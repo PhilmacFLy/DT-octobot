@@ -1,0 +1,94 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+G:\DT\project\balancebot.uvproj
+Project File Date:  <unknown>
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Start_V3.A66...
+compiling MAIN.C...
+MAIN.C(352): error C83: '++': incompatible types
+MAIN.C(352): error C73: sizeof illegal operand taken
+MAIN.C(352): error C100: '++': left operand must be l-value
+MAIN.C(353): error C67: 'x': undefined identifier
+MAIN.C(355): error C67: 'speed': undefined identifier
+MAIN.C(357): error C83: '++': incompatible types
+MAIN.C(357): error C73: sizeof illegal operand taken
+MAIN.C(357): error C100: '++': left operand must be l-value
+MAIN.C(358): error C67: 'z': undefined identifier
+MAIN.C(360): error C67: 'z': undefined identifier
+MAIN.C(361): error C67: 'speed': undefined identifier
+MAIN.C(362): error C67: 'speed': undefined identifier
+MAIN.C(362): warning C140: 'SetMotorSpeedLeft' undefined; assuming 'extern int SetMotorSpeedLeft()'
+MAIN.C(369): error C67: 'x': undefined identifier
+MAIN.C(370): error C83: '++': incompatible types
+MAIN.C(370): error C73: sizeof illegal operand taken
+MAIN.C(370): error C100: '++': left operand must be l-value
+MAIN.C(372): error C67: 'direction': undefined identifier
+MAIN.C(374): error C67: 'val': undefined identifier
+MAIN.C(374): error C67: 'val': undefined identifier
+MAIN.C(375): error C67: 'val': undefined identifier
+MAIN.C(375): error C67: 'direction': undefined identifier
+MAIN.C(379): error C67: 'val': undefined identifier
+MAIN.C(379): error C67: 'val': undefined identifier
+MAIN.C(380): error C67: 'val': undefined identifier
+MAIN.C(380): error C67: 'direction': undefined identifier
+compiling SCS.C...
+compiling IO.C...
+compiling CC2.C...
+compiling motor.c...
+motor.c(8): warning C47: 'direction': unreferenced parameter
+motor.c(15): warning C47: 'direction': unreferenced parameter
+Target not created
+Build target 'Target 1'
+assembling Start_V3.A66...
+compiling MAIN.C...
+MAIN.C(359): error C83: '++': incompatible types
+MAIN.C(359): error C73: sizeof illegal operand taken
+MAIN.C(359): error C100: '++': left operand must be l-value
+MAIN.C(360): error C67: 'x': undefined identifier
+MAIN.C(369): warning C140: 'SetMotorSpeedLeft' undefined; assuming 'extern int SetMotorSpeedLeft()'
+MAIN.C(376): error C67: 'x': undefined identifier
+compiling SCS.C...
+compiling IO.C...
+compiling CC2.C...
+compiling motor.c...
+motor.c(8): warning C47: 'direction': unreferenced parameter
+motor.c(15): warning C47: 'direction': unreferenced parameter
+Target not created
+Build target 'Target 1'
+assembling Start_V3.A66...
+compiling MAIN.C...
+MAIN.C(370): warning C140: 'SetMotorSpeedLeft' undefined; assuming 'extern int SetMotorSpeedLeft()'
+compiling SCS.C...
+compiling IO.C...
+compiling CC2.C...
+compiling motor.c...
+motor.c(8): warning C47: 'direction': unreferenced parameter
+motor.c(15): warning C47: 'direction': unreferenced parameter
+linking...
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SetMotorSpeedLeft
+    MODULE:  MAIN.obj (MAIN)
+   DEFINED:  motor.obj (MOTOR)
+Program Size: data=1088(near=1088) const=2(near=0) code=1526
+"balancebot" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+assembling Start_V3.A66...
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling CC2.C...
+compiling motor.c...
+motor.c(8): warning C47: 'direction': unreferenced parameter
+motor.c(15): warning C47: 'direction': unreferenced parameter
+linking...
+Program Size: data=1088(near=1088) const=2(near=0) code=1526
+"balancebot" - 0 Error(s), 2 Warning(s).
+Clean started: Project: 'balancebot'
+   deleting intermediate output files for target 'Target 1'
+Clean started: Project: 'balancebot'
+   deleting intermediate output files for target 'Target 1'

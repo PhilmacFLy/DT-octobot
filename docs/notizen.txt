@@ -1,0 +1,8 @@
+P2.3 ist PWM für linker Motor
+P2.2 ist Direction für linker Motor
+
+
+
+
+P2.4 ist PWM für rechter Motor
+P2.5 ist Direction für rechter Motor
