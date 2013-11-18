@@ -6,3 +6,17 @@ P2.2 ist Direction für linker Motor
 
 P2.4 ist PWM für rechter Motor
 P2.5 ist Direction für rechter Motor
+
+
+noch...
+
+
+
+
+neu:
+
+P4.3 ist Motor Links PWM
+P4.4 ist Motor Links Direction
+
+P4.5 ist Motor Rechts PWM
+P4.6 ist Motor Rechts Direction

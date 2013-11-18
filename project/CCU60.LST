@@ -1,0 +1,462 @@
+C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 1   
+
+
+C166 COMPILER V7.05, COMPILATION OF MODULE CCU60
+OBJECT MODULE PLACED IN .\obj\CCU60.obj
+COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\CCU60.obj) 
+
+ stmt lvl     source
+
+*** WARNING C500 IN LINE 1 OF CCU60.C: SERIAL NUMBER EXPIRED
+
+    1         //****************************************************************************
+    2         // @Module        Capture / Compare Unit 60 (CCU60)
+    3         // @Filename      CCU60.C
+    4         // @Project       balancebot.dav
+    5         //----------------------------------------------------------------------------
+    6         // @Controller    Infineon XE167F-96F66
+    7         //
+    8         // @Compiler      Keil
+    9         //
+   10         // @Codegenerator 2.2
+   11         //
+   12         // @Description   This file contains functions that use the CCU60 module.
+   13         //
+   14         //----------------------------------------------------------------------------
+   15         // @Date          18.11.2013 18:52:18
+   16         //
+   17         //****************************************************************************
+   18         
+   19         // USER CODE BEGIN (CCU60_General,1)
+   20         
+   21         // USER CODE END
+   22         
+   23         
+   24         
+   25         //****************************************************************************
+   26         // @Project Includes
+   27         //****************************************************************************
+   28         
+   29         #include "MAIN.H"
+   30         
+   31         // USER CODE BEGIN (CCU60_General,2)
+   32         
+   33         // USER CODE END
+   34         
+   35         
+   36         //****************************************************************************
+   37         // @Macros
+   38         //****************************************************************************
+   39         
+   40         // USER CODE BEGIN (CCU60_General,3)
+   41         
+   42         // USER CODE END
+   43         
+   44         
+   45         //****************************************************************************
+   46         // @Defines
+   47         //****************************************************************************
+   48         
+   49         // USER CODE BEGIN (CCU60_General,4)
+   50         
+   51         // USER CODE END
+   52         
+   53         
+   54         //****************************************************************************
+C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 2   
+
+   55         // @Typedefs
+   56         //****************************************************************************
+   57         
+   58         // USER CODE BEGIN (CCU60_General,5)
+   59         
+   60         // USER CODE END
+   61         
+   62         
+   63         //****************************************************************************
+   64         // @Imported Global Variables
+   65         //****************************************************************************
+   66         
+   67         // USER CODE BEGIN (CCU60_General,6)
+   68         
+   69         // USER CODE END
+   70         
+   71         
+   72         //****************************************************************************
+   73         // @Global Variables
+   74         //****************************************************************************
+   75         
+   76         // USER CODE BEGIN (CCU60_General,7)
+   77         
+   78         // USER CODE END
+   79         
+   80         
+   81         //****************************************************************************
+   82         // @External Prototypes
+   83         //****************************************************************************
+   84         
+   85         // USER CODE BEGIN (CCU60_General,8)
+   86         
+   87         // USER CODE END
+   88         
+   89         
+   90         //****************************************************************************
+   91         // @Prototypes Of Local Functions
+   92         //****************************************************************************
+   93         
+   94         // USER CODE BEGIN (CCU60_General,9)
+   95         
+   96         // USER CODE END
+   97         
+   98         
+   99         //****************************************************************************
+  100         // @Function      void CCU60_vInit(void) 
+  101         //
+  102         //----------------------------------------------------------------------------
+  103         // @Description   This is the initialization function of the CCU60 function 
+  104         //                library. It is assumed that the SFRs used by this library 
+  105         //                are in reset state. 
+  106         //
+  107         //----------------------------------------------------------------------------
+  108         // @Returnvalue   None
+  109         //
+  110         //----------------------------------------------------------------------------
+  111         // @Parameters    None
+  112         //
+  113         //----------------------------------------------------------------------------
+  114         // @Date          18.11.2013
+  115         //
+  116         //****************************************************************************
+C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 3   
+
+  117         
+  118         // USER CODE BEGIN (Init,1)
+  119         
+  120         // USER CODE END
+  121         
+  122         void CCU60_vInit(void)
+  123         {
+  124  1        // USER CODE BEGIN (Init,2)
+  125  1      
+  126  1        // USER CODE END
+  127  1      
+  128  1        ///  -----------------------------------------------------------------------
+  129  1        ///  Configuration of KERNEL REGISTERS :
+  130  1        ///  -----------------------------------------------------------------------
+  131  1        ///  - CCU60 Module is enabled.
+  132  1        ///  - The CCU60 module clock = 66,000 MHz. 
+  133  1        ///  - T12 is enabled.
+  134  1        ///  - T13 is enabled.
+  135  1        ///  - MCM is enabled.
+  136  1      
+  137  1        CCU60_KSCFG    =  0x0003;      // Kernel State Configuration Register
+  138  1      
+  139  1        _nop_();    //No operation function as Delay
+  140  1        _nop_();    //No operation function as Delay
+  141  1        _nop_();    //No operation function as Delay
+  142  1        _nop_();    //No operation function as Delay
+  143  1      
+  144  1        ///  -----------------------------------------------------------------------
+  145  1        ///  Configuration of CCU60 Timer 12:
+  146  1        ///  -----------------------------------------------------------------------
+  147  1        ///  - Timer 12 Input clock factor (T12CLK) is 6
+  148  1        ///  - prescaler factor is 0
+  149  1        ///  - Timer 12 run bit is set
+  150  1        ///  - Single shot mode is disabled
+  151  1        ///  - Timer 12 works in edge aligned mode
+  152  1        ///  - Interrupt on period match is enabled
+  153  1        ///  - Interrupt on one match is disabled
+  154  1        ///  - No External run selection is selected.
+  155  1        ///  - Timer mode is selected.
+  156  1        ///  - 
+  157  1      
+  158  1        CCU60_T12PR    =  0x00FF;      // load CCU60 T12 period register
+  159  1      
+  160  1        ///  -----------------------------------------------------------------------
+  161  1        ///  Configuration of T13HR Signal:
+  162  1        ///  -----------------------------------------------------------------------
+  163  1        ///  - Signal T13HRA is selected as Input
+  164  1      
+  165  1        ///  -----------------------------------------------------------------------
+  166  1        ///  Configuration of CCU60 Timer 13:
+  167  1        ///  -----------------------------------------------------------------------
+  168  1        ///  - Timer 13 Input Clock factor (T13CLK) is 6
+  169  1        ///  - prescaler factor is 0
+  170  1        ///  - Timer 13 run bit is reset
+  171  1        ///  - Trigger control is disabled
+  172  1        ///  - No External run selection is selected.
+  173  1        ///  - Timer mode is selected.
+  174  1        ///  - 
+  175  1        ///  - Single shot mode is disabled
+  176  1        ///  - Interrupt on period match is disabled
+  177  1        ///  - Interrupt on compare match is disabled
+  178  1      
+C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 4   
+
+  179  1        CCU60_T13PR    =  0x00FF;      // load CCU60 T13 period register
+  180  1      
+  181  1        CCU60_TCTR0    =  0x0606;      // load CCU60 timer control register 0
+  182  1        CCU60_TCTR2    =  0x0020;      // load CCU60 timer control register 2
+  183  1      
+  184  1        ///  -----------------------------------------------------------------------
+  185  1        ///  Configuration of Multi Channel Mode:
+  186  1        ///  -----------------------------------------------------------------------
+  187  1        ///  - Multi channel mode is disabled
+  188  1      
+  189  1      
+  190  1        ///  -----------------------------------------------------------------------
+  191  1        ///  Configuration of CCU60 Channel 0:
+  192  1        ///  -----------------------------------------------------------------------
+  193  1        ///  - Compare mode 1 is selected
+  194  1        ///  - T12 modulation for output CC60 is disabled
+  195  1        ///  - T13 modulation for output CC60 is disabled
+  196  1        ///  - The trap functionality of the pin CC60 is disabled
+  197  1        ///  - The compare output CC60 drives passive level while CC60ST is '0'
+  198  1        ///  - The passive level of the output CC60 is '0'
+  199  1        ///  - T12 modulation for output COUT60 is disabled
+  200  1        ///  - T13 modulation for output COUT60 is disabled
+  201  1        ///  - Dead time generation is disabled
+  202  1      
+  203  1        ///  - Generation interrupt on flag ICC60R is enabled
+  204  1        ///  - Generation interrupt on flag ICC60F is disabled
+  205  1      
+  206  1        CCU60_CC60SR   =  0x00FF;      // Load CCU60 capture/compare shadow 
+  207  1                                       // register for channel 0
+  208  1      
+  209  1        ///  -----------------------------------------------------------------------
+  210  1        ///  Configuration of CCU60 Channel 1:
+  211  1        ///  -----------------------------------------------------------------------
+  212  1        ///  - Compare mode 1 is selected
+  213  1        ///  - T12 modulation for output CC61 is disabled
+  214  1        ///  - T13 modulation for output CC61 is disabled
+  215  1        ///  - The trap functionality of the pin CC61 is disabled
+  216  1        ///  - The compare output CC61 drives passive level while CC61ST is '0'
+  217  1        ///  - The passive level of the output CC61 is '0'
+  218  1        ///  - T12 modulation for output COUT61 is disabled
+  219  1        ///  - T13 modulation for output COUT61 is disabled
+  220  1        ///  - Dead time generation is disabled
+  221  1      
+  222  1        ///  - Generation interrupt on flag ICC61R is enabled
+  223  1        ///  - Generation interrupt on flag ICC61F is disabled
+  224  1      
+  225  1        CCU60_CC61SR   =  0x00FF;      // Load CCU60 capture/compare shadow 
+  226  1                                       // register for channel 1
+  227  1      
+  228  1        ///  -----------------------------------------------------------------------
+  229  1        ///  Configuration of CCU60 Channel 2:
+  230  1        ///  -----------------------------------------------------------------------
+  231  1        ///  - Channel 2 is disabled
+  232  1        ///  - T12 modulation for output CC62 is disabled
+  233  1        ///  - T13 modulation for output CC62 is disabled
+  234  1        ///  - T13 modulation for output CC62 is disabled
+  235  1      
+  236  1        ///  - Generation interrupt on flag ICC62R is disabled
+  237  1        ///  - Generation interrupt on flag ICC62F is disabled
+  238  1      
+  239  1        CCU60_CC62SR   =  0x0000;      // Load CCU60 capture/compare shadow 
+  240  1                                       // register for channel 2
+C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 5   
+
+  241  1      
+  242  1        ///  -----------------------------------------------------------------------
+  243  1        ///  Configuration of CCU60 Channel 3:
+  244  1        ///  -----------------------------------------------------------------------
+  245  1        ///  - T13 output is not inverted
+  246  1      
+  247  1      
+  248  1        CCU60_CC63SR   =  0x0000;      // load CCU60 capture/compare shadow 
+  249  1                                       // register for channel 3
+  250  1      
+  251  1      
+  252  1        CCU60_T12DTC   =  0x0001;      // load CCU60 dead time control register for 
+  253  1                                       // timer T12
+  254  1      
+  255  1        CCU60_T12MSEL  =  0x0011;      // load CCU60 T12 campture/compare mode 
+  256  1                                       // select register
+  257  1      
+  258  1        ///  -----------------------------------------------------------------------
+  259  1        ///  Configuration of CCU60 trap control:
+  260  1        ///  -----------------------------------------------------------------------
+  261  1        ///  - Trap can only be generated by SW by setting the bit TRPF
+  262  1        ///  - The trap state is left when a zero-match of T12 (while counting up) 
+  263  1        ///    is detected (synchronization to T12)
+  264  1        ///  - Bit TRPF is automatically cleared by HW (according to TRPPEN, TRPM0 
+  265  1        ///    and TRPM1)
+  266  1        ///  - Trap interrupt is disabled
+  267  1      
+  268  1      
+  269  1        ///  -----------------------------------------------------------------------
+  270  1        ///  Configuration of CCU60 interrupt control:
+  271  1        ///  -----------------------------------------------------------------------
+  272  1        ///  - For channel 0 interrupts is node I0 selected
+  273  1        ///  - For channel 1 interrupts is node I0 selected
+  274  1        ///  - For channel 2 interrupts is node I0 selected
+  275  1        ///  - For correct hall event interrupt is node I0 selected
+  276  1        ///  - For error interrupts is node I0 selected
+  277  1        ///  - For T12 interrupts is node I0 selected
+  278  1        ///  - For T13 interrupts is node I0 selected
+  279  1      
+  280  1      
+  281  1        CCU60_INP      =  0x0000;      // Load CCU60 capture/compare interrupt node 
+  282  1                                       // pointer register
+  283  1      
+  284  1        CCU60_IEN      =  0x0085;      // Load CCU60 capture/compare interrupt 
+  285  1                                       // enable register
+  286  1      
+  287  1      
+  288  1        ///  -----------------------------------------------------------------------
+  289  1        ///  Configuration of the used CCU60 Channel Port Pins:
+  290  1        ///  -----------------------------------------------------------------------
+  291  1        ///  - P8.0 is used for  CCU60 output(CC60)
+  292  1        ///  - P8.1 is used for  CCU60 output(CC61)
+  293  1      
+  294  1        P8_IOCR00 = 0x0090;    //set direction register
+  295  1        P8_IOCR01 = 0x0090;    //set direction register
+  296  1      
+  297  1        CCU60_PISELL   =  0xFFC0;      // Load CCU60 Port Input Selection register
+  298  1      
+  299  1        ///  -----------------------------------------------------------------------
+  300  1        ///  Configuration of the used CCU60 Channels Interrupts:
+  301  1        ///  -----------------------------------------------------------------------
+  302  1        ///  NodeI0 service request node configuration:
+C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 6   
+
+  303  1        ///  - NodeI0 interrupt priority level (ILVL) = 8
+  304  1        ///  - NodeI0 interrupt group level (GLVL) = 0
+  305  1        ///  - NodeI0 group priority extension (GPX) = 0
+  306  1      
+  307  1        CCU60_0IC      =  0x0060;     
+  308  1      
+  309  1      
+  310  1        ///  -----------------------------------------------------------------------
+  311  1        ///  Configuration of T12, T13 ---- CCU60_TCTR4 Register:
+  312  1        ///  -----------------------------------------------------------------------
+  313  1        ///  - Enable shadow transfer of T12 and T13
+  314  1        ///  - Timer 12 run bit is set
+  315  1        ///  - Timer 13 run bit is reset
+  316  1        CCU60_TCTR4    =  0x4042;      // load CCU60 timer control register 4
+  317  1      
+  318  1      
+  319  1        // USER CODE BEGIN (NodeI3,3)
+  320  1      
+  321  1        // USER CODE END
+  322  1      
+  323  1      } //  End of function CCU60_vInit
+  324         
+  325         
+  326         //****************************************************************************
+  327         // @Function      void CCU60_viNodeI0(void) 
+  328         //
+  329         //----------------------------------------------------------------------------
+  330         // @Description   This is the interrupt service routine for the CCU60 node 
+  331         //                I0. If the content of the corresponding compare timer 
+  332         //                (configurable) equals the content of the capture/compare 
+  333         //                register or if a capture event occurs at the associated 
+  334         //                port pin, the interrupt request flag is set and an 
+  335         //                interrupt is triggered (only if enabled).
+  336         //                Please note that you have to add application specific code 
+  337         //                to this function.
+  338         //
+  339         //----------------------------------------------------------------------------
+  340         // @Returnvalue   None
+  341         //
+  342         //----------------------------------------------------------------------------
+  343         // @Parameters    None
+  344         //
+  345         //----------------------------------------------------------------------------
+  346         // @Date          18.11.2013
+  347         //
+  348         //****************************************************************************
+  349         
+  350         // USER CODE BEGIN (NodeI0,1)
+  351         
+  352         // USER CODE END
+  353         
+  354         void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
+  355         {
+  356  1        // USER CODE BEGIN (NodeI0,2)
+  357  1        int x = CCU60_IS;
+  358  1        x = x + 1;
+  359  1        if(CCU60_IS & 0x0001)
+  360  1        {
+  361  2        // linker motor
+  362  2         P4_OUT_P3 = 1;
+  363  2         CCU60_ISR |= 0x0001;
+  364  2        }
+C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 7   
+
+  365  1        if(CCU60_IS & 0x0004)
+  366  1        {
+  367  2        // rechter motor
+  368  2          P4_OUT_P5 = 1; 
+  369  2         CCU60_ISR |= 0x0004;
+  370  2        }
+  371  1        // USER CODE END
+  372  1      
+  373  1        if(CCU60_IS & 0x0001)   // if CCU60_IS_ICC60R
+  374  1        {
+  375  2          // Capture, Compare match rising edge detection an channel 0
+  376  2      
+  377  2          // USER CODE BEGIN (NodeI0,10)
+  378  2      
+  379  2          // USER CODE END
+  380  2      
+  381  2          CCU60_ISR |= 0x0001;  // clear flag CCU60_IS_ICC60R
+  382  2        }
+  383  1      
+  384  1        if(CCU60_IS & 0x0004)  // if CCU60_IS_ICC61R
+  385  1        {
+  386  2          // Capture, Compare match rising edge detection an channel 1
+  387  2      
+  388  2          // USER CODE BEGIN (NodeI0,12)
+  389  2      
+  390  2          // USER CODE END
+  391  2      
+  392  2          CCU60_ISR |= 0x0004;  // clear flag CCU60_IS_ICC61R
+  393  2        }
+  394  1      
+  395  1        if(CCU60_IS & 0x0080)  // if CCU60_IS_T12PM
+  396  1        {
+  397  2          // Timer T12 period match detection
+  398  2      
+  399  2          // USER CODE BEGIN (NodeI0,19)
+  400  2              P4_OUT_P3 = 0; 
+  401  2              P4_OUT_P5 = 0;    
+  402  2          // USER CODE END
+  403  2      
+  404  2          CCU60_ISR |= 0x0080;  // clear flag CCU60_IS_T12PM
+  405  2        }
+  406  1      
+  407  1      
+  408  1      } //  End of function CCU60_viNodeI0
+  409         
+  410         
+  411         
+  412         
+  413         // USER CODE BEGIN (CCU60_General,10)
+  414         
+  415         // USER CODE END
+  416         
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =         242     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =    --------     --------
+  FAR-DATA SIZE    =    --------     --------
+C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 8   
+
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =    --------     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

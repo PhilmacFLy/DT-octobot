@@ -1,0 +1,320 @@
+C166 COMPILER V7.05, IO                                                                    11/18/2013 18:52:52 PAGE 1   
+
+
+C166 COMPILER V7.05, COMPILATION OF MODULE IO
+OBJECT MODULE PLACED IN .\obj\IO.obj
+COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\IO.obj) 
+
+ stmt lvl     source
+
+*** WARNING C500 IN LINE 1 OF IO.C: SERIAL NUMBER EXPIRED
+
+    1         //****************************************************************************
+    2         // @Module        Parallel Ports
+    3         // @Filename      IO.C
+    4         // @Project       balancebot.dav
+    5         //----------------------------------------------------------------------------
+    6         // @Controller    Infineon XE167F-96F66
+    7         //
+    8         // @Compiler      Keil
+    9         //
+   10         // @Codegenerator 2.2
+   11         //
+   12         // @Description   This file contains functions that use the IO module.
+   13         //
+   14         //----------------------------------------------------------------------------
+   15         // @Date          18.11.2013 18:52:17
+   16         //
+   17         //****************************************************************************
+   18         
+   19         // USER CODE BEGIN (IO_General,1)
+   20         
+   21         // USER CODE END
+   22         
+   23         
+   24         
+   25         //****************************************************************************
+   26         // @Project Includes
+   27         //****************************************************************************
+   28         
+   29         #include "MAIN.H"
+   30         
+   31         // USER CODE BEGIN (IO_General,2)
+   32         
+   33         // USER CODE END
+   34         
+   35         
+   36         //****************************************************************************
+   37         // @Macros
+   38         //****************************************************************************
+   39         
+   40         // USER CODE BEGIN (IO_General,3)
+   41         
+   42         // USER CODE END
+   43         
+   44         
+   45         //****************************************************************************
+   46         // @Defines
+   47         //****************************************************************************
+   48         
+   49         // USER CODE BEGIN (IO_General,4)
+   50         
+   51         // USER CODE END
+   52         
+   53         
+   54         //****************************************************************************
+C166 COMPILER V7.05, IO                                                                    11/18/2013 18:52:52 PAGE 2   
+
+   55         // @Typedefs
+   56         //****************************************************************************
+   57         
+   58         // USER CODE BEGIN (IO_General,5)
+   59         
+   60         // USER CODE END
+   61         
+   62         
+   63         //****************************************************************************
+   64         // @Imported Global Variables
+   65         //****************************************************************************
+   66         
+   67         // USER CODE BEGIN (IO_General,6)
+   68         
+   69         // USER CODE END
+   70         
+   71         
+   72         //****************************************************************************
+   73         // @Global Variables
+   74         //****************************************************************************
+   75         
+   76         // USER CODE BEGIN (IO_General,7)
+   77         
+   78         // USER CODE END
+   79         
+   80         
+   81         //****************************************************************************
+   82         // @External Prototypes
+   83         //****************************************************************************
+   84         
+   85         // USER CODE BEGIN (IO_General,8)
+   86         
+   87         // USER CODE END
+   88         
+   89         
+   90         //****************************************************************************
+   91         // @Prototypes Of Local Functions
+   92         //****************************************************************************
+   93         
+   94         // USER CODE BEGIN (IO_General,9)
+   95         
+   96         // USER CODE END
+   97         
+   98         
+   99         //****************************************************************************
+  100         // @Function      void IO_vInit(void) 
+  101         //
+  102         //----------------------------------------------------------------------------
+  103         // @Description   This is the initialization function of the IO function 
+  104         //                library. It is assumed that the SFRs used by this library 
+  105         //                are in reset state. 
+  106         //
+  107         //----------------------------------------------------------------------------
+  108         // @Returnvalue   None
+  109         //
+  110         //----------------------------------------------------------------------------
+  111         // @Parameters    None
+  112         //
+  113         //----------------------------------------------------------------------------
+  114         // @Date          18.11.2013
+  115         //
+  116         //****************************************************************************
+C166 COMPILER V7.05, IO                                                                    11/18/2013 18:52:52 PAGE 3   
+
+  117         
+  118         // USER CODE BEGIN (IO_Function,1)
+  119         
+  120         // USER CODE END
+  121         
+  122         void IO_vInit(void)
+  123         {
+  124  1        // USER CODE BEGIN (IO_Function,2)
+  125  1      
+  126  1        // USER CODE END
+  127  1      
+  128  1      
+  129  1        ///  -----------------------------------------------------------------------
+  130  1        ///  Configuration of Port P0:
+  131  1        ///  -----------------------------------------------------------------------
+  132  1        ///  - no pin of port P0 is used
+  133  1      
+  134  1      
+  135  1        ///  -----------------------------------------------------------------------
+  136  1        ///  Configuration of Port P1:
+  137  1        ///  -----------------------------------------------------------------------
+  138  1        ///  - no pin of port P1 is used
+  139  1      
+  140  1      
+  141  1        ///  -----------------------------------------------------------------------
+  142  1        ///  Configuration of Port P2:
+  143  1        ///  -----------------------------------------------------------------------
+  144  1        ///  P2.2 is used as general purpose output
+  145  1        ///  - push/pull output is selected
+  146  1        ///  - the pin status is low level
+  147  1        ///  P2.5 is used as general input
+  148  1        ///  - pull device is tristate 
+  149  1      
+  150  1        ///  P2.0 - P2.3 output driver characteristic: strong driver
+  151  1        ///  P2.4 - P2.7 output driver characteristic: strong driver
+  152  1        ///  P2.8 - P2.12 output driver characteristic: strong driver
+  153  1      
+  154  1        ///  P2.0 - P2.3 output edge characteristic: sharp edge mode
+  155  1        ///  P2.4 - P2.7 output edge characteristic: sharp edge mode
+  156  1        ///  P2.8 - P2.12 output edge characteristic: sharp edge mode
+  157  1      
+  158  1        P2_IOCR02      =  0x0080;      // load port control register 2
+  159  1      
+  160  1        ///  -----------------------------------------------------------------------
+  161  1        ///  Configuration of Port P3:
+  162  1        ///  -----------------------------------------------------------------------
+  163  1        ///  - no pin of port P3 is used
+  164  1      
+  165  1      
+  166  1        ///  -----------------------------------------------------------------------
+  167  1        ///  Configuration of Port P4:
+  168  1        ///  -----------------------------------------------------------------------
+  169  1        ///  P4.3 is used as general purpose output
+  170  1        ///  - push/pull output is selected
+  171  1        ///  - the pin status is low level
+  172  1        ///  P4.4 is used as general purpose output
+  173  1        ///  - push/pull output is selected
+  174  1        ///  - the pin status is low level
+  175  1        ///  P4.5 is used as general purpose output
+  176  1        ///  - push/pull output is selected
+  177  1        ///  - the pin status is low level
+  178  1        ///  P4.6 is used as general purpose output
+C166 COMPILER V7.05, IO                                                                    11/18/2013 18:52:52 PAGE 4   
+
+  179  1        ///  - push/pull output is selected
+  180  1        ///  - the pin status is low level
+  181  1      
+  182  1        ///  P4.0 - P4.3 output driver characteristic: strong driver
+  183  1        ///  P4.4 - P4.7 output driver characteristic: strong driver
+  184  1      
+  185  1        ///  P4.0 - P4.3 output edge characteristic: sharp edge mode
+  186  1        ///  P4.4 - P4.7 output edge characteristic: sharp edge mode
+  187  1      
+  188  1        P4_IOCR03      =  0x0080;      // load port control register 3
+  189  1        P4_IOCR04      =  0x0080;      // load port control register 4
+  190  1        P4_IOCR05      =  0x0080;      // load port control register 5
+  191  1        P4_IOCR06      =  0x0080;      // load port control register 6
+  192  1      
+  193  1        ///  -----------------------------------------------------------------------
+  194  1        ///  Configuration of Port P5:
+  195  1        ///  -----------------------------------------------------------------------
+  196  1        ///  - no pin of port P5 is used
+  197  1        ///  - Port5 Data register P5(Read only)
+  198  1      
+  199  1      
+  200  1        ///  -----------------------------------------------------------------------
+  201  1        ///  Configuration of Port P6:
+  202  1        ///  -----------------------------------------------------------------------
+  203  1        ///  - no pin of port P6 is used
+  204  1      
+  205  1      
+  206  1        ///  -----------------------------------------------------------------------
+  207  1        ///  Configuration of Port P7:
+  208  1        ///  -----------------------------------------------------------------------
+  209  1        ///  - no pin of port P7 is used
+  210  1      
+  211  1      
+  212  1        ///  -----------------------------------------------------------------------
+  213  1        ///  Configuration of Port P8:
+  214  1        ///  -----------------------------------------------------------------------
+  215  1        ///  P8.0 is used as alternate output for the  CCU60 output(CC60)
+  216  1        ///  - push/pull output is selected
+  217  1        ///  P8.1 is used as alternate output for the  CCU60 output(CC61)
+  218  1        ///  - push/pull output is selected
+  219  1      
+  220  1        ///  P8.0 - P8.3 output driver characteristic: strong driver
+  221  1        ///  P8.4 - P8.6 output driver characteristic: strong driver
+  222  1      
+  223  1        ///  P8.0 - P8.3 output edge characteristic: sharp edge mode
+  224  1        ///  P8.4 - P8.6 output edge characteristic: sharp edge mode
+  225  1      
+  226  1      
+  227  1        ///  -----------------------------------------------------------------------
+  228  1        ///  Configuration of Port P9:
+  229  1        ///  -----------------------------------------------------------------------
+  230  1        ///  - no pin of port P9 is used
+  231  1      
+  232  1      
+  233  1        ///  -----------------------------------------------------------------------
+  234  1        ///  Configuration of Port P10:
+  235  1        ///  -----------------------------------------------------------------------
+  236  1        ///  P10.0 is used as general purpose output
+  237  1        ///  - push/pull output is selected
+  238  1        ///  - the pin status is low level
+  239  1        ///  P10.1 is used as general purpose output
+  240  1        ///  - push/pull output is selected
+C166 COMPILER V7.05, IO                                                                    11/18/2013 18:52:52 PAGE 5   
+
+  241  1        ///  - the pin status is low level
+  242  1      
+  243  1        ///  P10.0 - P10.3 output driver characteristic: strong driver
+  244  1        ///  P10.4 - P10.7 output driver characteristic: strong driver
+  245  1        ///  P10.8 - P10.11 output driver characteristic: strong driver
+  246  1        ///  P10.12 - P10.15 output driver characteristic: strong driver
+  247  1      
+  248  1        ///  P10.0 - P10.3 output edge characteristic: sharp edge mode
+  249  1        ///  P10.4 - P10.7 output edge characteristic: sharp edge mode
+  250  1        ///  P10.8 - P10.11 output edge characteristic: sharp edge mode
+  251  1        ///  P10.12 - P10.15 output edge characteristic: sharp edge mode
+  252  1      
+  253  1      
+  254  1        ///  -----------------------------------------------------------------------
+  255  1        ///  Configuration of Port P11:
+  256  1        ///  -----------------------------------------------------------------------
+  257  1        ///  - no pin of port P11 is used
+  258  1      
+  259  1      
+  260  1        ///  -----------------------------------------------------------------------
+  261  1        ///  Configuration of Port P15:
+  262  1        ///  -----------------------------------------------------------------------
+  263  1        ///  - no pin of port P15 is used
+  264  1        ///  - Port15 Data register P15(Read only)
+  265  1      
+  266  1      
+  267  1      
+  268  1        // USER CODE BEGIN (IO_Function,3)
+  269  1      
+  270  1        // USER CODE END
+  271  1      
+  272  1      } //  End of function IO_vInit
+  273         
+  274         
+  275         
+  276         
+  277         // USER CODE BEGIN (IO_General,10)
+  278         
+  279         // USER CODE END
+  280         
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =          26     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =    --------     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =    --------     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

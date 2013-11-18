@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the CC2 module.
 //
 //----------------------------------------------------------------------------
-// @Date          14.11.2013 13:45:21
+// @Date          18.11.2013 17:25:50
 //
 //****************************************************************************
 
@@ -111,7 +111,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          14.11.2013
+// @Date          18.11.2013
 //
 //****************************************************************************
 
@@ -149,8 +149,8 @@ void CC2_vInit(void)
   ///  Configuration of CAPCOM2 Timer 7:
   ///  -----------------------------------------------------------------------
   ///  - timer 7 works in timer mode
-  ///  - prescaler factor is 64
-  ///  - timer 7 run bit is set
+  ///  - prescaler factor is 8
+  ///  - timer 7 run bit is reset
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of CAPCOM2 Timer 8:
@@ -159,9 +159,6 @@ void CC2_vInit(void)
   ///  - prescaler factor is 8
   ///  - timer 8 run bit is reset
 
-
-  CC2_T78CON     =  0x0003;      // load CAPCOM2 timer 7 and timer 8 control 
-                                 // register
 
   CC2_T7         =  0xFF00;      // load CAPCOM2 timer 7 register
 
@@ -180,20 +177,14 @@ void CC2_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of the used CAPCOM2 Channel 16:
   ///  -----------------------------------------------------------------------
-  ///  - compare mode 3:  set bit CC0IO and pin CC16IO (P2.3) on each match
-  ///  - CC16 allocated to CAPCOM2 timer 7
-  ///  - single event mode is disabled
-
+  ///  - channel 16 is disabled
 
   CC2_CC16       =  0xFF01;      // load CAPCOM2 channel 16 register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of the used CAPCOM2 Channel 17:
   ///  -----------------------------------------------------------------------
-  ///  - compare mode 3:  set bit CC1IO and pin CC17IO (P2.4) on each match
-  ///  - CC17 allocated to CAPCOM2 timer 7
-  ///  - single event mode is disabled
-
+  ///  - channel 17 is disabled
 
   CC2_CC17       =  0xFF01;      // load CAPCOM2 channel 17 register
 
@@ -267,22 +258,15 @@ void CC2_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  - channel 31 is disabled
 
-  CC2_M4         =  0x0077;      // load CAPCOM2 mode register 4
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of the used CAPCOM2 Channel Port Pins:
   ///  -----------------------------------------------------------------------
-  ///  - P2.3 is used for CAPCOM2 output(CC2_16)
-  ///  - P2.4 is used for CAPCOM2 output(CC2_17)
 
-  P2_IOCR03 = 0x00B0;    //set direction register
-  P2_IOCR04 = 0x00B0;    //set direction register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of the used CAPCOM2 Channels Interrupts:
   ///  -----------------------------------------------------------------------
-
-  CC2_T78CON_T7R    = 1;    // set CAPCOM2 timer 7 run bit
 
 
   // USER CODE BEGIN (Tmr8,3)

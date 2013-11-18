@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          14.11.2013 13:45:19
+// @Date          18.11.2013 18:52:16
 //
 //****************************************************************************
 
@@ -111,7 +111,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          14.11.2013
+// @Date          18.11.2013
 //
 //****************************************************************************
 
@@ -147,8 +147,8 @@ void MAIN_vInit(void)
   //   initializes the Parallel Ports
   IO_vInit();
 
-  //   initializes the Capture / Compare Unit 2 (CAPCOM2)
-  CC2_vInit();
+  //   initializes the Capture / Compare Unit 60 (CCU60)
+  CCU60_vInit();
 
 
   //   -----------------------------------------------------------------------
@@ -182,7 +182,7 @@ void MAIN_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          14.11.2013
+// @Date          18.11.2013
 //
 //****************************************************************************
 
@@ -220,7 +220,7 @@ void MAIN_vUnlockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          14.11.2013
+// @Date          18.11.2013
 //
 //****************************************************************************
 
@@ -262,7 +262,7 @@ void MAIN_vLockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          14.11.2013
+// @Date          18.11.2013
 //
 //****************************************************************************
 
@@ -326,7 +326,7 @@ void MAIN_vChangeFreq(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          14.11.2013
+// @Date          18.11.2013
 //
 //****************************************************************************
 
@@ -352,6 +352,8 @@ void main(void)
 
   // USER CODE BEGIN (Main,3)
 
+//CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, 0x0F);
+
   // USER CODE END
 
   while(1)
@@ -362,14 +364,26 @@ void main(void)
    x++;
    if (x % 1000000 == 0)
    {
-     if (speed < 0xFF)
+     //if (speed < 0xFF)
 	 {
 	   z++;
-	   if (z == 5)
+	   if (z == 20)
 	   {
-		z = 0;
-		speed += 0x10;
-		SetMotorSpeedLeft(0, speed);
+		//z = 0;
+		//speed += 0x10;
+		//CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, 0x7F);
+		SetMotorSpeedLeft(MOTOR_FORWARD, 0x20);
+        //CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, 0xC0);
+		//SetMotorSpeedLeft(0, speed);
+
+	   }
+	   if (z == 40)
+	   {
+		 //SetMotorSpeedLeft(MOTOR_BACKWARD, 0);
+	   }
+	   if (z == 60)
+	   {
+		 //SetMotorSpeedLeft(MOTOR_BACKWARD, 0x20);
 	   }
 	 }
 		

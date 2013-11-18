@@ -1,24 +1,38 @@
 
 #include "XE16xREGS.H"
 
-#include "CC2.H"
+#include "CCU60.H"
 #include "IO.H"
 #include "motor.h"
 
 // API for Left Motor
 void SetMotorSpeedLeft(unsigned char direction, unsigned char speed)
 {
-  CC2_vStopTmr(CC2_TIMER_7);
-  CC2_vSetCCxReg(CC2_CC_16, (0xFF00 | (uword) (~speed)));
-  //P2_OUT_P2
-  CC2_vStartTmr(CC2_TIMER_7);
+  CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, (0xFF - speed));
+  CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
+  // rechter motor direction pin = 0 für vorwärts
+  if (MOTOR_FORWARD == direction)
+  {
+    P4_OUT_P4 = 1;
+  }
+  else
+  {
+    P4_OUT_P4 = 0;
+  }
 }
 
 // API for Right Motor
 void SetMotorSpeedRight(unsigned char direction, unsigned char speed)
-{	 
-  CC2_vStopTmr(CC2_TIMER_7);
-  CC2_vSetCCxReg(CC2_CC_17, (0xFF00 | (uword) (~speed)));
-  //P2_OUT_P5
-  CC2_vStartTmr(CC2_TIMER_7);
+{
+  CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, (0xFF - speed));
+  CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
+  // rechter motor direction pin = 1 für vorwärts
+  if (MOTOR_FORWARD == direction)
+  {
+    P4_OUT_P6 = 0;
+  }
+  else
+  {
+    P4_OUT_P6 = 1;
+  }
 }

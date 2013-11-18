@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the IO module.
 //
 //----------------------------------------------------------------------------
-// @Date          14.11.2013 13:45:20
+// @Date          18.11.2013 18:52:17
 //
 //****************************************************************************
 
@@ -111,7 +111,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          14.11.2013
+// @Date          18.11.2013
 //
 //****************************************************************************
 
@@ -144,13 +144,8 @@ void IO_vInit(void)
   ///  P2.2 is used as general purpose output
   ///  - push/pull output is selected
   ///  - the pin status is low level
-  ///  P2.3 is used as alternate output for the CAPCOM2 output(CC2_16)
-  ///  - push/pull output is selected
-  ///  P2.4 is used as alternate output for the CAPCOM2 output(CC2_17)
-  ///  - push/pull output is selected
-  ///  P2.5 is used as general purpose output
-  ///  - push/pull output is selected
-  ///  - the pin status is low level
+  ///  P2.5 is used as general input
+  ///  - pull device is tristate 
 
   ///  P2.0 - P2.3 output driver characteristic: strong driver
   ///  P2.4 - P2.7 output driver characteristic: strong driver
@@ -161,7 +156,6 @@ void IO_vInit(void)
   ///  P2.8 - P2.12 output edge characteristic: sharp edge mode
 
   P2_IOCR02      =  0x0080;      // load port control register 2
-  P2_IOCR05      =  0x0080;      // load port control register 5
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of Port P3:
@@ -172,8 +166,29 @@ void IO_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of Port P4:
   ///  -----------------------------------------------------------------------
-  ///  - no pin of port P4 is used
+  ///  P4.3 is used as general purpose output
+  ///  - push/pull output is selected
+  ///  - the pin status is low level
+  ///  P4.4 is used as general purpose output
+  ///  - push/pull output is selected
+  ///  - the pin status is low level
+  ///  P4.5 is used as general purpose output
+  ///  - push/pull output is selected
+  ///  - the pin status is low level
+  ///  P4.6 is used as general purpose output
+  ///  - push/pull output is selected
+  ///  - the pin status is low level
 
+  ///  P4.0 - P4.3 output driver characteristic: strong driver
+  ///  P4.4 - P4.7 output driver characteristic: strong driver
+
+  ///  P4.0 - P4.3 output edge characteristic: sharp edge mode
+  ///  P4.4 - P4.7 output edge characteristic: sharp edge mode
+
+  P4_IOCR03      =  0x0080;      // load port control register 3
+  P4_IOCR04      =  0x0080;      // load port control register 4
+  P4_IOCR05      =  0x0080;      // load port control register 5
+  P4_IOCR06      =  0x0080;      // load port control register 6
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of Port P5:
@@ -197,7 +212,16 @@ void IO_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of Port P8:
   ///  -----------------------------------------------------------------------
-  ///  - no pin of port P8 is used
+  ///  P8.0 is used as alternate output for the  CCU60 output(CC60)
+  ///  - push/pull output is selected
+  ///  P8.1 is used as alternate output for the  CCU60 output(CC61)
+  ///  - push/pull output is selected
+
+  ///  P8.0 - P8.3 output driver characteristic: strong driver
+  ///  P8.4 - P8.6 output driver characteristic: strong driver
+
+  ///  P8.0 - P8.3 output edge characteristic: sharp edge mode
+  ///  P8.4 - P8.6 output edge characteristic: sharp edge mode
 
 
   ///  -----------------------------------------------------------------------
@@ -226,8 +250,6 @@ void IO_vInit(void)
   ///  P10.8 - P10.11 output edge characteristic: sharp edge mode
   ///  P10.12 - P10.15 output edge characteristic: sharp edge mode
 
-  P10_IOCR00     =  0x0080;      // load port control register 0
-  P10_IOCR01     =  0x0080;      // load port control register 1
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of Port P11:

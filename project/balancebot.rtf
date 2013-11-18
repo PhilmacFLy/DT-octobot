@@ -8,7 +8,7 @@
 \par \plain\f4\fs22\cf0 Compiler: \tab\tab\b Keil
 \par \plain\f4\fs22\cf0 Memory Model: \tab\b SMALL
 \par 
-\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 14.11.2013 13:45:21
+\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 18.11.2013 18:52:18
 \par 
 \par 
 \par \plain\f4\fs22\cf2\b Please read this document carefully and note
@@ -27,8 +27,8 @@
 \par \tab\tab\tab XE16XREGS.H
 \par \tab\tab\tab IO.H
 \par \tab\tab\tab IO.C
-\par \tab\tab\tab CC2.H
-\par \tab\tab\tab CC2.C
+\par \tab\tab\tab CCU60.H
+\par \tab\tab\tab CCU60.C
 \par \tab\tab\tab BALANCEBOT.ASM
 \par 
 \par 
@@ -359,13 +359,8 @@
 \tab P2.2 is used as general purpose output\par 
 \tab - push/pull output is selected\par 
 \tab - the pin status is low level\par 
-\tab P2.3 is used as alternate output for the CAPCOM2 output(CC2_16)\par 
-\tab - push/pull output is selected\par 
-\tab P2.4 is used as alternate output for the CAPCOM2 output(CC2_17)\par 
-\tab - push/pull output is selected\par 
-\tab P2.5 is used as general purpose output\par 
-\tab - push/pull output is selected\par 
-\tab - the pin status is low level\par 
+\tab P2.5 is used as general input\par 
+\tab - pull device is tristate\par 
 \par 
 \tab P2.0 - P2.3 output driver characteristic: strong driver\par 
 \tab P2.4 - P2.7 output driver characteristic: strong driver\par 
@@ -379,7 +374,24 @@
 \tab - no pin of port P3 is used\par 
 \par 
 \tab Configuration of Port P4:\par 
-\tab - no pin of port P4 is used\par 
+\tab P4.3 is used as general purpose output\par 
+\tab - push/pull output is selected\par 
+\tab - the pin status is low level\par 
+\tab P4.4 is used as general purpose output\par 
+\tab - push/pull output is selected\par 
+\tab - the pin status is low level\par 
+\tab P4.5 is used as general purpose output\par 
+\tab - push/pull output is selected\par 
+\tab - the pin status is low level\par 
+\tab P4.6 is used as general purpose output\par 
+\tab - push/pull output is selected\par 
+\tab - the pin status is low level\par 
+\par 
+\tab P4.0 - P4.3 output driver characteristic: strong driver\par 
+\tab P4.4 - P4.7 output driver characteristic: strong driver\par 
+\par 
+\tab P4.0 - P4.3 output edge characteristic: sharp edge mode\par 
+\tab P4.4 - P4.7 output edge characteristic: sharp edge mode\par 
 \par 
 \tab Configuration of Port P5:\par 
 \tab - no pin of port P5 is used\par 
@@ -392,7 +404,16 @@
 \tab - no pin of port P7 is used\par 
 \par 
 \tab Configuration of Port P8:\par 
-\tab - no pin of port P8 is used\par 
+\tab P8.0 is used as alternate output for the  CCU60 output(CC60)\par 
+\tab - push/pull output is selected\par 
+\tab P8.1 is used as alternate output for the  CCU60 output(CC61)\par 
+\tab - push/pull output is selected\par 
+\par 
+\tab P8.0 - P8.3 output driver characteristic: strong driver\par 
+\tab P8.4 - P8.6 output driver characteristic: strong driver\par 
+\par 
+\tab P8.0 - P8.3 output edge characteristic: sharp edge mode\par 
+\tab P8.4 - P8.6 output edge characteristic: sharp edge mode\par 
 \par 
 \tab Configuration of Port P9:\par 
 \tab - no pin of port P9 is used\par 
@@ -424,26 +445,24 @@
 \par 
 
 \par \plain\f4\fs20\cf0
-\par \plain\f4\fs28\cf0\ul Capture / Compare Unit 2 (CAPCOM2)
+\par \plain\f4\fs28\cf0\ul Capture / Compare Unit 60 (CCU60)
 \par
 \par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
 \par
 \par
 \par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CC2_vStartTmr(TimerNr)\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vStartTmr(TimerNr)\plain\f4\fs20\cf0
 \par \tab Description:
 \par \plain\f4\fs20\cf0\i
-\tab \tab This macro starts the selected CAPCOM2 timer. The timer
+\tab \tab This macro starts the selected CCU60 timer. The timer
 
 \par \tab \tab continues counting from where it stopped.
 
 \par \tab \tab The following definitions for TimerNr are available:
 
-\par \tab \tab CC2_TIMER_7
+\par \tab \tab CCU60_TIMER_12
 
-\par \tab \tab CC2_TIMER_8
-
-\par \tab \tab (see @Defines in header file)
+\par \tab \tab CCU60_TIMER_13
 
 \par \plain\f4\fs20\cf0 \tab Returnvalue:
 \par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
@@ -451,25 +470,23 @@
 \par \plain\f4\fs20\cf0\b 
 \tab \tab TimerNr:
 
-\par \tab \tab Name of the CAPCOM2 timer to be started
+\par \tab \tab Name of the CCU60 timer to be started
 
 \par
 \par
 \par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CC2_vStopTmr(TimerNr)\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vStopTmr(TimerNr)\plain\f4\fs20\cf0
 \par \tab Description:
 \par \plain\f4\fs20\cf0\i
-\tab \tab This macro stops the selected CAPCOM2 timer. The content of
+\tab \tab This macro stops the selected CCU60 timer. The content of
 
 \par \tab \tab the timer register remains unchanged.
 
 \par \tab \tab The following definitions for TimerNr are available:
 
-\par \tab \tab CC2_TIMER_7
+\par \tab \tab CCU60_TIMER_12
 
-\par \tab \tab CC2_TIMER_8
-
-\par \tab \tab (see @Defines in header file)
+\par \tab \tab CCU60_TIMER_13
 
 \par \plain\f4\fs20\cf0 \tab Returnvalue:
 \par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
@@ -477,45 +494,69 @@
 \par \plain\f4\fs20\cf0\b 
 \tab \tab TimerNr:
 
-\par \tab \tab Name of the CAPCOM2 timer to be stopped
+\par \tab \tab Name of the CCU60 timer to be stopped
 
 \par
 \par
 \par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CC2_vSetCCxReg(RegName, Value)\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vEnableShadowTransfer(TimerNr)\plain\f4\fs20\cf0
 \par \tab Description:
 \par \plain\f4\fs20\cf0\i
-\tab \tab This macro loads the selected CAPCOM2 register with the
+\tab \tab This macro enables the transfer from the shadow registers
 
-\par \tab \tab parameter Value.
+\par \tab \tab to the actual CCU60 registers.
 
-\par \tab \tab The following definitions are available for RegName (only
+\par \tab \tab The following definitions for TimerNr are available:
 
-\par \tab \tab for enabled CAPCOM2 channels):
+\par \tab \tab CCU60_TIMER_12
 
-\par \tab \tab CC2_CC_16 .. CC2_CC_31
-
-\par \tab \tab (see @Defines in header file)
+\par \tab \tab CCU60_TIMER_13
 
 \par \plain\f4\fs20\cf0 \tab Returnvalue:
 \par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
 \par \plain\f4\fs20\cf0 \tab Parameters:
 \par \plain\f4\fs20\cf0\b 
-\tab \tab RegName:
+\tab \tab TimerNr:
 
-\par \tab \tab Name of the CAPCOM2 channel to be loaded
+\par \tab \tab Name of the CCU60 timer to be used
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vLoadChannelShadowRegister(ChName, Value)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro loads the selected CCU60 channel shadow register
+
+\par \tab \tab with the parameter Value.
+
+\par \tab \tab The following definitions are available for RegName:
+
+\par \tab \tab CCU60_CHANNEL_0 .. CCU60_CHANNEL_3 (see @Defines in header
+
+\par \tab \tab file)
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab ChName:
+
+\par \tab \tab Name of the CCU60 channel to be loaded
 
 \par \tab \tab Value:
 
-\par \tab \tab 16-bit Value with which the CAPCOM2 register is to be loaded
+\par \tab \tab 16-bit Value with which the CCU60 shadow register is to be
+
+\par \tab \tab loaded
 
 \par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
 \par
 \par \plain\f4\fs20\cf0 \tab Function:
-\par \plain\f4\fs20\cf0\b \tab \tab void CC2_vInit(void)\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0\b \tab \tab void CCU60_vInit(void)\plain\f4\fs20\cf0
 \par \tab Description:
 \par \plain\f4\fs20\cf0\i
-\tab \tab This is the initialization function of the CAPCOM2 function
+\tab \tab This is the initialization function of the CCU60 function
 
 \par \tab \tab library. It is assumed that the SFRs used by this library
 
@@ -528,88 +569,144 @@
 \tab \tab None
 
 \par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void CCU60_viNodeI0(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This is the interrupt service routine for the CCU60 node
+
+\par \tab \tab I0. If the content of the corresponding compare timer
+
+\par \tab \tab (configurable) equals the content of the capture/compare
+
+\par \tab \tab register or if a capture event occurs at the associated
+
+\par \tab \tab port pin, the interrupt request flag is set and an
+
+\par \tab \tab interrupt is triggered (only if enabled).
+
+\par \tab \tab Please note that you have to add application specific code
+
+\par \tab \tab to this function.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
 \par \plain\f4\fs24\cf0 Initialization:
 \par \plain\f4\fs20\cf0\b
 \par
-\tab Configuration of  Kernel state configuration Control:\par 
-\tab - the Peripheral is supplied with clock signal for CAPCOM2 unit\par 
-\tab - the CC2 module clock = 66,00 MHz\par 
+\tab Configuration of KERNEL REGISTERS :\par 
+\tab - CCU60 Module is enabled.\par 
+\tab - The CCU60 module clock = 66,000 MHz.\par 
+\tab - T12 is enabled.\par 
+\tab - T13 is enabled.\par 
+\tab - MCM is enabled.\par 
 \par 
-\tab Configuration of CAPCOM2 Control:\par 
-\tab - the contents of the CC2_OUT register is visble at output port\par 
-\tab - the contents of the port register is changed by the CAPCOM2 unit\par 
+\tab Configuration of CCU60 Timer 12:\par 
+\tab - Timer 12 Input clock factor (T12CLK) is 6\par 
+\tab - prescaler factor is 0\par 
+\tab - Timer 12 run bit is set\par 
+\tab - Single shot mode is disabled\par 
+\tab - Timer 12 works in edge aligned mode\par 
+\tab - Interrupt on period match is enabled\par 
+\tab - Interrupt on one match is disabled\par 
+\tab - No External run selection is selected.\par 
+\tab - Timer mode is selected.\par 
+\tab -\par 
 \par 
-\tab Configuration of CAPCOM2 Timer 7:\par 
-\tab - timer 7 works in timer mode\par 
-\tab - prescaler factor is 64\par 
-\tab - timer 7 run bit is set\par 
+\tab Configuration of T13HR Signal:\par 
+\tab - Signal T13HRA is selected as Input\par 
 \par 
-\tab Configuration of CAPCOM2 Timer 8:\par 
-\tab - timer 8 works in timer mode\par 
-\tab - prescaler factor is 8\par 
-\tab - timer 8 run bit is reset\par 
+\tab Configuration of CCU60 Timer 13:\par 
+\tab - Timer 13 Input Clock factor (T13CLK) is 6\par 
+\tab - prescaler factor is 0\par 
+\tab - Timer 13 run bit is reset\par 
+\tab - Trigger control is disabled\par 
+\tab - No External run selection is selected.\par 
+\tab - Timer mode is selected.\par 
+\tab -\par 
+\tab - Single shot mode is disabled\par 
+\tab - Interrupt on period match is disabled\par 
+\tab - Interrupt on compare match is disabled\par 
 \par 
-\tab Configuration of the used CAPCOM2 Timer Port Pins:\par 
+\tab Configuration of Multi Channel Mode:\par 
+\tab - Multi channel mode is disabled\par 
 \par 
-\tab Configuration of the used CAPCOM2 Timer Interrupts:\par 
+\tab Configuration of CCU60 Channel 0:\par 
+\tab - Compare mode 1 is selected\par 
+\tab - T12 modulation for output CC60 is disabled\par 
+\tab - T13 modulation for output CC60 is disabled\par 
+\tab - The trap functionality of the pin CC60 is disabled\par 
+\tab - The compare output CC60 drives passive level while CC60ST is '0'\par 
+\tab - The passive level of the output CC60 is '0'\par 
+\tab - T12 modulation for output COUT60 is disabled\par 
+\tab - T13 modulation for output COUT60 is disabled\par 
+\tab - Dead time generation is disabled\par 
 \par 
-\tab Configuration of the used CAPCOM2 Channel 16:\par 
-\tab - compare mode 3:  set bit CC0IO and pin CC16IO (P2.3) on each match\par 
-\tab - CC16 allocated to CAPCOM2 timer 7\par 
-\tab - single event mode is disabled\par 
+\tab - Generation interrupt on flag ICC60R is enabled\par 
+\tab - Generation interrupt on flag ICC60F is disabled\par 
 \par 
-\tab Configuration of the used CAPCOM2 Channel 17:\par 
-\tab - compare mode 3:  set bit CC1IO and pin CC17IO (P2.4) on each match\par 
-\tab - CC17 allocated to CAPCOM2 timer 7\par 
-\tab - single event mode is disabled\par 
+\tab Configuration of CCU60 Channel 1:\par 
+\tab - Compare mode 1 is selected\par 
+\tab - T12 modulation for output CC61 is disabled\par 
+\tab - T13 modulation for output CC61 is disabled\par 
+\tab - The trap functionality of the pin CC61 is disabled\par 
+\tab - The compare output CC61 drives passive level while CC61ST is '0'\par 
+\tab - The passive level of the output CC61 is '0'\par 
+\tab - T12 modulation for output COUT61 is disabled\par 
+\tab - T13 modulation for output COUT61 is disabled\par 
+\tab - Dead time generation is disabled\par 
 \par 
-\tab Configuration of the used CAPCOM2 Channel 18:\par 
-\tab - channel 18 is disabled\par 
+\tab - Generation interrupt on flag ICC61R is enabled\par 
+\tab - Generation interrupt on flag ICC61F is disabled\par 
 \par 
-\tab Configuration of the used CAPCOM2 Channel 19:\par 
-\tab - channel 19 is disabled\par 
+\tab Configuration of CCU60 Channel 2:\par 
+\tab - Channel 2 is disabled\par 
+\tab - T12 modulation for output CC62 is disabled\par 
+\tab - T13 modulation for output CC62 is disabled\par 
+\tab - T13 modulation for output CC62 is disabled\par 
 \par 
-\tab Configuration of the used CAPCOM2 Channel 20:\par 
-\tab - channel 20 is disabled\par 
+\tab - Generation interrupt on flag ICC62R is disabled\par 
+\tab - Generation interrupt on flag ICC62F is disabled\par 
 \par 
-\tab Configuration of the used CAPCOM2 Channel 21:\par 
-\tab - channel 21 is disabled\par 
+\tab Configuration of CCU60 Channel 3:\par 
+\tab - T13 output is not inverted\par 
 \par 
-\tab Configuration of the used CAPCOM2 Channel 22:\par 
-\tab - channel 22 is disabled\par 
+\tab Configuration of CCU60 trap control:\par 
+\tab - Trap can only be generated by SW by setting the bit TRPF\par 
+\tab - The trap state is left when a zero-match of T12 (while counting up)\par 
+\tab is detected (synchronization to T12)\par 
+\tab - Bit TRPF is automatically cleared by HW (according to TRPPEN, TRPM0\par 
+\tab and TRPM1)\par 
+\tab - Trap interrupt is disabled\par 
 \par 
-\tab Configuration of the used CAPCOM2 Channel 23:\par 
-\tab - channel 23 is disabled\par 
+\tab Configuration of CCU60 interrupt control:\par 
+\tab - For channel 0 interrupts is node I0 selected\par 
+\tab - For channel 1 interrupts is node I0 selected\par 
+\tab - For channel 2 interrupts is node I0 selected\par 
+\tab - For correct hall event interrupt is node I0 selected\par 
+\tab - For error interrupts is node I0 selected\par 
+\tab - For T12 interrupts is node I0 selected\par 
+\tab - For T13 interrupts is node I0 selected\par 
 \par 
-\tab Configuration of the used CAPCOM2 Channel 24:\par 
-\tab - channel 24 is disabled\par 
+\tab Configuration of the used CCU60 Channel Port Pins:\par 
+\tab - P8.0 is used for  CCU60 output(CC60)\par 
+\tab - P8.1 is used for  CCU60 output(CC61)\par 
 \par 
-\tab Configuration of the used CAPCOM2 Channel 25:\par 
-\tab - channel 25 is disabled\par 
+\tab Configuration of the used CCU60 Channels Interrupts:\par 
+\tab NodeI0 service request node configuration:\par 
+\tab - NodeI0 interrupt priority level (ILVL) = 8\par 
+\tab - NodeI0 interrupt group level (GLVL) = 0\par 
+\tab - NodeI0 group priority extension (GPX) = 0\par 
 \par 
-\tab Configuration of the used CAPCOM2 Channel 26:\par 
-\tab - channel 26 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 27:\par 
-\tab - channel 27 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 28:\par 
-\tab - channel 28 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 29:\par 
-\tab - channel 29 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 30:\par 
-\tab - channel 30 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 31:\par 
-\tab - channel 31 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel Port Pins:\par 
-\tab - P2.3 is used for CAPCOM2 output(CC2_16)\par 
-\tab - P2.4 is used for CAPCOM2 output(CC2_17)\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channels Interrupts:\par 
+\tab Configuration of T12, T13 ---- CCU60_TCTR4 Register:\par 
+\tab - Enable shadow transfer of T12 and T13\par 
+\tab - Timer 12 run bit is set\par 
+\tab - Timer 13 run bit is reset\par 
 \par 
 
 }
