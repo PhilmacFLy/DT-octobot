@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the CCU60 module.
 //
 //----------------------------------------------------------------------------
-// @Date          18.11.2013 18:52:18
+// @Date          21.11.2013 14:26:55
 //
 //****************************************************************************
 
@@ -111,7 +111,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          18.11.2013
+// @Date          21.11.2013
 //
 //****************************************************************************
 
@@ -300,11 +300,11 @@ void CCU60_vInit(void)
   ///  Configuration of the used CCU60 Channels Interrupts:
   ///  -----------------------------------------------------------------------
   ///  NodeI0 service request node configuration:
-  ///  - NodeI0 interrupt priority level (ILVL) = 8
+  ///  - NodeI0 interrupt priority level (ILVL) = 12
   ///  - NodeI0 interrupt group level (GLVL) = 0
   ///  - NodeI0 group priority extension (GPX) = 0
 
-  CCU60_0IC      =  0x0060;     
+  CCU60_0IC      =  0x0070;     
 
 
   ///  -----------------------------------------------------------------------
@@ -343,7 +343,7 @@ void CCU60_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          18.11.2013
+// @Date          21.11.2013
 //
 //****************************************************************************
 
@@ -354,28 +354,17 @@ void CCU60_vInit(void)
 void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
 {
   // USER CODE BEGIN (NodeI0,2)
-  int x = CCU60_IS;
-  x = x + 1;
-  if(CCU60_IS & 0x0001)
-  {
-  // linker motor
-   P4_OUT_P3 = 1;
-   CCU60_ISR |= 0x0001;
-  }
-  if(CCU60_IS & 0x0004)
-  {
-  // rechter motor
-    P4_OUT_P5 = 1; 
-   CCU60_ISR |= 0x0004;
-  }
+
   // USER CODE END
 
   if(CCU60_IS & 0x0001)   // if CCU60_IS_ICC60R
   {
     // Capture, Compare match rising edge detection an channel 0
 
-    // USER CODE BEGIN (NodeI0,10)
-
+    // USER CODE BEGIN (NodeI0,10)	   
+    // steigende Flanke für linker Motor
+    P4_OUT_P3 = 1;
+    CCU60_ISR |= 0x0001;
     // USER CODE END
 
     CCU60_ISR |= 0x0001;  // clear flag CCU60_IS_ICC60R
@@ -385,8 +374,10 @@ void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
   {
     // Capture, Compare match rising edge detection an channel 1
 
-    // USER CODE BEGIN (NodeI0,12)
-
+    // USER CODE BEGIN (NodeI0,12) 
+    // steigende Flanke für rechter Motor
+    P4_OUT_P5 = 1; 
+    CCU60_ISR |= 0x0004;
     // USER CODE END
 
     CCU60_ISR |= 0x0004;  // clear flag CCU60_IS_ICC61R
@@ -397,6 +388,7 @@ void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
     // Timer T12 period match detection
 
     // USER CODE BEGIN (NodeI0,19)
+	// fallende Flanke für beide Motoren
 	P4_OUT_P3 = 0; 
 	P4_OUT_P5 = 0;	  
     // USER CODE END

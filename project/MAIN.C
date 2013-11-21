@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          18.11.2013 18:52:16
+// @Date          21.11.2013 14:26:53
 //
 //****************************************************************************
 
@@ -31,7 +31,7 @@
 // USER CODE BEGIN (MAIN_General,2)
 
 #include "motor.h"
-
+#include "megatron.h"
 // USER CODE END
 
 
@@ -111,7 +111,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          18.11.2013
+// @Date          21.11.2013
 //
 //****************************************************************************
 
@@ -146,6 +146,12 @@ void MAIN_vInit(void)
 
   //   initializes the Parallel Ports
   IO_vInit();
+
+  //   initializes the General Purpose Timer Unit (GPT1)
+  GPT1_vInit();
+
+  //   initializes the General Purpose Timer Unit (GPT2)
+  GPT2_vInit();
 
   //   initializes the Capture / Compare Unit 60 (CCU60)
   CCU60_vInit();
@@ -182,7 +188,7 @@ void MAIN_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          18.11.2013
+// @Date          21.11.2013
 //
 //****************************************************************************
 
@@ -220,7 +226,7 @@ void MAIN_vUnlockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          18.11.2013
+// @Date          21.11.2013
 //
 //****************************************************************************
 
@@ -262,7 +268,7 @@ void MAIN_vLockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          18.11.2013
+// @Date          21.11.2013
 //
 //****************************************************************************
 
@@ -326,7 +332,7 @@ void MAIN_vChangeFreq(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          18.11.2013
+// @Date          21.11.2013
 //
 //****************************************************************************
 
@@ -369,10 +375,46 @@ void main(void)
 	   z++;
 	   if (z == 20)
 	   {
+	    unsigned int foo;
+		signed int l;
+		signed int r;
+		l = 0x80;
+		r = 0x80;
+		SetMotorSpeeds(&l, &r);
+		l = 0x80;
+		r = 0x80;
+		SetMotorSpeeds(&l, &r);
+		l = 0x80;
+		r = 0x80;
+		SetMotorSpeeds(&l, &r);
+		l = 0x80;
+		r = 0x80;
+		SetMotorSpeeds(&l, &r);
+		l = 0x80;
+		r = 0x80;
+		SetMotorSpeeds(&l, &r);
+		l = 0x80;
+		r = 0x80;
+		SetMotorSpeeds(&l, &r);
+		l = 0x80;
+		r = 0x80;
+		SetMotorSpeeds(&l, &r);
+		l = 0x80;
+		r = 0x80;
+		SetMotorSpeeds(&l, &r);
+		l = 0x80;
+		r = 0x80;
+		SetMotorSpeeds(&l, &r);
+
+		l = 0xFF;
+		r = 0x80;
+		SetMotorSpeeds(&l, &r);
 		//z = 0;
 		//speed += 0x10;
 		//CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, 0x7F);
-		SetMotorSpeedLeft(MOTOR_FORWARD, 0x20);
+		//SetMotorSpeedLeft(MOTOR_FORWARD, 0x20);
+		//foo = ReadMegatronLeft();
+		//unsigned int foo = ReadMegatronLeft();
         //CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, 0xC0);
 		//SetMotorSpeedLeft(0, speed);
 

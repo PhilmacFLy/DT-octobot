@@ -309,6 +309,16 @@
               <FileType>1</FileType>
               <FilePath>.\CCU60.C</FilePath>
             </File>
+            <File>
+              <FileName>GPT1.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\GPT1.C</FilePath>
+            </File>
+            <File>
+              <FileName>GPT2.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\GPT2.C</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -318,6 +328,11 @@
               <FileName>motor.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>megatron.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\megatron.c</FilePath>
             </File>
           </Files>
         </Group>

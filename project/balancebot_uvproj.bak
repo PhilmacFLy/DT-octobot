@@ -305,14 +305,19 @@
               <FilePath>.\IO.C</FilePath>
             </File>
             <File>
-              <FileName>CC2.C</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\CC2.C</FilePath>
-            </File>
-            <File>
               <FileName>CCU60.C</FileName>
               <FileType>1</FileType>
               <FilePath>.\CCU60.C</FilePath>
+            </File>
+            <File>
+              <FileName>GPT1.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\GPT1.C</FilePath>
+            </File>
+            <File>
+              <FileName>GPT2.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\GPT2.C</FilePath>
             </File>
           </Files>
         </Group>

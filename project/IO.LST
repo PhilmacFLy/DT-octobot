@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, IO                                                                    11/18/2013 18:52:52 PAGE 1   
+C166 COMPILER V7.05, IO                                                                    11/21/2013 14:06:16 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE IO
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
    12         // @Description   This file contains functions that use the IO module.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          18.11.2013 18:52:17
+   15         // @Date          21.11.2013 12:03:18
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
    52         
    53         
    54         //****************************************************************************
-C166 COMPILER V7.05, IO                                                                    11/18/2013 18:52:52 PAGE 2   
+C166 COMPILER V7.05, IO                                                                    11/21/2013 14:06:16 PAGE 2   
 
    55         // @Typedefs
    56         //****************************************************************************
@@ -124,10 +124,10 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   111         // @Parameters    None
   112         //
   113         //----------------------------------------------------------------------------
-  114         // @Date          18.11.2013
+  114         // @Date          21.11.2013
   115         //
   116         //****************************************************************************
-C166 COMPILER V7.05, IO                                                                    11/18/2013 18:52:52 PAGE 3   
+C166 COMPILER V7.05, IO                                                                    11/21/2013 14:06:16 PAGE 3   
 
   117         
   118         // USER CODE BEGIN (IO_Function,1)
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   176  1        ///  - push/pull output is selected
   177  1        ///  - the pin status is low level
   178  1        ///  P4.6 is used as general purpose output
-C166 COMPILER V7.05, IO                                                                    11/18/2013 18:52:52 PAGE 4   
+C166 COMPILER V7.05, IO                                                                    11/21/2013 14:06:16 PAGE 4   
 
   179  1        ///  - push/pull output is selected
   180  1        ///  - the pin status is low level
@@ -255,7 +255,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   238  1        ///  - the pin status is low level
   239  1        ///  P10.1 is used as general purpose output
   240  1        ///  - push/pull output is selected
-C166 COMPILER V7.05, IO                                                                    11/18/2013 18:52:52 PAGE 5   
+C166 COMPILER V7.05, IO                                                                    11/21/2013 14:06:16 PAGE 5   
 
   241  1        ///  - the pin status is low level
   242  1      
@@ -279,24 +279,26 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   260  1        ///  -----------------------------------------------------------------------
   261  1        ///  Configuration of Port P15:
   262  1        ///  -----------------------------------------------------------------------
-  263  1        ///  - no pin of port P15 is used
-  264  1        ///  - Port15 Data register P15(Read only)
-  265  1      
-  266  1      
+  263  1        ///  P15.2 is used as alternate input for the GPT12E Timer5 Count 
+  264  1        ///  input(T5IN)
+  265  1        ///  P15.4 is used as alternate input for the  GPT12E Timer6 Count 
+  266  1        ///  input(T6IN)
   267  1      
-  268  1        // USER CODE BEGIN (IO_Function,3)
+  268  1      
   269  1      
-  270  1        // USER CODE END
+  270  1        // USER CODE BEGIN (IO_Function,3)
   271  1      
-  272  1      } //  End of function IO_vInit
-  273         
-  274         
+  272  1        // USER CODE END
+  273  1      
+  274  1      } //  End of function IO_vInit
   275         
   276         
-  277         // USER CODE BEGIN (IO_General,10)
+  277         
   278         
-  279         // USER CODE END
+  279         // USER CODE BEGIN (IO_General,10)
   280         
+  281         // USER CODE END
+  282         
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED

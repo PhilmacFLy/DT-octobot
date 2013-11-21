@@ -1,6 +1,6 @@
 //****************************************************************************
-// @Module        Project Settings
-// @Filename      MAIN.H
+// @Module        General Purpose Timer Unit (GPT1)
+// @Filename      GPT1.H
 // @Project       balancebot.dav
 //----------------------------------------------------------------------------
 // @Controller    Infineon XE167F-96F66
@@ -10,27 +10,27 @@
 // @Codegenerator 2.2
 //
 // @Description   This file contains all function prototypes and macros for 
-//                the MAIN module.
+//                the GPT1 module.
 //
 //----------------------------------------------------------------------------
-// @Date          21.11.2013 14:26:53
+// @Date          21.11.2013 14:26:55
 //
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,1)
+// USER CODE BEGIN (GPT1_Header,1)
 
 // USER CODE END
 
 
 
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef _GPT1_H_
+#define _GPT1_H_
 
 //****************************************************************************
 // @Project Includes
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,2)
+// USER CODE BEGIN (GPT1_Header,2)
 
 // USER CODE END
 
@@ -39,7 +39,7 @@
 // @Macros
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,3)
+// USER CODE BEGIN (GPT1_Header,3)
 
 // USER CODE END
 
@@ -47,12 +47,18 @@
 //****************************************************************************
 // @Defines
 //****************************************************************************
-#define KEIL
 
-#define SEG(func) (unsigned int)(((unsigned long)((void (far*)(void))func) >> 16))
-#define SOF(func) (unsigned int)(((void (far *) (void))func))
+//   This parameter identifies GPT1 timer 2
+#define GPT1_TIMER_2 2
 
-// USER CODE BEGIN (MAIN_Header,4)
+//   This parameter identifies GPT1 timer 3
+#define GPT1_TIMER_3 3
+
+//   This parameter identifies GPT1 timer 4
+#define GPT1_TIMER_4 4
+
+
+// USER CODE BEGIN (GPT1_Header,4)
 
 // USER CODE END
 
@@ -61,7 +67,7 @@
 // @Typedefs
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,5)
+// USER CODE BEGIN (GPT1_Header,5)
 
 // USER CODE END
 
@@ -70,7 +76,7 @@
 // @Imported Global Variables
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,6)
+// USER CODE BEGIN (GPT1_Header,6)
 
 // USER CODE END
 
@@ -79,7 +85,7 @@
 // @Global Variables
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,7)
+// USER CODE BEGIN (GPT1_Header,7)
 
 // USER CODE END
 
@@ -88,14 +94,10 @@
 // @Prototypes Of Global Functions
 //****************************************************************************
 
+void GPT1_vInit(void);
 
-void MAIN_vUnlockProtecReg(void);
 
-void MAIN_vLockProtecReg(void);
-
-void MAIN_vChangeFreq(void);
-
-// USER CODE BEGIN (MAIN_Header,8)
+// USER CODE BEGIN (GPT1_Header,8)
 
 // USER CODE END
 
@@ -104,28 +106,11 @@ void MAIN_vChangeFreq(void);
 // @Interrupt Vectors
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,9)
+#define T2INT 0x20
+
+// USER CODE BEGIN (GPT1_Header,9)
 
 // USER CODE END
 
 
-//****************************************************************************
-// @Project Includes
-//****************************************************************************
-
-#include <Intrins.h>
-
-#include  "XE16xREGS.H"
-#include  "SCS.H"
-
-#include  "IO.H"
-#include  "GPT1.H"
-#include  "GPT2.H"
-#include  "CCU60.H"
-
-// USER CODE BEGIN (MAIN_Header,10)
-
-// USER CODE END
-
-
-#endif  // ifndef _MAIN_H_
+#endif  // ifndef _GPT1_H_

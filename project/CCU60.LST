@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 1   
+C166 COMPILER V7.05, CCU60                                                                 11/21/2013 14:06:17 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE CCU60
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
    12         // @Description   This file contains functions that use the CCU60 module.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          18.11.2013 18:52:18
+   15         // @Date          21.11.2013 12:03:18
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
    52         
    53         
    54         //****************************************************************************
-C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 2   
+C166 COMPILER V7.05, CCU60                                                                 11/21/2013 14:06:17 PAGE 2   
 
    55         // @Typedefs
    56         //****************************************************************************
@@ -124,10 +124,10 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
   111         // @Parameters    None
   112         //
   113         //----------------------------------------------------------------------------
-  114         // @Date          18.11.2013
+  114         // @Date          21.11.2013
   115         //
   116         //****************************************************************************
-C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 3   
+C166 COMPILER V7.05, CCU60                                                                 11/21/2013 14:06:17 PAGE 3   
 
   117         
   118         // USER CODE BEGIN (Init,1)
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
   176  1        ///  - Interrupt on period match is disabled
   177  1        ///  - Interrupt on compare match is disabled
   178  1      
-C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 4   
+C166 COMPILER V7.05, CCU60                                                                 11/21/2013 14:06:17 PAGE 4   
 
   179  1        CCU60_T13PR    =  0x00FF;      // load CCU60 T13 period register
   180  1      
@@ -255,7 +255,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
   238  1      
   239  1        CCU60_CC62SR   =  0x0000;      // Load CCU60 capture/compare shadow 
   240  1                                       // register for channel 2
-C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 5   
+C166 COMPILER V7.05, CCU60                                                                 11/21/2013 14:06:17 PAGE 5   
 
   241  1      
   242  1        ///  -----------------------------------------------------------------------
@@ -319,7 +319,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
   300  1        ///  Configuration of the used CCU60 Channels Interrupts:
   301  1        ///  -----------------------------------------------------------------------
   302  1        ///  NodeI0 service request node configuration:
-C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 6   
+C166 COMPILER V7.05, CCU60                                                                 11/21/2013 14:06:17 PAGE 6   
 
   303  1        ///  - NodeI0 interrupt priority level (ILVL) = 8
   304  1        ///  - NodeI0 interrupt group level (GLVL) = 0
@@ -364,7 +364,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
   343         // @Parameters    None
   344         //
   345         //----------------------------------------------------------------------------
-  346         // @Date          18.11.2013
+  346         // @Date          21.11.2013
   347         //
   348         //****************************************************************************
   349         
@@ -375,80 +375,70 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
   354         void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
   355         {
   356  1        // USER CODE BEGIN (NodeI0,2)
-  357  1        int x = CCU60_IS;
-  358  1        x = x + 1;
-  359  1        if(CCU60_IS & 0x0001)
-  360  1        {
-  361  2        // linker motor
-  362  2         P4_OUT_P3 = 1;
-  363  2         CCU60_ISR |= 0x0001;
-  364  2        }
-C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 7   
+  357  1      
+  358  1        // USER CODE END
+  359  1      
+  360  1        if(CCU60_IS & 0x0001)   // if CCU60_IS_ICC60R
+  361  1        {
+  362  2          // Capture, Compare match rising edge detection an channel 0
+  363  2      
+  364  2          // USER CODE BEGIN (NodeI0,10)         
+C166 COMPILER V7.05, CCU60                                                                 11/21/2013 14:06:17 PAGE 7   
 
-  365  1        if(CCU60_IS & 0x0004)
-  366  1        {
-  367  2        // rechter motor
-  368  2          P4_OUT_P5 = 1; 
-  369  2         CCU60_ISR |= 0x0004;
-  370  2        }
-  371  1        // USER CODE END
+  365  2          // steigende Flanke für linker Motor
+  366  2          P4_OUT_P3 = 1;
+  367  2          CCU60_ISR |= 0x0001;
+  368  2          // USER CODE END
+  369  2      
+  370  2          CCU60_ISR |= 0x0001;  // clear flag CCU60_IS_ICC60R
+  371  2        }
   372  1      
-  373  1        if(CCU60_IS & 0x0001)   // if CCU60_IS_ICC60R
+  373  1        if(CCU60_IS & 0x0004)  // if CCU60_IS_ICC61R
   374  1        {
-  375  2          // Capture, Compare match rising edge detection an channel 0
+  375  2          // Capture, Compare match rising edge detection an channel 1
   376  2      
-  377  2          // USER CODE BEGIN (NodeI0,10)
-  378  2      
-  379  2          // USER CODE END
-  380  2      
-  381  2          CCU60_ISR |= 0x0001;  // clear flag CCU60_IS_ICC60R
-  382  2        }
-  383  1      
-  384  1        if(CCU60_IS & 0x0004)  // if CCU60_IS_ICC61R
-  385  1        {
-  386  2          // Capture, Compare match rising edge detection an channel 1
-  387  2      
-  388  2          // USER CODE BEGIN (NodeI0,12)
+  377  2          // USER CODE BEGIN (NodeI0,12) 
+  378  2          // steigende Flanke für rechter Motor
+  379  2          P4_OUT_P5 = 1; 
+  380  2          CCU60_ISR |= 0x0004;
+  381  2          // USER CODE END
+  382  2      
+  383  2          CCU60_ISR |= 0x0004;  // clear flag CCU60_IS_ICC61R
+  384  2        }
+  385  1      
+  386  1        if(CCU60_IS & 0x0080)  // if CCU60_IS_T12PM
+  387  1        {
+  388  2          // Timer T12 period match detection
   389  2      
-  390  2          // USER CODE END
-  391  2      
-  392  2          CCU60_ISR |= 0x0004;  // clear flag CCU60_IS_ICC61R
-  393  2        }
-  394  1      
-  395  1        if(CCU60_IS & 0x0080)  // if CCU60_IS_T12PM
-  396  1        {
-  397  2          // Timer T12 period match detection
-  398  2      
-  399  2          // USER CODE BEGIN (NodeI0,19)
-  400  2              P4_OUT_P3 = 0; 
-  401  2              P4_OUT_P5 = 0;    
-  402  2          // USER CODE END
-  403  2      
-  404  2          CCU60_ISR |= 0x0080;  // clear flag CCU60_IS_T12PM
-  405  2        }
-  406  1      
-  407  1      
-  408  1      } //  End of function CCU60_viNodeI0
-  409         
-  410         
-  411         
-  412         
-  413         // USER CODE BEGIN (CCU60_General,10)
-  414         
-  415         // USER CODE END
-  416         
+  390  2          // USER CODE BEGIN (NodeI0,19)
+  391  2              // fallende Flanke für beide Motoren
+  392  2              P4_OUT_P3 = 0; 
+  393  2              P4_OUT_P5 = 0;    
+  394  2          // USER CODE END
+  395  2      
+  396  2          CCU60_ISR |= 0x0080;  // clear flag CCU60_IS_T12PM
+  397  2        }
+  398  1      
+  399  1      
+  400  1      } //  End of function CCU60_viNodeI0
+  401         
+  402         
+  403         
+  404         
+  405         // USER CODE BEGIN (CCU60_General,10)
+  406         
+  407         // USER CODE END
+  408         
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
-  CODE SIZE        =         242     --------
+  CODE SIZE        =         222     --------
   NEAR-CONST SIZE  =    --------     --------
   FAR-CONST SIZE   =    --------     --------
   HUGE-CONST SIZE  =    --------     --------
   XHUGE-CONST SIZE =    --------     --------
   NEAR-DATA SIZE   =    --------     --------
   FAR-DATA SIZE    =    --------     --------
-C166 COMPILER V7.05, CCU60                                                                 11/18/2013 18:52:53 PAGE 8   
-
   XHUGE-DATA SIZE  =    --------     --------
   IDATA-DATA SIZE  =    --------     --------
   SDATA-DATA SIZE  =    --------     --------
@@ -457,6 +447,8 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
   BIT SIZE         =    --------     --------
   INIT'L SIZE      =    --------     --------
 END OF MODULE INFORMATION.
+C166 COMPILER V7.05, CCU60                                                                 11/21/2013 14:06:17 PAGE 8   
+
 
 
 C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

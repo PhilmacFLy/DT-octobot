@@ -1,6 +1,6 @@
 //****************************************************************************
-// @Module        Capture / Compare Unit 60 (CCU60)
-// @Filename      CCU60.H
+// @Module        General Purpose Timer Unit (GPT2)
+// @Filename      GPT2.H
 // @Project       balancebot.dav
 //----------------------------------------------------------------------------
 // @Controller    Infineon XE167F-96F66
@@ -10,27 +10,27 @@
 // @Codegenerator 2.2
 //
 // @Description   This file contains all function prototypes and macros for 
-//                the CCU60 module.
+//                the GPT2 module.
 //
 //----------------------------------------------------------------------------
 // @Date          21.11.2013 14:26:55
 //
 //****************************************************************************
 
-// USER CODE BEGIN (CCU60_Header,1)
+// USER CODE BEGIN (GPT2_Header,1)
 
 // USER CODE END
 
 
 
-#ifndef _CCU60_H_
-#define _CCU60_H_
+#ifndef _GPT2_H_
+#define _GPT2_H_
 
 //****************************************************************************
 // @Project Includes
 //****************************************************************************
 
-// USER CODE BEGIN (CCU60_Header,2)
+// USER CODE BEGIN (GPT2_Header,2)
 
 // USER CODE END
 
@@ -39,7 +39,7 @@
 // @Macros
 //****************************************************************************
 
-// USER CODE BEGIN (CCU60_Header,3)
+// USER CODE BEGIN (GPT2_Header,3)
 
 // USER CODE END
 
@@ -48,26 +48,13 @@
 // @Defines
 //****************************************************************************
 
-//   This parameter identifies CCU60 timer 12
-#define CCU60_TIMER_12 12
+//   This parameter identifies GPT2 timer 5
+#define GPT2_TIMER_5 5
 
-//   This parameter identifies CCU60 timer 13
-#define CCU60_TIMER_13 13
+//   This parameter identifies GPT2 timer 6
+#define GPT2_TIMER_6 6
 
-//   This parameter identifies CCU60 channel 0
-#define CCU60_CHANNEL_0 0
-
-//   This parameter identifies CCU60 channel 1
-#define CCU60_CHANNEL_1 1
-
-//   This parameter identifies CCU60 channel 2
-#define CCU60_CHANNEL_2 2
-
-//   This parameter identifies CCU60 channel 3
-#define CCU60_CHANNEL_3 3
-
-
-// USER CODE BEGIN (CCU60_Header,4)
+// USER CODE BEGIN (GPT2_Header,4)
 
 // USER CODE END
 
@@ -76,7 +63,7 @@
 // @Typedefs
 //****************************************************************************
 
-// USER CODE BEGIN (CCU60_Header,5)
+// USER CODE BEGIN (GPT2_Header,5)
 
 // USER CODE END
 
@@ -85,7 +72,7 @@
 // @Imported Global Variables
 //****************************************************************************
 
-// USER CODE BEGIN (CCU60_Header,6)
+// USER CODE BEGIN (GPT2_Header,6)
 
 // USER CODE END
 
@@ -94,7 +81,7 @@
 // @Global Variables
 //****************************************************************************
 
-// USER CODE BEGIN (CCU60_Header,7)
+// USER CODE BEGIN (GPT2_Header,7)
 
 // USER CODE END
 
@@ -103,141 +90,135 @@
 // @Prototypes Of Global Functions
 //****************************************************************************
 
-void CCU60_vInit(void);
+void GPT2_vInit(void);
 
-
-// USER CODE BEGIN (CCU60_Header,8)
+// USER CODE BEGIN (GPT2_Header,8)
 
 // USER CODE END
 
-
 //****************************************************************************
-// @Macro         CCU60_vStartTmr(TimerNr) 
+// @Macro         GPT2_vStartTmr(TimerNr) 
 //
 //----------------------------------------------------------------------------
-// @Description   This macro starts the selected CCU60 timer. The timer 
-//                continues counting from where it stopped. 
-//                
-//                The following definitions for TimerNr are available: 
-//                CCU60_TIMER_12
-//                CCU60_TIMER_13
+// @Description   This macro starts the selected GPT2 timer. The timer 
+//                continues to count from where it had stopped. The following 
+//                definitions are available for TimerNr:
+//                GPT2_TIMER_5
+//                GPT2_TIMER_6
 //
 //----------------------------------------------------------------------------
 // @Returnvalue   None
 //
 //----------------------------------------------------------------------------
 // @Parameters    TimerNr: 
-//                Name of the CCU60 timer to be started
+//                The name of the timer to be started
 //
 //----------------------------------------------------------------------------
 // @Date          21.11.2013
 //
 //****************************************************************************
 
-#define CCU60_vStartTmr(TimerNr) CCU60_vStartTmr_##TimerNr()
-#define CCU60_vStartTmr_CCU60_TIMER_12() CCU60_TCTR4 |= 0x0002
-#define CCU60_vStartTmr_CCU60_TIMER_13() CCU60_TCTR4 |= 0x0200
+#define GPT2_vStartTmr(TimerNr) GPT2_vStartTmr_##TimerNr()
+#define GPT2_vStartTmr_GPT2_TIMER_5() GPT12E_T5CON_T5R = 1
+#define GPT2_vStartTmr_GPT2_TIMER_6() GPT12E_T6CON_T6R = 1
 
 
 //****************************************************************************
-// @Macro         CCU60_vStopTmr(TimerNr) 
+// @Macro         GPT2_vStopTmr(TimerNr) 
 //
 //----------------------------------------------------------------------------
-// @Description   This macro stops the selected CCU60 timer. The content of 
-//                the timer register remains unchanged. 
-//                
-//                The following definitions for TimerNr are available: 
-//                CCU60_TIMER_12
-//                CCU60_TIMER_13
+// @Description   This macro stops the selected GPT2 timer. The contents of 
+//                the timer register remain unchanged. The remote control of 
+//                the selected timer is cleared. The following definitions 
+//                are available for TimerNr:
+//                GPT2_TIMER_5
+//                GPT2_TIMER_6
 //
 //----------------------------------------------------------------------------
 // @Returnvalue   None
 //
 //----------------------------------------------------------------------------
 // @Parameters    TimerNr: 
-//                Name of the CCU60 timer to be stopped
+//                The name of the timer to be stopped
 //
 //----------------------------------------------------------------------------
 // @Date          21.11.2013
 //
 //****************************************************************************
 
-#define CCU60_vStopTmr(TimerNr) CCU60_vStopTmr_##TimerNr()
-#define CCU60_vStopTmr_CCU60_TIMER_12() CCU60_TCTR4 |= 0x0001
-#define CCU60_vStopTmr_CCU60_TIMER_13() CCU60_TCTR4 |= 0x0100
+#define GPT2_vStopTmr(TimerNr) GPT2_vStopTmr_##TimerNr()
+#define GPT2_vStopTmr_GPT2_TIMER_5() GPT12E_T5CON_T5R = 0; GPT12E_T5CON_T5RC = 0
+#define GPT2_vStopTmr_GPT2_TIMER_6() GPT12E_T6CON_T6R = 0
 
 
 //****************************************************************************
-// @Macro         CCU60_vEnableShadowTransfer(TimerNr) 
+// @Macro         GPT2_uwReadTmr(TimerNr) 
 //
 //----------------------------------------------------------------------------
-// @Description   This macro enables the transfer from the shadow registers 
-//                to the actual CCU60 registers.
-//                
-//                The following definitions for TimerNr are available: 
-//                CCU60_TIMER_12
-//                CCU60_TIMER_13
+// @Description   This macro returns the contents of the selected GPT2 timer. 
+//                The timer is not stopped. Access of the CPU to the 
+//                registers of the timer is of higher priority than a timer 
+//                increment, a reload or a capture event. The following 
+//                definitions are available for TimerNr:
+//                GPT2_TIMER_5
+//                GPT2_TIMER_6
+//
+//----------------------------------------------------------------------------
+// @Returnvalue   Current 16-bit value of the timer
+//
+//----------------------------------------------------------------------------
+// @Parameters    TimerNr: 
+//                The name of the timer to be readed
+//
+//----------------------------------------------------------------------------
+// @Date          21.11.2013
+//
+//****************************************************************************
+
+#define GPT2_uwReadTmr(TimerNr) GPT2_uwReadTmr_##TimerNr()
+#define GPT2_uwReadTmr_GPT2_TIMER_5() GPT12E_T5
+#define GPT2_uwReadTmr_GPT2_TIMER_6() GPT12E_T6
+
+
+//****************************************************************************
+// @Macro         GPT2_vLoadTmr(TimerNr, Value) 
+//
+//----------------------------------------------------------------------------
+// @Description   This macro loads the selected GPT2 timer with the forwarded 
+//                value. The timer is not stopped. The access of the CPU to 
+//                the registers of the timers is of higher priority than a 
+//                timer increment, a reload or a capture event. The following 
+//                definitions are available for TimerNr:
+//                GPT2_TIMER_5
+//                GPT2_TIMER_6
 //
 //----------------------------------------------------------------------------
 // @Returnvalue   None
 //
 //----------------------------------------------------------------------------
 // @Parameters    TimerNr: 
-//                Name of the CCU60 timer to be used
-//
-//----------------------------------------------------------------------------
-// @Date          21.11.2013
-//
-//****************************************************************************
-
-#define CCU60_vEnableShadowTransfer(TimerNr) CCU60_vEnableShadowTransfer_##TimerNr()
-#define CCU60_vEnableShadowTransfer_CCU60_TIMER_12() CCU60_TCTR4 |= 0x0040
-#define CCU60_vEnableShadowTransfer_CCU60_TIMER_13() CCU60_TCTR4 |= 0x4000
-
-
-//****************************************************************************
-// @Macro         CCU60_vLoadChannelShadowRegister(ChName, Value) 
-//
-//----------------------------------------------------------------------------
-// @Description   This macro loads the selected CCU60 channel shadow register 
-//                with the parameter Value. 
-//                
-//                The following definitions are available for RegName: 
-//                CCU60_CHANNEL_0 .. CCU60_CHANNEL_3 (see @Defines in header 
-//                file)
-//
-//----------------------------------------------------------------------------
-// @Returnvalue   None
-//
-//----------------------------------------------------------------------------
-// @Parameters    ChName: 
-//                Name of the CCU60 channel to be loaded
+//                The name of the timer to be loaded
 // @Parameters    Value: 
-//                16-bit Value with which the CCU60 shadow register is to be 
-//                loaded
+//                16-bit value to be loaded
 //
 //----------------------------------------------------------------------------
 // @Date          21.11.2013
 //
 //****************************************************************************
 
-#define CCU60_vLoadChannelShadowRegister(ChName, Value) CCU60_vLoadChannelShadowRegister_##ChName(Value)
-#define CCU60_vLoadChannelShadowRegister_CCU60_CHANNEL_0(Value) CCU60_CC60SR = Value
-#define CCU60_vLoadChannelShadowRegister_CCU60_CHANNEL_1(Value) CCU60_CC61SR = Value
-#define CCU60_vLoadChannelShadowRegister_CCU60_CHANNEL_2(Value) CCU60_CC62SR = Value
-#define CCU60_vLoadChannelShadowRegister_CCU60_CHANNEL_3(Value) CCU60_CC63SR = Value
+#define GPT2_vLoadTmr(TimerNr, Value) GPT2_vLoadTmr_##TimerNr(Value)
+#define GPT2_vLoadTmr_GPT2_TIMER_5(Value) GPT12E_T5 = Value
+#define GPT2_vLoadTmr_GPT2_TIMER_6(Value) GPT12E_T6 = Value
 
 
 //****************************************************************************
 // @Interrupt Vectors
 //****************************************************************************
 
-#define CCU60_NodeI0_INT    0x30
 
-
-// USER CODE BEGIN (CCU60_Header,9)
+// USER CODE BEGIN (GPT2_Header,9)
 
 // USER CODE END
 
 
-#endif  // ifndef _CCU60_H_
+#endif  // ifndef _GPT2_H_

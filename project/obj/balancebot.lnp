@@ -3,7 +3,10 @@
 ".\obj\SCS.obj",
 ".\obj\IO.obj",
 ".\obj\CCU60.obj",
-".\obj\motor.obj" 
+".\obj\GPT1.obj",
+".\obj\GPT2.obj",
+".\obj\motor.obj",
+".\obj\megatron.obj" 
 TO ".\obj\balancebot" 
 PRINT(".\balancebot.m66") VECTAB (0x0C00000) 
 CLASSES (ICODE (0xC00000-0xC0EFFF), NCODE (0xC10000-0xC1FFFF), 

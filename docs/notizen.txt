@@ -1,22 +1,25 @@
-P2.3 ist PWM für linker Motor
-P2.2 ist Direction für linker Motor
-
-
-
-
-P2.4 ist PWM für rechter Motor
-P2.5 ist Direction für rechter Motor
-
-
-noch...
-
-
 
 
 neu:
+
+
+CCU60 wird für Motoransteuerung genutzt (PWM Signal)
 
 P4.3 ist Motor Links PWM
 P4.4 ist Motor Links Direction
 
 P4.5 ist Motor Rechts PWM
 P4.6 ist Motor Rechts Direction
+
+
+
+GPT2 zum Auslesen der MEGATRONs
+
+P15.2 Megatron links (T5)
+P15.4 Megatron rechts (T6)
+
+
+
+
+
+Timer T2 cyclic interrupt (GPT1) alle 50 ms
