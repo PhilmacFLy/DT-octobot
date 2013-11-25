@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the GPT2 module.
 //
 //----------------------------------------------------------------------------
-// @Date          21.11.2013 14:26:55
+// @Date          25.11.2013 16:09:40
 //
 //****************************************************************************
 
@@ -112,7 +112,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          21.11.2013
+// @Date          25.11.2013
 //
 //****************************************************************************
 
@@ -150,6 +150,7 @@ void GPT2_vInit(void)
   ///  - timer 5 is clocked by positive transition on T5IN (P15.2)
   ///  - up/down control bit is reset
   ///  - external up/down control is disabled
+  ///  - timer 5 run bit is reset
   ///  - timer 5 remote control is disabled
 
   GPT12E_T5CON   =  0x0009;      // load timer 5 control register
@@ -165,6 +166,7 @@ void GPT2_vInit(void)
   ///  - alternate output function T6OUT (P6.2) is disabled
   ///  - alternate output function T6OUT (P7.0) is disabled
   ///  - timer 6 output toggle latch (T6OTL) is set to 0
+  ///  - timer 6 run bit is reset
   ///  - timer 6 is not cleared on a capture
 
   GPT12E_T6CON   =  0x0009;      // load timer 6 control register
@@ -185,6 +187,8 @@ void GPT2_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of the used GPT2 Port Pins:
   ///  -----------------------------------------------------------------------
+  ///  - P5.3 is used for  GPT12E Timer2 Count input(T3IN)
+  ///  - P5.4 is used for GPT12E Timer 3 Ext.Up/Down enable(T3EUD)
 
 
   ///  -----------------------------------------------------------------------
@@ -195,10 +199,6 @@ void GPT2_vInit(void)
   // USER CODE BEGIN (GPT2_Function,3)
 
   // USER CODE END
-
-  GPT12E_T5CON_T5R  =  1;        // set timer 5 run bit
-
-  GPT12E_T6CON_T6R  =  1;        // set timer 6 run bit
 
 } //  End of function GPT2_viCAPREL
 

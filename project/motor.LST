@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, MOTOR                                                                 11/21/2013 14:06:18 PAGE 1   
+C166 COMPILER V7.05, MOTOR                                                                 11/25/2013 16:29:03 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE MOTOR
@@ -49,21 +49,21 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE motor.c MODV2 BROWS
    38  2          if (right > lastright) right = lastright + 25;
    39  2              else right = lastright - 25;
    40  2        }
-   41  1      
+   41  1       
    42  1        // megatron auslesen
-   43  1        megatronleft = 10000;//ReadMegatronLeft();
-   44  1        megatronright = 5000;//ReadMegatronRight();
+   43  1        megatronleft = ReadMegatronLeft();
+   44  1        megatronright = ReadMegatronRight();
    45  1                      
    46  1        // verhaeltnis der megatrons errechnen
-   47  1        if (lastleft != 0) optimusprimeleft = megatronleft / abs(lastleft);
+   47  1        if (lastleft != 0) optimusprimeleft = megatronleft * 0xFF / abs(lastleft);
    48  1        else optimusprimeleft = 0;
-   49  1        if (lastright != 0) optimusprimeright = megatronright / abs(lastright);
+   49  1        if (lastright != 0) optimusprimeright = megatronright * 0xFF / abs(lastright);
    50  1        else optimusprimeright = 0;
    51  1      
    52  1        // vor nachjustierung errechnete werte speichern
    53  1        lastleft = left;
    54  1        lastright = right;
-C166 COMPILER V7.05, MOTOR                                                                 11/21/2013 14:06:18 PAGE 2   
+C166 COMPILER V7.05, MOTOR                                                                 11/25/2013 16:29:03 PAGE 2   
 
    55  1      
    56  1        if (optimusprimeleft > 0 && optimusprimeright > 0)
@@ -71,7 +71,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE motor.c MODV2 BROWS
    58  2              if (optimusprimeleft > optimusprimeright) // links "schneller" als rechts
    59  2              {
    60  3                // links langsamer drehen
-   61  3                left = left * ((signed int)   optimusprimeright) / ((signed int) optimusprimeleft);
+   61  3                left = left * ((signed int) optimusprimeright) / ((signed int) optimusprimeleft);
    62  3              }
    63  2              if (optimusprimeright > optimusprimeleft) // rechts "schneller" als links
    64  2              {
@@ -80,7 +80,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE motor.c MODV2 BROWS
    67  3              }
    68  2        }
    69  1      
-   70  1      /*
+   70  1      
    71  1        if (left < 0)
    72  1          SetMotorSpeedLeft(MOTOR_BACKWARD, abs(left));
    73  1        else
@@ -90,49 +90,48 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE motor.c MODV2 BROWS
    77  1          SetMotorSpeedRight(MOTOR_BACKWARD, abs(right));
    78  1        else
    79  1          SetMotorSpeedRight(MOTOR_FORWARD, right); // kein abs noetig, da right>=0
-   80  1        */
-   81  1      
-   82  1        *left_p = left;
-   83  1        *right_p = right;
-   84  1      }
-   85         
-   86         // API for Left Motor
-   87         void SetMotorSpeedLeft(unsigned char direction, unsigned char speed)
-   88         {
-   89  1        CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, (0xFF - speed)); // ?
-   90  1        CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
-   91  1        // rechter motor direction pin = 0 für vorwärts
-   92  1        if (MOTOR_FORWARD == direction)
-   93  1        {
-   94  2          P4_OUT_P4 = 1;
-   95  2        }
-   96  1        else
-   97  1        {
-   98  2          P4_OUT_P4 = 0;
-   99  2        }
-  100  1      }
-  101         
-  102         // API for Right Motor
-  103         void SetMotorSpeedRight(unsigned char direction, unsigned char speed)
-  104         {
-  105  1        CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, (0xFF - speed)); // ?
-  106  1        CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
-  107  1        // rechter motor direction pin = 1 für vorwärts
-  108  1        if (MOTOR_FORWARD == direction)
-  109  1        {
-  110  2          P4_OUT_P6 = 0;
-  111  2        }
-  112  1        else
-  113  1        {
-  114  2          P4_OUT_P6 = 1;
-  115  2        }
-  116  1      }
-C166 COMPILER V7.05, MOTOR                                                                 11/21/2013 14:06:18 PAGE 3   
+   80  1        
+   81  1        *left_p = left;
+   82  1        *right_p = right;
+   83  1      }
+   84         
+   85         // API for Left Motor
+   86         void SetMotorSpeedLeft(unsigned char direction, unsigned char speed)
+   87         {
+   88  1        CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, (0xFF - speed)); // ?
+   89  1        CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
+   90  1        // rechter motor direction pin = 0 für vorwärts
+   91  1        if (MOTOR_FORWARD == direction)
+   92  1        {
+   93  2          P4_OUT_P4 = 1;
+   94  2        }
+   95  1        else
+   96  1        {
+   97  2          P4_OUT_P4 = 0;
+   98  2        }
+   99  1      }
+  100         
+  101         // API for Right Motor
+  102         void SetMotorSpeedRight(unsigned char direction, unsigned char speed)
+  103         {
+  104  1        CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, (0xFF - speed)); // ?
+  105  1        CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
+  106  1        // rechter motor direction pin = 1 für vorwärts
+  107  1        if (MOTOR_FORWARD == direction)
+  108  1        {
+  109  2          P4_OUT_P1 = 0;
+  110  2        }
+  111  1        else
+  112  1        {
+  113  2          P4_OUT_P1 = 1;
+  114  2        }
+  115  1      }
 
+C166 COMPILER V7.05, MOTOR                                                                 11/25/2013 16:29:03 PAGE 3   
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
-  CODE SIZE        =         382     --------
+  CODE SIZE        =         452     --------
   NEAR-CONST SIZE  =    --------     --------
   FAR-CONST SIZE   =    --------     --------
   HUGE-CONST SIZE  =    --------     --------

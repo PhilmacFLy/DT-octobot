@@ -8,18 +8,19 @@ CCU60 wird für Motoransteuerung genutzt (PWM Signal)
 P4.3 ist Motor Links PWM
 P4.4 ist Motor Links Direction
 
-P4.5 ist Motor Rechts PWM
-P4.6 ist Motor Rechts Direction
-
-
-
-GPT2 zum Auslesen der MEGATRONs
-
-P15.2 Megatron links (T5)
-P15.4 Megatron rechts (T6)
+P4.0 ist Motor Rechts PWM
+P4.1 ist Motor Rechts Direction
 
 
 
 
 
 Timer T2 cyclic interrupt (GPT1) alle 50 ms
+
+Timer T3 Megatron links
+Kanal A auf T3IN P5.3
+kanal B auf T3EUD P5.4
+
+Timer T4 Megatron rechts
+Kanal A auf T4IN P4.6
+Kanal B auf T4EUD P4.7

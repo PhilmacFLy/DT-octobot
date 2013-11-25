@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the IO module.
 //
 //----------------------------------------------------------------------------
-// @Date          21.11.2013 14:26:55
+// @Date          25.11.2013 16:09:39
 //
 //****************************************************************************
 
@@ -111,7 +111,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          21.11.2013
+// @Date          25.11.2013
 //
 //****************************************************************************
 
@@ -166,18 +166,20 @@ void IO_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of Port P4:
   ///  -----------------------------------------------------------------------
+  ///  P4.0 is used as general purpose output
+  ///  - push/pull output is selected
+  ///  - the pin status is low level
+  ///  P4.1 is used as general purpose output
+  ///  - push/pull output is selected
+  ///  - the pin status is low level
   ///  P4.3 is used as general purpose output
   ///  - push/pull output is selected
   ///  - the pin status is low level
   ///  P4.4 is used as general purpose output
   ///  - push/pull output is selected
   ///  - the pin status is low level
-  ///  P4.5 is used as general purpose output
-  ///  - push/pull output is selected
-  ///  - the pin status is low level
-  ///  P4.6 is used as general purpose output
-  ///  - push/pull output is selected
-  ///  - the pin status is low level
+  ///  P4.7 is used as alternate input for the  GPT12E timer4 Ext.Up/Down 
+  ///  enable(T4EUD)
 
   ///  P4.0 - P4.3 output driver characteristic: strong driver
   ///  P4.4 - P4.7 output driver characteristic: strong driver
@@ -185,16 +187,18 @@ void IO_vInit(void)
   ///  P4.0 - P4.3 output edge characteristic: sharp edge mode
   ///  P4.4 - P4.7 output edge characteristic: sharp edge mode
 
+  P4_IOCR00      =  0x0080;      // load port control register 0
+  P4_IOCR01      =  0x0080;      // load port control register 1
   P4_IOCR03      =  0x0080;      // load port control register 3
   P4_IOCR04      =  0x0080;      // load port control register 4
-  P4_IOCR05      =  0x0080;      // load port control register 5
-  P4_IOCR06      =  0x0080;      // load port control register 6
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of Port P5:
   ///  -----------------------------------------------------------------------
-  ///  - no pin of port P5 is used
-  ///  - Port5 Data register P5(Read only)
+  ///  P5.3 is used as alternate input for the  GPT12E Timer2 Count 
+  ///  input(T3IN)
+  ///  P5.4 is used as alternate input for the GPT12E Timer 3 Ext.Up/Down 
+  ///  enable(T3EUD)
 
 
   ///  -----------------------------------------------------------------------

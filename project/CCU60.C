@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the CCU60 module.
 //
 //----------------------------------------------------------------------------
-// @Date          21.11.2013 14:26:55
+// @Date          25.11.2013 16:09:40
 //
 //****************************************************************************
 
@@ -111,7 +111,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          21.11.2013
+// @Date          25.11.2013
 //
 //****************************************************************************
 
@@ -343,7 +343,7 @@ void CCU60_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          21.11.2013
+// @Date          25.11.2013
 //
 //****************************************************************************
 
@@ -363,7 +363,7 @@ void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
 
     // USER CODE BEGIN (NodeI0,10)	   
     // steigende Flanke für linker Motor
-    P4_OUT_P3 = 1;
+    P4_OUT_P3 = 1;	// motor links PWM
     CCU60_ISR |= 0x0001;
     // USER CODE END
 
@@ -376,7 +376,7 @@ void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
 
     // USER CODE BEGIN (NodeI0,12) 
     // steigende Flanke für rechter Motor
-    P4_OUT_P5 = 1; 
+    P4_OUT_P0 = 1; // motor rechts PWM
     CCU60_ISR |= 0x0004;
     // USER CODE END
 
@@ -389,8 +389,8 @@ void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
 
     // USER CODE BEGIN (NodeI0,19)
 	// fallende Flanke für beide Motoren
-	P4_OUT_P3 = 0; 
-	P4_OUT_P5 = 0;	  
+	P4_OUT_P3 = 0; 	// motor links PWM
+	P4_OUT_P0 = 0;	 // motor rechts PWM  
     // USER CODE END
 
     CCU60_ISR |= 0x0080;  // clear flag CCU60_IS_T12PM

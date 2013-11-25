@@ -15,8 +15,8 @@ void SetMotorSpeeds(signed int* left_p, signed int* right_p)
   static signed int lastleft = 0;
   static signed int lastright = 0;
 
-  unsigned long megatronleft;
-  unsigned long megatronright;
+  unsigned int megatronleft;
+  unsigned int megatronright;
 
   unsigned int optimusprimeleft;
   unsigned int optimusprimeright;
@@ -38,8 +38,7 @@ void SetMotorSpeeds(signed int* left_p, signed int* right_p)
     if (right > lastright) right = lastright + 25;
 	else right = lastright - 25;
   }
-
-	 
+ 
   // megatron auslesen
   megatronleft = ReadMegatronLeft();
   megatronright = ReadMegatronRight();
@@ -59,7 +58,7 @@ void SetMotorSpeeds(signed int* left_p, signed int* right_p)
 	if (optimusprimeleft > optimusprimeright) // links "schneller" als rechts
 	{
 	  // links langsamer drehen
-	  left = left * ((signed int)	optimusprimeright) / ((signed int) optimusprimeleft);
+	  left = left * ((signed int) optimusprimeright) / ((signed int) optimusprimeleft);
 	}
 	if (optimusprimeright > optimusprimeleft) // rechts "schneller" als links
 	{
@@ -107,10 +106,10 @@ void SetMotorSpeedRight(unsigned char direction, unsigned char speed)
   // rechter motor direction pin = 1 für vorwärts
   if (MOTOR_FORWARD == direction)
   {
-    P4_OUT_P6 = 0;
+    P4_OUT_P1 = 0;
   }
   else
   {
-    P4_OUT_P6 = 1;
+    P4_OUT_P1 = 1;
   }
 }

@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, MAIN                                                                  11/21/2013 14:06:15 PAGE 1   
+C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE MAIN
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
    12         // @Description   This file contains the project initialization function.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          21.11.2013 12:03:15
+   15         // @Date          25.11.2013 16:09:37
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
    52         
    53         // USER CODE END
    54         
-C166 COMPILER V7.05, MAIN                                                                  11/21/2013 14:06:15 PAGE 2   
+C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 2   
 
    55         
    56         //****************************************************************************
@@ -124,10 +124,10 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   111         // @Parameters    None
   112         //
   113         //----------------------------------------------------------------------------
-  114         // @Date          21.11.2013
+  114         // @Date          25.11.2013
   115         //
   116         //****************************************************************************
-C166 COMPILER V7.05, MAIN                                                                  11/21/2013 14:06:15 PAGE 3   
+C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 3   
 
   117         
   118         // USER CODE BEGIN (Init,1)
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   176         
   177         //****************************************************************************
   178         // @Function      void MAIN_vUnlockProtecReg(void) 
-C166 COMPILER V7.05, MAIN                                                                  11/21/2013 14:06:15 PAGE 4   
+C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 4   
 
   179         //
   180         //----------------------------------------------------------------------------
@@ -205,7 +205,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   188         // @Parameters    None
   189         //
   190         //----------------------------------------------------------------------------
-  191         // @Date          21.11.2013
+  191         // @Date          25.11.2013
   192         //
   193         //****************************************************************************
   194         
@@ -243,7 +243,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   226         // @Parameters    None
   227         //
   228         //----------------------------------------------------------------------------
-  229         // @Date          21.11.2013
+  229         // @Date          25.11.2013
   230         //
   231         //****************************************************************************
   232         
@@ -255,7 +255,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   238         {
   239  1        uword uwPASSWORD;
   240  1      
-C166 COMPILER V7.05, MAIN                                                                  11/21/2013 14:06:15 PAGE 5   
+C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 5   
 
   241  1          SCU_SLC = 0xAAAA;                   // command 0
   242  1          SCU_SLC = 0x5554;                   // command 1
@@ -287,7 +287,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   268         // @Parameters    None
   269         //
   270         //----------------------------------------------------------------------------
-  271         // @Date          21.11.2013
+  271         // @Date          25.11.2013
   272         //
   273         //****************************************************************************
   274         
@@ -319,7 +319,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   298  1        else                                               // fR derived from external crystal clock
   299  1              {
   300  2                  if ((SCU_PLLSTAT & 0x1009) == 0x1009)    // fR derived from external crystal clock + VCO is lo
-C166 COMPILER V7.05, MAIN                                                                  11/21/2013 14:06:15 PAGE 6   
+C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 6   
 
              -cked
   301  2                  {
@@ -358,7 +358,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   332         // @Parameters    None
   333         //
   334         //----------------------------------------------------------------------------
-  335         // @Date          21.11.2013
+  335         // @Date          25.11.2013
   336         //
   337         //****************************************************************************
   338         
@@ -383,7 +383,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   357  1        MAIN_vInit();
   358  1      
   359  1        // USER CODE BEGIN (Main,3)
-C166 COMPILER V7.05, MAIN                                                                  11/21/2013 14:06:15 PAGE 7   
+C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 7   
 
   360  1      
   361  1      //CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, 0x0F);
@@ -403,93 +403,91 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   375  4                 z++;
   376  4                 if (z == 20)
   377  4                 {
-  378  5                  unsigned int foo;
-  379  5                      signed int l;
-  380  5                      signed int r;
-  381  5                      l = 0x80;
-  382  5                      r = 0x80;
-  383  5                      SetMotorSpeeds(&l, &r);
-  384  5                      l = 0x80;
-  385  5                      r = 0x80;
-  386  5                      SetMotorSpeeds(&l, &r);
-  387  5                      l = 0x80;
-  388  5                      r = 0x80;
-  389  5                      SetMotorSpeeds(&l, &r);
-  390  5                      l = 0x80;
-  391  5                      r = 0x80;
-  392  5                      SetMotorSpeeds(&l, &r);
-  393  5                      l = 0x80;
-  394  5                      r = 0x80;
-  395  5                      SetMotorSpeeds(&l, &r);
-  396  5                      l = 0x80;
-  397  5                      r = 0x80;
-  398  5                      SetMotorSpeeds(&l, &r);
-  399  5                      l = 0x80;
-  400  5                      r = 0x80;
-  401  5                      SetMotorSpeeds(&l, &r);
-  402  5                      l = 0x80;
-  403  5                      r = 0x80;
-  404  5                      SetMotorSpeeds(&l, &r);
-  405  5                      l = 0x80;
-  406  5                      r = 0x80;
-  407  5                      SetMotorSpeeds(&l, &r);
-  408  5      
-  409  5                      l = 0xFF;
-  410  5                      r = 0x80;
-  411  5                      SetMotorSpeeds(&l, &r);
-  412  5                      //z = 0;
-  413  5                      //speed += 0x10;
-  414  5                      //CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, 0x7F);
-  415  5                      //SetMotorSpeedLeft(MOTOR_FORWARD, 0x20);
-  416  5                      //foo = ReadMegatronLeft();
-  417  5                      //unsigned int foo = ReadMegatronLeft();
-  418  5              //CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, 0xC0);
-  419  5                      //SetMotorSpeedLeft(0, speed);
-  420  5      
-  421  5                 }
-C166 COMPILER V7.05, MAIN                                                                  11/21/2013 14:06:15 PAGE 8   
+  378  5                      signed int l;
+  379  5                      signed int r;
+  380  5                      l = 0x80;
+  381  5                      r = 0x80;
+  382  5                      SetMotorSpeeds(&l, &r);
+  383  5                      l = 0x80;
+  384  5                      r = 0x80;
+  385  5                      SetMotorSpeeds(&l, &r);
+  386  5                      l = 0x80;
+  387  5                      r = 0x80;
+  388  5                      SetMotorSpeeds(&l, &r);
+  389  5                      l = 0x80;
+  390  5                      r = 0x80;
+  391  5                      SetMotorSpeeds(&l, &r);
+  392  5                      l = 0x80;
+  393  5                      r = 0x80;
+  394  5                      SetMotorSpeeds(&l, &r);
+  395  5                      l = 0x80;
+  396  5                      r = 0x80;
+  397  5                      SetMotorSpeeds(&l, &r);
+  398  5                      l = 0x80;
+  399  5                      r = 0x80;
+  400  5                      SetMotorSpeeds(&l, &r);
+  401  5                      l = 0x80;
+  402  5                      r = 0x80;
+  403  5                      SetMotorSpeeds(&l, &r);
+  404  5                      l = 0x80;
+  405  5                      r = 0x80;
+  406  5                      SetMotorSpeeds(&l, &r);
+  407  5      
+  408  5                      l = 0xFF;
+  409  5                      r = 0x80;
+  410  5                      SetMotorSpeeds(&l, &r);
+  411  5                      //z = 0;
+  412  5                      //speed += 0x10;
+  413  5                      //CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, 0x7F);
+  414  5                      //SetMotorSpeedLeft(MOTOR_FORWARD, 0x20);
+  415  5                      //foo = ReadMegatronLeft();
+  416  5                      //unsigned int foo = ReadMegatronLeft();
+  417  5              //CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, 0xC0);
+  418  5                      //SetMotorSpeedLeft(0, speed);
+  419  5      
+  420  5                 }
+  421  4                 if (z == 40)
+C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 8   
 
-  422  4                 if (z == 40)
-  423  4                 {
-  424  5                       //SetMotorSpeedLeft(MOTOR_BACKWARD, 0);
-  425  5                 }
-  426  4                 if (z == 60)
-  427  4                 {
-  428  5                       //SetMotorSpeedLeft(MOTOR_BACKWARD, 0x20);
-  429  5                 }
-  430  4               }
-  431  3                      
-  432  3           P10_OUT_P0 = ~P10_OUT_P0;
+  422  4                 {
+  423  5                       //SetMotorSpeedLeft(MOTOR_BACKWARD, 0);
+  424  5                 }
+  425  4                 if (z == 60)
+  426  4                 {
+  427  5                       //SetMotorSpeedLeft(MOTOR_BACKWARD, 0x20);
+  428  5                 }
+  429  4               }
+  430  3                      
+  431  3           P10_OUT_P0 = ~P10_OUT_P0;
+  432  3      
   433  3      
-  434  3      
-  435  3           x = 0;
-  436  3           y++;
-  437  3               //CC2_vSetCCxReg(CC2_CC_16, (val | 0xFF00));
-  438  3               if (1 == direction)
-  439  3               {
-  440  4                 val = (val + 0x10) % 0x100;
-  441  4                 if (0xF0 == val) direction = 0;
-  442  4           }
-  443  3               else
-  444  3               {
-  445  4                 val = (val - 0x10) % 0x100;
-  446  4                 if (0 == val) direction = 1;
-  447  4           }
-  448  3         }
-  449  2      
-  450  2         // USER CODE END
-  451  2      
-  452  2        }
-  453  1      
-  454  1      } //  End of function main
-*** WARNING C47 IN LINE 378 OF MAIN.C: 'foo': unreferenced local variable
+  434  3           x = 0;
+  435  3           y++;
+  436  3               //CC2_vSetCCxReg(CC2_CC_16, (val | 0xFF00));
+  437  3               if (1 == direction)
+  438  3               {
+  439  4                 val = (val + 0x10) % 0x100;
+  440  4                 if (0xF0 == val) direction = 0;
+  441  4           }
+  442  3               else
+  443  3               {
+  444  4                 val = (val - 0x10) % 0x100;
+  445  4                 if (0 == val) direction = 1;
+  446  4           }
+  447  3         }
+  448  2      
+  449  2         // USER CODE END
+  450  2      
+  451  2        }
+  452  1      
+  453  1      } //  End of function main
+  454         
   455         
   456         
-  457         
-  458         // USER CODE BEGIN (MAIN_General,10)
-  459         
-  460         // USER CODE END
-  461         
+  457         // USER CODE BEGIN (MAIN_General,10)
+  458         
+  459         // USER CODE END
+  460         
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
@@ -510,4 +508,4 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
 END OF MODULE INFORMATION.
 
 
-C166 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)
+C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, GPT2                                                                  11/21/2013 14:06:18 PAGE 1   
+C166 COMPILER V7.05, GPT2                                                                  11/25/2013 16:29:03 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE GPT2
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
    12         // @Description   This file contains functions that use the GPT2 module.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          21.11.2013 12:03:18
+   15         // @Date          25.11.2013 16:09:40
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
    52         
    53         
    54         //****************************************************************************
-C166 COMPILER V7.05, GPT2                                                                  11/21/2013 14:06:18 PAGE 2   
+C166 COMPILER V7.05, GPT2                                                                  11/25/2013 16:29:03 PAGE 2   
 
    55         // @Typedefs
    56         //****************************************************************************
@@ -125,9 +125,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
   112         // @Parameters    None
   113         //
   114         //----------------------------------------------------------------------------
-  115         // @Date          21.11.2013
+  115         // @Date          25.11.2013
   116         //
-C166 COMPILER V7.05, GPT2                                                                  11/21/2013 14:06:18 PAGE 3   
+C166 COMPILER V7.05, GPT2                                                                  11/25/2013 16:29:03 PAGE 3   
 
   117         //****************************************************************************
   118         
@@ -165,57 +165,57 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
   150  1        ///  - timer 5 is clocked by positive transition on T5IN (P15.2)
   151  1        ///  - up/down control bit is reset
   152  1        ///  - external up/down control is disabled
-  153  1        ///  - timer 5 remote control is disabled
-  154  1      
-  155  1        GPT12E_T5CON   =  0x0009;      // load timer 5 control register
-  156  1        GPT12E_T5      =  0x0000;      // load timer 5 register
-  157  1      
-  158  1        ///  -----------------------------------------------------------------------
-  159  1        ///  Configuration of the GPT2 Core Timer 6:
-  160  1        ///  -----------------------------------------------------------------------
-  161  1        ///  - timer 6 works in counter mode
-  162  1        ///  - timer 6 is clocked by positive transition on T6IN (P15.4)
-  163  1        ///  - up/down control bit is reset
-  164  1        ///  - external up/down control is disabled
-  165  1        ///  - alternate output function T6OUT (P6.2) is disabled
-  166  1        ///  - alternate output function T6OUT (P7.0) is disabled
-  167  1        ///  - timer 6 output toggle latch (T6OTL) is set to 0
-  168  1        ///  - timer 6 is not cleared on a capture
-  169  1      
-  170  1        GPT12E_T6CON   =  0x0009;      // load timer 6 control register
-  171  1        GPT12E_T6      =  0x0000;      // load timer 6 register
-  172  1      
-  173  1        ///  -----------------------------------------------------------------------
-  174  1        ///  Configuration of the GPT2 CAPREL:
+  153  1        ///  - timer 5 run bit is reset
+  154  1        ///  - timer 5 remote control is disabled
+  155  1      
+  156  1        GPT12E_T5CON   =  0x0009;      // load timer 5 control register
+  157  1        GPT12E_T5      =  0x0000;      // load timer 5 register
+  158  1      
+  159  1        ///  -----------------------------------------------------------------------
+  160  1        ///  Configuration of the GPT2 Core Timer 6:
+  161  1        ///  -----------------------------------------------------------------------
+  162  1        ///  - timer 6 works in counter mode
+  163  1        ///  - timer 6 is clocked by positive transition on T6IN (P15.4)
+  164  1        ///  - up/down control bit is reset
+  165  1        ///  - external up/down control is disabled
+  166  1        ///  - alternate output function T6OUT (P6.2) is disabled
+  167  1        ///  - alternate output function T6OUT (P7.0) is disabled
+  168  1        ///  - timer 6 output toggle latch (T6OTL) is set to 0
+  169  1        ///  - timer 6 run bit is reset
+  170  1        ///  - timer 6 is not cleared on a capture
+  171  1      
+  172  1        GPT12E_T6CON   =  0x0009;      // load timer 6 control register
+  173  1        GPT12E_T6      =  0x0000;      // load timer 6 register
+  174  1      
   175  1        ///  -----------------------------------------------------------------------
-  176  1        ///  - capture T5 into CAPREL is disabled
-  177  1        ///  - capture trigger from pin CAPIN
-  178  1        ///  - capure is disabled
-C166 COMPILER V7.05, GPT2                                                                  11/21/2013 14:06:18 PAGE 4   
+  176  1        ///  Configuration of the GPT2 CAPREL:
+  177  1        ///  -----------------------------------------------------------------------
+  178  1        ///  - capture T5 into CAPREL is disabled
+C166 COMPILER V7.05, GPT2                                                                  11/25/2013 16:29:03 PAGE 4   
 
-  179  1        ///  - timer 5 is not cleared on a capture
-  180  1        ///  - timer 5 is just captured without any correction
-  181  1      
-  182  1        GPT12E_T5CON  |=  0x0000;      // load timer 5 control register
-  183  1        GPT12E_CAPREL  =  0x0000;      // load CAPREL register
-  184  1      
-  185  1        ///  -----------------------------------------------------------------------
-  186  1        ///  Configuration of the used GPT2 Port Pins:
+  179  1        ///  - capture trigger from pin CAPIN
+  180  1        ///  - capure is disabled
+  181  1        ///  - timer 5 is not cleared on a capture
+  182  1        ///  - timer 5 is just captured without any correction
+  183  1      
+  184  1        GPT12E_T5CON  |=  0x0000;      // load timer 5 control register
+  185  1        GPT12E_CAPREL  =  0x0000;      // load CAPREL register
+  186  1      
   187  1        ///  -----------------------------------------------------------------------
-  188  1      
-  189  1      
-  190  1        ///  -----------------------------------------------------------------------
-  191  1        ///  Configuration of the used GPT2 Interrupts:
-  192  1        ///  -----------------------------------------------------------------------
+  188  1        ///  Configuration of the used GPT2 Port Pins:
+  189  1        ///  -----------------------------------------------------------------------
+  190  1        ///  - P5.3 is used for  GPT12E Timer2 Count input(T3IN)
+  191  1        ///  - P5.4 is used for GPT12E Timer 3 Ext.Up/Down enable(T3EUD)
+  192  1      
   193  1      
-  194  1      
-  195  1        // USER CODE BEGIN (GPT2_Function,3)
-  196  1      
-  197  1        // USER CODE END
+  194  1        ///  -----------------------------------------------------------------------
+  195  1        ///  Configuration of the used GPT2 Interrupts:
+  196  1        ///  -----------------------------------------------------------------------
+  197  1      
   198  1      
-  199  1        GPT12E_T5CON_T5R  =  1;        // set timer 5 run bit
+  199  1        // USER CODE BEGIN (GPT2_Function,3)
   200  1      
-  201  1        GPT12E_T6CON_T6R  =  1;        // set timer 6 run bit
+  201  1        // USER CODE END
   202  1      
   203  1      } //  End of function GPT2_viCAPREL
   204         
@@ -228,7 +228,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
-  CODE SIZE        =          38     --------
+  CODE SIZE        =          34     --------
   NEAR-CONST SIZE  =    --------     --------
   FAR-CONST SIZE   =    --------     --------
   HUGE-CONST SIZE  =    --------     --------
