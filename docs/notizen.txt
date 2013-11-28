@@ -1,5 +1,6 @@
 
 
+
 neu:
 
 
@@ -24,3 +25,21 @@ kanal B auf T3EUD P5.4
 Timer T4 Megatron rechts
 Kanal A auf T4IN P4.6
 Kanal B auf T4EUD P4.7
+
+ADC:
+
+beides 8 Bit Conversions (evtl 10 Bit?)
+andere VRef?
+
+
+Gyro Pins:
+P5.5 für X
+P5.6 für Y
+P5.7 für Z
+
+
+
+Accelerator Pins:
+P5.13 für X
+P5.14 für Y
+P5.15 für Z
