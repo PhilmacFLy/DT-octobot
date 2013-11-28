@@ -7,6 +7,11 @@
 #include "megatron.h"
 #include "motor.h"
 
+void SetMotorSpeedsNoReturn(signed int left, signed int right)
+{
+  SetMotorSpeeds(&left, &right);
+}
+
 void SetMotorSpeeds(signed int* left_p, signed int* right_p)
 {
   signed int left = *left_p;
@@ -42,11 +47,12 @@ void SetMotorSpeeds(signed int* left_p, signed int* right_p)
   // megatron auslesen
   megatronleft = ReadMegatronLeft();
   megatronright = ReadMegatronRight();
-		
+
+  // muss evtl angepasst werden		
   // verhaeltnis der megatrons errechnen
-  if (lastleft != 0) optimusprimeleft = megatronleft * 0xFF / abs(lastleft);
+  if (lastleft != 0) optimusprimeleft = megatronleft * 0x10 / abs(lastleft);
   else optimusprimeleft = 0;
-  if (lastright != 0) optimusprimeright = megatronright * 0xFF / abs(lastright);
+  if (lastright != 0) optimusprimeright = megatronright * 0x10 / abs(lastright);
   else optimusprimeright = 0;
 
   // vor nachjustierung errechnete werte speichern

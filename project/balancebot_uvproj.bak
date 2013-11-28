@@ -329,6 +329,11 @@
               <FileType>1</FileType>
               <FilePath>.\motor.c</FilePath>
             </File>
+            <File>
+              <FileName>megatron.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\megatron.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

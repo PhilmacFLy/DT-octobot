@@ -1,13 +1,12 @@
-C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 1   
+C166 COMPILER V7.05, MAIN                                                                  11/28/2013 12:23:34 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE MAIN
 OBJECT MODULE PLACED IN .\obj\MAIN.obj
-COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\MAIN.obj) 
+COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\MAIN.obj
+                    -) 
 
  stmt lvl     source
-
-*** WARNING C500 IN LINE 1 OF MAIN.C: SERIAL NUMBER EXPIRED
 
     1         //****************************************************************************
     2         // @Module        Project Settings
@@ -63,7 +62,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
    52         
    53         // USER CODE END
    54         
-C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 2   
+C166 COMPILER V7.05, MAIN                                                                  11/28/2013 12:23:34 PAGE 2   
 
    55         
    56         //****************************************************************************
@@ -89,7 +88,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
    76         //****************************************************************************
    77         
    78         // USER CODE BEGIN (MAIN_General,7)
-   79         
+   79         volatile unsigned char timerevent = 0;
    80         // USER CODE END
    81         
    82         
@@ -127,7 +126,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   114         // @Date          25.11.2013
   115         //
   116         //****************************************************************************
-C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 3   
+C166 COMPILER V7.05, MAIN                                                                  11/28/2013 12:23:34 PAGE 3   
 
   117         
   118         // USER CODE BEGIN (Init,1)
@@ -191,7 +190,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   176         
   177         //****************************************************************************
   178         // @Function      void MAIN_vUnlockProtecReg(void) 
-C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 4   
+C166 COMPILER V7.05, MAIN                                                                  11/28/2013 12:23:34 PAGE 4   
 
   179         //
   180         //----------------------------------------------------------------------------
@@ -255,7 +254,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   238         {
   239  1        uword uwPASSWORD;
   240  1      
-C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 5   
+C166 COMPILER V7.05, MAIN                                                                  11/28/2013 12:23:34 PAGE 5   
 
   241  1          SCU_SLC = 0xAAAA;                   // command 0
   242  1          SCU_SLC = 0x5554;                   // command 1
@@ -319,7 +318,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   298  1        else                                               // fR derived from external crystal clock
   299  1              {
   300  2                  if ((SCU_PLLSTAT & 0x1009) == 0x1009)    // fR derived from external crystal clock + VCO is lo
-C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 6   
+C166 COMPILER V7.05, MAIN                                                                  11/28/2013 12:23:34 PAGE 6   
 
              -cked
   301  2                  {
@@ -369,134 +368,46 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   343         void main(void)
   344         {
   345  1        // USER CODE BEGIN (Main,2)
-  346  1                              /*
-  347  1                                testing code only
-  348  1                              */
-  349  1              int x = 0;
-  350  1                int y = 0;
-  351  1                int val = 0;
-  352  1                int direction = 1;
-  353  1                int z = 0;
-  354  1                unsigned char speed = 0x1F;
-  355  1        // USER CODE END
-  356  1      
-  357  1        MAIN_vInit();
-  358  1      
-  359  1        // USER CODE BEGIN (Main,3)
-C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 7   
+  346  1      
+  347  1        // USER CODE END
+  348  1      
+  349  1        MAIN_vInit();
+  350  1      
+  351  1        // USER CODE BEGIN (Main,3)
+  352  1      
+  353  1        // USER CODE END
+  354  1      
+  355  1        while(1)
+  356  1        {
+  357  2      
+  358  2         // USER CODE BEGIN (Main,4)
+  359  2         while(0 == timerevent);
+C166 COMPILER V7.05, MAIN                                                                  11/28/2013 12:23:34 PAGE 7   
 
-  360  1      
-  361  1      //CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, 0x0F);
-  362  1      
-  363  1        // USER CODE END
-  364  1      
-  365  1        while(1)
-  366  1        {
-  367  2      
-  368  2         // USER CODE BEGIN (Main,4)
-  369  2      
-  370  2         x++;
-  371  2         if (x % 1000000 == 0)
-  372  2         {
-  373  3           //if (speed < 0xFF)
-  374  3               {
-  375  4                 z++;
-  376  4                 if (z == 20)
-  377  4                 {
-  378  5                      signed int l;
-  379  5                      signed int r;
-  380  5                      l = 0x80;
-  381  5                      r = 0x80;
-  382  5                      SetMotorSpeeds(&l, &r);
-  383  5                      l = 0x80;
-  384  5                      r = 0x80;
-  385  5                      SetMotorSpeeds(&l, &r);
-  386  5                      l = 0x80;
-  387  5                      r = 0x80;
-  388  5                      SetMotorSpeeds(&l, &r);
-  389  5                      l = 0x80;
-  390  5                      r = 0x80;
-  391  5                      SetMotorSpeeds(&l, &r);
-  392  5                      l = 0x80;
-  393  5                      r = 0x80;
-  394  5                      SetMotorSpeeds(&l, &r);
-  395  5                      l = 0x80;
-  396  5                      r = 0x80;
-  397  5                      SetMotorSpeeds(&l, &r);
-  398  5                      l = 0x80;
-  399  5                      r = 0x80;
-  400  5                      SetMotorSpeeds(&l, &r);
-  401  5                      l = 0x80;
-  402  5                      r = 0x80;
-  403  5                      SetMotorSpeeds(&l, &r);
-  404  5                      l = 0x80;
-  405  5                      r = 0x80;
-  406  5                      SetMotorSpeeds(&l, &r);
-  407  5      
-  408  5                      l = 0xFF;
-  409  5                      r = 0x80;
-  410  5                      SetMotorSpeeds(&l, &r);
-  411  5                      //z = 0;
-  412  5                      //speed += 0x10;
-  413  5                      //CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, 0x7F);
-  414  5                      //SetMotorSpeedLeft(MOTOR_FORWARD, 0x20);
-  415  5                      //foo = ReadMegatronLeft();
-  416  5                      //unsigned int foo = ReadMegatronLeft();
-  417  5              //CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, 0xC0);
-  418  5                      //SetMotorSpeedLeft(0, speed);
-  419  5      
-  420  5                 }
-  421  4                 if (z == 40)
-C166 COMPILER V7.05, MAIN                                                                  11/25/2013 16:29:00 PAGE 8   
-
-  422  4                 {
-  423  5                       //SetMotorSpeedLeft(MOTOR_BACKWARD, 0);
-  424  5                 }
-  425  4                 if (z == 60)
-  426  4                 {
-  427  5                       //SetMotorSpeedLeft(MOTOR_BACKWARD, 0x20);
-  428  5                 }
-  429  4               }
-  430  3                      
-  431  3           P10_OUT_P0 = ~P10_OUT_P0;
-  432  3      
-  433  3      
-  434  3           x = 0;
-  435  3           y++;
-  436  3               //CC2_vSetCCxReg(CC2_CC_16, (val | 0xFF00));
-  437  3               if (1 == direction)
-  438  3               {
-  439  4                 val = (val + 0x10) % 0x100;
-  440  4                 if (0xF0 == val) direction = 0;
-  441  4           }
-  442  3               else
-  443  3               {
-  444  4                 val = (val - 0x10) % 0x100;
-  445  4                 if (0 == val) direction = 1;
-  446  4           }
-  447  3         }
-  448  2      
-  449  2         // USER CODE END
-  450  2      
-  451  2        }
-  452  1      
-  453  1      } //  End of function main
-  454         
-  455         
-  456         
-  457         // USER CODE BEGIN (MAIN_General,10)
-  458         
-  459         // USER CODE END
-  460         
+  360  2      
+  361  2         // do some kind of stuff
+  362  2      
+  363  2         // USER CODE END
+  364  2      
+  365  2        }
+  366  1      
+  367  1      } //  End of function main
+  368         
+  369         
+  370         
+  371         // USER CODE BEGIN (MAIN_General,10)
+  372         
+  373         // USER CODE END
+  374         
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
-  CODE SIZE        =         592     --------
+  CODE SIZE        =         210     --------
   NEAR-CONST SIZE  =    --------     --------
   FAR-CONST SIZE   =    --------     --------
   HUGE-CONST SIZE  =    --------     --------
   XHUGE-CONST SIZE =    --------     --------
-  NEAR-DATA SIZE   =    --------     --------
+  NEAR-DATA SIZE   =           1     --------
   FAR-DATA SIZE    =    --------     --------
   XHUGE-DATA SIZE  =    --------     --------
   IDATA-DATA SIZE  =    --------     --------
@@ -504,8 +415,8 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
   BDATA-DATA SIZE  =    --------     --------
   HUGE-DATA SIZE   =    --------     --------
   BIT SIZE         =    --------     --------
-  INIT'L SIZE      =    --------     --------
+  INIT'L SIZE      =           6     --------
 END OF MODULE INFORMATION.
 
 
-C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

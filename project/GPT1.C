@@ -249,7 +249,8 @@ void GPT1_viTmr2(void) interrupt T2INT
 
 
   // USER CODE BEGIN (Tmr2,5)
-
+  //set variable timerevent for main function
+  timerevent = 1;
   // USER CODE END
 
 } //  End of function GPT1_viTmr2

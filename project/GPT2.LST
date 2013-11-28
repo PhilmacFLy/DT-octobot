@@ -1,13 +1,12 @@
-C166 COMPILER V7.05, GPT2                                                                  11/25/2013 16:29:03 PAGE 1   
+C166 COMPILER V7.05, GPT2                                                                  11/28/2013 12:23:35 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE GPT2
 OBJECT MODULE PLACED IN .\obj\GPT2.obj
-COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\GPT2.obj) 
+COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\GPT2.obj
+                    -) 
 
  stmt lvl     source
-
-*** WARNING C500 IN LINE 1 OF GPT2.C: SERIAL NUMBER EXPIRED
 
     1         //****************************************************************************
     2         // @Module        General Purpose Timer Unit (GPT2)
@@ -63,7 +62,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
    52         
    53         
    54         //****************************************************************************
-C166 COMPILER V7.05, GPT2                                                                  11/25/2013 16:29:03 PAGE 2   
+C166 COMPILER V7.05, GPT2                                                                  11/28/2013 12:23:35 PAGE 2   
 
    55         // @Typedefs
    56         //****************************************************************************
@@ -127,7 +126,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
   114         //----------------------------------------------------------------------------
   115         // @Date          25.11.2013
   116         //
-C166 COMPILER V7.05, GPT2                                                                  11/25/2013 16:29:03 PAGE 3   
+C166 COMPILER V7.05, GPT2                                                                  11/28/2013 12:23:35 PAGE 3   
 
   117         //****************************************************************************
   118         
@@ -191,7 +190,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
   176  1        ///  Configuration of the GPT2 CAPREL:
   177  1        ///  -----------------------------------------------------------------------
   178  1        ///  - capture T5 into CAPREL is disabled
-C166 COMPILER V7.05, GPT2                                                                  11/25/2013 16:29:03 PAGE 4   
+C166 COMPILER V7.05, GPT2                                                                  11/28/2013 12:23:35 PAGE 4   
 
   179  1        ///  - capture trigger from pin CAPIN
   180  1        ///  - capure is disabled
@@ -245,4 +244,4 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
 END OF MODULE INFORMATION.
 
 
-C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

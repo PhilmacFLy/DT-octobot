@@ -1,13 +1,11 @@
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 1   
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE SCS
 OBJECT MODULE PLACED IN .\obj\SCS.obj
-COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\SCS.obj) 
+COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\SCS.obj) 
 
  stmt lvl     source
-
-*** WARNING C500 IN LINE 1 OF SCS.C: SERIAL NUMBER EXPIRED
 
     1         //****************************************************************************
     2         // @Module        Project Settings
@@ -63,9 +61,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
    52         
    53         
    54         // Check frequency related values /////////////////////////////////////////////
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 2   
-
    55         // Check fP
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 2   
+
    56         #if SCS_F_P < 4000000 || SCS_F_P > 16000000
               #   error  "SCS_F_P out of range"
               #endif
@@ -127,9 +125,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
               #  endif
   115         #endif
   116         #ifdef SCS_K2_WU_3
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 3   
-
               #  if SCS_K2_WU_3 < 1 || SCS_K2_WU_3 > 512
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 3   
+
               #     error  "SCS_K2_WU_3 out of range"
               #  endif
               #endif
@@ -191,9 +189,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
   176         
   177         _inline void SetK2(unsigned int K2);
   178         _inline void EnableVcoBypass(void);
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 4   
-
   179         _inline void DisableVcoBypass(void);
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 4   
+
   180         _inline void WaitForTimer13Stop(void);
   181         
   182         
@@ -255,9 +253,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
   238  2           }
   239  1      } // end of function SetK2
   240         
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 5   
-
   241         //****************************************************************************;
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 5   
+
   242         // @Function      _inline void EnableVcoBypass(void)
   243         //
   244         //-----------------------------------------------------------------------------
@@ -319,9 +317,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
   300         //-----------------------------------------------------------------------------
   301         // @Date          25.11.2013
   302         //
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 6   
-
   303         //-----------------------------------------------------------------------------
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 6   
+
   304         
   305         // USER CODE BEGIN (DisableVcoBypass,1)
   306         
@@ -383,9 +381,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
   362  1           ((0U    <<4U) | // T12R T12 Run Bit (rh)
   363  1            (0U    <<5U) | // STE12 T12 Shadow Transfer Enable (rh)
   364  1            (0U    <<6U) | // CDIR T12 Count Direction (rh)
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 7   
-
   365  1            (1U    <<12U)| // T13R T13 Run Bit (rh)
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 7   
+
   366  1            (0U    <<13U)))// STE13 T13 Shadow Transfer Enable (rh)
   367  1           {
   368  2               // wait
@@ -447,9 +445,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
   424  1           (0U    <<9U) | // EMCLKEN OSCWDT Emergency System Clock Source Select Enable
   425  1                          // 0 : MCM controlled by SYSCON0.CLKSEL in OSCWDT emergency case
   426  1                          // 1 : MCM controlled by SYSCON0.EMCLKSEL in OSCWDT emergency case
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 8   
-
   427  1           (0U    <<10U); // EMFINDISEN Emergency Input Clock Disconnect Enable
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 8   
+
   428  1                          // 0 : PLLSTAT.FINDIS not updated in OSCWDT emergency case
   429  1                          // 1 : PLLSTAT.FINDIS is set in OSCWDT emergency case
   430  1         if (UseTimer)
@@ -511,9 +509,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
   486         {
   487  1         if (UseTimer)
   488  1         {
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 9   
-
   489  2            // wait until T13 is stopped
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 9   
+
   490  2            WaitForTimer13Stop();
   491  2      
   492  2            #ifdef SCS_K2_WAIT
@@ -575,9 +573,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
   548  1                            // 1 : 96...160 MHz
   549  1             (0U    <<4U) | // REGENCLR PLL Power Regulator Enable Clear (w)
   550  1                            // 0 : Configuration for PLL power regulator  unchanged
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 10  
-
   551  1                            // 1 : PLL is not powered (no operation possible)
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 10  
+
   552  1             (0U    <<5U) | // REGENSET PLL PLL Power Regulator Enable Set (w)
   553  1                            // 0 : Configuration for PLL power regulator unchanged
   554  1                            // 1 : PLL is powered (operation possible)
@@ -639,9 +637,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
   610         //                - The user is responsible for disabling the register
   611         //                  protection.
   612         //-----------------------------------------------------------------------------
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 11  
-
   613         // @Returnvalue   None
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 11  
+
   614         //
   615         //-----------------------------------------------------------------------------
   616         // @Parameters    None
@@ -703,9 +701,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
   672  1          (0U    <<13U)| // PVCMOFF PVC_M No valid results for this step
   673  1          (0U    <<14U)| // PVC1OFF PVC_1 No valid results for this step
   674  1          (0U    <<15U));// Read as 1, should be written with 1
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 12  
-
   675  1      
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 12  
+
   676  1      } // end of function SCS_SwitchToHighPrecBandgap
   677         
   678         //****************************************************************************;
@@ -767,9 +765,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
   734  1         // read SFR back to avoid pipeline effects
   735  1         Work = CCU60_KSCFG;
   736  1         // enable T13 functionality
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 13  
-
   737  1         CCU60_MCFG |=
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 13  
+
   738  1           (0U    <<0U) | // T12 T12 Available
   739  1           (1U    <<1U) | // T13 T13 Available
   740  1           (0U    <<2U);  // MCM Multi-Channel Mode Available
@@ -831,9 +829,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
   796  1                         // 0: External setting of T12R disabled
   797  1                         // 1: T12R set on rising edge of T12HR
   798  1                         // 2: T12R set on falling edge of T12HR
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 14  
-
   799  1                         // 3: T12R set on any edge of T12HR
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 14  
+
   800  1          (0U    <<10U)  // T13RSEL T13 External Run Selection
   801  1                         // 0: External setting of T13R is disabled
   802  1                         // 1: T13R set on rising edge of T13HR
@@ -895,8 +893,8 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE SCS.C MODV2 BROWSE 
   858  1      
   859  1      
   860  1      } // end of function SCS_CountClocksWithTimer
-C166 COMPILER V7.05, SCS                                                                   11/25/2013 16:29:01 PAGE 15  
 
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 15  
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
@@ -917,4 +915,4 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
 END OF MODULE INFORMATION.
 
 
-C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -77,7 +77,7 @@
 //****************************************************************************
 
 // USER CODE BEGIN (GPT1_Header,6)
-
+extern volatile unsigned char timerevent;
 // USER CODE END
 
 

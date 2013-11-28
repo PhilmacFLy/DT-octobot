@@ -76,7 +76,7 @@
 //****************************************************************************
 
 // USER CODE BEGIN (MAIN_General,7)
-
+volatile unsigned char timerevent = 0;
 // USER CODE END
 
 
@@ -343,22 +343,12 @@ void MAIN_vChangeFreq(void)
 void main(void)
 {
   // USER CODE BEGIN (Main,2)
-			/*
-			  testing code only
-			*/
-	int x = 0;
-	  int y = 0;
-	  int val = 0;
-	  int direction = 1;
-	  int z = 0;
-	  unsigned char speed = 0x1F;
+
   // USER CODE END
 
   MAIN_vInit();
 
   // USER CODE BEGIN (Main,3)
-
-//CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, 0x0F);
 
   // USER CODE END
 
@@ -366,85 +356,9 @@ void main(void)
   {
 
    // USER CODE BEGIN (Main,4)
+   while(0 == timerevent);
 
-   x++;
-   if (x % 1000000 == 0)
-   {
-     //if (speed < 0xFF)
-	 {
-	   z++;
-	   if (z == 20)
-	   {
-		signed int l;
-		signed int r;
-		l = 0x80;
-		r = 0x80;
-		SetMotorSpeeds(&l, &r);
-		l = 0x80;
-		r = 0x80;
-		SetMotorSpeeds(&l, &r);
-		l = 0x80;
-		r = 0x80;
-		SetMotorSpeeds(&l, &r);
-		l = 0x80;
-		r = 0x80;
-		SetMotorSpeeds(&l, &r);
-		l = 0x80;
-		r = 0x80;
-		SetMotorSpeeds(&l, &r);
-		l = 0x80;
-		r = 0x80;
-		SetMotorSpeeds(&l, &r);
-		l = 0x80;
-		r = 0x80;
-		SetMotorSpeeds(&l, &r);
-		l = 0x80;
-		r = 0x80;
-		SetMotorSpeeds(&l, &r);
-		l = 0x80;
-		r = 0x80;
-		SetMotorSpeeds(&l, &r);
-
-		l = 0xFF;
-		r = 0x80;
-		SetMotorSpeeds(&l, &r);
-		//z = 0;
-		//speed += 0x10;
-		//CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, 0x7F);
-		//SetMotorSpeedLeft(MOTOR_FORWARD, 0x20);
-		//foo = ReadMegatronLeft();
-		//unsigned int foo = ReadMegatronLeft();
-        //CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, 0xC0);
-		//SetMotorSpeedLeft(0, speed);
-
-	   }
-	   if (z == 40)
-	   {
-		 //SetMotorSpeedLeft(MOTOR_BACKWARD, 0);
-	   }
-	   if (z == 60)
-	   {
-		 //SetMotorSpeedLeft(MOTOR_BACKWARD, 0x20);
-	   }
-	 }
-		
-     P10_OUT_P0 = ~P10_OUT_P0;
-
-
-     x = 0;
-     y++;
-	 //CC2_vSetCCxReg(CC2_CC_16, (val | 0xFF00));
-	 if (1 == direction)
-	 {
-	   val = (val + 0x10) % 0x100;
-	   if (0xF0 == val) direction = 0;
-     }
-	 else
-	 {
-	   val = (val - 0x10) % 0x100;
-	   if (0 == val) direction = 1;
-     }
-   }
+   // do some kind of stuff
 
    // USER CODE END
 

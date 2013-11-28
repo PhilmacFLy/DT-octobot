@@ -1,13 +1,11 @@
-C166 COMPILER V7.05, IO                                                                    11/25/2013 16:29:01 PAGE 1   
+C166 COMPILER V7.05, IO                                                                    11/28/2013 12:23:34 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE IO
 OBJECT MODULE PLACED IN .\obj\IO.obj
-COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\IO.obj) 
+COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\IO.obj) 
 
  stmt lvl     source
-
-*** WARNING C500 IN LINE 1 OF IO.C: SERIAL NUMBER EXPIRED
 
     1         //****************************************************************************
     2         // @Module        Parallel Ports
@@ -63,9 +61,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
    52         
    53         
    54         //****************************************************************************
-C166 COMPILER V7.05, IO                                                                    11/25/2013 16:29:01 PAGE 2   
-
    55         // @Typedefs
+C166 COMPILER V7.05, IO                                                                    11/28/2013 12:23:34 PAGE 2   
+
    56         //****************************************************************************
    57         
    58         // USER CODE BEGIN (IO_General,5)
@@ -127,9 +125,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   114         // @Date          25.11.2013
   115         //
   116         //****************************************************************************
-C166 COMPILER V7.05, IO                                                                    11/25/2013 16:29:01 PAGE 3   
-
   117         
+C166 COMPILER V7.05, IO                                                                    11/28/2013 12:23:34 PAGE 3   
+
   118         // USER CODE BEGIN (IO_Function,1)
   119         
   120         // USER CODE END
@@ -191,9 +189,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   176  1        ///  - push/pull output is selected
   177  1        ///  - the pin status is low level
   178  1        ///  P4.4 is used as general purpose output
-C166 COMPILER V7.05, IO                                                                    11/25/2013 16:29:01 PAGE 4   
-
   179  1        ///  - push/pull output is selected
+C166 COMPILER V7.05, IO                                                                    11/28/2013 12:23:34 PAGE 4   
+
   180  1        ///  - the pin status is low level
   181  1        ///  P4.7 is used as alternate input for the  GPT12E timer4 Ext.Up/Down 
   182  1        ///  enable(T4EUD)
@@ -255,9 +253,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   238  1        ///  Configuration of Port P10:
   239  1        ///  -----------------------------------------------------------------------
   240  1        ///  P10.0 is used as general purpose output
-C166 COMPILER V7.05, IO                                                                    11/25/2013 16:29:01 PAGE 5   
-
   241  1        ///  - push/pull output is selected
+C166 COMPILER V7.05, IO                                                                    11/28/2013 12:23:34 PAGE 5   
+
   242  1        ///  - the pin status is low level
   243  1        ///  P10.1 is used as general purpose output
   244  1        ///  - push/pull output is selected
@@ -319,10 +317,10 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
   BDATA-DATA SIZE  =    --------     --------
   HUGE-DATA SIZE   =    --------     --------
   BIT SIZE         =    --------     --------
-C166 COMPILER V7.05, IO                                                                    11/25/2013 16:29:01 PAGE 6   
-
   INIT'L SIZE      =    --------     --------
+C166 COMPILER V7.05, IO                                                                    11/28/2013 12:23:34 PAGE 6   
+
 END OF MODULE INFORMATION.
 
 
-C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
