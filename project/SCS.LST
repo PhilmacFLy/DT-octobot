@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 1   
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE SCS
@@ -25,7 +25,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
    16         //                the user.
    17         //
    18         //----------------------------------------------------------------------------
-   19         // @Date          25.11.2013 16:09:37
+   19         // @Date          28.11.2013 13:40:50
    20         //
    21         //****************************************************************************
    22         
@@ -62,7 +62,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
    53         
    54         // Check frequency related values /////////////////////////////////////////////
    55         // Check fP
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 2   
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 2   
 
    56         #if SCS_F_P < 4000000 || SCS_F_P > 16000000
               #   error  "SCS_F_P out of range"
@@ -126,7 +126,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   115         #endif
   116         #ifdef SCS_K2_WU_3
               #  if SCS_K2_WU_3 < 1 || SCS_K2_WU_3 > 512
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 3   
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 3   
 
               #     error  "SCS_K2_WU_3 out of range"
               #  endif
@@ -190,7 +190,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   177         _inline void SetK2(unsigned int K2);
   178         _inline void EnableVcoBypass(void);
   179         _inline void DisableVcoBypass(void);
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 4   
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 4   
 
   180         _inline void WaitForTimer13Stop(void);
   181         
@@ -212,7 +212,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   197         // @Parameters    K2: K2 divider
   198         //
   199         //-----------------------------------------------------------------------------
-  200         // @Date          25.11.2013
+  200         // @Date          28.11.2013
   201         //
   202         //-----------------------------------------------------------------------------
   203         
@@ -254,7 +254,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   239  1      } // end of function SetK2
   240         
   241         //****************************************************************************;
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 5   
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 5   
 
   242         // @Function      _inline void EnableVcoBypass(void)
   243         //
@@ -268,7 +268,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   251         // @Parameters    None
   252         //
   253         //-----------------------------------------------------------------------------
-  254         // @Date          25.11.2013
+  254         // @Date          28.11.2013
   255         //
   256         //-----------------------------------------------------------------------------
   257         
@@ -315,10 +315,10 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   298         // @Parameters    None
   299         //
   300         //-----------------------------------------------------------------------------
-  301         // @Date          25.11.2013
+  301         // @Date          28.11.2013
   302         //
   303         //-----------------------------------------------------------------------------
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 6   
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 6   
 
   304         
   305         // USER CODE BEGIN (DisableVcoBypass,1)
@@ -366,7 +366,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   347         // @Parameters    None
   348         //
   349         //-----------------------------------------------------------------------------
-  350         // @Date          25.11.2013
+  350         // @Date          28.11.2013
   351         //
   352         //-----------------------------------------------------------------------------
   353         
@@ -382,7 +382,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   363  1            (0U    <<5U) | // STE12 T12 Shadow Transfer Enable (rh)
   364  1            (0U    <<6U) | // CDIR T12 Count Direction (rh)
   365  1            (1U    <<12U)| // T13R T13 Run Bit (rh)
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 7   
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 7   
 
   366  1            (0U    <<13U)))// STE13 T13 Shadow Transfer Enable (rh)
   367  1           {
@@ -416,7 +416,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   395         //                via T13
   396         //
   397         //-----------------------------------------------------------------------------
-  398         // @Date          25.11.2013
+  398         // @Date          28.11.2013
   399         //
   400         //-----------------------------------------------------------------------------
   401         
@@ -446,7 +446,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   425  1                          // 0 : MCM controlled by SYSCON0.CLKSEL in OSCWDT emergency case
   426  1                          // 1 : MCM controlled by SYSCON0.EMCLKSEL in OSCWDT emergency case
   427  1           (0U    <<10U); // EMFINDISEN Emergency Input Clock Disconnect Enable
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 8   
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 8   
 
   428  1                          // 0 : PLLSTAT.FINDIS not updated in OSCWDT emergency case
   429  1                          // 1 : PLLSTAT.FINDIS is set in OSCWDT emergency case
@@ -497,7 +497,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   474         //                via T13
   475         //
   476         //-----------------------------------------------------------------------------
-  477         // @Date          25.11.2013
+  477         // @Date          28.11.2013
   478         //
   479         //-----------------------------------------------------------------------------
   480         
@@ -510,7 +510,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   487  1         if (UseTimer)
   488  1         {
   489  2            // wait until T13 is stopped
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 9   
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 9   
 
   490  2            WaitForTimer13Stop();
   491  2      
@@ -574,7 +574,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   549  1             (0U    <<4U) | // REGENCLR PLL Power Regulator Enable Clear (w)
   550  1                            // 0 : Configuration for PLL power regulator  unchanged
   551  1                            // 1 : PLL is not powered (no operation possible)
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 10  
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 10  
 
   552  1             (0U    <<5U) | // REGENSET PLL PLL Power Regulator Enable Set (w)
   553  1                            // 0 : Configuration for PLL power regulator unchanged
@@ -638,14 +638,14 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   611         //                  protection.
   612         //-----------------------------------------------------------------------------
   613         // @Returnvalue   None
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 11  
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 11  
 
   614         //
   615         //-----------------------------------------------------------------------------
   616         // @Parameters    None
   617         //
   618         //-----------------------------------------------------------------------------
-  619         // @Date          25.11.2013
+  619         // @Date          28.11.2013
   620         //
   621         //-----------------------------------------------------------------------------
   622         
@@ -702,7 +702,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   673  1          (0U    <<14U)| // PVC1OFF PVC_1 No valid results for this step
   674  1          (0U    <<15U));// Read as 1, should be written with 1
   675  1      
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 12  
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 12  
 
   676  1      } // end of function SCS_SwitchToHighPrecBandgap
   677         
@@ -737,7 +737,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   706         //                 Clocks: Number of clocks to count, 1...65535
   707         //
   708         //-----------------------------------------------------------------------------
-  709         // @Date          25.11.2013
+  709         // @Date          28.11.2013
   710         //
   711         //-----------------------------------------------------------------------------
   712         
@@ -766,7 +766,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   735  1         Work = CCU60_KSCFG;
   736  1         // enable T13 functionality
   737  1         CCU60_MCFG |=
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 13  
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 13  
 
   738  1           (0U    <<0U) | // T12 T12 Available
   739  1           (1U    <<1U) | // T13 T13 Available
@@ -830,7 +830,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   797  1                         // 1: T12R set on rising edge of T12HR
   798  1                         // 2: T12R set on falling edge of T12HR
   799  1                         // 3: T12R set on any edge of T12HR
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 14  
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 14  
 
   800  1          (0U    <<10U)  // T13RSEL T13 External Run Selection
   801  1                         // 0: External setting of T13R is disabled
@@ -894,7 +894,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE SCS.C MODV2 B
   859  1      
   860  1      } // end of function SCS_CountClocksWithTimer
 
-C166 COMPILER V7.05, SCS                                                                   11/28/2013 12:23:34 PAGE 15  
+C166 COMPILER V7.05, SCS                                                                   11/28/2013 14:13:50 PAGE 15  
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED

@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the IO module.
 //
 //----------------------------------------------------------------------------
-// @Date          25.11.2013 16:09:39
+// @Date          28.11.2013 13:40:52
 //
 //****************************************************************************
 
@@ -111,7 +111,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          25.11.2013
+// @Date          28.11.2013
 //
 //****************************************************************************
 
@@ -199,6 +199,12 @@ void IO_vInit(void)
   ///  input(T3IN)
   ///  P5.4 is used as alternate input for the GPT12E Timer 3 Ext.Up/Down 
   ///  enable(T3EUD)
+  ///  P5.5 is used as alternate input for the  Analog Input Pin (AN55)
+  ///  P5.6 is used as alternate input for the  Analog Input Pin (AN56)
+  ///  P5.7 is used as alternate input for the  Analog Input Pin (AN57)
+  ///  P5.13 is used as alternate input for the  Analog Input Pin (AN513)
+  ///  P5.14 is used as alternate input for the  Analog Input Pin (AN514)
+  ///  P5.15 is used as alternate input for the  Analog Input Pin (AN515)
 
 
   ///  -----------------------------------------------------------------------

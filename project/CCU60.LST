@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, CCU60                                                                 11/28/2013 12:23:34 PAGE 1   
+C166 COMPILER V7.05, CCU60                                                                 11/28/2013 14:13:50 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE CCU60
@@ -22,7 +22,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE CCU60.C MODV2
    12         // @Description   This file contains functions that use the CCU60 module.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          25.11.2013 16:09:40
+   15         // @Date          28.11.2013 13:40:52
    16         //
    17         //****************************************************************************
    18         
@@ -62,7 +62,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE CCU60.C MODV2
    52         
    53         
    54         //****************************************************************************
-C166 COMPILER V7.05, CCU60                                                                 11/28/2013 12:23:34 PAGE 2   
+C166 COMPILER V7.05, CCU60                                                                 11/28/2013 14:13:50 PAGE 2   
 
    55         // @Typedefs
    56         //****************************************************************************
@@ -123,10 +123,10 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE CCU60.C MODV2
   111         // @Parameters    None
   112         //
   113         //----------------------------------------------------------------------------
-  114         // @Date          25.11.2013
+  114         // @Date          28.11.2013
   115         //
   116         //****************************************************************************
-C166 COMPILER V7.05, CCU60                                                                 11/28/2013 12:23:34 PAGE 3   
+C166 COMPILER V7.05, CCU60                                                                 11/28/2013 14:13:50 PAGE 3   
 
   117         
   118         // USER CODE BEGIN (Init,1)
@@ -190,7 +190,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE CCU60.C MODV2
   176  1        ///  - Interrupt on period match is disabled
   177  1        ///  - Interrupt on compare match is disabled
   178  1      
-C166 COMPILER V7.05, CCU60                                                                 11/28/2013 12:23:34 PAGE 4   
+C166 COMPILER V7.05, CCU60                                                                 11/28/2013 14:13:50 PAGE 4   
 
   179  1        CCU60_T13PR    =  0x00FF;      // load CCU60 T13 period register
   180  1      
@@ -254,7 +254,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE CCU60.C MODV2
   238  1      
   239  1        CCU60_CC62SR   =  0x0000;      // Load CCU60 capture/compare shadow 
   240  1                                       // register for channel 2
-C166 COMPILER V7.05, CCU60                                                                 11/28/2013 12:23:34 PAGE 5   
+C166 COMPILER V7.05, CCU60                                                                 11/28/2013 14:13:50 PAGE 5   
 
   241  1      
   242  1        ///  -----------------------------------------------------------------------
@@ -318,7 +318,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE CCU60.C MODV2
   300  1        ///  Configuration of the used CCU60 Channels Interrupts:
   301  1        ///  -----------------------------------------------------------------------
   302  1        ///  NodeI0 service request node configuration:
-C166 COMPILER V7.05, CCU60                                                                 11/28/2013 12:23:34 PAGE 6   
+C166 COMPILER V7.05, CCU60                                                                 11/28/2013 14:13:50 PAGE 6   
 
   303  1        ///  - NodeI0 interrupt priority level (ILVL) = 12
   304  1        ///  - NodeI0 interrupt group level (GLVL) = 0
@@ -363,7 +363,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE CCU60.C MODV2
   343         // @Parameters    None
   344         //
   345         //----------------------------------------------------------------------------
-  346         // @Date          25.11.2013
+  346         // @Date          28.11.2013
   347         //
   348         //****************************************************************************
   349         
@@ -382,7 +382,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE CCU60.C MODV2
   362  2          // Capture, Compare match rising edge detection an channel 0
   363  2      
   364  2          // USER CODE BEGIN (NodeI0,10)         
-C166 COMPILER V7.05, CCU60                                                                 11/28/2013 12:23:34 PAGE 7   
+C166 COMPILER V7.05, CCU60                                                                 11/28/2013 14:13:50 PAGE 7   
 
   365  2          // steigende Flanke für linker Motor
   366  2          P4_OUT_P3 = 1;      // motor links PWM

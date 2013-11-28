@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          25.11.2013 16:09:37
+// @Date          28.11.2013 13:40:50
 //
 //****************************************************************************
 
@@ -111,7 +111,7 @@ volatile unsigned char timerevent = 0;
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          25.11.2013
+// @Date          28.11.2013
 //
 //****************************************************************************
 
@@ -156,6 +156,9 @@ void MAIN_vInit(void)
   //   initializes the Capture / Compare Unit 60 (CCU60)
   CCU60_vInit();
 
+  //   initializes the Analog / Digital Converter  (ADC0)
+  ADC0_vInit();
+
 
   //   -----------------------------------------------------------------------
   //   Initialization of the Bank Select registers:
@@ -188,7 +191,7 @@ void MAIN_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          25.11.2013
+// @Date          28.11.2013
 //
 //****************************************************************************
 
@@ -226,7 +229,7 @@ void MAIN_vUnlockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          25.11.2013
+// @Date          28.11.2013
 //
 //****************************************************************************
 
@@ -268,7 +271,7 @@ void MAIN_vLockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          25.11.2013
+// @Date          28.11.2013
 //
 //****************************************************************************
 
@@ -332,7 +335,7 @@ void MAIN_vChangeFreq(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          25.11.2013
+// @Date          28.11.2013
 //
 //****************************************************************************
 
@@ -343,7 +346,13 @@ void MAIN_vChangeFreq(void)
 void main(void)
 {
   // USER CODE BEGIN (Main,2)
-
+  // calculation variables
+  volatile unsigned char gyro_x = 0;
+  volatile unsigned char gyro_y = 0;
+  volatile unsigned char gyro_z = 0;
+  volatile unsigned char accel_x = 0;
+  volatile unsigned char accel_y = 0;
+  volatile unsigned char accel_z = 0;
   // USER CODE END
 
   MAIN_vInit();
@@ -357,9 +366,32 @@ void main(void)
 
    // USER CODE BEGIN (Main,4)
    while(0 == timerevent);
+   timerevent = 0;
+   
+   // read ALL! the ADC channels
+   //5,6,7 for gyro	sensor
+   //13,14,15 for acceleration sensor
+   ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_5);
+   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_13);
+   while(!ADC0_uwResultValid(RESULT_REG_0) && !ADC0_uwResultValid(RESULT_REG_3)); // necessary?
+   ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_6);
+   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_14);
+   while(!ADC0_uwResultValid(RESULT_REG_1) && !ADC0_uwResultValid(RESULT_REG_4)); // necessary?
+   ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_7);
+   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_15);  
+   while(!ADC0_uwResultValid(RESULT_REG_2) && !ADC0_uwResultValid(RESULT_REG_5)); // necessary?
 
+   gyro_x = ADC0_uwGetResultData(RESULT_REG_0);
+   gyro_y = ADC0_uwGetResultData(RESULT_REG_1);
+   gyro_z = ADC0_uwGetResultData(RESULT_REG_2);
+   accel_x = ADC0_uwGetResultData(RESULT_REG_3);
+   accel_y = ADC0_uwGetResultData(RESULT_REG_4);
+   accel_z = ADC0_uwGetResultData(RESULT_REG_5);
    // do some kind of stuff
 
+   // set motor speed
+   //SetMotorSpeedsNoReturn(links_p, rechts_p);
+   SetMotorSpeedsNoReturn(0, 0);
    // USER CODE END
 
   }

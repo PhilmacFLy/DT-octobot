@@ -8,7 +8,7 @@
 \par \plain\f4\fs22\cf0 Compiler: \tab\tab\b Keil
 \par \plain\f4\fs22\cf0 Memory Model: \tab\b SMALL
 \par 
-\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 25.11.2013 16:09:40
+\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 28.11.2013 13:40:52
 \par 
 \par 
 \par \plain\f4\fs22\cf2\b Please read this document carefully and note
@@ -33,6 +33,8 @@
 \par \tab\tab\tab GPT2.C
 \par \tab\tab\tab CCU60.H
 \par \tab\tab\tab CCU60.C
+\par \tab\tab\tab ADC0.H
+\par \tab\tab\tab ADC0.C
 \par \tab\tab\tab BALANCEBOT.ASM
 \par 
 \par 
@@ -404,6 +406,12 @@
 \tab input(T3IN)\par 
 \tab P5.4 is used as alternate input for the GPT12E Timer 3 Ext.Up/Down\par 
 \tab enable(T3EUD)\par 
+\tab P5.5 is used as alternate input for the  Analog Input Pin (AN55)\par 
+\tab P5.6 is used as alternate input for the  Analog Input Pin (AN56)\par 
+\tab P5.7 is used as alternate input for the  Analog Input Pin (AN57)\par 
+\tab P5.13 is used as alternate input for the  Analog Input Pin (AN513)\par 
+\tab P5.14 is used as alternate input for the  Analog Input Pin (AN514)\par 
+\tab P5.15 is used as alternate input for the  Analog Input Pin (AN515)\par 
 \par 
 \tab Configuration of Port P6:\par 
 \tab - no pin of port P6 is used\par 
@@ -1105,6 +1113,524 @@
 \tab - Enable shadow transfer of T12 and T13\par 
 \tab - Timer 12 run bit is set\par 
 \tab - Timer 13 run bit is reset\par 
+\par 
+
+\par \plain\f4\fs20\cf0
+\par \plain\f4\fs28\cf0\ul Analog / Digital Converter  (ADC0)
+\par
+\par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab uword ADC0_uwGetResultData(RegNum)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro returns the left aligned, 10-bit result data of
+
+\par \tab \tab the last conversion from requested result register
+
+\par \tab \tab Ex- RegNum = RESULT_REG_0,for Result register 0
+
+\par \tab \tab RegNum = RESULT_REG_2,for Result register 2
+
+\par \tab \tab - For 8 bit resolution user has to right shift the result
+
+\par \tab \tab by 2 bits as shown below
+
+\par \tab \tab uwResult = ADC0_uwGetResultData(RESULT_REG_0);
+
+\par \tab \tab uwResult >>= 2;
+
+\par \tab \tab NOTE -
+
+\par \tab \tab If this macro is called before ADC0_uwGetResultChNum macro
+
+\par \tab \tab for the same result register then channel information will
+
+\par \tab \tab be lost.So always call ADC0_uwGetResultChNum macro before
+
+\par \tab \tab this macro if channel information is required.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Returns result data from requested result register\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab RegNum:
+
+\par \tab \tab RegNum: defines the result register number
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab ubyte ADC0_ubGetResultChNum(RegNum)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro returns channel number from requested result
+
+\par \tab \tab register
+
+\par \tab \tab Ex- RegNum = RESULT_REG_0,for Result register 0
+
+\par \tab \tab RegNum = RESULT_REG_2,for Result register 2
+
+\par \tab \tab NOTE -
+
+\par \tab \tab If only channel information is required then make sure that
+
+\par \tab \tab you call ADC0_vClearValidBit macro after reading the
+
+\par \tab \tab channel number.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Returns channel number from requested result register\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab RegNum:
+
+\par \tab \tab RegNum: defines the result register number
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab uword ADC0_uwResultValid(RegNum)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro indicates that the contents of the result
+
+\par \tab \tab register x is valid or not valid.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b 1 for valid and 0 for not valid\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab RegNum:
+
+\par \tab \tab RegNum: defines the result register number
+
+\par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void ADC0_vInit(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This is the initialization function of the ADC function
+
+\par \tab \tab library. It is assumed that the SFRs used by this library
+
+\par \tab \tab are in reset state.
+
+\par \tab \tab Following SFR fields will be initialized:
+
+\par \tab \tab GLOBCTR  - Global Control
+
+\par \tab \tab RSPR0    - Priority and Arbitration Register
+
+\par \tab \tab ASENR    - Arbitration slot enable register
+
+\par \tab \tab CHCTRx   - Channel Control Register x
+
+\par \tab \tab RCRx     - Result Control Register x
+
+\par \tab \tab KSCFG    - Module configuration Register
+
+\par \tab \tab INPCR    - Input class Registers
+
+\par \tab \tab CHINPRx  - Channel Interrupt register
+
+\par \tab \tab EVINPRx  - Event Interrupt register
+
+\par \tab \tab SYNCTR   - Synchronisation control register
+
+\par \tab \tab LCBRx    - Limit check boundary register
+
+\par \tab \tab PISEL    - Port input selection
+
+\par \tab \tab QMR0     - Sequential 0 mode register
+
+\par \tab \tab CRMR1    - Parallel mode register
+
+\par \tab \tab QMR2     - Sequential 2 mode register
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function starts the conversion of the requested
+
+\par \tab \tab channel.
+
+\par \tab \tab NOTE -
+
+\par \tab \tab Before passing ubEnIntr argument as 1,make sure that Seq 0
+
+\par \tab \tab source interrupt is enabled.
+
+\par \tab \tab External Trigger -> 0,Indicates software trigger
+
+\par \tab \tab (Conversion starts once this function is executed)
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab ubExtTrg:
+
+\par \tab \tab External Trigger : defines external trigger.
+
+\par \tab \tab ubEnIntr:
+
+\par \tab \tab Enable Source Interrupt : defines source interrupt
+
+\par \tab \tab ubRFill:
+
+\par \tab \tab Refill : defines the refill
+
+\par \tab \tab ubChannelNum:
+
+\par \tab \tab Channel number : Name of the Request Channel Number (0 -
+
+\par \tab \tab 15)- see macros defined in the header file
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void ADC0_vStartSeq2ReqChNum(ubyte ubExtTrg, ubyte\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function starts the conversion of the requested
+
+\par \tab \tab channel.
+
+\par \tab \tab NOTE -
+
+\par \tab \tab Before passing ubEnIntr argument as 1,make sure that Seq 2
+
+\par \tab \tab source interrupt is enabled.
+
+\par \tab \tab External Trigger -> 0,Indicates software trigger
+
+\par \tab \tab (Conversion starts once this function is executed)
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab ubExtTrg:
+
+\par \tab \tab External Trigger : defines external trigger.
+
+\par \tab \tab ubEnIntr:
+
+\par \tab \tab Enable Source Interrupt : defines source interrupt
+
+\par \tab \tab ubRFill:
+
+\par \tab \tab Refill : defines the refill
+
+\par \tab \tab ubChannelNum:
+
+\par \tab \tab Channel number : Name of the Request Channel Number (0 -
+
+\par \tab \tab 15) - see macros defined in the header file
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void ADC0_vStartParReqChNum(uword uwChannelNum)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function starts conversion request of analog
+
+\par \tab \tab channel.The possible values for the request channels are:
+
+\par \tab \tab Bit 0 = 1   ->  analog channel 0 is requested for
+
+\par \tab \tab conversion
+
+\par \tab \tab Bit 4 = 1   ->  analog channel 4 is requested for
+
+\par \tab \tab conversion
+
+\par \tab \tab Bit 8 = 1   ->  analog channel 8 is requested for
+
+\par \tab \tab conversion
+
+\par \tab \tab Bit 12 = 1   ->  analog channel 12 is requested for
+
+\par \tab \tab conversion
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab uwChannelNum:
+
+\par \tab \tab ChannelNumber : defines the channel number for parallel
+
+\par \tab \tab source to start conversion
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void ADC0_vSeqSoftTrigger(ubyte ubSrc)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function sets TREV bit for the requested sequential
+
+\par \tab \tab source in the register QMRx.
+
+\par \tab \tab It is applicable only when sequential source conversion
+
+\par \tab \tab request API is called with 'ubExtTrg' parameter set to '1'.
+
+\par \tab \tab This API helps in triggering (software) all the sequential
+
+\par \tab \tab conversion requests which are waiting for external hardware
+
+\par \tab \tab trigger to occur.
+
+\par \tab \tab Ex- ubSrc = ADC0_SOURCE_0,for sequential source 0
+
+\par \tab \tab ubSrc = ADC0_SOURCE_2,for sequential source 2
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab ubSrc:
+
+\par \tab \tab ubSrc: defines the sequential source number
+
+\par
+\par \plain\f4\fs24\cf0 Initialization:
+\par \plain\f4\fs20\cf0\b
+\par
+\tab Configuration of ADC0 kernel configuration register:\par 
+\par 
+\tab - the ADC module clock is enabled\par 
+\tab - the ADC module clock = 66,00 MHz\par 
+\tab \par 
+\par 
+\tab Configure global control register:\par 
+\tab --- Conversion Timing -----------------\par 
+\tab - conversion time (CTC)    = 01,29 us\par 
+\par 
+\tab _Analog clock is 1/5th of module clock and digital clock is 1/1 times\par 
+\tab of module clock\par 
+\par 
+\tab - the arbitration started by pending conversion request is selected\par 
+\par 
+\tab Configuration of Arbitration Slot enable register and also the Source\par 
+\tab Priority register:\par 
+\tab - Arbitration Slot 0 is enabled\par 
+\par 
+\tab - Arbitration Slot 1 is enabled\par 
+\par 
+\tab - Arbitration Slot 2 is enabled\par 
+\par 
+\tab - the priority of request source 0 is low\par 
+\tab - the wait-for-start mode is selected for source 0\par 
+\tab - the priority of request source 1 is low\par 
+\tab - the wait-for-start mode is selected for source 1\par 
+\tab - the priority of request source 2 is low\par 
+\tab - the wait-for-start mode is selected for source 2\par 
+\par 
+\tab Configuration of Channel Control Registers:\par 
+\tab Configuration of Channel 5\par 
+\tab - the result register0 is selected\par 
+\tab - the limit check 0 is selected\par 
+\par 
+\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\par 
+\tab - the input class selected is Input Class 0\par 
+\par 
+\tab - LCBR0 is selected as upper boundary\par 
+\par 
+\tab - LCBR1 is selected as lower boundary\par 
+\par 
+\tab Configuration of Channel 6\par 
+\tab - the result register1 is selected\par 
+\tab - the limit check 0 is selected\par 
+\par 
+\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\par 
+\tab - the input class selected is Input Class 0\par 
+\par 
+\tab - LCBR0 is selected as upper boundary\par 
+\par 
+\tab - LCBR1 is selected as lower boundary\par 
+\par 
+\tab Configuration of Channel 7\par 
+\tab - the result register2 is selected\par 
+\tab - the limit check 0 is selected\par 
+\par 
+\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\par 
+\tab - the input class selected is Input Class 0\par 
+\par 
+\tab - LCBR0 is selected as upper boundary\par 
+\par 
+\tab - LCBR1 is selected as lower boundary\par 
+\par 
+\tab Configuration of Channel 13\par 
+\tab - the result register3 is selected\par 
+\tab - the limit check 0 is selected\par 
+\par 
+\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\par 
+\tab - the input class selected is Input Class 0\par 
+\par 
+\tab - LCBR0 is selected as upper boundary\par 
+\par 
+\tab - LCBR1 is selected as lower boundary\par 
+\par 
+\tab Configuration of Channel 14\par 
+\tab - the result register4 is selected\par 
+\tab - the limit check 0 is selected\par 
+\par 
+\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\par 
+\tab - the input class selected is Input Class 0\par 
+\par 
+\tab - LCBR0 is selected as upper boundary\par 
+\par 
+\tab - LCBR1 is selected as lower boundary\par 
+\par 
+\tab Configuration of Channel 15\par 
+\tab - the result register5 is selected\par 
+\tab - the limit check 0 is selected\par 
+\par 
+\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\par 
+\tab - the input class selected is Input Class 0\par 
+\par 
+\tab - LCBR0 is selected as upper boundary\par 
+\par 
+\tab - LCBR1 is selected as lower boundary\par 
+\par 
+\tab Configuration of Sample Time and Resolution:\par 
+\par 
+\tab 8 bit resolution selected\par 
+\par 
+\tab 8 bit resolution selected\par 
+\par 
+\tab Configuration of Result Control Registers:\par 
+\tab Configuration of Result Control Register 0\par 
+\tab - the data reduction filter is disabled\par 
+\tab - the event interrupt is disabled\par 
+\tab - the wait-for-read mode is disabled\par 
+\par 
+\tab - the FIFO functionality is disabled\par 
+\par 
+\tab Configuration of Result Control Register 1\par 
+\tab - the data reduction filter is disabled\par 
+\tab - the event interrupt is disabled\par 
+\tab - the wait-for-read mode is disabled\par 
+\par 
+\tab - the FIFO functionality is disabled\par 
+\par 
+\tab Configuration of Result Control Register 2\par 
+\tab - the data reduction filter is disabled\par 
+\tab - the event interrupt is disabled\par 
+\tab - the wait-for-read mode is disabled\par 
+\par 
+\tab - the FIFO functionality is disabled\par 
+\par 
+\tab Configuration of Result Control Register 3\par 
+\tab - the data reduction filter is disabled\par 
+\tab - the event interrupt is disabled\par 
+\tab - the wait-for-read mode is disabled\par 
+\par 
+\tab - the FIFO functionality is disabled\par 
+\par 
+\tab Configuration of Result Control Register 4\par 
+\tab - the data reduction filter is disabled\par 
+\tab - the event interrupt is disabled\par 
+\tab - the wait-for-read mode is disabled\par 
+\par 
+\tab - the FIFO functionality is disabled\par 
+\par 
+\tab Configuration of Result Control Register 5\par 
+\tab - the data reduction filter is disabled\par 
+\tab - the event interrupt is disabled\par 
+\tab - the wait-for-read mode is disabled\par 
+\par 
+\tab - the FIFO functionality is disabled\par 
+\par 
+\tab Configuration of Result Control Register 6\par 
+\tab - the data reduction filter is disabled\par 
+\tab - the event interrupt is disabled\par 
+\tab - the wait-for-read mode is disabled\par 
+\par 
+\tab - the FIFO functionality is disabled\par 
+\par 
+\tab Configuration of Result Control Register 7\par 
+\tab - the data reduction filter is disabled\par 
+\tab - the event interrupt is disabled\par 
+\tab - the wait-for-read mode is disabled\par 
+\par 
+\tab - the FIFO functionality is disabled\par 
+\par 
+\tab Configuration of Channel Interrupt Node Pointer Register:\par 
+\par 
+\tab - the SR0 line become activated if channel 5 interrupt is generated\par 
+\par 
+\tab - the SR0 line become activated if channel 6 interrupt is generated\par 
+\par 
+\tab - the SR0 line become activated if channel 7 interrupt is generated\par 
+\par 
+\tab - the SR0 line become activated if channel 13 interrupt is generated\par 
+\par 
+\tab - the SR0 line become activated if channel 14 interrupt is generated\par 
+\par 
+\tab - the SR0 line become activated if channel 15 interrupt is generated\par 
+\par 
+\tab Configuration of Event Interrupt Node Pointer Register for Source\par 
+\tab Interrupts:\par 
+\tab - the SR 0 line become activated if the event 0 interrupt is generated\par 
+\tab - the SR 0 line become activated if the event 1 interrupt is generated\par 
+\tab - the SR 0 line become activated if the event 2 interrupt is generated\par 
+\par 
+\tab Configuration of Event Interrupt Node Pointer Register for Result\par 
+\tab Interrupts:\par 
+\par 
+\tab Configuration of Service Request Nodes 0 - 3 :\par 
+\par 
+\tab Configuration of Limit Check Boundary:\par 
+\par 
+\tab Configuration of Gating source and External Trigger Control:\par 
+\tab - No Gating source selected for Arbitration Source 0\par 
+\par 
+\tab - the trigger input ETR00 is selected for Source 0\par 
+\par 
+\tab - No Gating source selected for Arbitration Source 1\par 
+\par 
+\tab - the trigger input ETR00 is selected for Source 1\par 
+\par 
+\tab - No Gating source selected for Arbitration Source 2\par 
+\par 
+\tab - the trigger input ETR00 is selected for Source 1\par 
+\par 
+\tab Configuration of Conversion Queue Mode Register:Sequential Source 0\par 
+\tab - the gating line is permanently Enabled\par 
+\tab - the external trigger is disabled\par 
+\par 
+\tab Configuration of Conversion Queue Mode Register:Sequential Source 2\par 
+\tab - the gating line is permanently Enabled\par 
+\tab - the external trigger is disabled\par 
+\par 
+\tab Configuration of Conversion Request Mode Registers:Parallel Source\par 
+\tab - the gating line is permanently Enabled\par 
+\tab - the external trigger is disabled\par 
+\tab - the source interrupt is disabled\par 
+\tab - the autoscan functionality is disabled\par 
+\par 
+\tab Configuration of Synchronisation Registers:\par 
+\tab - ADC0 is master\par 
 \par 
 
 }

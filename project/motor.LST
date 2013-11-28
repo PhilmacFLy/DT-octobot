@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, MOTOR                                                                 11/28/2013 12:23:35 PAGE 1   
+C166 COMPILER V7.05, MOTOR                                                                 11/28/2013 14:13:50 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE MOTOR
@@ -57,81 +57,82 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE motor.c MODV2
    47  1        // megatron auslesen
    48  1        megatronleft = ReadMegatronLeft();
    49  1        megatronright = ReadMegatronRight();
-   50  1                      
-   51  1        // verhaeltnis der megatrons errechnen
-   52  1        if (lastleft != 0) optimusprimeleft = megatronleft * 0x10 / abs(lastleft);
-   53  1        else optimusprimeleft = 0;
-   54  1        if (lastright != 0) optimusprimeright = megatronright * 0x10 / abs(lastright);
-C166 COMPILER V7.05, MOTOR                                                                 11/28/2013 12:23:35 PAGE 2   
+   50  1      
+   51  1        // muss evtl angepasst werden         
+   52  1        // verhaeltnis der megatrons errechnen
+   53  1        if (lastleft != 0) optimusprimeleft = megatronleft * 0x10 / abs(lastleft);
+   54  1        else optimusprimeleft = 0;
+C166 COMPILER V7.05, MOTOR                                                                 11/28/2013 14:13:50 PAGE 2   
 
-   55  1        else optimusprimeright = 0;
-   56  1      
-   57  1        // vor nachjustierung errechnete werte speichern
-   58  1        lastleft = left;
-   59  1        lastright = right;
-   60  1      
-   61  1        if (optimusprimeleft > 0 && optimusprimeright > 0)
-   62  1        {
-   63  2              if (optimusprimeleft > optimusprimeright) // links "schneller" als rechts
-   64  2              {
-   65  3                // links langsamer drehen
-   66  3                left = left * ((signed int) optimusprimeright) / ((signed int) optimusprimeleft);
-   67  3              }
-   68  2              if (optimusprimeright > optimusprimeleft) // rechts "schneller" als links
-   69  2              {
-   70  3                // rechts langsamer drehen
-   71  3            right = right * ((signed int) optimusprimeleft) / ((signed int) optimusprimeright);
-   72  3              }
-   73  2        }
-   74  1      
+   55  1        if (lastright != 0) optimusprimeright = megatronright * 0x10 / abs(lastright);
+   56  1        else optimusprimeright = 0;
+   57  1      
+   58  1        // vor nachjustierung errechnete werte speichern
+   59  1        lastleft = left;
+   60  1        lastright = right;
+   61  1      
+   62  1        if (optimusprimeleft > 0 && optimusprimeright > 0)
+   63  1        {
+   64  2              if (optimusprimeleft > optimusprimeright) // links "schneller" als rechts
+   65  2              {
+   66  3                // links langsamer drehen
+   67  3                left = left * ((signed int) optimusprimeright) / ((signed int) optimusprimeleft);
+   68  3              }
+   69  2              if (optimusprimeright > optimusprimeleft) // rechts "schneller" als links
+   70  2              {
+   71  3                // rechts langsamer drehen
+   72  3            right = right * ((signed int) optimusprimeleft) / ((signed int) optimusprimeright);
+   73  3              }
+   74  2        }
    75  1      
-   76  1        if (left < 0)
-   77  1          SetMotorSpeedLeft(MOTOR_BACKWARD, abs(left));
-   78  1        else
-   79  1              SetMotorSpeedLeft(MOTOR_FORWARD, left); // kein abs noetig, da left>=0
-   80  1        
-   81  1        if (right < 0)
-   82  1          SetMotorSpeedRight(MOTOR_BACKWARD, abs(right));
-   83  1        else
-   84  1          SetMotorSpeedRight(MOTOR_FORWARD, right); // kein abs noetig, da right>=0
-   85  1        
-   86  1        *left_p = left;
-   87  1        *right_p = right;
-   88  1      }
-   89         
-   90         // API for Left Motor
-   91         void SetMotorSpeedLeft(unsigned char direction, unsigned char speed)
-   92         {
-   93  1        CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, (0xFF - speed)); // ?
-   94  1        CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
-   95  1        // rechter motor direction pin = 0 für vorwärts
-   96  1        if (MOTOR_FORWARD == direction)
-   97  1        {
-   98  2          P4_OUT_P4 = 1;
-   99  2        }
-  100  1        else
-  101  1        {
-  102  2          P4_OUT_P4 = 0;
-  103  2        }
-  104  1      }
-  105         
-  106         // API for Right Motor
-  107         void SetMotorSpeedRight(unsigned char direction, unsigned char speed)
-  108         {
-  109  1        CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, (0xFF - speed)); // ?
-  110  1        CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
-  111  1        // rechter motor direction pin = 1 für vorwärts
-  112  1        if (MOTOR_FORWARD == direction)
-  113  1        {
-  114  2          P4_OUT_P1 = 0;
-  115  2        }
-  116  1        else
-C166 COMPILER V7.05, MOTOR                                                                 11/28/2013 12:23:35 PAGE 3   
+   76  1      
+   77  1        if (left < 0)
+   78  1          SetMotorSpeedLeft(MOTOR_BACKWARD, abs(left));
+   79  1        else
+   80  1              SetMotorSpeedLeft(MOTOR_FORWARD, left); // kein abs noetig, da left>=0
+   81  1        
+   82  1        if (right < 0)
+   83  1          SetMotorSpeedRight(MOTOR_BACKWARD, abs(right));
+   84  1        else
+   85  1          SetMotorSpeedRight(MOTOR_FORWARD, right); // kein abs noetig, da right>=0
+   86  1        
+   87  1        *left_p = left;
+   88  1        *right_p = right;
+   89  1      }
+   90         
+   91         // API for Left Motor
+   92         void SetMotorSpeedLeft(unsigned char direction, unsigned char speed)
+   93         {
+   94  1        CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, (0xFF - speed)); // ?
+   95  1        CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
+   96  1        // rechter motor direction pin = 0 für vorwärts
+   97  1        if (MOTOR_FORWARD == direction)
+   98  1        {
+   99  2          P4_OUT_P4 = 1;
+  100  2        }
+  101  1        else
+  102  1        {
+  103  2          P4_OUT_P4 = 0;
+  104  2        }
+  105  1      }
+  106         
+  107         // API for Right Motor
+  108         void SetMotorSpeedRight(unsigned char direction, unsigned char speed)
+  109         {
+  110  1        CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, (0xFF - speed)); // ?
+  111  1        CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
+  112  1        // rechter motor direction pin = 1 für vorwärts
+  113  1        if (MOTOR_FORWARD == direction)
+  114  1        {
+  115  2          P4_OUT_P1 = 0;
+  116  2        }
+C166 COMPILER V7.05, MOTOR                                                                 11/28/2013 14:13:50 PAGE 3   
 
-  117  1        {
-  118  2          P4_OUT_P1 = 1;
-  119  2        }
-  120  1      }
+  117  1        else
+  118  1        {
+  119  2          P4_OUT_P1 = 1;
+  120  2        }
+  121  1      }
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED

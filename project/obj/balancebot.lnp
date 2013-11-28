@@ -5,6 +5,7 @@
 ".\obj\CCU60.obj",
 ".\obj\GPT1.obj",
 ".\obj\GPT2.obj",
+".\obj\ADC0.obj",
 ".\obj\motor.obj",
 ".\obj\megatron.obj" 
 TO ".\obj\balancebot" 
