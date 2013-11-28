@@ -364,7 +364,6 @@ void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
     // USER CODE BEGIN (NodeI0,10)	   
     // steigende Flanke für linker Motor
     P4_OUT_P3 = 1;	// motor links PWM
-    CCU60_ISR |= 0x0001;
     // USER CODE END
 
     CCU60_ISR |= 0x0001;  // clear flag CCU60_IS_ICC60R
@@ -377,7 +376,6 @@ void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
     // USER CODE BEGIN (NodeI0,12) 
     // steigende Flanke für rechter Motor
     P4_OUT_P0 = 1; // motor rechts PWM
-    CCU60_ISR |= 0x0004;
     // USER CODE END
 
     CCU60_ISR |= 0x0004;  // clear flag CCU60_IS_ICC61R
