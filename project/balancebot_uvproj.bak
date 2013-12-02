@@ -319,6 +319,11 @@
               <FileType>1</FileType>
               <FilePath>.\GPT2.C</FilePath>
             </File>
+            <File>
+              <FileName>ADC0.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ADC0.C</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -8,7 +8,7 @@
 \par \plain\f4\fs22\cf0 Compiler: \tab\tab\b Keil
 \par \plain\f4\fs22\cf0 Memory Model: \tab\b SMALL
 \par 
-\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 28.11.2013 13:40:52
+\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 02.12.2013 15:59:57
 \par 
 \par 
 \par \plain\f4\fs22\cf2\b Please read this document carefully and note
@@ -456,10 +456,8 @@
 \tab - no pin of port P11 is used\par 
 \par 
 \tab Configuration of Port P15:\par 
-\tab P15.2 is used as alternate input for the GPT12E Timer5 Count\par 
-\tab input(T5IN)\par 
-\tab P15.4 is used as alternate input for the  GPT12E Timer6 Count\par 
-\tab input(T6IN)\par 
+\tab - no pin of port P15 is used\par 
+\tab - Port15 Data register P15(Read only)\par 
 \par 
 
 \par \plain\f4\fs20\cf0
@@ -819,7 +817,7 @@
 \par 
 \tab Configuration of the GPT2 Core Timer 5:\par 
 \tab - timer 5 works in counter mode\par 
-\tab - timer 5 is clocked by positive transition on T5IN (P15.2)\par 
+\tab - timer 5 is disabled\par 
 \tab - up/down control bit is reset\par 
 \tab - external up/down control is disabled\par 
 \tab - timer 5 run bit is reset\par 
@@ -827,7 +825,7 @@
 \par 
 \tab Configuration of the GPT2 Core Timer 6:\par 
 \tab - timer 6 works in counter mode\par 
-\tab - timer 6 is clocked by positive transition on T6IN (P15.4)\par 
+\tab - timer 6 is disabled\par 
 \tab - up/down control bit is reset\par 
 \tab - external up/down control is disabled\par 
 \tab - alternate output function T6OUT (P6.2) is disabled\par 
@@ -1514,9 +1512,9 @@
 \par 
 \tab Configuration of Sample Time and Resolution:\par 
 \par 
-\tab 8 bit resolution selected\par 
+\tab 10 bit resolution selected\par 
 \par 
-\tab 8 bit resolution selected\par 
+\tab 10 bit resolution selected\par 
 \par 
 \tab Configuration of Result Control Registers:\par 
 \tab Configuration of Result Control Register 0\par 

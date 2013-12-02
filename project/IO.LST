@@ -1,11 +1,13 @@
-C166 COMPILER V7.05, IO                                                                    11/28/2013 14:13:50 PAGE 1   
+C166 COMPILER V7.05, IO                                                                    12/02/2013 17:05:31 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE IO
 OBJECT MODULE PLACED IN .\obj\IO.obj
-COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\IO.obj) 
+COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\IO.obj) 
 
  stmt lvl     source
+
+*** WARNING C500 IN LINE 1 OF IO.C: SERIAL NUMBER EXPIRED
 
     1         //****************************************************************************
     2         // @Module        Parallel Ports
@@ -21,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE IO.C MODV2 BR
    12         // @Description   This file contains functions that use the IO module.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          28.11.2013 13:40:52
+   15         // @Date          02.12.2013 15:59:56
    16         //
    17         //****************************************************************************
    18         
@@ -61,9 +63,9 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE IO.C MODV2 BR
    52         
    53         
    54         //****************************************************************************
-   55         // @Typedefs
-C166 COMPILER V7.05, IO                                                                    11/28/2013 14:13:50 PAGE 2   
+C166 COMPILER V7.05, IO                                                                    12/02/2013 17:05:31 PAGE 2   
 
+   55         // @Typedefs
    56         //****************************************************************************
    57         
    58         // USER CODE BEGIN (IO_General,5)
@@ -122,12 +124,12 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE IO.C MODV2 BR
   111         // @Parameters    None
   112         //
   113         //----------------------------------------------------------------------------
-  114         // @Date          28.11.2013
+  114         // @Date          02.12.2013
   115         //
   116         //****************************************************************************
-  117         
-C166 COMPILER V7.05, IO                                                                    11/28/2013 14:13:50 PAGE 3   
+C166 COMPILER V7.05, IO                                                                    12/02/2013 17:05:31 PAGE 3   
 
+  117         
   118         // USER CODE BEGIN (IO_Function,1)
   119         
   120         // USER CODE END
@@ -189,9 +191,9 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE IO.C MODV2 BR
   176  1        ///  - push/pull output is selected
   177  1        ///  - the pin status is low level
   178  1        ///  P4.4 is used as general purpose output
-  179  1        ///  - push/pull output is selected
-C166 COMPILER V7.05, IO                                                                    11/28/2013 14:13:50 PAGE 4   
+C166 COMPILER V7.05, IO                                                                    12/02/2013 17:05:31 PAGE 4   
 
+  179  1        ///  - push/pull output is selected
   180  1        ///  - the pin status is low level
   181  1        ///  P4.7 is used as alternate input for the  GPT12E timer4 Ext.Up/Down 
   182  1        ///  enable(T4EUD)
@@ -253,9 +255,9 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE IO.C MODV2 BR
   238  1        ///  Configuration of Port P9:
   239  1        ///  -----------------------------------------------------------------------
   240  1        ///  - no pin of port P9 is used
-  241  1      
-C166 COMPILER V7.05, IO                                                                    11/28/2013 14:13:50 PAGE 5   
+C166 COMPILER V7.05, IO                                                                    12/02/2013 17:05:31 PAGE 5   
 
+  241  1      
   242  1      
   243  1        ///  -----------------------------------------------------------------------
   244  1        ///  Configuration of Port P10:
@@ -287,26 +289,24 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE IO.C MODV2 BR
   270  1        ///  -----------------------------------------------------------------------
   271  1        ///  Configuration of Port P15:
   272  1        ///  -----------------------------------------------------------------------
-  273  1        ///  P15.2 is used as alternate input for the GPT12E Timer5 Count 
-  274  1        ///  input(T5IN)
-  275  1        ///  P15.4 is used as alternate input for the  GPT12E Timer6 Count 
-  276  1        ///  input(T6IN)
+  273  1        ///  - no pin of port P15 is used
+  274  1        ///  - Port15 Data register P15(Read only)
+  275  1      
+  276  1      
   277  1      
-  278  1      
+  278  1        // USER CODE BEGIN (IO_Function,3)
   279  1      
-  280  1        // USER CODE BEGIN (IO_Function,3)
+  280  1        // USER CODE END
   281  1      
-  282  1        // USER CODE END
-  283  1      
-  284  1      } //  End of function IO_vInit
+  282  1      } //  End of function IO_vInit
+  283         
+  284         
   285         
   286         
-  287         
+  287         // USER CODE BEGIN (IO_General,10)
   288         
-  289         // USER CODE BEGIN (IO_General,10)
+  289         // USER CODE END
   290         
-  291         // USER CODE END
-  292         
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
@@ -318,9 +318,9 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
   NEAR-DATA SIZE   =    --------     --------
   FAR-DATA SIZE    =    --------     --------
   XHUGE-DATA SIZE  =    --------     --------
-C166 COMPILER V7.05, IO                                                                    11/28/2013 14:13:50 PAGE 6   
-
   IDATA-DATA SIZE  =    --------     --------
+C166 COMPILER V7.05, IO                                                                    12/02/2013 17:05:31 PAGE 6   
+
   SDATA-DATA SIZE  =    --------     --------
   BDATA-DATA SIZE  =    --------     --------
   HUGE-DATA SIZE   =    --------     --------
@@ -329,4 +329,4 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
 END OF MODULE INFORMATION.
 
 
-C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

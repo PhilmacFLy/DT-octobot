@@ -1,12 +1,14 @@
-C166 COMPILER V7.05, MEGATRON                                                              11/28/2013 14:13:50 PAGE 1   
+C166 COMPILER V7.05, MEGATRON                                                              12/02/2013 17:05:31 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE MEGATRON
 OBJECT MODULE PLACED IN .\obj\megatron.obj
-COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE megatron.c MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\mega
-                    -tron.obj) 
+COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE megatron.c MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\megatron.o
+                    -bj) 
 
  stmt lvl     source
+
+*** WARNING C500 IN LINE 1 OF megatron.c: SERIAL NUMBER EXPIRED
 
     1         
     2         #include "XE16xREGS.H"
@@ -61,11 +63,11 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
   SDATA-DATA SIZE  =    --------     --------
   BDATA-DATA SIZE  =    --------     --------
   HUGE-DATA SIZE   =    --------     --------
-  BIT SIZE         =    --------     --------
-C166 COMPILER V7.05, MEGATRON                                                              11/28/2013 14:13:50 PAGE 2   
+C166 COMPILER V7.05, MEGATRON                                                              12/02/2013 17:05:31 PAGE 2   
 
+  BIT SIZE         =    --------     --------
   INIT'L SIZE      =    --------     --------
 END OF MODULE INFORMATION.
 
 
-C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

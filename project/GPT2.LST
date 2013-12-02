@@ -1,12 +1,13 @@
-C166 COMPILER V7.05, GPT2                                                                  11/28/2013 14:13:50 PAGE 1   
+C166 COMPILER V7.05, GPT2                                                                  12/02/2013 17:05:31 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE GPT2
 OBJECT MODULE PLACED IN .\obj\GPT2.obj
-COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\GPT2.obj
-                    -) 
+COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\GPT2.obj) 
 
  stmt lvl     source
+
+*** WARNING C500 IN LINE 1 OF GPT2.C: SERIAL NUMBER EXPIRED
 
     1         //****************************************************************************
     2         // @Module        General Purpose Timer Unit (GPT2)
@@ -22,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE GPT2.C MODV2 
    12         // @Description   This file contains functions that use the GPT2 module.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          28.11.2013 13:40:52
+   15         // @Date          02.12.2013 15:59:56
    16         //
    17         //****************************************************************************
    18         
@@ -62,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE GPT2.C MODV2 
    52         
    53         
    54         //****************************************************************************
-C166 COMPILER V7.05, GPT2                                                                  11/28/2013 14:13:50 PAGE 2   
+C166 COMPILER V7.05, GPT2                                                                  12/02/2013 17:05:31 PAGE 2   
 
    55         // @Typedefs
    56         //****************************************************************************
@@ -124,9 +125,9 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE GPT2.C MODV2 
   112         // @Parameters    None
   113         //
   114         //----------------------------------------------------------------------------
-  115         // @Date          28.11.2013
+  115         // @Date          02.12.2013
   116         //
-C166 COMPILER V7.05, GPT2                                                                  11/28/2013 14:13:50 PAGE 3   
+C166 COMPILER V7.05, GPT2                                                                  12/02/2013 17:05:31 PAGE 3   
 
   117         //****************************************************************************
   118         
@@ -161,20 +162,20 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE GPT2.C MODV2 
   147  1        ///  Configuration of the GPT2 Core Timer 5:
   148  1        ///  -----------------------------------------------------------------------
   149  1        ///  - timer 5 works in counter mode
-  150  1        ///  - timer 5 is clocked by positive transition on T5IN (P15.2)
+  150  1        ///  - timer 5 is disabled
   151  1        ///  - up/down control bit is reset
   152  1        ///  - external up/down control is disabled
   153  1        ///  - timer 5 run bit is reset
   154  1        ///  - timer 5 remote control is disabled
   155  1      
-  156  1        GPT12E_T5CON   =  0x0009;      // load timer 5 control register
+  156  1        GPT12E_T5CON   =  0x0008;      // load timer 5 control register
   157  1        GPT12E_T5      =  0x0000;      // load timer 5 register
   158  1      
   159  1        ///  -----------------------------------------------------------------------
   160  1        ///  Configuration of the GPT2 Core Timer 6:
   161  1        ///  -----------------------------------------------------------------------
   162  1        ///  - timer 6 works in counter mode
-  163  1        ///  - timer 6 is clocked by positive transition on T6IN (P15.4)
+  163  1        ///  - timer 6 is disabled
   164  1        ///  - up/down control bit is reset
   165  1        ///  - external up/down control is disabled
   166  1        ///  - alternate output function T6OUT (P6.2) is disabled
@@ -183,14 +184,14 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE GPT2.C MODV2 
   169  1        ///  - timer 6 run bit is reset
   170  1        ///  - timer 6 is not cleared on a capture
   171  1      
-  172  1        GPT12E_T6CON   =  0x0009;      // load timer 6 control register
+  172  1        GPT12E_T6CON   =  0x0008;      // load timer 6 control register
   173  1        GPT12E_T6      =  0x0000;      // load timer 6 register
   174  1      
   175  1        ///  -----------------------------------------------------------------------
   176  1        ///  Configuration of the GPT2 CAPREL:
   177  1        ///  -----------------------------------------------------------------------
   178  1        ///  - capture T5 into CAPREL is disabled
-C166 COMPILER V7.05, GPT2                                                                  11/28/2013 14:13:50 PAGE 4   
+C166 COMPILER V7.05, GPT2                                                                  12/02/2013 17:05:31 PAGE 4   
 
   179  1        ///  - capture trigger from pin CAPIN
   180  1        ///  - capure is disabled
@@ -244,4 +245,4 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
 END OF MODULE INFORMATION.
 
 
-C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

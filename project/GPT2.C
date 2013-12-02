@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the GPT2 module.
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013 13:40:52
+// @Date          02.12.2013 15:59:56
 //
 //****************************************************************************
 
@@ -112,7 +112,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013
+// @Date          02.12.2013
 //
 //****************************************************************************
 
@@ -147,20 +147,20 @@ void GPT2_vInit(void)
   ///  Configuration of the GPT2 Core Timer 5:
   ///  -----------------------------------------------------------------------
   ///  - timer 5 works in counter mode
-  ///  - timer 5 is clocked by positive transition on T5IN (P15.2)
+  ///  - timer 5 is disabled
   ///  - up/down control bit is reset
   ///  - external up/down control is disabled
   ///  - timer 5 run bit is reset
   ///  - timer 5 remote control is disabled
 
-  GPT12E_T5CON   =  0x0009;      // load timer 5 control register
+  GPT12E_T5CON   =  0x0008;      // load timer 5 control register
   GPT12E_T5      =  0x0000;      // load timer 5 register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of the GPT2 Core Timer 6:
   ///  -----------------------------------------------------------------------
   ///  - timer 6 works in counter mode
-  ///  - timer 6 is clocked by positive transition on T6IN (P15.4)
+  ///  - timer 6 is disabled
   ///  - up/down control bit is reset
   ///  - external up/down control is disabled
   ///  - alternate output function T6OUT (P6.2) is disabled
@@ -169,7 +169,7 @@ void GPT2_vInit(void)
   ///  - timer 6 run bit is reset
   ///  - timer 6 is not cleared on a capture
 
-  GPT12E_T6CON   =  0x0009;      // load timer 6 control register
+  GPT12E_T6CON   =  0x0008;      // load timer 6 control register
   GPT12E_T6      =  0x0000;      // load timer 6 register
 
   ///  -----------------------------------------------------------------------

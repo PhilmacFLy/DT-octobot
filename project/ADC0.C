@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the ADC0 module.
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013 13:40:52
+// @Date          02.12.2013 15:59:57
 //
 //****************************************************************************
 
@@ -128,7 +128,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013
+// @Date          02.12.2013
 //
 //****************************************************************************
 
@@ -278,13 +278,13 @@ void ADC0_vInit(void)
   ///  Configuration of Sample Time and Resolution:
   ///  -----------------------------------------------------------------------
 
-  ///  8 bit resolution selected
+  ///  10 bit resolution selected
 
-  ADC0_INPCR0    =  0x0200;      // load input class0 register
+  ADC0_INPCR0    =  0x0000;      // load input class0 register
 
-  ///  8 bit resolution selected
+  ///  10 bit resolution selected
 
-  ADC0_INPCR1    =  0x0200;      // load input class1 register
+  ADC0_INPCR1    =  0x0000;      // load input class1 register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of Result Control Registers:
@@ -513,7 +513,7 @@ void ADC0_vInit(void)
 //                15)- see macros defined in the header file
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013
+// @Date          02.12.2013
 //
 //****************************************************************************
 
@@ -568,7 +568,7 @@ void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte ubEnIntr, ubyte ubRFill, ubyt
 //                15) - see macros defined in the header file
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013
+// @Date          02.12.2013
 //
 //****************************************************************************
 
@@ -619,7 +619,7 @@ void ADC0_vStartSeq2ReqChNum(ubyte ubExtTrg, ubyte ubEnIntr, ubyte ubRFill, ubyt
 //                source to start conversion
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013
+// @Date          02.12.2013
 //
 //****************************************************************************
 
@@ -653,7 +653,7 @@ void ADC0_vStartParReqChNum(uword uwChannelNum)
 //                ubSrc: defines the sequential source number
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013
+// @Date          02.12.2013
 //
 //****************************************************************************
 

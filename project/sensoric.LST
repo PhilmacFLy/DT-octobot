@@ -1,0 +1,130 @@
+C166 COMPILER V7.05, SENSORIC                                                              12/02/2013 17:05:31 PAGE 1   
+
+
+C166 COMPILER V7.05, COMPILATION OF MODULE SENSORIC
+OBJECT MODULE PLACED IN .\obj\sensoric.obj
+COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE sensoric.c MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\sensoric.o
+                    -bj) 
+
+ stmt lvl     source
+
+*** WARNING C500 IN LINE 1 OF sensoric.c: SERIAL NUMBER EXPIRED
+
+    1         
+    2         #include "XE16xREGS.H"
+    3         
+    4         #include "ADC0.H"
+    5         
+    6         #include "sensoric.h"
+    7         
+    8         volatile unsigned int gyro_x = 0;
+    9         volatile unsigned int gyro_y = 0;
+   10         volatile unsigned int gyro_z = 0;
+   11         volatile unsigned int accel_spin = 0;
+   12         volatile unsigned int accel_x = 0;
+   13         volatile unsigned int accel_y = 0;
+   14         volatile unsigned int accel_z = 0;
+   15         
+   16         void ReadSensorData()
+   17         {
+   18  1         // read ALL! the ADC channels
+   19  1         //13,14,5 for gyro acceleration
+   20  1         //7 for spinning sensor
+   21  1         //register 0 - channel 5  (Acceleration Z Axix)
+   22  1         //register 1 - channel 6  (Acceleration Spinning)
+   23  1         //register 2 - channel 7  (unused)
+   24  1         //register 3 - channel 13 (Acceleration )
+   25  1         //register 4 - channel 14 ()
+   26  1         //register 5 - channel 15 (unused)
+   27  1         ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_5);
+   28  1         ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_13);
+   29  1         while(!ADC0_uwResultValid(RESULT_REG_0) && !ADC0_uwResultValid(RESULT_REG_3)); // necessary?
+   30  1         ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_6);
+   31  1         ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_14);
+   32  1         while(!ADC0_uwResultValid(RESULT_REG_1) && !ADC0_uwResultValid(RESULT_REG_4)); // necessary?
+   33  1         //ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_7);
+   34  1         //ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_15);  
+   35  1         //while(!ADC0_uwResultValid(RESULT_REG_2) && !ADC0_uwResultValid(RESULT_REG_5)); // necessary?
+   36  1      
+   37  1         accel_x = ADC0_uwGetResultData(RESULT_REG_3);
+   38  1         accel_y = ADC0_uwGetResultData(RESULT_REG_4);
+   39  1         accel_z = ADC0_uwGetResultData(RESULT_REG_0);
+   40  1         accel_spin = ADC0_uwGetResultData(RESULT_REG_1);
+   41  1      }
+   42         
+   43         unsigned int ReadAccelValueRaw(unsigned char direction)
+   44         {
+   45  1        if (direction == DIRECTION_X) return accel_x;
+   46  1        if (direction == DIRECTION_Y) return accel_y;
+   47  1        if (direction == DIRECTION_Z) return accel_z;
+   48  1        return 0;
+   49  1      }
+   50         
+   51         // untested
+   52         //DIRECTION_X positive value: backward, negative value: forward
+   53         //DIRECTION_Y positive value: left, negative value: right
+C166 COMPILER V7.05, SENSORIC                                                              12/02/2013 17:05:31 PAGE 2   
+
+   54         //DIRECTION_Z positive value: down, negative value: up
+   55         signed int ReadAccelValue(unsigned char direction)
+   56         {
+   57  1        unsigned int tmp = 0;
+   58  1        signed int x;
+   59  1      
+   60  1        if (direction == DIRECTION_X) tmp = accel_x;
+   61  1        if (direction == DIRECTION_Y) tmp = accel_y;
+   62  1        if (direction == DIRECTION_Z) tmp = accel_z;
+   63  1      
+   64  1        // read value between 0x00 and 0x3FF
+   65  1        // 0x3FF = 5V
+   66  1        // 0x00 = 0V
+   67  1        // Vs = 3,3V => 675
+   68  1        // Vs/2 = 1,65V => 338
+   69  1        // 1g = 0,33V => ~67,5
+   70  1        if (tmp < 338) x = -((signed int)(338 - tmp)); // negative
+   71  1        else           x = ((signed int)(tmp - 338)); // posivite
+   72  1      
+   73  1        // range -338 to 338
+   74  1        //       -5G  to 5G
+   75  1        return ((x * 100) / 338); // return value / 20 = X G
+   76  1      }
+   77         
+   78         // untested
+   79         // positive value: vorwärts kipping
+   80         // negative value: rückwärts kipping
+   81         signed int ReadSpinAccelValue()
+   82         {
+   83  1        unsigned int tmp = accel_spin;
+   84  1        signed int x;
+   85  1      
+   86  1        //Vs = 3,3V => 675
+   87  1        //Vs/2 = 1,65V => 338
+   88  1        //3,3 mV / grad/s
+   89  1        if (tmp < 338) x = -((signed int)(338 - tmp)); // negative
+   90  1        else           x = ((signed int)(tmp - 338)); // positive
+   91  1      
+   92  1        // range -338 to 338
+   93  1        //       -500 grad/s to 500 grad/s
+   94  1        return ((x * 100) / 338); // return value / 5 = X grad/s
+   95  1      }
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =         366     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =          14     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =          42     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

@@ -1,12 +1,13 @@
-C166 COMPILER V7.05, MOTOR                                                                 11/28/2013 14:13:50 PAGE 1   
+C166 COMPILER V7.05, MOTOR                                                                 12/02/2013 17:05:31 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE MOTOR
 OBJECT MODULE PLACED IN .\obj\motor.obj
-COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE motor.c MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\motor.o
-                    -bj) 
+COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE motor.c MODV2 BROWSE MODV2 DEBUG OBJECT(.\obj\motor.obj) 
 
  stmt lvl     source
+
+*** WARNING C500 IN LINE 1 OF motor.c: SERIAL NUMBER EXPIRED
 
     1         
     2         #include "XE16xREGS.H"
@@ -62,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE motor.c MODV2
    52  1        // verhaeltnis der megatrons errechnen
    53  1        if (lastleft != 0) optimusprimeleft = megatronleft * 0x10 / abs(lastleft);
    54  1        else optimusprimeleft = 0;
-C166 COMPILER V7.05, MOTOR                                                                 11/28/2013 14:13:50 PAGE 2   
+C166 COMPILER V7.05, MOTOR                                                                 12/02/2013 17:05:31 PAGE 2   
 
    55  1        if (lastright != 0) optimusprimeright = megatronright * 0x10 / abs(lastright);
    56  1        else optimusprimeright = 0;
@@ -126,7 +127,7 @@ COMPILER INVOKED BY: C:\Program Files (x86)\Keil\C166\BIN\C166.EXE motor.c MODV2
   114  1        {
   115  2          P4_OUT_P1 = 0;
   116  2        }
-C166 COMPILER V7.05, MOTOR                                                                 11/28/2013 14:13:50 PAGE 3   
+C166 COMPILER V7.05, MOTOR                                                                 12/02/2013 17:05:31 PAGE 3   
 
   117  1        else
   118  1        {
@@ -153,4 +154,4 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
 END OF MODULE INFORMATION.
 
 
-C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

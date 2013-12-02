@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013 13:40:50
+// @Date          02.12.2013 15:59:55
 //
 //****************************************************************************
 
@@ -32,6 +32,7 @@
 
 #include "motor.h"
 #include "megatron.h"
+#include "sensoric.h"
 // USER CODE END
 
 
@@ -111,7 +112,7 @@ volatile unsigned char timerevent = 0;
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013
+// @Date          02.12.2013
 //
 //****************************************************************************
 
@@ -191,7 +192,7 @@ void MAIN_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013
+// @Date          02.12.2013
 //
 //****************************************************************************
 
@@ -229,7 +230,7 @@ void MAIN_vUnlockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013
+// @Date          02.12.2013
 //
 //****************************************************************************
 
@@ -271,7 +272,7 @@ void MAIN_vLockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013
+// @Date          02.12.2013
 //
 //****************************************************************************
 
@@ -335,7 +336,7 @@ void MAIN_vChangeFreq(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.11.2013
+// @Date          02.12.2013
 //
 //****************************************************************************
 
@@ -346,13 +347,7 @@ void MAIN_vChangeFreq(void)
 void main(void)
 {
   // USER CODE BEGIN (Main,2)
-  // calculation variables
-  volatile unsigned char gyro_x = 0;
-  volatile unsigned char gyro_y = 0;
-  volatile unsigned char gyro_z = 0;
-  volatile unsigned char accel_x = 0;
-  volatile unsigned char accel_y = 0;
-  volatile unsigned char accel_z = 0;
+  
   // USER CODE END
 
   MAIN_vInit();
@@ -368,30 +363,16 @@ void main(void)
    while(0 == timerevent);
    timerevent = 0;
    
-   // read ALL! the ADC channels
-   //5,6,7 for gyro	sensor
-   //13,14,15 for acceleration sensor
-   ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_5);
-   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_13);
-   while(!ADC0_uwResultValid(RESULT_REG_0) && !ADC0_uwResultValid(RESULT_REG_3)); // necessary?
-   ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_6);
-   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_14);
-   while(!ADC0_uwResultValid(RESULT_REG_1) && !ADC0_uwResultValid(RESULT_REG_4)); // necessary?
-   ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_7);
-   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_15);  
-   while(!ADC0_uwResultValid(RESULT_REG_2) && !ADC0_uwResultValid(RESULT_REG_5)); // necessary?
+   // start reading the data, they will be get then
+   ReadSensorData();
 
-   gyro_x = ADC0_uwGetResultData(RESULT_REG_0);
-   gyro_y = ADC0_uwGetResultData(RESULT_REG_1);
-   gyro_z = ADC0_uwGetResultData(RESULT_REG_2);
-   accel_x = ADC0_uwGetResultData(RESULT_REG_3);
-   accel_y = ADC0_uwGetResultData(RESULT_REG_4);
-   accel_z = ADC0_uwGetResultData(RESULT_REG_5);
    // do some kind of stuff
 
    // set motor speed
    //SetMotorSpeedsNoReturn(links_p, rechts_p);
-   SetMotorSpeedsNoReturn(0, 0);
+   // faehrt vorwärts hoffentlich
+   // und au langsam
+   SetMotorSpeedsNoReturn(20, 20);
    // USER CODE END
 
   }

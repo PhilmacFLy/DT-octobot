@@ -19,8 +19,8 @@ P4.1 ist Motor Rechts Direction
 Timer T2 cyclic interrupt (GPT1) alle 50 ms
 
 Timer T3 Megatron links
-Kanal A auf T3IN P5.3
-kanal B auf T3EUD P5.4
+Kanal A auf T3IN P5.3	rot
+kanal B auf T3EUD P5.4	gelb 
 
 Timer T4 Megatron rechts
 Kanal A auf T4IN P4.6
@@ -28,18 +28,14 @@ Kanal B auf T4EUD P4.7
 
 ADC:
 
-beides 8 Bit Conversions (evtl 10 Bit?)
+beides 10 Bit Conversions
 andere VRef?
 
 
-Gyro Pins:
-P5.5 für X
-P5.6 für Y
-P5.7 für Z
 
 
-
-Accelerator Pins:
-P5.13 für X
-P5.14 für Y
-P5.15 für Z
+neue Pins:
+P5.13 für X Acceleration
+P5.14 für Y Acceleration
+P5.5  für Z Acceleration
+P5.6  für Spin-O-Meter
