@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the IO module.
 //
 //----------------------------------------------------------------------------
-// @Date          02.12.2013 15:59:56
+// @Date          02.12.2013 18:53:10
 //
 //****************************************************************************
 
@@ -178,8 +178,7 @@ void IO_vInit(void)
   ///  P4.4 is used as general purpose output
   ///  - push/pull output is selected
   ///  - the pin status is low level
-  ///  P4.7 is used as alternate input for the  GPT12E timer4 Ext.Up/Down 
-  ///  enable(T4EUD)
+  ///  P4.6 is used as alternate input for the GPT12E  timer4Count input(T4IN)
 
   ///  P4.0 - P4.3 output driver characteristic: strong driver
   ///  P4.4 - P4.7 output driver characteristic: strong driver
@@ -197,8 +196,6 @@ void IO_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  P5.3 is used as alternate input for the  GPT12E Timer2 Count 
   ///  input(T3IN)
-  ///  P5.4 is used as alternate input for the GPT12E Timer 3 Ext.Up/Down 
-  ///  enable(T3EUD)
   ///  P5.5 is used as alternate input for the  Analog Input Pin (AN55)
   ///  P5.6 is used as alternate input for the  Analog Input Pin (AN56)
   ///  P5.7 is used as alternate input for the  Analog Input Pin (AN57)

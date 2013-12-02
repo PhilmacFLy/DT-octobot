@@ -12,19 +12,15 @@ P4.4 ist Motor Links Direction
 P4.0 ist Motor Rechts PWM
 P4.1 ist Motor Rechts Direction
 
-
-
-
-
 Timer T2 cyclic interrupt (GPT1) alle 50 ms
 
 Timer T3 Megatron links
 Kanal A auf T3IN P5.3	rot
-kanal B auf T3EUD P5.4	gelb 
+//kanal B auf T3EUD P5.4	gelb 
 
 Timer T4 Megatron rechts
 Kanal A auf T4IN P4.6
-Kanal B auf T4EUD P4.7
+//Kanal B auf T4EUD P4.7
 
 ADC:
 

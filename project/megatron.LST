@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, MEGATRON                                                              12/02/2013 17:05:31 PAGE 1   
+C166 COMPILER V7.05, MEGATRON                                                              12/02/2013 18:56:00 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE MEGATRON
@@ -16,42 +16,31 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE megatron.c MODV2 BR
     4         #include "GPT1.H"
     5         #include "IO.H"
     6         #include "megatron.h"
-    7         
-    8         #define ROLLOUTMEGATRONCODE(timeridx)   signed int value; \
-    9                                                                                         GPT1_vStop_Tmr(timeridx); \
-   10                                                                                         value = (signed int) GPT1_uwReadTmr(timeridx); \
-   11                                                                                         GPT1_vLoadTmr(timeridx, 0);     \
-   12                                                                                         GPT1_vStartTmr(timeridx); \
-   13                                                                                         if (value < 0) return (unsigned int) (-value); \
-   14                                                                                         else return (unsigned int) (value)
-   15         
-   16                                 
-   17         unsigned int ReadMegatronLeft()
-   18         {
-   19  1        //ROLLOUTMEGATRONCODE(GPT1_TIMER_3);
-   20  1        signed int value; 
-   21  1        GPT1_vStopTmr(GPT1_TIMER_3);
-   22  1        value = (signed int) GPT1_uwReadTmr(GPT1_TIMER_3);
-   23  1        GPT1_vLoadTmr(GPT1_TIMER_3, 0);
-   24  1        GPT1_vStartTmr(GPT1_TIMER_3);
-   25  1        if (value < 0) return (unsigned int) (-value);
-   26  1        else return (unsigned int) (value);
+    7                                 
+    8         unsigned int ReadMegatronLeft()
+    9         {
+   10  1        //ROLLOUTMEGATRONCODE(GPT1_TIMER_3);
+   11  1        unsigned int value; 
+   12  1        GPT1_vStopTmr(GPT1_TIMER_3);
+   13  1        value = (signed int) GPT1_uwReadTmr(GPT1_TIMER_3);
+   14  1        GPT1_vLoadTmr(GPT1_TIMER_3, 0);
+   15  1        GPT1_vStartTmr(GPT1_TIMER_3);
+   16  1        return value;
+   17  1      }
+   18         
+   19         unsigned int ReadMegatronRight()
+   20         {
+   21  1        unsigned int value; 
+   22  1        GPT1_vStopTmr(GPT1_TIMER_4);
+   23  1        value = (signed int) GPT1_uwReadTmr(GPT1_TIMER_4);
+   24  1        GPT1_vLoadTmr(GPT1_TIMER_4, 0);
+   25  1        GPT1_vStartTmr(GPT1_TIMER_4);
+   26  1        return value;
    27  1      }
-   28         
-   29         unsigned int ReadMegatronRight()
-   30         {
-   31  1        signed int value; 
-   32  1        GPT1_vStopTmr(GPT1_TIMER_4);
-   33  1        value = (signed int) GPT1_uwReadTmr(GPT1_TIMER_4);
-   34  1        GPT1_vLoadTmr(GPT1_TIMER_4, 0);
-   35  1        GPT1_vStartTmr(GPT1_TIMER_4);
-   36  1        if (value < 0) return (unsigned int) (-value);
-   37  1        else return (unsigned int) (value);
-   38  1      }
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
-  CODE SIZE        =          54     --------
+  CODE SIZE        =          30     --------
   NEAR-CONST SIZE  =    --------     --------
   FAR-CONST SIZE   =    --------     --------
   HUGE-CONST SIZE  =    --------     --------
@@ -63,8 +52,6 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
   SDATA-DATA SIZE  =    --------     --------
   BDATA-DATA SIZE  =    --------     --------
   HUGE-DATA SIZE   =    --------     --------
-C166 COMPILER V7.05, MEGATRON                                                              12/02/2013 17:05:31 PAGE 2   
-
   BIT SIZE         =    --------     --------
   INIT'L SIZE      =    --------     --------
 END OF MODULE INFORMATION.

@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the GPT1 module.
 //
 //----------------------------------------------------------------------------
-// @Date          02.12.2013 15:59:56
+// @Date          02.12.2013 18:53:10
 //
 //****************************************************************************
 
@@ -144,14 +144,14 @@ void GPT1_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of the GPT1 Core Timer 3:
   ///  -----------------------------------------------------------------------
-  ///  - timer 3 works in incremental interface mode (edge detection)
-  ///  - counting by any transition (rising and falling edge) on T3IN () or 
-  ///    T3EUD ()
+  ///  - timer 3 works in counter mode
+  ///  - external up/down control is disabled
+  ///  - timer 3 is clocked by positive transition on T3IN ()
   ///  - up/down control bit is reset
   ///  - alternate output function T3OUT (P7.0) is disabled
   ///  - timer 3 output toggle latch (T3OTL) is set to 0
 
-  GPT12E_T3CON   =  0x013B;      // load timer 3 control register
+  GPT12E_T3CON   =  0x0009;      // load timer 3 control register
   GPT12E_T3      =  0x0000;      // load timer 3 register
   ///  - prescaler for timer block 1 is 8
 
@@ -170,21 +170,20 @@ void GPT1_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of the GPT1 Auxiliary Timer 4:
   ///  -----------------------------------------------------------------------
-  ///  - timer 4 works in incremental interface mode (edge detection)
-  ///  - counting by any transition (rising and falling edge) on T4IN () or 
-  ///    T4EUD ()
+  ///  - timer 4 works in counter mode
+  ///  - external up/down control is disabled
+  ///  - timer 4 is clocked by positive transition on T4IN ()
   ///  - up/down control bit is reset
 
-  GPT12E_T4CON   =  0x013B;      // load timer 4 control register
+  GPT12E_T4CON   =  0x0009;      // load timer 4 control register
   GPT12E_T4      =  0x0000;      // load timer 4 register
   ///  - prescaler for timer block 1 is 8
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of the used GPT1 Port Pins:
   ///  -----------------------------------------------------------------------
-  ///  - P5.4 is used for GPT12E Timer 3 Ext.Up/Down enable(T3EUD)
   ///  - P5.3 is used for  GPT12E Timer2 Count input(T3IN)
-  ///  - P4.7 is used for  GPT12E timer4 Ext.Up/Down enable(T4EUD)
+  ///  - P4.6 is used for GPT12E  timer4Count input(T4IN)
 
 
   ///  -----------------------------------------------------------------------

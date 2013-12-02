@@ -8,7 +8,7 @@
 \par \plain\f4\fs22\cf0 Compiler: \tab\tab\b Keil
 \par \plain\f4\fs22\cf0 Memory Model: \tab\b SMALL
 \par 
-\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 02.12.2013 15:59:57
+\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 02.12.2013 18:53:10
 \par 
 \par 
 \par \plain\f4\fs22\cf2\b Please read this document carefully and note
@@ -392,8 +392,7 @@
 \tab P4.4 is used as general purpose output\par 
 \tab - push/pull output is selected\par 
 \tab - the pin status is low level\par 
-\tab P4.7 is used as alternate input for the  GPT12E timer4 Ext.Up/Down\par 
-\tab enable(T4EUD)\par 
+\tab P4.6 is used as alternate input for the GPT12E  timer4Count input(T4IN)\par 
 \par 
 \tab P4.0 - P4.3 output driver characteristic: strong driver\par 
 \tab P4.4 - P4.7 output driver characteristic: strong driver\par 
@@ -404,8 +403,6 @@
 \tab Configuration of Port P5:\par 
 \tab P5.3 is used as alternate input for the  GPT12E Timer2 Count\par 
 \tab input(T3IN)\par 
-\tab P5.4 is used as alternate input for the GPT12E Timer 3 Ext.Up/Down\par 
-\tab enable(T3EUD)\par 
 \tab P5.5 is used as alternate input for the  Analog Input Pin (AN55)\par 
 \tab P5.6 is used as alternate input for the  Analog Input Pin (AN56)\par 
 \tab P5.7 is used as alternate input for the  Analog Input Pin (AN57)\par 
@@ -637,9 +634,9 @@
 \tab - prescaler for timer block 1 is 8\par 
 \par 
 \tab Configuration of the GPT1 Core Timer 3:\par 
-\tab - timer 3 works in incremental interface mode (edge detection)\par 
-\tab - counting by any transition (rising and falling edge) on T3IN () or\par 
-\tab T3EUD ()\par 
+\tab - timer 3 works in counter mode\par 
+\tab - external up/down control is disabled\par 
+\tab - timer 3 is clocked by positive transition on T3IN ()\par 
 \tab - up/down control bit is reset\par 
 \tab - alternate output function T3OUT (P7.0) is disabled\par 
 \tab - timer 3 output toggle latch (T3OTL) is set to 0\par 
@@ -655,17 +652,16 @@
 \tab - prescaler for timer block 1 is 8\par 
 \par 
 \tab Configuration of the GPT1 Auxiliary Timer 4:\par 
-\tab - timer 4 works in incremental interface mode (edge detection)\par 
-\tab - counting by any transition (rising and falling edge) on T4IN () or\par 
-\tab T4EUD ()\par 
+\tab - timer 4 works in counter mode\par 
+\tab - external up/down control is disabled\par 
+\tab - timer 4 is clocked by positive transition on T4IN ()\par 
 \tab - up/down control bit is reset\par 
 \par 
 \tab - prescaler for timer block 1 is 8\par 
 \par 
 \tab Configuration of the used GPT1 Port Pins:\par 
-\tab - P5.4 is used for GPT12E Timer 3 Ext.Up/Down enable(T3EUD)\par 
 \tab - P5.3 is used for  GPT12E Timer2 Count input(T3IN)\par 
-\tab - P4.7 is used for  GPT12E timer4 Ext.Up/Down enable(T4EUD)\par 
+\tab - P4.6 is used for GPT12E  timer4Count input(T4IN)\par 
 \par 
 \tab Configuration of the used GPT1 Interrupts:\par 
 \tab timer 2 service request node configuration:\par 
@@ -843,7 +839,6 @@
 \par 
 \tab Configuration of the used GPT2 Port Pins:\par 
 \tab - P5.3 is used for  GPT12E Timer2 Count input(T3IN)\par 
-\tab - P5.4 is used for GPT12E Timer 3 Ext.Up/Down enable(T3EUD)\par 
 \par 
 \tab Configuration of the used GPT2 Interrupts:\par 
 \par 

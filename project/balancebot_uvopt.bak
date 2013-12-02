@@ -16,8 +16,8 @@
   </Extensions>
 
   <DaveTm>
-    <dwLowDateTime>715056256</dwLowDateTime>
-    <dwHighDateTime>30338927</dwHighDateTime>
+    <dwLowDateTime>1233406881</dwLowDateTime>
+    <dwHighDateTime>30338948</dwHighDateTime>
   </DaveTm>
 
   <Target>
@@ -221,7 +221,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGT167</Key>
-          <Name>(5023=-1,-1,-1,-1,0)</Name>
+          <Name>(5023=150,103,588,263,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -234,68 +234,28 @@
           <Name>-O4399 -F15 -Q0"XE16x-96F" -J01 -L0C00000 -N0C0000 -M00)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint>
-        <Bp>
-          <Number>0</Number>
-          <Type>0</Type>
-          <LineNumber>40</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>sensoric.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>40</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>sensoric.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>374</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>12648722</Address>
-          <ByteObject>0</ByteObject>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>MAIN.C</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>3</Number>
-          <Type>0</Type>
-          <LineNumber>384</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>12648842</Address>
-          <ByteObject>0</ByteObject>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>MAIN.C</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-      </Breakpoint>
+      <WatchWindow1>
+        <Ww>
+          <count>0</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>megatronleft</ItemText>
+        </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>megatronright</ItemText>
+        </Ww>
+        <Ww>
+          <count>2</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>optimusprimeleft</ItemText>
+        </Ww>
+        <Ww>
+          <count>3</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>optimusprimeright</ItemText>
+        </Ww>
+      </WatchWindow1>
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
@@ -352,10 +312,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>33</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>341</TopLine>
-      <CurrentLine>359</CurrentLine>
+      <TopLine>353</TopLine>
+      <CurrentLine>372</CurrentLine>
       <bDave2>1</bDave2>
       <PathWithFileName>.\MAIN.C</PathWithFileName>
       <FilenameWithoutPath>MAIN.C</FilenameWithoutPath>
@@ -408,9 +368,9 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>17</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>239</TopLine>
+      <TopLine>229</TopLine>
       <CurrentLine>253</CurrentLine>
       <bDave2>1</bDave2>
       <PathWithFileName>.\GPT1.C</PathWithFileName>
@@ -436,10 +396,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>33</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>281</TopLine>
-      <CurrentLine>281</CurrentLine>
+      <CurrentLine>286</CurrentLine>
       <bDave2>1</bDave2>
       <PathWithFileName>.\ADC0.C</PathWithFileName>
       <FilenameWithoutPath>ADC0.C</FilenameWithoutPath>
@@ -457,10 +417,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>13</ColumnNumber>
+      <ColumnNumber>22</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>8</CurrentLine>
+      <CurrentLine>12</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\motor.c</PathWithFileName>
       <FilenameWithoutPath>motor.c</FilenameWithoutPath>
@@ -473,22 +433,22 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>22</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\megatron.c</PathWithFileName>
       <FilenameWithoutPath>megatron.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>0</FileNumber>
+      <FileNumber>11</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>12</ColumnNumber>
+      <ColumnNumber>14</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>61</TopLine>
-      <CurrentLine>63</CurrentLine>
+      <TopLine>21</TopLine>
+      <CurrentLine>53</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\sensoric.c</PathWithFileName>
       <FilenameWithoutPath>sensoric.c</FilenameWithoutPath>
@@ -496,35 +456,9 @@
   </Group>
 
   <AlienFiles>
-    <PathWithFilename>C:\Users\hap41156\Desktop\DT\project\GPT1.H</PathWithFilename>
-    <TopLine>80</TopLine>
-    <CurrentLine>80</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <AlienFiles>
-    <PathWithFilename>C:\Users\hap41156\Desktop\DT\project\ADC0.H</PathWithFilename>
-    <TopLine>157</TopLine>
-    <CurrentLine>189</CurrentLine>
+    <PathWithFilename>C:\Users\hap41156\Desktop\DT\project\motor.h</PathWithFilename>
+    <TopLine>1</TopLine>
+    <CurrentLine>13</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -574,9 +508,35 @@
   </AlienFiles>
 
   <AlienFiles>
-    <PathWithFilename>C:\Users\hap41156\Desktop\DT\project\motor.h</PathWithFilename>
-    <TopLine>1</TopLine>
-    <CurrentLine>13</CurrentLine>
+    <PathWithFilename>C:\Users\hap41156\Desktop\DT\project\GPT1.H</PathWithFilename>
+    <TopLine>80</TopLine>
+    <CurrentLine>80</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>C:\Users\hap41156\Desktop\DT\project\ADC0.H</PathWithFilename>
+    <TopLine>170</TopLine>
+    <CurrentLine>189</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -608,27 +568,27 @@
       <Documents>
         <Doc>
           <Name>.\MAIN.C</Name>
-          <ColumnNumber>33</ColumnNumber>
-          <TopLine>341</TopLine>
-          <CurrentLine>359</CurrentLine>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>353</TopLine>
+          <CurrentLine>372</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\ADC0.C</Name>
-          <ColumnNumber>33</ColumnNumber>
+          <ColumnNumber>0</ColumnNumber>
           <TopLine>281</TopLine>
-          <CurrentLine>281</CurrentLine>
+          <CurrentLine>286</CurrentLine>
         </Doc>
         <Doc>
           <Name>ADC0.H</Name>
-          <ColumnNumber>58</ColumnNumber>
-          <TopLine>157</TopLine>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>170</TopLine>
           <CurrentLine>189</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\motor.c</Name>
-          <ColumnNumber>13</ColumnNumber>
+          <ColumnNumber>22</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>8</CurrentLine>
+          <CurrentLine>12</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\IO.C</Name>
@@ -644,15 +604,15 @@
         </Doc>
         <Doc>
           <Name>.\GPT1.C</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>239</TopLine>
+          <ColumnNumber>17</ColumnNumber>
+          <TopLine>229</TopLine>
           <CurrentLine>253</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\sensoric.c</Name>
-          <ColumnNumber>12</ColumnNumber>
-          <TopLine>61</TopLine>
-          <CurrentLine>63</CurrentLine>
+          <ColumnNumber>14</ColumnNumber>
+          <TopLine>21</TopLine>
+          <CurrentLine>53</CurrentLine>
         </Doc>
         <Doc>
           <Name>sensoric.h</Name>
@@ -665,6 +625,12 @@
           <ColumnNumber>41</ColumnNumber>
           <TopLine>1</TopLine>
           <CurrentLine>13</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\megatron.c</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>22</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

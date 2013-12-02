@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 17:05:30 PAGE 1   
+C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE MAIN
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
    12         // @Description   This file contains the project initialization function.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          02.12.2013 15:59:55
+   15         // @Date          02.12.2013 18:53:08
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
    52         // USER CODE BEGIN (MAIN_General,4)
    53         
    54         // USER CODE END
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 17:05:30 PAGE 2   
+C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 2   
 
    55         
    56         
@@ -127,7 +127,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   114         //----------------------------------------------------------------------------
   115         // @Date          02.12.2013
   116         //
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 17:05:30 PAGE 3   
+C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 3   
 
   117         //****************************************************************************
   118         
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   176  1        PSW_IEN        =  1;          
   177  1      
   178  1      } //  End of function MAIN_vInit
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 17:05:30 PAGE 4   
+C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 4   
 
   179         
   180         
@@ -255,7 +255,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   238         
   239         // USER CODE END
   240         
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 17:05:30 PAGE 5   
+C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 5   
 
   241         void MAIN_vLockProtecReg(void)
   242         {
@@ -319,7 +319,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
              -Hz)
   299  2      
   300  2              }
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 17:05:30 PAGE 6   
+C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 6   
 
   301  1      
   302  1        else                                               // fR derived from external crystal clock
@@ -373,50 +373,53 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   347         void main(void)
   348         {
   349  1        // USER CODE BEGIN (Main,2)
-  350  1        
-  351  1        // USER CODE END
-  352  1      
-  353  1        MAIN_vInit();
-  354  1      
-  355  1        // USER CODE BEGIN (Main,3)
-  356  1      
-  357  1        // USER CODE END
-  358  1      
-  359  1        while(1)
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 17:05:30 PAGE 7   
+  350  1        signed int ret_left;
+  351  1        signed int ret_right;
+  352  1        // USER CODE END
+  353  1      
+  354  1        MAIN_vInit();
+  355  1      
+  356  1        // USER CODE BEGIN (Main,3)
+  357  1      
+  358  1        // USER CODE END
+  359  1      
+C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 7   
 
-  360  1        {
-  361  2      
-  362  2         // USER CODE BEGIN (Main,4)
-  363  2         while(0 == timerevent);
-  364  2         timerevent = 0;
-  365  2         
-  366  2         // start reading the data, they will be get then
-  367  2         ReadSensorData();
-  368  2      
-  369  2         // do some kind of stuff
-  370  2      
-  371  2         // set motor speed
-  372  2         //SetMotorSpeedsNoReturn(links_p, rechts_p);
-  373  2         // faehrt vorwärts hoffentlich
-  374  2         // und au langsam
-  375  2         SetMotorSpeedsNoReturn(20, 20);
-  376  2         // USER CODE END
-  377  2      
-  378  2        }
-  379  1      
-  380  1      } //  End of function main
-  381         
-  382         
-  383         
-  384         // USER CODE BEGIN (MAIN_General,10)
+  360  1        while(1)
+  361  1        {
+  362  2      
+  363  2         // USER CODE BEGIN (Main,4)
+  364  2         while(0 == timerevent);
+  365  2         timerevent = 0;
+  366  2      
+  367  2         // start reading the data, they will be get then
+  368  2         ReadSensorData();
+  369  2      
+  370  2         // do some kind of stuff
+  371  2         ret_left = 40;
+  372  2         ret_right = 40;
+  373  2         SetMotorSpeeds(&ret_left, &ret_right);
+  374  2         // set motor speed
+  375  2         //SetMotorSpeedsNoReturn(links_p, rechts_p);
+  376  2         // faehrt vorwärts hoffentlich
+  377  2         // und au langsam
+  378  2         //SetMotorSpeedsNoReturn(-40, -40);//20, 20);
+  379  2         // USER CODE END
+  380  2      
+  381  2        }
+  382  1      
+  383  1      } //  End of function main
+  384         
   385         
-  386         // USER CODE END
-  387         
+  386         
+  387         // USER CODE BEGIN (MAIN_General,10)
+  388         
+  389         // USER CODE END
+  390         
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
-  CODE SIZE        =         234     --------
+  CODE SIZE        =         244     --------
   NEAR-CONST SIZE  =    --------     --------
   FAR-CONST SIZE   =    --------     --------
   HUGE-CONST SIZE  =    --------     --------

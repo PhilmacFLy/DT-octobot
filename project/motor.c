@@ -7,6 +7,13 @@
 #include "megatron.h"
 #include "motor.h"
 
+volatile unsigned int megatroncounter = 0;
+volatile unsigned int megatronleft = 0;
+volatile unsigned int megatronright = 0;
+		   
+volatile unsigned int optimusprimeleft;
+volatile unsigned int optimusprimeright;
+
 void SetMotorSpeedsNoReturn(signed int left, signed int right)
 {
   SetMotorSpeeds(&left, &right);
@@ -19,12 +26,6 @@ void SetMotorSpeeds(signed int* left_p, signed int* right_p)
 
   static signed int lastleft = 0;
   static signed int lastright = 0;
-
-  unsigned int megatronleft;
-  unsigned int megatronright;
-
-  unsigned int optimusprimeleft;
-  unsigned int optimusprimeright;
 
   // zu hohe werte abfangen
   if (left > 0xFF) left = 0xFF;
@@ -43,10 +44,15 @@ void SetMotorSpeeds(signed int* left_p, signed int* right_p)
     if (right > lastright) right = lastright + 25;
 	else right = lastright - 25;
   }
- 
-  // megatron auslesen
-  megatronleft = ReadMegatronLeft();
-  megatronright = ReadMegatronRight();
+   
+  // megatron auslesen alle 10 cycles
+  megatroncounter = (megatroncounter + 1);
+  if (megatroncounter == 10)
+  {
+	megatronleft = ReadMegatronLeft();
+	megatronright = ReadMegatronRight();
+	megatroncounter = 0;
+  }
 
   // muss evtl angepasst werden		
   // verhaeltnis der megatrons errechnen
@@ -96,11 +102,11 @@ void SetMotorSpeedLeft(unsigned char direction, unsigned char speed)
   // rechter motor direction pin = 0 für vorwärts
   if (MOTOR_FORWARD == direction)
   {
-    P4_OUT_P4 = 1;
+    P4_OUT_P4 = 0;
   }
   else
   {
-    P4_OUT_P4 = 0;
+    P4_OUT_P4 = 1;
   }
 }
 
@@ -112,10 +118,10 @@ void SetMotorSpeedRight(unsigned char direction, unsigned char speed)
   // rechter motor direction pin = 1 für vorwärts
   if (MOTOR_FORWARD == direction)
   {
-    P4_OUT_P1 = 0;
+    P4_OUT_P1 = 1;
   }
   else
   {
-    P4_OUT_P1 = 1;
+    P4_OUT_P1 = 0;
   }
 }

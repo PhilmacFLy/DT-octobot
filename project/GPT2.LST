@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, GPT2                                                                  12/02/2013 17:05:31 PAGE 1   
+C166 COMPILER V7.05, GPT2                                                                  12/02/2013 18:56:00 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE GPT2
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
    12         // @Description   This file contains functions that use the GPT2 module.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          02.12.2013 15:59:56
+   15         // @Date          02.12.2013 18:53:10
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
    52         
    53         
    54         //****************************************************************************
-C166 COMPILER V7.05, GPT2                                                                  12/02/2013 17:05:31 PAGE 2   
+C166 COMPILER V7.05, GPT2                                                                  12/02/2013 18:56:00 PAGE 2   
 
    55         // @Typedefs
    56         //****************************************************************************
@@ -127,7 +127,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
   114         //----------------------------------------------------------------------------
   115         // @Date          02.12.2013
   116         //
-C166 COMPILER V7.05, GPT2                                                                  12/02/2013 17:05:31 PAGE 3   
+C166 COMPILER V7.05, GPT2                                                                  12/02/2013 18:56:00 PAGE 3   
 
   117         //****************************************************************************
   118         
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
   176  1        ///  Configuration of the GPT2 CAPREL:
   177  1        ///  -----------------------------------------------------------------------
   178  1        ///  - capture T5 into CAPREL is disabled
-C166 COMPILER V7.05, GPT2                                                                  12/02/2013 17:05:31 PAGE 4   
+C166 COMPILER V7.05, GPT2                                                                  12/02/2013 18:56:00 PAGE 4   
 
   179  1        ///  - capture trigger from pin CAPIN
   180  1        ///  - capure is disabled
@@ -205,26 +205,25 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
   188  1        ///  Configuration of the used GPT2 Port Pins:
   189  1        ///  -----------------------------------------------------------------------
   190  1        ///  - P5.3 is used for  GPT12E Timer2 Count input(T3IN)
-  191  1        ///  - P5.4 is used for GPT12E Timer 3 Ext.Up/Down enable(T3EUD)
+  191  1      
   192  1      
-  193  1      
-  194  1        ///  -----------------------------------------------------------------------
-  195  1        ///  Configuration of the used GPT2 Interrupts:
-  196  1        ///  -----------------------------------------------------------------------
+  193  1        ///  -----------------------------------------------------------------------
+  194  1        ///  Configuration of the used GPT2 Interrupts:
+  195  1        ///  -----------------------------------------------------------------------
+  196  1      
   197  1      
-  198  1      
-  199  1        // USER CODE BEGIN (GPT2_Function,3)
-  200  1      
-  201  1        // USER CODE END
-  202  1      
-  203  1      } //  End of function GPT2_viCAPREL
+  198  1        // USER CODE BEGIN (GPT2_Function,3)
+  199  1      
+  200  1        // USER CODE END
+  201  1      
+  202  1      } //  End of function GPT2_viCAPREL
+  203         
   204         
   205         
-  206         
-  207         // USER CODE BEGIN (GPT2_General,10)
-  208         
-  209         // USER CODE END
-  210         
+  206         // USER CODE BEGIN (GPT2_General,10)
+  207         
+  208         // USER CODE END
+  209         
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED

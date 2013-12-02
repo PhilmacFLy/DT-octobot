@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          02.12.2013 15:59:55
+// @Date          02.12.2013 18:53:08
 //
 //****************************************************************************
 
@@ -347,7 +347,8 @@ void MAIN_vChangeFreq(void)
 void main(void)
 {
   // USER CODE BEGIN (Main,2)
-  
+  signed int ret_left;
+  signed int ret_right;
   // USER CODE END
 
   MAIN_vInit();
@@ -362,17 +363,19 @@ void main(void)
    // USER CODE BEGIN (Main,4)
    while(0 == timerevent);
    timerevent = 0;
-   
+
    // start reading the data, they will be get then
    ReadSensorData();
 
    // do some kind of stuff
-
+   ret_left = 40;
+   ret_right = 40;
+   SetMotorSpeeds(&ret_left, &ret_right);
    // set motor speed
    //SetMotorSpeedsNoReturn(links_p, rechts_p);
    // faehrt vorwärts hoffentlich
    // und au langsam
-   SetMotorSpeedsNoReturn(20, 20);
+   //SetMotorSpeedsNoReturn(-40, -40);//20, 20);
    // USER CODE END
 
   }
