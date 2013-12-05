@@ -1,4 +1,4 @@
-L166 LINKER/LOCATER V5.25                                                               12/05/2013  12:54:49  PAGE 1
+L166 LINKER/LOCATER V5.25                                                               12/05/2013  14:10:59  PAGE 1
 
 
 L166 LINKER/LOCATER V5.25, INVOKED BY:
@@ -59,7 +59,7 @@ GPT1_viTmr2                          32  ---
 
 MEMORY MAP OF MODULE:  .\obj\balancebot (?C_STARTUP)
 
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 2
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 2
 
 
 
@@ -73,23 +73,23 @@ C000C0H   C000C3H   000004H   ---   ---   ---    ---  ---  ---   * INTVECTOR TAB
 C000C4H   C002BBH   0001F8H   CODE  REL   WORD   ---  ---  PRIV  ICODE   ?C_STARTUP_CODE
 C10000H   C1003DH   00003EH   XDATA REL   WORD   ---  ---  GLOB  ---     ?C_INITSEC
 C1003EH   C1004BH   00000EH   CONST ABS   WORD   ---  ---  PRIV  ---     ?C_CLRMEMSEC
-C1004CH   C10235H   0001EAH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?MOTOR
-C10236H   C103C7H   000192H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?ADC0
-C103C8H   C10543H   00017CH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?SENSORIC
-C10544H   C1069DH   00015AH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?SCS
-C1069EH   C1079DH   000100H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?MAIN
-C1079EH   C10867H   0000CAH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?CCU60
-C10868H   C108A1H   00003AH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?IO
-C108A2H   C108D9H   000038H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?GPT1
-C108DAH   C108FBH   000022H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?GPT2
-C108FCH   C10919H   00001EH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?MEGATRON
-C1091AH   C10927H   00000EH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?ABS
+C1004CH   C10249H   0001FEH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?MAIN
+C1024AH   C1043FH   0001F6H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?SENSORIC
+C10440H   C10629H   0001EAH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?MOTOR
+C1062AH   C107BBH   000192H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?ADC0
+C107BCH   C10915H   00015AH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?SCS
+C10916H   C109DFH   0000CAH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?CCU60
+C109E0H   C10A19H   00003AH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?IO
+C10A1AH   C10A51H   000038H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?GPT1
+C10A52H   C10A73H   000022H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?GPT2
+C10A74H   C10A91H   00001EH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?MEGATRON
+C10A92H   C10A9FH   00000EH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?ABS
 E00000H   E001FFH   000200H   DATA  REL   WORD   ---    1  PUBL  NDATA   ?C_USERSTACK
 E00200H   E0021FH   000020H   DATA  REL   WORD   ---    1  PUBL  NDATA   ?C_USERSTACK1
 E00220H   E0023FH   000020H   DATA  REL   WORD   ---    1  PUBL  NDATA   ?C_USERSTACK2
-E00240H   E0024DH   00000EH   DATA  REL   WORD   ---    1  PUBL  NDATA0  ?ND0?MOTOR
-E0024EH   E00255H   000008H   DATA  REL   WORD   ---    1  PUBL  NDATA0  ?ND0?SENSORIC
-E00256H   E00256H   000001H   DATA  REL   BYTE   ---    1  PUBL  NDATA0  ?ND0?MAIN
+E00240H   E00297H   000058H   DATA  REL   WORD   ---    1  PUBL  NDATA0  ?ND0?SENSORIC
+E00298H   E002A5H   00000EH   DATA  REL   WORD   ---    1  PUBL  NDATA0  ?ND0?MOTOR
+E002A6H   E002A6H   000001H   DATA  REL   BYTE   ---    1  PUBL  NDATA0  ?ND0?MAIN
 
 
 
@@ -119,7 +119,7 @@ NCODE                                CODE  ---    3  NCODE       ?PR?MAIN
                                                      NCODE       ?PR?SENSORIC
                                                      NCODE       ?PR?ABS
 
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 3
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 3
 
 
 
@@ -145,56 +145,61 @@ PUBLIC SYMBOLS OF MODULE:  .\obj\balancebot (?C_STARTUP)
       00F800H     ?C_SYSSTKTOP                     VAR   ---  IDATA   ?C_SYSSTACK
       E00000H     ?C_USRSTKBOT                     VAR   ---  NDATA   ?C_USERSTACK
       000000H     ?L?VECSC                         CONST ---  ---     ---
-      C10236H     ADC0_vInit                       LABEL ---  NCODE   ?PR?ADC0
-      C10390H     ADC0_vSeqSoftTrigger             LABEL ---  NCODE   ?PR?ADC0
-      C10384H     ADC0_vStartParReqChNum           LABEL ---  NCODE   ?PR?ADC0
-      C10324H     ADC0_vStartSeq0ReqChNum          LABEL ---  NCODE   ?PR?ADC0
-      C10354H     ADC0_vStartSeq2ReqChNum          LABEL ---  NCODE   ?PR?ADC0
-      C1079EH     CCU60_vInit                      LABEL ---  NCODE   ?PR?CCU60
-      C1081EH     CCU60_viNodeI0                   LABEL ---  NCODE   ?PR?CCU60
-      C1056AH     DisableVcoBypass                 LABEL ---  NCODE   ?PR?SCS
-      C1055CH     EnableVcoBypass                  LABEL ---  NCODE   ?PR?SCS
-      C108A2H     GPT1_vInit                       LABEL ---  NCODE   ?PR?GPT1
-      C108CEH     GPT1_viTmr2                      LABEL ---  NCODE   ?PR?GPT1
-      C108DAH     GPT2_vInit                       LABEL ---  NCODE   ?PR?GPT2
-      C10868H     IO_vInit                         LABEL ---  NCODE   ?PR?IO
-      C10738H     MAIN_vChangeFreq                 LABEL ---  NCODE   ?PR?MAIN
-      C1069EH     MAIN_vInit                       LABEL ---  NCODE   ?PR?MAIN
-      C106ECH     MAIN_vLockProtecReg              LABEL ---  NCODE   ?PR?MAIN
-      C106BEH     MAIN_vUnlockProtecReg            LABEL ---  NCODE   ?PR?MAIN
+      C1062AH     ADC0_vInit                       LABEL ---  NCODE   ?PR?ADC0
+      C10784H     ADC0_vSeqSoftTrigger             LABEL ---  NCODE   ?PR?ADC0
+      C10778H     ADC0_vStartParReqChNum           LABEL ---  NCODE   ?PR?ADC0
+      C10718H     ADC0_vStartSeq0ReqChNum          LABEL ---  NCODE   ?PR?ADC0
+      C10748H     ADC0_vStartSeq2ReqChNum          LABEL ---  NCODE   ?PR?ADC0
+      C10916H     CCU60_vInit                      LABEL ---  NCODE   ?PR?CCU60
+      C10996H     CCU60_viNodeI0                   LABEL ---  NCODE   ?PR?CCU60
+      C107E2H     DisableVcoBypass                 LABEL ---  NCODE   ?PR?SCS
+      C107D4H     EnableVcoBypass                  LABEL ---  NCODE   ?PR?SCS
+      C10A1AH     GPT1_vInit                       LABEL ---  NCODE   ?PR?GPT1
+      C10A46H     GPT1_viTmr2                      LABEL ---  NCODE   ?PR?GPT1
+      C10A52H     GPT2_vInit                       LABEL ---  NCODE   ?PR?GPT2
+      C1024AH     GetMediumValue                   LABEL ---  NCODE   ?PR?SENSORIC
+      C109E0H     IO_vInit                         LABEL ---  NCODE   ?PR?IO
+      C100E6H     MAIN_vChangeFreq                 LABEL ---  NCODE   ?PR?MAIN
+      C1004CH     MAIN_vInit                       LABEL ---  NCODE   ?PR?MAIN
+      C1009AH     MAIN_vLockProtecReg              LABEL ---  NCODE   ?PR?MAIN
+      C1006CH     MAIN_vUnlockProtecReg            LABEL ---  NCODE   ?PR?MAIN
       000000H     RESET                            INTNO ---  ---     ---
-      C104B8H     ReadAccelValue                   LABEL ---  NCODE   ?PR?SENSORIC
-      C10482H     ReadAccelValueRaw                LABEL ---  NCODE   ?PR?SENSORIC
-      C108FCH     ReadMegatronLeft                 LABEL ---  NCODE   ?PR?MEGATRON
-      C1090AH     ReadMegatronRight                LABEL ---  NCODE   ?PR?MEGATRON
-      C103C8H     ReadSensorData                   LABEL ---  NCODE   ?PR?SENSORIC
-      C1050CH     ReadSpinValue                    LABEL ---  NCODE   ?PR?SENSORIC
-      C104B0H     ReadSpinValueRaw                 LABEL ---  NCODE   ?PR?SENSORIC
-      C10638H     SCS_CountClocksWithTimer         LABEL ---  NCODE   ?PR?SCS
-      C10582H     SCS_StartXtalOsc                 LABEL ---  NCODE   ?PR?SCS
-      C105A6H     SCS_SwitchSystemClock            LABEL ---  NCODE   ?PR?SCS
-      C10632H     SCS_SwitchToHighPrecBandgap      LABEL ---  NCODE   ?PR?SCS
-      C10544H     SetK2                            LABEL ---  NCODE   ?PR?SCS
-      C101EAH     SetMotorSpeedLeft                LABEL ---  NCODE   ?PR?MOTOR
-      C10210H     SetMotorSpeedRight               LABEL ---  NCODE   ?PR?MOTOR
-      C1005CH     SetMotorSpeeds                   LABEL ---  NCODE   ?PR?MOTOR
-      C1004CH     SetMotorSpeedsNoReturn           LABEL ---  NCODE   ?PR?MOTOR
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 4
+      C103B0H     ReadAccelValue                   LABEL ---  NCODE   ?PR?SENSORIC
+      C1037AH     ReadAccelValueRaw                LABEL ---  NCODE   ?PR?SENSORIC
+      C10A74H     ReadMegatronLeft                 LABEL ---  NCODE   ?PR?MEGATRON
+      C10A82H     ReadMegatronRight                LABEL ---  NCODE   ?PR?MEGATRON
+      C1027AH     ReadSensorData                   LABEL ---  NCODE   ?PR?SENSORIC
+      C10404H     ReadSpinValue                    LABEL ---  NCODE   ?PR?SENSORIC
+      C103A8H     ReadSpinValueRaw                 LABEL ---  NCODE   ?PR?SENSORIC
+      C108B0H     SCS_CountClocksWithTimer         LABEL ---  NCODE   ?PR?SCS
+      C107FAH     SCS_StartXtalOsc                 LABEL ---  NCODE   ?PR?SCS
+      C1081EH     SCS_SwitchSystemClock            LABEL ---  NCODE   ?PR?SCS
+      C108AAH     SCS_SwitchToHighPrecBandgap      LABEL ---  NCODE   ?PR?SCS
+      C107BCH     SetK2                            LABEL ---  NCODE   ?PR?SCS
+      C105DEH     SetMotorSpeedLeft                LABEL ---  NCODE   ?PR?MOTOR
+      C10604H     SetMotorSpeedRight               LABEL ---  NCODE   ?PR?MOTOR
+      C10450H     SetMotorSpeeds                   LABEL ---  NCODE   ?PR?MOTOR
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 4
 
 
-      C10578H     WaitForTimer13Stop               LABEL ---  NCODE   ?PR?SCS
-      C1091AH     abs                              LABEL ---  NCODE   ?PR?ABS
-      E00252H     accel_x                          VAR   ---  NDATA0  ?ND0?SENSORIC
-      E00250H     accel_y                          VAR   ---  NDATA0  ?ND0?SENSORIC
-      E0024EH     accel_z                          VAR   ---  NDATA0  ?ND0?SENSORIC
-      C1076AH     main                             LABEL ---  NCODE   ?PR?MAIN
-      E00240H     megatroncounter                  VAR   ---  NDATA0  ?ND0?MOTOR
-      E0024AH     megatronleft                     VAR   ---  NDATA0  ?ND0?MOTOR
-      E0024CH     megatronright                    VAR   ---  NDATA0  ?ND0?MOTOR
-      E00242H     optimusprimeleft                 VAR   ---  NDATA0  ?ND0?MOTOR
-      E00244H     optimusprimeright                VAR   ---  NDATA0  ?ND0?MOTOR
-      E00254H     speed_spin                       VAR   ---  NDATA0  ?ND0?SENSORIC
-      E00256H     timerevent                       VAR   ---  NDATA0  ?ND0?MAIN
+      C10440H     SetMotorSpeedsNoReturn           LABEL ---  NCODE   ?PR?MOTOR
+      C107F0H     WaitForTimer13Stop               LABEL ---  NCODE   ?PR?SCS
+      C10A92H     abs                              LABEL ---  NCODE   ?PR?ABS
+      E00294H     accel_x                          VAR   ---  NDATA0  ?ND0?SENSORIC
+      E00268H     accel_x_arr                      VAR   ---  NDATA0  ?ND0?SENSORIC
+      E00292H     accel_y                          VAR   ---  NDATA0  ?ND0?SENSORIC
+      E00254H     accel_y_arr                      VAR   ---  NDATA0  ?ND0?SENSORIC
+      E00290H     accel_z                          VAR   ---  NDATA0  ?ND0?SENSORIC
+      E00240H     accel_z_arr                      VAR   ---  NDATA0  ?ND0?SENSORIC
+      C10118H     main                             LABEL ---  NCODE   ?PR?MAIN
+      E00298H     megatroncounter                  VAR   ---  NDATA0  ?ND0?MOTOR
+      E002A2H     megatronleft                     VAR   ---  NDATA0  ?ND0?MOTOR
+      E002A4H     megatronright                    VAR   ---  NDATA0  ?ND0?MOTOR
+      E0029AH     optimusprimeleft                 VAR   ---  NDATA0  ?ND0?MOTOR
+      E0029CH     optimusprimeright                VAR   ---  NDATA0  ?ND0?MOTOR
+      E00296H     speed_spin                       VAR   ---  NDATA0  ?ND0?SENSORIC
+      E0027CH     speed_spin_arr                   VAR   ---  NDATA0  ?ND0?SENSORIC
+      E002A6H     timerevent                       VAR   ---  NDATA0  ?ND0?MAIN
 
 
 
@@ -234,14 +239,14 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       00FF0CH     SYMBOL    SFR       ---     ---   SPSEG
       000200H     SYMBOL    CONST     ---     ---   SSTSZ
       00F0E2H     SYMBOL    ESFR      ---     ---   STATCLR1
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 5
+
+
       00FE14H     SYMBOL    SFR       ---     ---   STKOV
       00FE16H     SYMBOL    SFR       ---     ---   STKUN
       000020H     SYMBOL    CONST     ---     ---   UST1SZ
       000020H     SYMBOL    CONST     ---     ---   UST2SZ
       000200H     SYMBOL    CONST     ---     ---   USTSZ
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 5
-
-
       00F600H     SYMBOL    VAR       ---     ---   _BOS
       00F800H     SYMBOL    VAR       ---     ---   _TOS
       000000H     SYMBOL    CONST     ---     ---   _VCOBY
@@ -294,14 +299,14 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C00142H     LINE      ---       ---     ---   #1825
       C00144H     LINE      ---       ---     ---   #1827
       C00146H     LINE      ---       ---     ---   #1828
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 6
+
+
       C00148H     LINE      ---       ---     ---   #1833
       C0014AH     LINE      ---       ---     ---   #1834
       C0014CH     LINE      ---       ---     ---   #1835
       C0014EH     LINE      ---       ---     ---   #1836
       C00150H     LINE      ---       ---     ---   #1837
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 6
-
-
       C00154H     LINE      ---       ---     ---   #1838
       C00156H     LINE      ---       ---     ---   #1839
       C00158H     LINE      ---       ---     ---   #1840
@@ -354,14 +359,14 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C001CEH     LINE      ---       ---     ---   #1961
       C001D0H     LINE      ---       ---     ---   #1962
       C001D2H     LINE      ---       ---     ---   #1964
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 7
+
+
       C001D4H     LINE      ---       ---     ---   #1965
       C001D6H     LINE      ---       ---     ---   #1966
       C001DAH     LINE      ---       ---     ---   #1967
       C001DCH     LINE      ---       ---     ---   #1968
       C001DEH     LINE      ---       ---     ---   #1969
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 7
-
-
       C001E0H     LINE      ---       ---     ---   #1970
       C001E4H     LINE      ---       ---     ---   #1971
       C001E6H     LINE      ---       ---     ---   #1972
@@ -414,14 +419,14 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C00236H     LINE      ---       ---     ---   #2101
       C00238H     LINE      ---       ---     ---   #2102
       C0023AH     LINE      ---       ---     ---   #2104
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 8
+
+
       C0023EH     LINE      ---       ---     ---   #2106
       C00242H     LINE      ---       ---     ---   #2107
       C00246H     LINE      ---       ---     ---   #2109
       C00248H     LINE      ---       ---     ---   #2110
       C0024AH     LINE      ---       ---     ---   #2112
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 8
-
-
       C0024EH     LINE      ---       ---     ---   #2113
       C00252H     LINE      ---       ---     ---   #2115
       C00254H     LINE      ---       ---     ---   #2118
@@ -474,714 +479,766 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C00224H     SYMBOL    LABEL     ---     ---   K1SETLoop
       C00218H     SYMBOL    LABEL     ---     ---   K1CLRLoop
       C00208H     SYMBOL    LABEL     ---     ---   ApplyNewK1Div
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 9
+
+
       C00202H     SYMBOL    LABEL     ---     ---   Del2
       C001FEH     SYMBOL    LABEL     ---     ---   Delay200us
       C001F8H     SYMBOL    LABEL     ---     ---   Del1
       C001F4H     SYMBOL    LABEL     ---     ---   Delay1ms
       ---         BLOCKEND  LVL=0     ---     ---   
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 9
+      C10118H     GLOBAL    LABEL     ---     ---   main
+      C100E6H     PUBLIC    LABEL     ---     ---   MAIN_vChangeFreq
+      C1009AH     PUBLIC    LABEL     ---     ---   MAIN_vLockProtecReg
+      C1004CH     PUBLIC    LABEL     ---     ---   MAIN_vInit
+      C1006CH     PUBLIC    LABEL     ---     ---   MAIN_vUnlockProtecReg
+      E002A6H     PUBLIC    VAR       ---     ---   timerevent
 
-
-      C1076AH     GLOBAL    LABEL     ---     ---   main
-      C10738H     PUBLIC    LABEL     ---     ---   MAIN_vChangeFreq
-      C106ECH     PUBLIC    LABEL     ---     ---   MAIN_vLockProtecReg
-      C1069EH     PUBLIC    LABEL     ---     ---   MAIN_vInit
-      C106BEH     PUBLIC    LABEL     ---     ---   MAIN_vUnlockProtecReg
-      E00256H     PUBLIC    VAR       ---     ---   timerevent
-
-      C1069EH     BLOCK     LVL=0     0020H   ---   MAIN_vInit
-      C1069EH     LINE      ---       ---     ---   #123
-      C1069EH     LINE      ---       ---     ---   #130
-      C106A0H     LINE      ---       ---     ---   #140
-      C106A2H     LINE      ---       ---     ---   #142
-      C106A4H     LINE      ---       ---     ---   #149
-      C106A8H     LINE      ---       ---     ---   #152
-      C106ACH     LINE      ---       ---     ---   #155
-      C106B0H     LINE      ---       ---     ---   #158
-      C106B4H     LINE      ---       ---     ---   #161
-      C106B8H     LINE      ---       ---     ---   #173
-      C106BAH     LINE      ---       ---     ---   #176
-      C106BCH     LINE      ---       ---     ---   #178
+      C1004CH     BLOCK     LVL=0     0020H   ---   MAIN_vInit
+      C1004CH     LINE      ---       ---     ---   #123
+      C1004CH     LINE      ---       ---     ---   #130
+      C1004EH     LINE      ---       ---     ---   #140
+      C10050H     LINE      ---       ---     ---   #142
+      C10052H     LINE      ---       ---     ---   #149
+      C10056H     LINE      ---       ---     ---   #152
+      C1005AH     LINE      ---       ---     ---   #155
+      C1005EH     LINE      ---       ---     ---   #158
+      C10062H     LINE      ---       ---     ---   #161
+      C10066H     LINE      ---       ---     ---   #173
+      C10068H     LINE      ---       ---     ---   #176
+      C1006AH     LINE      ---       ---     ---   #178
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C106BEH     BLOCK     LVL=0     002EH   ---   MAIN_vUnlockProtecReg
-      C106BEH     BLOCK     LVL=1     002CH   ---   
+      C1006CH     BLOCK     LVL=0     002EH   ---   MAIN_vUnlockProtecReg
+      C1006CH     BLOCK     LVL=1     002CH   ---   
       000005H     SYMBOL    REG       ---     ---   uwPASSWORD
       ---         BLOCKEND  LVL=1     ---     ---   
-      C106BEH     LINE      ---       ---     ---   #203
-      C106BEH     LINE      ---       ---     ---   #204
-      C106BEH     LINE      ---       ---     ---   #207
-      C106C4H     LINE      ---       ---     ---   #208
-      C106C8H     LINE      ---       ---     ---   #210
-      C106D0H     LINE      ---       ---     ---   #211
-      C106DAH     LINE      ---       ---     ---   #213
-      C106E4H     LINE      ---       ---     ---   #214
-      C106EAH     LINE      ---       ---     ---   #216
+      C1006CH     LINE      ---       ---     ---   #203
+      C1006CH     LINE      ---       ---     ---   #204
+      C1006CH     LINE      ---       ---     ---   #207
+      C10072H     LINE      ---       ---     ---   #208
+      C10076H     LINE      ---       ---     ---   #210
+      C1007EH     LINE      ---       ---     ---   #211
+      C10088H     LINE      ---       ---     ---   #213
+      C10092H     LINE      ---       ---     ---   #214
+      C10098H     LINE      ---       ---     ---   #216
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C106ECH     BLOCK     LVL=0     004CH   ---   MAIN_vLockProtecReg
-      C106ECH     BLOCK     LVL=1     004AH   ---   
+      C1009AH     BLOCK     LVL=0     004CH   ---   MAIN_vLockProtecReg
+      C1009AH     BLOCK     LVL=1     004AH   ---   
       000005H     SYMBOL    REG       ---     ---   uwPASSWORD
       ---         BLOCKEND  LVL=1     ---     ---   
-      C106ECH     LINE      ---       ---     ---   #241
-      C106ECH     LINE      ---       ---     ---   #242
-      C106ECH     LINE      ---       ---     ---   #245
-      C106F2H     LINE      ---       ---     ---   #246
-      C106F6H     LINE      ---       ---     ---   #248
-      C106FEH     LINE      ---       ---     ---   #249
-      C10708H     LINE      ---       ---     ---   #251
-      C10712H     LINE      ---       ---     ---   #252
-      C10718H     LINE      ---       ---     ---   #254
-      C10722H     LINE      ---       ---     ---   #255
-      C1072CH     LINE      ---       ---     ---   #256
-      C10736H     LINE      ---       ---     ---   #258
+      C1009AH     LINE      ---       ---     ---   #241
+      C1009AH     LINE      ---       ---     ---   #242
+      C1009AH     LINE      ---       ---     ---   #245
+      C100A0H     LINE      ---       ---     ---   #246
+      C100A4H     LINE      ---       ---     ---   #248
+      C100ACH     LINE      ---       ---     ---   #249
+      C100B6H     LINE      ---       ---     ---   #251
+      C100C0H     LINE      ---       ---     ---   #252
+      C100C6H     LINE      ---       ---     ---   #254
+      C100D0H     LINE      ---       ---     ---   #255
+      C100DAH     LINE      ---       ---     ---   #256
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 10
+
+
+      C100E4H     LINE      ---       ---     ---   #258
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C10738H     BLOCK     LVL=0     0032H   ---   MAIN_vChangeFreq
-      C10738H     LINE      ---       ---     ---   #283
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 10
-
-
-      C10738H     LINE      ---       ---     ---   #285
-      C1073CH     LINE      ---       ---     ---   #291
-      C10746H     LINE      ---       ---     ---   #297
-      C1074CH     LINE      ---       ---     ---   #298
-      C10752H     LINE      ---       ---     ---   #300
-      C10754H     LINE      ---       ---     ---   #304
-      C10762H     LINE      ---       ---     ---   #308
-      C10764H     LINE      ---       ---     ---   #310
-      C10766H     LINE      ---       ---     ---   #317
-      C10768H     LINE      ---       ---     ---   #318
-      C10768H     LINE      ---       ---     ---   #321
-      C10768H     LINE      ---       ---     ---   #323
+      C100E6H     BLOCK     LVL=0     0032H   ---   MAIN_vChangeFreq
+      C100E6H     LINE      ---       ---     ---   #283
+      C100E6H     LINE      ---       ---     ---   #285
+      C100EAH     LINE      ---       ---     ---   #291
+      C100F4H     LINE      ---       ---     ---   #297
+      C100FAH     LINE      ---       ---     ---   #298
+      C10100H     LINE      ---       ---     ---   #300
+      C10102H     LINE      ---       ---     ---   #304
+      C10110H     LINE      ---       ---     ---   #308
+      C10112H     LINE      ---       ---     ---   #310
+      C10114H     LINE      ---       ---     ---   #317
+      C10116H     LINE      ---       ---     ---   #318
+      C10116H     LINE      ---       ---     ---   #321
+      C10116H     LINE      ---       ---     ---   #323
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C1076AH     BLOCK     LVL=0     0034H   ---   main
-      C1076CH     BLOCK     LVL=1     0032H   ---   
+      C10118H     BLOCK     LVL=0     0132H   ---   main
+      C1011AH     BLOCK     LVL=1     0130H   ---   
       000000H     SYMBOL    AUTO      ---     ---   ret_left
       000002H     SYMBOL    AUTO      ---     ---   ret_right
-      000088H     SYMBOL    REG       ---     ---   ledvalue
+      000004H     SYMBOL    AUTO      ---     ---   gyrovalue
       ---         BLOCKEND  LVL=1     ---     ---   
-      C1076AH     LINE      ---       ---     ---   #347
-      C1076CH     LINE      ---       ---     ---   #348
-      C1076CH     LINE      ---       ---     ---   #356
-      C1076EH     LINE      ---       ---     ---   #362
-      C1076EH     LINE      ---       ---     ---   #366
-      C10774H     LINE      ---       ---     ---   #367
-      C10778H     LINE      ---       ---     ---   #370
-      C1077CH     LINE      ---       ---     ---   #371
-      C10780H     LINE      ---       ---     ---   #372
-      C10784H     LINE      ---       ---     ---   #373
-      C1078AH     LINE      ---       ---     ---   #375
-      C1078EH     LINE      ---       ---     ---   #376
-      C10792H     LINE      ---       ---     ---   #377
-      C1079CH     LINE      ---       ---     ---   #385
+      C10118H     LINE      ---       ---     ---   #347
+      C1011AH     LINE      ---       ---     ---   #348
+      C1011AH     LINE      ---       ---     ---   #356
+      C1011CH     LINE      ---       ---     ---   #362
+      C1011CH     LINE      ---       ---     ---   #366
+      C10122H     LINE      ---       ---     ---   #367
+      C10126H     LINE      ---       ---     ---   #370
+      C1012AH     LINE      ---       ---     ---   #371
+      C10132H     LINE      ---       ---     ---   #372
+      C10136H     LINE      ---       ---     ---   #374
+      C10156H     LINE      ---       ---     ---   #375
+      C10176H     LINE      ---       ---     ---   #376
+      C10196H     LINE      ---       ---     ---   #377
+      C101B4H     LINE      ---       ---     ---   #378
+      C101D4H     LINE      ---       ---     ---   #379
+      C101F4H     LINE      ---       ---     ---   #380
+      C10214H     LINE      ---       ---     ---   #381
+      C10232H     LINE      ---       ---     ---   #383
+      C10238H     LINE      ---       ---     ---   #384
+      C1023CH     LINE      ---       ---     ---   #385
+      C10246H     LINE      ---       ---     ---   #393
       ---         BLOCKEND  LVL=0     ---     ---   
-      C1055CH     PUBLIC    LABEL     ---     ---   EnableVcoBypass
-      C10638H     PUBLIC    LABEL     ---     ---   SCS_CountClocksWithTimer
-      C1056AH     PUBLIC    LABEL     ---     ---   DisableVcoBypass
-      C10578H     PUBLIC    LABEL     ---     ---   WaitForTimer13Stop
-      C10632H     PUBLIC    LABEL     ---     ---   SCS_SwitchToHighPrecBandgap
-      C105A6H     PUBLIC    LABEL     ---     ---   SCS_SwitchSystemClock
-      C10544H     PUBLIC    LABEL     ---     ---   SetK2
-      C10582H     PUBLIC    LABEL     ---     ---   SCS_StartXtalOsc
+      C107D4H     PUBLIC    LABEL     ---     ---   EnableVcoBypass
+      C108B0H     PUBLIC    LABEL     ---     ---   SCS_CountClocksWithTimer
+      C107E2H     PUBLIC    LABEL     ---     ---   DisableVcoBypass
+      C107F0H     PUBLIC    LABEL     ---     ---   WaitForTimer13Stop
+      C108AAH     PUBLIC    LABEL     ---     ---   SCS_SwitchToHighPrecBandgap
+      C1081EH     PUBLIC    LABEL     ---     ---   SCS_SwitchSystemClock
+      C107BCH     PUBLIC    LABEL     ---     ---   SetK2
+      C107FAH     PUBLIC    LABEL     ---     ---   SCS_StartXtalOsc
 
-      C10544H     BLOCK     LVL=0     0018H   ---   SetK2
+      C107BCH     BLOCK     LVL=0     0018H   ---   SetK2
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 11
+
+
       000008H     SYMBOL    REG       ---     ---   K2
-      C10544H     LINE      ---       ---     ---   #208
-      C10544H     LINE      ---       ---     ---   #214
-      C1054EH     LINE      ---       ---     ---   #217
-      C10552H     LINE      ---       ---     ---   #221
-      C10552H     LINE      ---       ---     ---   #238
-      C1055AH     LINE      ---       ---     ---   #239
+      C107BCH     LINE      ---       ---     ---   #208
+      C107BCH     LINE      ---       ---     ---   #214
+      C107C6H     LINE      ---       ---     ---   #217
+      C107CAH     LINE      ---       ---     ---   #221
+      C107CAH     LINE      ---       ---     ---   #238
+      C107D2H     LINE      ---       ---     ---   #239
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C1055CH     BLOCK     LVL=0     000EH   ---   EnableVcoBypass
-      C1055CH     LINE      ---       ---     ---   #262
-      C1055CH     LINE      ---       ---     ---   #265
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 11
-
-
-      C10560H     LINE      ---       ---     ---   #268
-      C10560H     LINE      ---       ---     ---   #285
-      C10568H     LINE      ---       ---     ---   #286
+      C107D4H     BLOCK     LVL=0     000EH   ---   EnableVcoBypass
+      C107D4H     LINE      ---       ---     ---   #262
+      C107D4H     LINE      ---       ---     ---   #265
+      C107D8H     LINE      ---       ---     ---   #268
+      C107D8H     LINE      ---       ---     ---   #285
+      C107E0H     LINE      ---       ---     ---   #286
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C1056AH     BLOCK     LVL=0     000EH   ---   DisableVcoBypass
-      C1056AH     LINE      ---       ---     ---   #309
-      C1056AH     LINE      ---       ---     ---   #312
-      C1056EH     LINE      ---       ---     ---   #315
-      C1056EH     LINE      ---       ---     ---   #332
-      C10576H     LINE      ---       ---     ---   #333
+      C107E2H     BLOCK     LVL=0     000EH   ---   DisableVcoBypass
+      C107E2H     LINE      ---       ---     ---   #309
+      C107E2H     LINE      ---       ---     ---   #312
+      C107E6H     LINE      ---       ---     ---   #315
+      C107E6H     LINE      ---       ---     ---   #332
+      C107EEH     LINE      ---       ---     ---   #333
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C10578H     BLOCK     LVL=0     000AH   ---   WaitForTimer13Stop
-      C10578H     LINE      ---       ---     ---   #358
-      C10578H     LINE      ---       ---     ---   #361
-      C10578H     LINE      ---       ---     ---   #370
-      C10580H     LINE      ---       ---     ---   #371
+      C107F0H     BLOCK     LVL=0     000AH   ---   WaitForTimer13Stop
+      C107F0H     LINE      ---       ---     ---   #358
+      C107F0H     LINE      ---       ---     ---   #361
+      C107F0H     LINE      ---       ---     ---   #370
+      C107F8H     LINE      ---       ---     ---   #371
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C10582H     BLOCK     LVL=0     0024H   ---   SCS_StartXtalOsc
+      C107FAH     BLOCK     LVL=0     0024H   ---   SCS_StartXtalOsc
       000008H     SYMBOL    REG       ---     ---   UseTimer
-      C1058CH     BLOCK     LVL=1     0010H   ---   
+      C10804H     BLOCK     LVL=1     0010H   ---   
       000004H     SYMBOL    REG       ---     ---   K2?1?SetK2
       ---         BLOCKEND  LVL=1     ---     ---   
-      C10582H     LINE      ---       ---     ---   #406
-      C10582H     LINE      ---       ---     ---   #427
-      C10588H     LINE      ---       ---     ---   #430
-      C1058CH     LINE      ---       ---     ---   #442
-      C1058CH     LINE      ---       ---     ---   #214
-      C10592H     LINE      ---       ---     ---   #217
-      C10594H     LINE      ---       ---     ---   #221
-      C10594H     LINE      ---       ---     ---   #238
-      C1059CH     LINE      ---       ---     ---   #445
-      C105A4H     LINE      ---       ---     ---   #446
+      C107FAH     LINE      ---       ---     ---   #406
+      C107FAH     LINE      ---       ---     ---   #427
+      C10800H     LINE      ---       ---     ---   #430
+      C10804H     LINE      ---       ---     ---   #442
+      C10804H     LINE      ---       ---     ---   #214
+      C1080AH     LINE      ---       ---     ---   #217
+      C1080CH     LINE      ---       ---     ---   #221
+      C1080CH     LINE      ---       ---     ---   #238
+      C10814H     LINE      ---       ---     ---   #445
+      C1081CH     LINE      ---       ---     ---   #446
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C105A6H     BLOCK     LVL=0     008CH   ---   SCS_SwitchSystemClock
+      C1081EH     BLOCK     LVL=0     008CH   ---   SCS_SwitchSystemClock
       000008H     SYMBOL    REG       ---     ---   UseTimer
-      C105B2H     BLOCK     LVL=1     0010H   ---   
+      C1082AH     BLOCK     LVL=1     0010H   ---   
       000004H     SYMBOL    REG       ---     ---   K2?3?SetK2
       ---         BLOCKEND  LVL=1     ---     ---   
-      C105DCH     BLOCK     LVL=1     0010H   ---   
+      C10854H     BLOCK     LVL=1     0010H   ---   
       000004H     SYMBOL    REG       ---     ---   K2?5?SetK2
       ---         BLOCKEND  LVL=1     ---     ---   
-      C105F8H     BLOCK     LVL=1     0010H   ---   
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 12
+
+
+      C10870H     BLOCK     LVL=1     0010H   ---   
       000004H     SYMBOL    REG       ---     ---   K2?7?SetK2
       ---         BLOCKEND  LVL=1     ---     ---   
-      C10608H     BLOCK     LVL=1     0010H   ---   
+      C10880H     BLOCK     LVL=1     0010H   ---   
       000004H     SYMBOL    REG       ---     ---   K2?8?SetK2
       ---         BLOCKEND  LVL=1     ---     ---   
-      C105A6H     LINE      ---       ---     ---   #485
-      C105A6H     LINE      ---       ---     ---   #487
-      C105AAH     LINE      ---       ---     ---   #361
-      C105AAH     LINE      ---       ---     ---   #370
-      C105B2H     LINE      ---       ---     ---   #502
-      C105B2H     LINE      ---       ---     ---   #214
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 12
-
-
-      C105B8H     LINE      ---       ---     ---   #217
-      C105BAH     LINE      ---       ---     ---   #221
-      C105BAH     LINE      ---       ---     ---   #238
-      C105C2H     LINE      ---       ---     ---   #504
-      C105C2H     LINE      ---       ---     ---   #509
-      C105C8H     LINE      ---       ---     ---   #265
-      C105CAH     LINE      ---       ---     ---   #268
-      C105CAH     LINE      ---       ---     ---   #285
-      C105D2H     LINE      ---       ---     ---   #534
-      C105D8H     LINE      ---       ---     ---   #558
-      C105DCH     LINE      ---       ---     ---   #563
-      C105DCH     LINE      ---       ---     ---   #214
-      C105E0H     LINE      ---       ---     ---   #217
-      C105E4H     LINE      ---       ---     ---   #221
-      C105E4H     LINE      ---       ---     ---   #238
-      C105ECH     LINE      ---       ---     ---   #312
-      C105F0H     LINE      ---       ---     ---   #315
-      C105F0H     LINE      ---       ---     ---   #332
-      C105F8H     LINE      ---       ---     ---   #569
-      C105F8H     LINE      ---       ---     ---   #214
-      C105FEH     LINE      ---       ---     ---   #217
-      C10600H     LINE      ---       ---     ---   #221
-      C10600H     LINE      ---       ---     ---   #238
-      C10608H     LINE      ---       ---     ---   #576
-      C10608H     LINE      ---       ---     ---   #214
-      C1060EH     LINE      ---       ---     ---   #217
-      C10610H     LINE      ---       ---     ---   #221
-      C10610H     LINE      ---       ---     ---   #238
-      C10618H     LINE      ---       ---     ---   #587
-      C1061EH     LINE      ---       ---     ---   #589
-      C10622H     LINE      ---       ---     ---   #591
-      C10626H     LINE      ---       ---     ---   #593
-      C1062AH     LINE      ---       ---     ---   #595
-      C10630H     LINE      ---       ---     ---   #597
+      C1081EH     LINE      ---       ---     ---   #485
+      C1081EH     LINE      ---       ---     ---   #487
+      C10822H     LINE      ---       ---     ---   #361
+      C10822H     LINE      ---       ---     ---   #370
+      C1082AH     LINE      ---       ---     ---   #502
+      C1082AH     LINE      ---       ---     ---   #214
+      C10830H     LINE      ---       ---     ---   #217
+      C10832H     LINE      ---       ---     ---   #221
+      C10832H     LINE      ---       ---     ---   #238
+      C1083AH     LINE      ---       ---     ---   #504
+      C1083AH     LINE      ---       ---     ---   #509
+      C10840H     LINE      ---       ---     ---   #265
+      C10842H     LINE      ---       ---     ---   #268
+      C10842H     LINE      ---       ---     ---   #285
+      C1084AH     LINE      ---       ---     ---   #534
+      C10850H     LINE      ---       ---     ---   #558
+      C10854H     LINE      ---       ---     ---   #563
+      C10854H     LINE      ---       ---     ---   #214
+      C10858H     LINE      ---       ---     ---   #217
+      C1085CH     LINE      ---       ---     ---   #221
+      C1085CH     LINE      ---       ---     ---   #238
+      C10864H     LINE      ---       ---     ---   #312
+      C10868H     LINE      ---       ---     ---   #315
+      C10868H     LINE      ---       ---     ---   #332
+      C10870H     LINE      ---       ---     ---   #569
+      C10870H     LINE      ---       ---     ---   #214
+      C10876H     LINE      ---       ---     ---   #217
+      C10878H     LINE      ---       ---     ---   #221
+      C10878H     LINE      ---       ---     ---   #238
+      C10880H     LINE      ---       ---     ---   #576
+      C10880H     LINE      ---       ---     ---   #214
+      C10886H     LINE      ---       ---     ---   #217
+      C10888H     LINE      ---       ---     ---   #221
+      C10888H     LINE      ---       ---     ---   #238
+      C10890H     LINE      ---       ---     ---   #587
+      C10896H     LINE      ---       ---     ---   #589
+      C1089AH     LINE      ---       ---     ---   #591
+      C1089EH     LINE      ---       ---     ---   #593
+      C108A2H     LINE      ---       ---     ---   #595
+      C108A8H     LINE      ---       ---     ---   #597
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C10632H     BLOCK     LVL=0     0006H   ---   SCS_SwitchToHighPrecBandgap
-      C10632H     LINE      ---       ---     ---   #627
-      C10632H     LINE      ---       ---     ---   #674
-      C10636H     LINE      ---       ---     ---   #676
+      C108AAH     BLOCK     LVL=0     0006H   ---   SCS_SwitchToHighPrecBandgap
+      C108AAH     LINE      ---       ---     ---   #627
+      C108AAH     LINE      ---       ---     ---   #674
+      C108AEH     LINE      ---       ---     ---   #676
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C10638H     BLOCK     LVL=0     0066H   ---   SCS_CountClocksWithTimer
+      C108B0H     BLOCK     LVL=0     0066H   ---   SCS_CountClocksWithTimer
       000008H     SYMBOL    REG       ---     ---   Source
       000009H     SYMBOL    REG       ---     ---   Clocks
-      C1063AH     BLOCK     LVL=1     0060H   ---   
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 13
+
+
+      C108B2H     BLOCK     LVL=1     0060H   ---   
       000000H     SYMBOL    AUTO      ---     ---   Work
       ---         BLOCKEND  LVL=1     ---     ---   
-      C10638H     LINE      ---       ---     ---   #717
-      C1063AH     LINE      ---       ---     ---   #718
-      C1063AH     LINE      ---       ---     ---   #733
-      C10644H     LINE      ---       ---     ---   #735
-      C1064AH     LINE      ---       ---     ---   #740
-      C10654H     LINE      ---       ---     ---   #756
-      C1065CH     LINE      ---       ---     ---   #759
-      C10664H     LINE      ---       ---     ---   #775
-      C1066CH     LINE      ---       ---     ---   #805
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 13
-
-
-      C1067AH     LINE      ---       ---     ---   #817
-      C10688H     LINE      ---       ---     ---   #839
-      C10692H     LINE      ---       ---     ---   #857
-      C1069AH     LINE      ---       ---     ---   #860
+      C108B0H     LINE      ---       ---     ---   #717
+      C108B2H     LINE      ---       ---     ---   #718
+      C108B2H     LINE      ---       ---     ---   #733
+      C108BCH     LINE      ---       ---     ---   #735
+      C108C2H     LINE      ---       ---     ---   #740
+      C108CCH     LINE      ---       ---     ---   #756
+      C108D4H     LINE      ---       ---     ---   #759
+      C108DCH     LINE      ---       ---     ---   #775
+      C108E4H     LINE      ---       ---     ---   #805
+      C108F2H     LINE      ---       ---     ---   #817
+      C10900H     LINE      ---       ---     ---   #839
+      C1090AH     LINE      ---       ---     ---   #857
+      C10912H     LINE      ---       ---     ---   #860
       ---         BLOCKEND  LVL=0     ---     ---   
-      C10868H     PUBLIC    LABEL     ---     ---   IO_vInit
+      C109E0H     PUBLIC    LABEL     ---     ---   IO_vInit
 
-      C10868H     BLOCK     LVL=0     003AH   ---   IO_vInit
-      C10868H     LINE      ---       ---     ---   #122
-      C10868H     LINE      ---       ---     ---   #158
-      C10870H     LINE      ---       ---     ---   #189
-      C10874H     LINE      ---       ---     ---   #190
-      C10878H     LINE      ---       ---     ---   #191
-      C1087CH     LINE      ---       ---     ---   #192
-      C10880H     LINE      ---       ---     ---   #279
-      C10884H     LINE      ---       ---     ---   #280
-      C10888H     LINE      ---       ---     ---   #281
-      C1088CH     LINE      ---       ---     ---   #282
-      C10890H     LINE      ---       ---     ---   #283
-      C10894H     LINE      ---       ---     ---   #284
-      C10898H     LINE      ---       ---     ---   #285
-      C1089CH     LINE      ---       ---     ---   #286
-      C108A0H     LINE      ---       ---     ---   #306
+      C109E0H     BLOCK     LVL=0     003AH   ---   IO_vInit
+      C109E0H     LINE      ---       ---     ---   #122
+      C109E0H     LINE      ---       ---     ---   #158
+      C109E8H     LINE      ---       ---     ---   #189
+      C109ECH     LINE      ---       ---     ---   #190
+      C109F0H     LINE      ---       ---     ---   #191
+      C109F4H     LINE      ---       ---     ---   #192
+      C109F8H     LINE      ---       ---     ---   #279
+      C109FCH     LINE      ---       ---     ---   #280
+      C10A00H     LINE      ---       ---     ---   #281
+      C10A04H     LINE      ---       ---     ---   #282
+      C10A08H     LINE      ---       ---     ---   #283
+      C10A0CH     LINE      ---       ---     ---   #284
+      C10A10H     LINE      ---       ---     ---   #285
+      C10A14H     LINE      ---       ---     ---   #286
+      C10A18H     LINE      ---       ---     ---   #306
       ---         BLOCKEND  LVL=0     ---     ---   
-      C1079EH     PUBLIC    LABEL     ---     ---   CCU60_vInit
-      C1081EH     PUBLIC    LABEL     ---     ---   CCU60_viNodeI0
+      C10916H     PUBLIC    LABEL     ---     ---   CCU60_vInit
+      C10996H     PUBLIC    LABEL     ---     ---   CCU60_viNodeI0
 
-      C1079EH     BLOCK     LVL=0     0080H   ---   CCU60_vInit
-      C1079EH     LINE      ---       ---     ---   #122
-      C1079EH     LINE      ---       ---     ---   #137
-      C107A4H     LINE      ---       ---     ---   #139
-      C107A6H     LINE      ---       ---     ---   #140
-      C107A8H     LINE      ---       ---     ---   #141
-      C107AAH     LINE      ---       ---     ---   #142
-      C107ACH     LINE      ---       ---     ---   #158
-      C107B4H     LINE      ---       ---     ---   #179
-      C107B8H     LINE      ---       ---     ---   #181
-      C107C0H     LINE      ---       ---     ---   #182
-      C107C8H     LINE      ---       ---     ---   #206
-      C107D0H     LINE      ---       ---     ---   #225
-      C107D4H     LINE      ---       ---     ---   #239
-      C107DAH     LINE      ---       ---     ---   #248
-      C107DEH     LINE      ---       ---     ---   #252
-      C107E4H     LINE      ---       ---     ---   #255
-      C107ECH     LINE      ---       ---     ---   #281
-      C107F2H     LINE      ---       ---     ---   #284
-      C107FAH     LINE      ---       ---     ---   #294
-      C10802H     LINE      ---       ---     ---   #295
-      C10806H     LINE      ---       ---     ---   #297
-      C1080EH     LINE      ---       ---     ---   #307
-      C10814H     LINE      ---       ---     ---   #316
-      C1081CH     LINE      ---       ---     ---   #323
-      ---         BLOCKEND  LVL=0     ---     ---   
-
-      C1081EH     BLOCK     LVL=0     004AH   ---   CCU60_viNodeI0
-      C1081EH     LINE      ---       ---     ---   #354
-      C10824H     LINE      ---       ---     ---   #360
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 14
+      C10916H     BLOCK     LVL=0     0080H   ---   CCU60_vInit
+      C10916H     LINE      ---       ---     ---   #122
+      C10916H     LINE      ---       ---     ---   #137
+      C1091CH     LINE      ---       ---     ---   #139
+      C1091EH     LINE      ---       ---     ---   #140
+      C10920H     LINE      ---       ---     ---   #141
+      C10922H     LINE      ---       ---     ---   #142
+      C10924H     LINE      ---       ---     ---   #158
+      C1092CH     LINE      ---       ---     ---   #179
+      C10930H     LINE      ---       ---     ---   #181
+      C10938H     LINE      ---       ---     ---   #182
+      C10940H     LINE      ---       ---     ---   #206
+      C10948H     LINE      ---       ---     ---   #225
+      C1094CH     LINE      ---       ---     ---   #239
+      C10952H     LINE      ---       ---     ---   #248
+      C10956H     LINE      ---       ---     ---   #252
+      C1095CH     LINE      ---       ---     ---   #255
+      C10964H     LINE      ---       ---     ---   #281
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 14
 
 
-      C1082CH     LINE      ---       ---     ---   #366
-      C1082EH     LINE      ---       ---     ---   #369
-      C10838H     LINE      ---       ---     ---   #370
-      C10838H     LINE      ---       ---     ---   #372
-      C10840H     LINE      ---       ---     ---   #378
-      C10842H     LINE      ---       ---     ---   #381
-      C1084CH     LINE      ---       ---     ---   #382
-      C1084CH     LINE      ---       ---     ---   #384
-      C10854H     LINE      ---       ---     ---   #390
-      C10856H     LINE      ---       ---     ---   #391
-      C10858H     LINE      ---       ---     ---   #394
-      C10862H     LINE      ---       ---     ---   #395
-      ---         BLOCKEND  LVL=0     ---     ---   
-      C108CEH     PUBLIC    LABEL     ---     ---   GPT1_viTmr2
-      C108A2H     PUBLIC    LABEL     ---     ---   GPT1_vInit
-
-      C108A2H     BLOCK     LVL=0     002CH   ---   GPT1_vInit
-      C108A2H     LINE      ---       ---     ---   #122
-      C108A2H     LINE      ---       ---     ---   #130
-      C108A6H     LINE      ---       ---     ---   #132
-      C108A8H     LINE      ---       ---     ---   #134
-      C108AAH     LINE      ---       ---     ---   #154
-      C108AEH     LINE      ---       ---     ---   #155
-      C108B2H     LINE      ---       ---     ---   #166
-      C108B6H     LINE      ---       ---     ---   #167
-      C108BAH     LINE      ---       ---     ---   #178
-      C108BEH     LINE      ---       ---     ---   #179
-      C108C2H     LINE      ---       ---     ---   #197
-      C108C6H     LINE      ---       ---     ---   #204
-      C108C8H     LINE      ---       ---     ---   #206
-      C108CAH     LINE      ---       ---     ---   #208
-      C108CCH     LINE      ---       ---     ---   #210
+      C1096AH     LINE      ---       ---     ---   #284
+      C10972H     LINE      ---       ---     ---   #294
+      C1097AH     LINE      ---       ---     ---   #295
+      C1097EH     LINE      ---       ---     ---   #297
+      C10986H     LINE      ---       ---     ---   #307
+      C1098CH     LINE      ---       ---     ---   #316
+      C10994H     LINE      ---       ---     ---   #323
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C108CEH     BLOCK     LVL=0     000CH   ---   GPT1_viTmr2
-      C108CEH     LINE      ---       ---     ---   #242
-      C108D0H     LINE      ---       ---     ---   #252
-      C108D6H     LINE      ---       ---     ---   #255
+      C10996H     BLOCK     LVL=0     004AH   ---   CCU60_viNodeI0
+      C10996H     LINE      ---       ---     ---   #354
+      C1099CH     LINE      ---       ---     ---   #360
+      C109A4H     LINE      ---       ---     ---   #366
+      C109A6H     LINE      ---       ---     ---   #369
+      C109B0H     LINE      ---       ---     ---   #370
+      C109B0H     LINE      ---       ---     ---   #372
+      C109B8H     LINE      ---       ---     ---   #378
+      C109BAH     LINE      ---       ---     ---   #381
+      C109C4H     LINE      ---       ---     ---   #382
+      C109C4H     LINE      ---       ---     ---   #384
+      C109CCH     LINE      ---       ---     ---   #390
+      C109CEH     LINE      ---       ---     ---   #391
+      C109D0H     LINE      ---       ---     ---   #394
+      C109DAH     LINE      ---       ---     ---   #395
       ---         BLOCKEND  LVL=0     ---     ---   
-      C108DAH     PUBLIC    LABEL     ---     ---   GPT2_vInit
+      C10A46H     PUBLIC    LABEL     ---     ---   GPT1_viTmr2
+      C10A1AH     PUBLIC    LABEL     ---     ---   GPT1_vInit
 
-      C108DAH     BLOCK     LVL=0     0022H   ---   GPT2_vInit
-      C108DAH     LINE      ---       ---     ---   #123
-      C108DAH     LINE      ---       ---     ---   #132
-      C108DEH     LINE      ---       ---     ---   #135
-      C108E0H     LINE      ---       ---     ---   #137
-      C108E2H     LINE      ---       ---     ---   #156
-      C108E6H     LINE      ---       ---     ---   #157
-      C108EAH     LINE      ---       ---     ---   #172
-      C108EEH     LINE      ---       ---     ---   #173
-      C108F2H     LINE      ---       ---     ---   #184
-      C108F6H     LINE      ---       ---     ---   #185
-      C108FAH     LINE      ---       ---     ---   #202
-      ---         BLOCKEND  LVL=0     ---     ---   
-      C10390H     PUBLIC    LABEL     ---     ---   ADC0_vSeqSoftTrigger
-      C10236H     PUBLIC    LABEL     ---     ---   ADC0_vInit
-      C10354H     PUBLIC    LABEL     ---     ---   ADC0_vStartSeq2ReqChNum
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 15
-
-
-      C10324H     PUBLIC    LABEL     ---     ---   ADC0_vStartSeq0ReqChNum
-      C10384H     PUBLIC    LABEL     ---     ---   ADC0_vStartParReqChNum
-
-      C10236H     BLOCK     LVL=0     00EEH   ---   ADC0_vInit
-      C10236H     LINE      ---       ---     ---   #139
-      C10236H     LINE      ---       ---     ---   #148
-      C1023CH     LINE      ---       ---     ---   #154
-      C1023EH     LINE      ---       ---     ---   #156
-      C10240H     LINE      ---       ---     ---   #168
-      C10248H     LINE      ---       ---     ---   #186
-      C1024EH     LINE      ---       ---     ---   #188
-      C10254H     LINE      ---       ---     ---   #205
-      C1025CH     LINE      ---       ---     ---   #219
-      C10264H     LINE      ---       ---     ---   #233
-      C1026CH     LINE      ---       ---     ---   #247
-      C10274H     LINE      ---       ---     ---   #261
-      C1027CH     LINE      ---       ---     ---   #275
-      C10284H     LINE      ---       ---     ---   #289
-      C1028CH     LINE      ---       ---     ---   #297
-      C10292H     LINE      ---       ---     ---   #301
-      C10296H     LINE      ---       ---     ---   #313
-      C1029AH     LINE      ---       ---     ---   #322
-      C1029EH     LINE      ---       ---     ---   #331
-      C102A2H     LINE      ---       ---     ---   #340
-      C102A6H     LINE      ---       ---     ---   #349
-      C102AAH     LINE      ---       ---     ---   #358
-      C102AEH     LINE      ---       ---     ---   #367
-      C102B2H     LINE      ---       ---     ---   #376
-      C102B6H     LINE      ---       ---     ---   #383
-      C102BAH     LINE      ---       ---     ---   #392
-      C102BEH     LINE      ---       ---     ---   #395
-      C102C2H     LINE      ---       ---     ---   #404
-      C102C6H     LINE      ---       ---     ---   #415
-      C102CAH     LINE      ---       ---     ---   #422
-      C102CEH     LINE      ---       ---     ---   #425
-      C102D2H     LINE      ---       ---     ---   #435
-      C102DAH     LINE      ---       ---     ---   #437
-      C102E2H     LINE      ---       ---     ---   #439
-      C102EAH     LINE      ---       ---     ---   #441
-      C102F2H     LINE      ---       ---     ---   #458
-      C102FAH     LINE      ---       ---     ---   #466
-      C10300H     LINE      ---       ---     ---   #474
-      C10304H     LINE      ---       ---     ---   #484
-      C10308H     LINE      ---       ---     ---   #490
-      C10312H     LINE      ---       ---     ---   #492
-      C10316H     LINE      ---       ---     ---   #494
-      C10322H     LINE      ---       ---     ---   #501
+      C10A1AH     BLOCK     LVL=0     002CH   ---   GPT1_vInit
+      C10A1AH     LINE      ---       ---     ---   #122
+      C10A1AH     LINE      ---       ---     ---   #130
+      C10A1EH     LINE      ---       ---     ---   #132
+      C10A20H     LINE      ---       ---     ---   #134
+      C10A22H     LINE      ---       ---     ---   #154
+      C10A26H     LINE      ---       ---     ---   #155
+      C10A2AH     LINE      ---       ---     ---   #166
+      C10A2EH     LINE      ---       ---     ---   #167
+      C10A32H     LINE      ---       ---     ---   #178
+      C10A36H     LINE      ---       ---     ---   #179
+      C10A3AH     LINE      ---       ---     ---   #197
+      C10A3EH     LINE      ---       ---     ---   #204
+      C10A40H     LINE      ---       ---     ---   #206
+      C10A42H     LINE      ---       ---     ---   #208
+      C10A44H     LINE      ---       ---     ---   #210
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C10324H     BLOCK     LVL=0     0030H   ---   ADC0_vStartSeq0ReqChNum
+      C10A46H     BLOCK     LVL=0     000CH   ---   GPT1_viTmr2
+      C10A46H     LINE      ---       ---     ---   #242
+      C10A48H     LINE      ---       ---     ---   #252
+      C10A4EH     LINE      ---       ---     ---   #255
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C10A52H     PUBLIC    LABEL     ---     ---   GPT2_vInit
+
+      C10A52H     BLOCK     LVL=0     0022H   ---   GPT2_vInit
+      C10A52H     LINE      ---       ---     ---   #123
+      C10A52H     LINE      ---       ---     ---   #132
+      C10A56H     LINE      ---       ---     ---   #135
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 15
+
+
+      C10A58H     LINE      ---       ---     ---   #137
+      C10A5AH     LINE      ---       ---     ---   #156
+      C10A5EH     LINE      ---       ---     ---   #157
+      C10A62H     LINE      ---       ---     ---   #172
+      C10A66H     LINE      ---       ---     ---   #173
+      C10A6AH     LINE      ---       ---     ---   #184
+      C10A6EH     LINE      ---       ---     ---   #185
+      C10A72H     LINE      ---       ---     ---   #202
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C10784H     PUBLIC    LABEL     ---     ---   ADC0_vSeqSoftTrigger
+      C1062AH     PUBLIC    LABEL     ---     ---   ADC0_vInit
+      C10748H     PUBLIC    LABEL     ---     ---   ADC0_vStartSeq2ReqChNum
+      C10718H     PUBLIC    LABEL     ---     ---   ADC0_vStartSeq0ReqChNum
+      C10778H     PUBLIC    LABEL     ---     ---   ADC0_vStartParReqChNum
+
+      C1062AH     BLOCK     LVL=0     00EEH   ---   ADC0_vInit
+      C1062AH     LINE      ---       ---     ---   #139
+      C1062AH     LINE      ---       ---     ---   #148
+      C10630H     LINE      ---       ---     ---   #154
+      C10632H     LINE      ---       ---     ---   #156
+      C10634H     LINE      ---       ---     ---   #168
+      C1063CH     LINE      ---       ---     ---   #186
+      C10642H     LINE      ---       ---     ---   #188
+      C10648H     LINE      ---       ---     ---   #205
+      C10650H     LINE      ---       ---     ---   #219
+      C10658H     LINE      ---       ---     ---   #233
+      C10660H     LINE      ---       ---     ---   #247
+      C10668H     LINE      ---       ---     ---   #261
+      C10670H     LINE      ---       ---     ---   #275
+      C10678H     LINE      ---       ---     ---   #289
+      C10680H     LINE      ---       ---     ---   #297
+      C10686H     LINE      ---       ---     ---   #301
+      C1068AH     LINE      ---       ---     ---   #313
+      C1068EH     LINE      ---       ---     ---   #322
+      C10692H     LINE      ---       ---     ---   #331
+      C10696H     LINE      ---       ---     ---   #340
+      C1069AH     LINE      ---       ---     ---   #349
+      C1069EH     LINE      ---       ---     ---   #358
+      C106A2H     LINE      ---       ---     ---   #367
+      C106A6H     LINE      ---       ---     ---   #376
+      C106AAH     LINE      ---       ---     ---   #383
+      C106AEH     LINE      ---       ---     ---   #392
+      C106B2H     LINE      ---       ---     ---   #395
+      C106B6H     LINE      ---       ---     ---   #404
+      C106BAH     LINE      ---       ---     ---   #415
+      C106BEH     LINE      ---       ---     ---   #422
+      C106C2H     LINE      ---       ---     ---   #425
+      C106C6H     LINE      ---       ---     ---   #435
+      C106CEH     LINE      ---       ---     ---   #437
+      C106D6H     LINE      ---       ---     ---   #439
+      C106DEH     LINE      ---       ---     ---   #441
+      C106E6H     LINE      ---       ---     ---   #458
+      C106EEH     LINE      ---       ---     ---   #466
+      C106F4H     LINE      ---       ---     ---   #474
+      C106F8H     LINE      ---       ---     ---   #484
+      C106FCH     LINE      ---       ---     ---   #490
+      C10706H     LINE      ---       ---     ---   #492
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 16
+
+
+      C1070AH     LINE      ---       ---     ---   #494
+      C10716H     LINE      ---       ---     ---   #501
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C10718H     BLOCK     LVL=0     0030H   ---   ADC0_vStartSeq0ReqChNum
       000048H     SYMBOL    REG       ---     ---   ubExtTrg
       000049H     SYMBOL    REG       ---     ---   ubEnIntr
       00004AH     SYMBOL    REG       ---     ---   ubRFill
       00004BH     SYMBOL    REG       ---     ---   ubChannelNum
-      C10324H     BLOCK     LVL=1     002EH   ---   
+      C10718H     BLOCK     LVL=1     002EH   ---   
       000006H     SYMBOL    REG       ---     ---   uwVal
       ---         BLOCKEND  LVL=1     ---     ---   
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 16
-
-
-      C10324H     LINE      ---       ---     ---   #536
-      C10324H     LINE      ---       ---     ---   #537
-      C10324H     LINE      ---       ---     ---   #539
-      C10326H     LINE      ---       ---     ---   #540
-      C1032CH     LINE      ---       ---     ---   #542
-      C10330H     LINE      ---       ---     ---   #543
-      C10330H     LINE      ---       ---     ---   #544
-      C10336H     LINE      ---       ---     ---   #546
-      C1033AH     LINE      ---       ---     ---   #547
-      C1033AH     LINE      ---       ---     ---   #548
-      C10340H     LINE      ---       ---     ---   #550
-      C10344H     LINE      ---       ---     ---   #551
-      C10344H     LINE      ---       ---     ---   #552
-      C1034EH     LINE      ---       ---     ---   #554
-      C10352H     LINE      ---       ---     ---   #556
+      C10718H     LINE      ---       ---     ---   #536
+      C10718H     LINE      ---       ---     ---   #537
+      C10718H     LINE      ---       ---     ---   #539
+      C1071AH     LINE      ---       ---     ---   #540
+      C10720H     LINE      ---       ---     ---   #542
+      C10724H     LINE      ---       ---     ---   #543
+      C10724H     LINE      ---       ---     ---   #544
+      C1072AH     LINE      ---       ---     ---   #546
+      C1072EH     LINE      ---       ---     ---   #547
+      C1072EH     LINE      ---       ---     ---   #548
+      C10734H     LINE      ---       ---     ---   #550
+      C10738H     LINE      ---       ---     ---   #551
+      C10738H     LINE      ---       ---     ---   #552
+      C10742H     LINE      ---       ---     ---   #554
+      C10746H     LINE      ---       ---     ---   #556
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C10354H     BLOCK     LVL=0     0030H   ---   ADC0_vStartSeq2ReqChNum
+      C10748H     BLOCK     LVL=0     0030H   ---   ADC0_vStartSeq2ReqChNum
       000048H     SYMBOL    REG       ---     ---   ubExtTrg
       000049H     SYMBOL    REG       ---     ---   ubEnIntr
       00004AH     SYMBOL    REG       ---     ---   ubRFill
       00004BH     SYMBOL    REG       ---     ---   ubChannelNum
-      C10354H     BLOCK     LVL=1     002EH   ---   
+      C10748H     BLOCK     LVL=1     002EH   ---   
       000006H     SYMBOL    REG       ---     ---   uwVal
       ---         BLOCKEND  LVL=1     ---     ---   
-      C10354H     LINE      ---       ---     ---   #591
-      C10354H     LINE      ---       ---     ---   #592
-      C10354H     LINE      ---       ---     ---   #594
-      C10356H     LINE      ---       ---     ---   #595
-      C1035CH     LINE      ---       ---     ---   #597
-      C10360H     LINE      ---       ---     ---   #598
-      C10360H     LINE      ---       ---     ---   #599
-      C10366H     LINE      ---       ---     ---   #601
-      C1036AH     LINE      ---       ---     ---   #602
-      C1036AH     LINE      ---       ---     ---   #603
-      C10370H     LINE      ---       ---     ---   #605
-      C10374H     LINE      ---       ---     ---   #606
-      C10374H     LINE      ---       ---     ---   #607
-      C1037EH     LINE      ---       ---     ---   #609
-      C10382H     LINE      ---       ---     ---   #611
+      C10748H     LINE      ---       ---     ---   #591
+      C10748H     LINE      ---       ---     ---   #592
+      C10748H     LINE      ---       ---     ---   #594
+      C1074AH     LINE      ---       ---     ---   #595
+      C10750H     LINE      ---       ---     ---   #597
+      C10754H     LINE      ---       ---     ---   #598
+      C10754H     LINE      ---       ---     ---   #599
+      C1075AH     LINE      ---       ---     ---   #601
+      C1075EH     LINE      ---       ---     ---   #602
+      C1075EH     LINE      ---       ---     ---   #603
+      C10764H     LINE      ---       ---     ---   #605
+      C10768H     LINE      ---       ---     ---   #606
+      C10768H     LINE      ---       ---     ---   #607
+      C10772H     LINE      ---       ---     ---   #609
+      C10776H     LINE      ---       ---     ---   #611
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C10384H     BLOCK     LVL=0     000CH   ---   ADC0_vStartParReqChNum
+      C10778H     BLOCK     LVL=0     000CH   ---   ADC0_vStartParReqChNum
       000008H     SYMBOL    REG       ---     ---   uwChannelNum
-      C10384H     LINE      ---       ---     ---   #642
-      C10384H     LINE      ---       ---     ---   #645
-      C1038EH     LINE      ---       ---     ---   #647
+      C10778H     LINE      ---       ---     ---   #642
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 17
+
+
+      C10778H     LINE      ---       ---     ---   #645
+      C10782H     LINE      ---       ---     ---   #647
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C10390H     BLOCK     LVL=0     0038H   ---   ADC0_vSeqSoftTrigger
+      C10784H     BLOCK     LVL=0     0038H   ---   ADC0_vSeqSoftTrigger
       000048H     SYMBOL    REG       ---     ---   ubSrc
-      C10390H     LINE      ---       ---     ---   #676
-      C10390H     LINE      ---       ---     ---   #679
-      C10396H     LINE      ---       ---     ---   #681
-      C10398H     LINE      ---       ---     ---   #683
-      C103A2H     LINE      ---       ---     ---   #684
-      C103AAH     LINE      ---       ---     ---   #686
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 17
-
-
-      C103ACH     LINE      ---       ---     ---   #688
-      C103B2H     LINE      ---       ---     ---   #690
-      C103B4H     LINE      ---       ---     ---   #692
-      C103BEH     LINE      ---       ---     ---   #693
-      C103C6H     LINE      ---       ---     ---   #695
-      C103C6H     LINE      ---       ---     ---   #701
-      C103C6H     LINE      ---       ---     ---   #703
+      C10784H     LINE      ---       ---     ---   #676
+      C10784H     LINE      ---       ---     ---   #679
+      C1078AH     LINE      ---       ---     ---   #681
+      C1078CH     LINE      ---       ---     ---   #683
+      C10796H     LINE      ---       ---     ---   #684
+      C1079EH     LINE      ---       ---     ---   #686
+      C107A0H     LINE      ---       ---     ---   #688
+      C107A6H     LINE      ---       ---     ---   #690
+      C107A8H     LINE      ---       ---     ---   #692
+      C107B2H     LINE      ---       ---     ---   #693
+      C107BAH     LINE      ---       ---     ---   #695
+      C107BAH     LINE      ---       ---     ---   #701
+      C107BAH     LINE      ---       ---     ---   #703
       ---         BLOCKEND  LVL=0     ---     ---   
-      C1004CH     PUBLIC    LABEL     ---     ---   SetMotorSpeedsNoReturn
-      C101EAH     PUBLIC    LABEL     ---     ---   SetMotorSpeedLeft
-      C10210H     PUBLIC    LABEL     ---     ---   SetMotorSpeedRight
-      C1005CH     PUBLIC    LABEL     ---     ---   SetMotorSpeeds
-      E00240H     PUBLIC    VAR       ---     ---   megatroncounter
-      E00242H     PUBLIC    VAR       ---     ---   optimusprimeleft
-      E00244H     PUBLIC    VAR       ---     ---   optimusprimeright
-      E0024AH     PUBLIC    VAR       ---     ---   megatronleft
-      E0024CH     PUBLIC    VAR       ---     ---   megatronright
+      C10440H     PUBLIC    LABEL     ---     ---   SetMotorSpeedsNoReturn
+      C105DEH     PUBLIC    LABEL     ---     ---   SetMotorSpeedLeft
+      C10604H     PUBLIC    LABEL     ---     ---   SetMotorSpeedRight
+      C10450H     PUBLIC    LABEL     ---     ---   SetMotorSpeeds
+      E00298H     PUBLIC    VAR       ---     ---   megatroncounter
+      E0029AH     PUBLIC    VAR       ---     ---   optimusprimeleft
+      E0029CH     PUBLIC    VAR       ---     ---   optimusprimeright
+      E002A2H     PUBLIC    VAR       ---     ---   megatronleft
+      E002A4H     PUBLIC    VAR       ---     ---   megatronright
 
-      C1004CH     BLOCK     LVL=0     0010H   ---   SetMotorSpeedsNoReturn
+      C10440H     BLOCK     LVL=0     0010H   ---   SetMotorSpeedsNoReturn
       000000H     SYMBOL    AUTO      ---     ---   left
       000002H     SYMBOL    AUTO      ---     ---   right
-      C1004CH     LINE      ---       ---     ---   #17
-      C10050H     LINE      ---       ---     ---   #19
-      C10058H     LINE      ---       ---     ---   #20
+      C10440H     LINE      ---       ---     ---   #17
+      C10444H     LINE      ---       ---     ---   #19
+      C1044CH     LINE      ---       ---     ---   #20
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C1005CH     BLOCK     LVL=0     018EH   ---   SetMotorSpeeds
+      C10450H     BLOCK     LVL=0     018EH   ---   SetMotorSpeeds
       00000EH     SYMBOL    REG       ---     ---   left_p
       00000DH     SYMBOL    REG       ---     ---   right_p
-      C10068H     BLOCK     LVL=1     0178H   ---   
+      C1045CH     BLOCK     LVL=1     0178H   ---   
       000000H     SYMBOL    AUTO      ---     ---   left
       00000FH     SYMBOL    REG       ---     ---   right
-      E00248H     SYMBOL    VAR       ---     ---   lastleft
-      E00246H     SYMBOL    VAR       ---     ---   lastright
+      E002A0H     SYMBOL    VAR       ---     ---   lastleft
+      E0029EH     SYMBOL    VAR       ---     ---   lastright
       ---         BLOCKEND  LVL=1     ---     ---   
-      C1005CH     LINE      ---       ---     ---   #22
-      C10068H     LINE      ---       ---     ---   #23
-      C10068H     LINE      ---       ---     ---   #24
-      C1006CH     LINE      ---       ---     ---   #25
-      C1006EH     LINE      ---       ---     ---   #31
-      C1007AH     LINE      ---       ---     ---   #32
-      C10088H     LINE      ---       ---     ---   #33
-      C10092H     LINE      ---       ---     ---   #34
-      C1009CH     LINE      ---       ---     ---   #37
-      C100AEH     LINE      ---       ---     ---   #39
-      C100C2H     LINE      ---       ---     ---   #40
-      C100CCH     LINE      ---       ---     ---   #41
-      C100CCH     LINE      ---       ---     ---   #42
-      C100DEH     LINE      ---       ---     ---   #44
-      C100F0H     LINE      ---       ---     ---   #45
-      C100FAH     LINE      ---       ---     ---   #46
-      C100FAH     LINE      ---       ---     ---   #49
-      C100FEH     LINE      ---       ---     ---   #50
-      C10108H     LINE      ---       ---     ---   #52
-      C10110H     LINE      ---       ---     ---   #53
-      C10118H     LINE      ---       ---     ---   #54
-      C1011CH     LINE      ---       ---     ---   #55
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 18
+      C10450H     LINE      ---       ---     ---   #22
+      C1045CH     LINE      ---       ---     ---   #23
+      C1045CH     LINE      ---       ---     ---   #24
+      C10460H     LINE      ---       ---     ---   #25
+      C10462H     LINE      ---       ---     ---   #31
+      C1046EH     LINE      ---       ---     ---   #32
+      C1047CH     LINE      ---       ---     ---   #33
+      C10486H     LINE      ---       ---     ---   #34
+      C10490H     LINE      ---       ---     ---   #37
+      C104A2H     LINE      ---       ---     ---   #39
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 18
 
 
-      C1011CH     LINE      ---       ---     ---   #59
-      C10138H     LINE      ---       ---     ---   #60
-      C1013CH     LINE      ---       ---     ---   #61
-      C10158H     LINE      ---       ---     ---   #62
-      C1015CH     LINE      ---       ---     ---   #65
-      C10162H     LINE      ---       ---     ---   #66
-      C10166H     LINE      ---       ---     ---   #68
-      C10176H     LINE      ---       ---     ---   #70
-      C10180H     LINE      ---       ---     ---   #73
-      C10192H     LINE      ---       ---     ---   #74
-      C10192H     LINE      ---       ---     ---   #75
-      C1019CH     LINE      ---       ---     ---   #78
-      C101ACH     LINE      ---       ---     ---   #79
-      C101ACH     LINE      ---       ---     ---   #83
-      C101B0H     LINE      ---       ---     ---   #84
-      C101BCH     LINE      ---       ---     ---   #86
-      C101C2H     LINE      ---       ---     ---   #88
-      C101C6H     LINE      ---       ---     ---   #89
-      C101D4H     LINE      ---       ---     ---   #91
-      C101DAH     LINE      ---       ---     ---   #93
-      C101DEH     LINE      ---       ---     ---   #94
-      C101E0H     LINE      ---       ---     ---   #95
+      C104B6H     LINE      ---       ---     ---   #40
+      C104C0H     LINE      ---       ---     ---   #41
+      C104C0H     LINE      ---       ---     ---   #42
+      C104D2H     LINE      ---       ---     ---   #44
+      C104E4H     LINE      ---       ---     ---   #45
+      C104EEH     LINE      ---       ---     ---   #46
+      C104EEH     LINE      ---       ---     ---   #49
+      C104F2H     LINE      ---       ---     ---   #50
+      C104FCH     LINE      ---       ---     ---   #52
+      C10504H     LINE      ---       ---     ---   #53
+      C1050CH     LINE      ---       ---     ---   #54
+      C10510H     LINE      ---       ---     ---   #55
+      C10510H     LINE      ---       ---     ---   #59
+      C1052CH     LINE      ---       ---     ---   #60
+      C10530H     LINE      ---       ---     ---   #61
+      C1054CH     LINE      ---       ---     ---   #62
+      C10550H     LINE      ---       ---     ---   #65
+      C10556H     LINE      ---       ---     ---   #66
+      C1055AH     LINE      ---       ---     ---   #68
+      C1056AH     LINE      ---       ---     ---   #70
+      C10574H     LINE      ---       ---     ---   #73
+      C10586H     LINE      ---       ---     ---   #74
+      C10586H     LINE      ---       ---     ---   #75
+      C10590H     LINE      ---       ---     ---   #78
+      C105A0H     LINE      ---       ---     ---   #79
+      C105A0H     LINE      ---       ---     ---   #83
+      C105A4H     LINE      ---       ---     ---   #84
+      C105B0H     LINE      ---       ---     ---   #86
+      C105B6H     LINE      ---       ---     ---   #88
+      C105BAH     LINE      ---       ---     ---   #89
+      C105C8H     LINE      ---       ---     ---   #91
+      C105CEH     LINE      ---       ---     ---   #93
+      C105D2H     LINE      ---       ---     ---   #94
+      C105D4H     LINE      ---       ---     ---   #95
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C101EAH     BLOCK     LVL=0     0026H   ---   SetMotorSpeedLeft
+      C105DEH     BLOCK     LVL=0     0026H   ---   SetMotorSpeedLeft
       000048H     SYMBOL    REG       ---     ---   direction
       000049H     SYMBOL    REG       ---     ---   speed
-      C101EAH     LINE      ---       ---     ---   #98
-      C101EAH     LINE      ---       ---     ---   #100
-      C101F8H     LINE      ---       ---     ---   #101
-      C10202H     LINE      ---       ---     ---   #103
-      C10208H     LINE      ---       ---     ---   #105
-      C1020AH     LINE      ---       ---     ---   #106
-      C1020CH     LINE      ---       ---     ---   #109
-      C1020EH     LINE      ---       ---     ---   #110
-      C1020EH     LINE      ---       ---     ---   #111
+      C105DEH     LINE      ---       ---     ---   #98
+      C105DEH     LINE      ---       ---     ---   #100
+      C105ECH     LINE      ---       ---     ---   #101
+      C105F6H     LINE      ---       ---     ---   #103
+      C105FCH     LINE      ---       ---     ---   #105
+      C105FEH     LINE      ---       ---     ---   #106
+      C10600H     LINE      ---       ---     ---   #109
+      C10602H     LINE      ---       ---     ---   #110
+      C10602H     LINE      ---       ---     ---   #111
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C10210H     BLOCK     LVL=0     0026H   ---   SetMotorSpeedRight
+      C10604H     BLOCK     LVL=0     0026H   ---   SetMotorSpeedRight
       000048H     SYMBOL    REG       ---     ---   direction
       000049H     SYMBOL    REG       ---     ---   speed
-      C10210H     LINE      ---       ---     ---   #114
-      C10210H     LINE      ---       ---     ---   #116
-      C1021EH     LINE      ---       ---     ---   #117
-      C10228H     LINE      ---       ---     ---   #119
-      C1022EH     LINE      ---       ---     ---   #121
-      C10230H     LINE      ---       ---     ---   #122
-      C10232H     LINE      ---       ---     ---   #125
-      C10234H     LINE      ---       ---     ---   #126
-      C10234H     LINE      ---       ---     ---   #127
+      C10604H     LINE      ---       ---     ---   #114
+      C10604H     LINE      ---       ---     ---   #116
+      C10612H     LINE      ---       ---     ---   #117
+      C1061CH     LINE      ---       ---     ---   #119
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 19
+
+
+      C10622H     LINE      ---       ---     ---   #121
+      C10624H     LINE      ---       ---     ---   #122
+      C10626H     LINE      ---       ---     ---   #125
+      C10628H     LINE      ---       ---     ---   #126
+      C10628H     LINE      ---       ---     ---   #127
       ---         BLOCKEND  LVL=0     ---     ---   
-      C108FCH     PUBLIC    LABEL     ---     ---   ReadMegatronLeft
-      C1090AH     PUBLIC    LABEL     ---     ---   ReadMegatronRight
+      C10A74H     PUBLIC    LABEL     ---     ---   ReadMegatronLeft
+      C10A82H     PUBLIC    LABEL     ---     ---   ReadMegatronRight
 
-      C108FCH     BLOCK     LVL=0     000EH   ---   ReadMegatronLeft
-      C108FCH     BLOCK     LVL=1     000CH   ---   
-      000004H     SYMBOL    REG       ---     ---   value
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 19
-
-
-      ---         BLOCKEND  LVL=1     ---     ---   
-      C108FCH     LINE      ---       ---     ---   #8
-      C108FCH     LINE      ---       ---     ---   #9
-      C108FCH     LINE      ---       ---     ---   #12
-      C108FEH     LINE      ---       ---     ---   #13
-      C10902H     LINE      ---       ---     ---   #14
-      C10906H     LINE      ---       ---     ---   #15
-      C10908H     LINE      ---       ---     ---   #16
-      C10908H     LINE      ---       ---     ---   #17
-      ---         BLOCKEND  LVL=0     ---     ---   
-
-      C1090AH     BLOCK     LVL=0     0010H   ---   ReadMegatronRight
-      C1090AH     BLOCK     LVL=1     000EH   ---   
+      C10A74H     BLOCK     LVL=0     000EH   ---   ReadMegatronLeft
+      C10A74H     BLOCK     LVL=1     000CH   ---   
       000004H     SYMBOL    REG       ---     ---   value
       ---         BLOCKEND  LVL=1     ---     ---   
-      C1090AH     LINE      ---       ---     ---   #19
-      C1090AH     LINE      ---       ---     ---   #20
-      C1090AH     LINE      ---       ---     ---   #22
-      C1090EH     LINE      ---       ---     ---   #23
-      C10912H     LINE      ---       ---     ---   #24
-      C10916H     LINE      ---       ---     ---   #25
-      C10918H     LINE      ---       ---     ---   #26
-      C10918H     LINE      ---       ---     ---   #27
-      ---         BLOCKEND  LVL=0     ---     ---   
-      C103C8H     PUBLIC    LABEL     ---     ---   ReadSensorData
-      C104B8H     PUBLIC    LABEL     ---     ---   ReadAccelValue
-      C104B0H     PUBLIC    LABEL     ---     ---   ReadSpinValueRaw
-      C1050CH     PUBLIC    LABEL     ---     ---   ReadSpinValue
-      C10482H     PUBLIC    LABEL     ---     ---   ReadAccelValueRaw
-      E0024EH     PUBLIC    VAR       ---     ---   accel_z
-      E00250H     PUBLIC    VAR       ---     ---   accel_y
-      E00252H     PUBLIC    VAR       ---     ---   accel_x
-      E00254H     PUBLIC    VAR       ---     ---   speed_spin
-
-      C103C8H     BLOCK     LVL=0     00BAH   ---   ReadSensorData
-      C103C8H     LINE      ---       ---     ---   #13
-      C103C8H     LINE      ---       ---     ---   #24
-      C103D4H     LINE      ---       ---     ---   #25
-      C103E0H     LINE      ---       ---     ---   #26
-      C103F0H     LINE      ---       ---     ---   #27
-      C103FCH     LINE      ---       ---     ---   #28
-      C10408H     LINE      ---       ---     ---   #29
-      C10418H     LINE      ---       ---     ---   #34
-      C10432H     LINE      ---       ---     ---   #35
-      C1044CH     LINE      ---       ---     ---   #36
-      C10466H     LINE      ---       ---     ---   #37
-      C10480H     LINE      ---       ---     ---   #38
+      C10A74H     LINE      ---       ---     ---   #8
+      C10A74H     LINE      ---       ---     ---   #9
+      C10A74H     LINE      ---       ---     ---   #12
+      C10A76H     LINE      ---       ---     ---   #13
+      C10A7AH     LINE      ---       ---     ---   #14
+      C10A7EH     LINE      ---       ---     ---   #15
+      C10A80H     LINE      ---       ---     ---   #16
+      C10A80H     LINE      ---       ---     ---   #17
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C10482H     BLOCK     LVL=0     002EH   ---   ReadAccelValueRaw
+      C10A82H     BLOCK     LVL=0     0010H   ---   ReadMegatronRight
+      C10A82H     BLOCK     LVL=1     000EH   ---   
+      000004H     SYMBOL    REG       ---     ---   value
+      ---         BLOCKEND  LVL=1     ---     ---   
+      C10A82H     LINE      ---       ---     ---   #19
+      C10A82H     LINE      ---       ---     ---   #20
+      C10A82H     LINE      ---       ---     ---   #22
+      C10A86H     LINE      ---       ---     ---   #23
+      C10A8AH     LINE      ---       ---     ---   #24
+      C10A8EH     LINE      ---       ---     ---   #25
+      C10A90H     LINE      ---       ---     ---   #26
+      C10A90H     LINE      ---       ---     ---   #27
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C1027AH     PUBLIC    LABEL     ---     ---   ReadSensorData
+      C103B0H     PUBLIC    LABEL     ---     ---   ReadAccelValue
+      C103A8H     PUBLIC    LABEL     ---     ---   ReadSpinValueRaw
+      C10404H     PUBLIC    LABEL     ---     ---   ReadSpinValue
+      C1024AH     PUBLIC    LABEL     ---     ---   GetMediumValue
+      C1037AH     PUBLIC    LABEL     ---     ---   ReadAccelValueRaw
+      E00240H     PUBLIC    VAR       ---     ---   accel_z_arr
+      E00254H     PUBLIC    VAR       ---     ---   accel_y_arr
+      E00268H     PUBLIC    VAR       ---     ---   accel_x_arr
+      E0027CH     PUBLIC    VAR       ---     ---   speed_spin_arr
+      E00290H     PUBLIC    VAR       ---     ---   accel_z
+      E00292H     PUBLIC    VAR       ---     ---   accel_y
+      E00294H     PUBLIC    VAR       ---     ---   accel_x
+      E00296H     PUBLIC    VAR       ---     ---   speed_spin
+
+      C1024AH     BLOCK     LVL=0     0030H   ---   GetMediumValue
+      000008H     SYMBOL    REG       ---     ---   vals
+      C1024AH     BLOCK     LVL=1     002EH   ---   
+      000007H     SYMBOL    REG       ---     ---   ret
+      00000AH     SYMBOL    REG       ---     ---   max
+      000009H     SYMBOL    REG       ---     ---   min
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 20
+
+
+      000006H     SYMBOL    REG       ---     ---   i
+      ---         BLOCKEND  LVL=1     ---     ---   
+      C1024AH     LINE      ---       ---     ---   #20
+      C1024AH     LINE      ---       ---     ---   #21
+      C1024AH     LINE      ---       ---     ---   #22
+      C1024CH     LINE      ---       ---     ---   #23
+      C1024EH     LINE      ---       ---     ---   #24
+      C10252H     LINE      ---       ---     ---   #25
+      C10254H     LINE      ---       ---     ---   #28
+      C10254H     LINE      ---       ---     ---   #30
+      C10260H     LINE      ---       ---     ---   #31
+      C10266H     LINE      ---       ---     ---   #32
+      C1026CH     LINE      ---       ---     ---   #33
+      C10270H     LINE      ---       ---     ---   #36
+      C10272H     LINE      ---       ---     ---   #37
+      C10274H     LINE      ---       ---     ---   #39
+      C10278H     LINE      ---       ---     ---   #40
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C1027AH     BLOCK     LVL=0     0100H   ---   ReadSensorData
+      C1027CH     BLOCK     LVL=1     00FAH   ---   
+      00000DH     SYMBOL    REG       ---     ---   i
+      ---         BLOCKEND  LVL=1     ---     ---   
+      C1027AH     LINE      ---       ---     ---   #42
+      C1027CH     LINE      ---       ---     ---   #43
+      C1027CH     LINE      ---       ---     ---   #44
+      C1027EH     LINE      ---       ---     ---   #54
+      C1027EH     LINE      ---       ---     ---   #56
+      C1028AH     LINE      ---       ---     ---   #57
+      C10296H     LINE      ---       ---     ---   #58
+      C102A6H     LINE      ---       ---     ---   #59
+      C102B2H     LINE      ---       ---     ---   #60
+      C102BEH     LINE      ---       ---     ---   #61
+      C102CEH     LINE      ---       ---     ---   #66
+      C102EEH     LINE      ---       ---     ---   #67
+      C1030AH     LINE      ---       ---     ---   #68
+      C10326H     LINE      ---       ---     ---   #69
+      C10342H     LINE      ---       ---     ---   #70
+      C10346H     LINE      ---       ---     ---   #71
+      C10352H     LINE      ---       ---     ---   #72
+      C1035EH     LINE      ---       ---     ---   #73
+      C1036AH     LINE      ---       ---     ---   #74
+      C10376H     LINE      ---       ---     ---   #75
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C1037AH     BLOCK     LVL=0     002EH   ---   ReadAccelValueRaw
       000048H     SYMBOL    REG       ---     ---   direction
-      C10482H     LINE      ---       ---     ---   #40
-      C10482H     LINE      ---       ---     ---   #42
-      C10490H     LINE      ---       ---     ---   #43
-      C1049EH     LINE      ---       ---     ---   #44
-      C104ACH     LINE      ---       ---     ---   #45
-      C104AEH     LINE      ---       ---     ---   #46
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 20
-
-
+      C1037AH     LINE      ---       ---     ---   #77
+      C1037AH     LINE      ---       ---     ---   #79
+      C10388H     LINE      ---       ---     ---   #80
+      C10396H     LINE      ---       ---     ---   #81
+      C103A4H     LINE      ---       ---     ---   #82
+      C103A6H     LINE      ---       ---     ---   #83
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C104B0H     BLOCK     LVL=0     0008H   ---   ReadSpinValueRaw
-      C104B0H     LINE      ---       ---     ---   #48
-      C104B0H     LINE      ---       ---     ---   #50
-      C104B6H     LINE      ---       ---     ---   #51
+      C103A8H     BLOCK     LVL=0     0008H   ---   ReadSpinValueRaw
+      C103A8H     LINE      ---       ---     ---   #85
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  14:10:59  PAGE 21
+
+
+      C103A8H     LINE      ---       ---     ---   #87
+      C103AEH     LINE      ---       ---     ---   #88
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C104B8H     BLOCK     LVL=0     0054H   ---   ReadAccelValue
+      C103B0H     BLOCK     LVL=0     0054H   ---   ReadAccelValue
       000048H     SYMBOL    REG       ---     ---   direction
-      C104B8H     BLOCK     LVL=1     0052H   ---   
+      C103B0H     BLOCK     LVL=1     0052H   ---   
       000006H     SYMBOL    REG       ---     ---   tmp
       000007H     SYMBOL    REG       ---     ---   x
       ---         BLOCKEND  LVL=1     ---     ---   
-      C104B8H     LINE      ---       ---     ---   #57
-      C104B8H     LINE      ---       ---     ---   #58
-      C104B8H     LINE      ---       ---     ---   #59
-      C104BAH     LINE      ---       ---     ---   #62
-      C104C4H     LINE      ---       ---     ---   #63
-      C104CEH     LINE      ---       ---     ---   #64
-      C104D8H     LINE      ---       ---     ---   #68
-      C104EAH     LINE      ---       ---     ---   #69
-      C104F0H     LINE      ---       ---     ---   #73
-      C1050AH     LINE      ---       ---     ---   #74
+      C103B0H     LINE      ---       ---     ---   #94
+      C103B0H     LINE      ---       ---     ---   #95
+      C103B0H     LINE      ---       ---     ---   #96
+      C103B2H     LINE      ---       ---     ---   #99
+      C103BCH     LINE      ---       ---     ---   #100
+      C103C6H     LINE      ---       ---     ---   #101
+      C103D0H     LINE      ---       ---     ---   #105
+      C103E2H     LINE      ---       ---     ---   #106
+      C103E8H     LINE      ---       ---     ---   #110
+      C10402H     LINE      ---       ---     ---   #111
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C1050CH     BLOCK     LVL=0     0038H   ---   ReadSpinValue
-      C1050CH     BLOCK     LVL=1     0036H   ---   
-      000006H     SYMBOL    REG       ---     ---   tmp
-      000007H     SYMBOL    REG       ---     ---   x
+      C10404H     BLOCK     LVL=0     003CH   ---   ReadSpinValue
+      C10404H     BLOCK     LVL=1     003AH   ---   
+      000007H     SYMBOL    REG       ---     ---   tmp
+      000006H     SYMBOL    REG       ---     ---   x
       ---         BLOCKEND  LVL=1     ---     ---   
-      C1050CH     LINE      ---       ---     ---   #79
-      C1050CH     LINE      ---       ---     ---   #80
-      C1050CH     LINE      ---       ---     ---   #81
-      C10510H     LINE      ---       ---     ---   #86
-      C10522H     LINE      ---       ---     ---   #87
-      C10528H     LINE      ---       ---     ---   #91
-      C10542H     LINE      ---       ---     ---   #92
+      C10404H     LINE      ---       ---     ---   #116
+      C10404H     LINE      ---       ---     ---   #117
+      C10404H     LINE      ---       ---     ---   #118
+      C10408H     LINE      ---       ---     ---   #123
+      C1041AH     LINE      ---       ---     ---   #124
+      C10420H     LINE      ---       ---     ---   #128
+      C10424H     LINE      ---       ---     ---   #132
+      C1043EH     LINE      ---       ---     ---   #133
       ---         BLOCKEND  LVL=0     ---     ---   
-      C1091AH     PUBLIC    LABEL     ---     ---   abs
+      C10A92H     PUBLIC    LABEL     ---     ---   abs
       C1003CH     PUBLIC    VAR       ---     ---   ?C_ENDINIT
 
 
@@ -1194,8 +1251,8 @@ FUNCTION . . . . . . . . . . . REG MASK
 
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 1000H BYTE CODE SIZE LIMIT; USED: 0B02H BYTE (68%) *
+* RESTRICTED VERSION WITH 1000H BYTE CODE SIZE LIMIT; USED: 0C7AH BYTE (77%) *
 ******************************************************************************
 
-Program Size: data=1111(near=1111) const=76(near=0) code=2772
+Program Size: data=1191(near=1191) const=76(near=0) code=3148
 L166 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

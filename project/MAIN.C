@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          05.12.2013 12:52:41
+// @Date          05.12.2013 13:20:48
 //
 //****************************************************************************
 
@@ -349,7 +349,7 @@ void main(void)
   // USER CODE BEGIN (Main,2)
   signed int ret_left;
   signed int ret_right;
-  signed int gyrovalue;
+  volatile signed int gyrovalue;
   unsigned char ledvalue;
   // USER CODE END
 
@@ -370,10 +370,18 @@ void main(void)
    ReadSensorData();
    gyrovalue = ReadSpinValue();
    ledvalue = ReadSpinValueRaw();
-   P10_OUT = ledvalue;
+   
+   P10_OUT_P7 = (gyrovalue > 35) ? 0 : 1;
+   P10_OUT_P6 =	(gyrovalue > 25) ? 0 : 1;
+   P10_OUT_P5 =	(gyrovalue > 15) ? 0 : 1;
+   P10_OUT_P4 =	(gyrovalue > 5) ? 0 : 1;
+   P10_OUT_P3 =	(gyrovalue < -5) ? 0 : 1;
+   P10_OUT_P2 =	(gyrovalue < -15) ? 0 : 1;
+   P10_OUT_P1 =	(gyrovalue < -25) ? 0 : 1;
+   P10_OUT_P0 =	(gyrovalue < -35) ? 0 : 1;
    // do some kind of stuff
-   ret_left = 0;
-   ret_right = 0;
+   ret_left = 80;
+   ret_right = 80;
    SetMotorSpeeds(&ret_left, &ret_right);
    // set motor speed
    //SetMotorSpeedsNoReturn(links_p, rechts_p);

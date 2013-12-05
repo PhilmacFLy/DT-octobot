@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the ADC0 module.
 //
 //----------------------------------------------------------------------------
-// @Date          05.12.2013 12:52:42
+// @Date          05.12.2013 13:20:50
 //
 //****************************************************************************
 
@@ -159,13 +159,13 @@ void ADC0_vInit(void)
   ///  Configure global control register:
   ///  -----------------------------------------------------------------------
   ///  --- Conversion Timing -----------------
-  ///  - conversion time (CTC)    = 01,29 us
+  ///  - conversion time (CTC)    = 02,58 us
 
-  ///  _Analog clock is 1/5th of module clock and digital clock is 1/1 times 
+  ///  _Analog clock is 1/10th of module clock and digital clock is 1/1 times 
   ///  of module clock
 
   ///  - the arbitration started by pending conversion request is selected
-  ADC0_GLOBCTR   =  0x8004;      // load global control register
+  ADC0_GLOBCTR   =  0x8009;      // load global control register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of Arbitration Slot enable register and also the Source 

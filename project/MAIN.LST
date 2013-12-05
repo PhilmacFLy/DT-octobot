@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:54:48 PAGE 1   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 14:10:58 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE MAIN
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
    12         // @Description   This file contains the project initialization function.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          05.12.2013 12:52:41
+   15         // @Date          05.12.2013 13:20:48
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
    52         // USER CODE BEGIN (MAIN_General,4)
    53         
    54         // USER CODE END
-C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:54:48 PAGE 2   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 14:10:58 PAGE 2   
 
    55         
    56         
@@ -127,7 +127,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   114         //----------------------------------------------------------------------------
   115         // @Date          05.12.2013
   116         //
-C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:54:48 PAGE 3   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 14:10:58 PAGE 3   
 
   117         //****************************************************************************
   118         
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   176  1        PSW_IEN        =  1;          
   177  1      
   178  1      } //  End of function MAIN_vInit
-C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:54:48 PAGE 4   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 14:10:58 PAGE 4   
 
   179         
   180         
@@ -255,7 +255,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   238         
   239         // USER CODE END
   240         
-C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:54:48 PAGE 5   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 14:10:58 PAGE 5   
 
   241         void MAIN_vLockProtecReg(void)
   242         {
@@ -319,7 +319,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
              -Hz)
   299  2      
   300  2              }
-C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:54:48 PAGE 6   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 14:10:58 PAGE 6   
 
   301  1      
   302  1        else                                               // fR derived from external crystal clock
@@ -375,7 +375,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   349  1        // USER CODE BEGIN (Main,2)
   350  1        signed int ret_left;
   351  1        signed int ret_right;
-  352  1        signed int gyrovalue;
+  352  1        volatile signed int gyrovalue;
   353  1        unsigned char ledvalue;
   354  1        // USER CODE END
   355  1      
@@ -383,7 +383,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   357  1      
   358  1        // USER CODE BEGIN (Main,3)
   359  1      
-C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:54:48 PAGE 7   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 14:10:58 PAGE 7   
 
   360  1        // USER CODE END
   361  1      
@@ -398,32 +398,40 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   370  2         ReadSensorData();
   371  2         gyrovalue = ReadSpinValue();
   372  2         ledvalue = ReadSpinValueRaw();
-  373  2         P10_OUT = ledvalue;
-  374  2         // do some kind of stuff
-  375  2         ret_left = 0;
-  376  2         ret_right = 0;
-  377  2         SetMotorSpeeds(&ret_left, &ret_right);
-  378  2         // set motor speed
-  379  2         //SetMotorSpeedsNoReturn(links_p, rechts_p);
-  380  2         // faehrt vorwärts hoffentlich
-  381  2         // und au langsam
-  382  2         //SetMotorSpeedsNoReturn(-40, -40);//20, 20);
-  383  2         // USER CODE END
-  384  2      
-  385  2        }
-  386  1      
-  387  1      } //  End of function main
-  388         
-  389         
-  390         
-  391         // USER CODE BEGIN (MAIN_General,10)
-  392         
-  393         // USER CODE END
-  394         
+  373  2         
+  374  2         P10_OUT_P7 = (gyrovalue > 35) ? 0 : 1;
+  375  2         P10_OUT_P6 = (gyrovalue > 25) ? 0 : 1;
+  376  2         P10_OUT_P5 = (gyrovalue > 15) ? 0 : 1;
+  377  2         P10_OUT_P4 = (gyrovalue > 5) ? 0 : 1;
+  378  2         P10_OUT_P3 = (gyrovalue < -5) ? 0 : 1;
+  379  2         P10_OUT_P2 = (gyrovalue < -15) ? 0 : 1;
+  380  2         P10_OUT_P1 = (gyrovalue < -25) ? 0 : 1;
+  381  2         P10_OUT_P0 = (gyrovalue < -35) ? 0 : 1;
+  382  2         // do some kind of stuff
+  383  2         ret_left = 80;
+  384  2         ret_right = 80;
+  385  2         SetMotorSpeeds(&ret_left, &ret_right);
+  386  2         // set motor speed
+  387  2         //SetMotorSpeedsNoReturn(links_p, rechts_p);
+  388  2         // faehrt vorwärts hoffentlich
+  389  2         // und au langsam
+  390  2         //SetMotorSpeedsNoReturn(-40, -40);//20, 20);
+  391  2         // USER CODE END
+  392  2      
+  393  2        }
+  394  1      
+  395  1      } //  End of function main
+  396         
+  397         
+  398         
+  399         // USER CODE BEGIN (MAIN_General,10)
+  400         
+  401         // USER CODE END
+  402         
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
-  CODE SIZE        =         256     --------
+  CODE SIZE        =         510     --------
   NEAR-CONST SIZE  =    --------     --------
   FAR-CONST SIZE   =    --------     --------
   HUGE-CONST SIZE  =    --------     --------
@@ -438,6 +446,8 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
   BIT SIZE         =    --------     --------
   INIT'L SIZE      =           6     --------
 END OF MODULE INFORMATION.
+
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 14:10:58 PAGE 8   
 
 
 C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

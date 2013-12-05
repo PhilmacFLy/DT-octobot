@@ -16,8 +16,8 @@
   </Extensions>
 
   <DaveTm>
-    <dwLowDateTime>1412550286</dwLowDateTime>
-    <dwHighDateTime>30339504</dwHighDateTime>
+    <dwLowDateTime>1866755881</dwLowDateTime>
+    <dwHighDateTime>30339508</dwHighDateTime>
   </DaveTm>
 
   <Target>
@@ -255,6 +255,16 @@
           <WinNumber>1</WinNumber>
           <ItemText>optimusprimeright</ItemText>
         </Ww>
+        <Ww>
+          <count>4</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>speed_spin</ItemText>
+        </Ww>
+        <Ww>
+          <count>5</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>speed_spin_arr</ItemText>
+        </Ww>
       </WatchWindow1>
       <DebugFlag>
         <trace>0</trace>
@@ -312,10 +322,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>83</ColumnNumber>
+      <ColumnNumber>21</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>347</TopLine>
-      <CurrentLine>374</CurrentLine>
+      <TopLine>355</TopLine>
+      <CurrentLine>364</CurrentLine>
       <bDave2>1</bDave2>
       <PathWithFileName>.\MAIN.C</PathWithFileName>
       <FilenameWithoutPath>MAIN.C</FilenameWithoutPath>
@@ -431,10 +441,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>32</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>22</CurrentLine>
+      <CurrentLine>11</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\megatron.c</PathWithFileName>
       <FilenameWithoutPath>megatron.c</FilenameWithoutPath>
@@ -445,10 +455,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>17</ColumnNumber>
+      <ColumnNumber>43</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>60</TopLine>
-      <CurrentLine>60</CurrentLine>
+      <TopLine>12</TopLine>
+      <CurrentLine>44</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\sensoric.c</PathWithFileName>
       <FilenameWithoutPath>sensoric.c</FilenameWithoutPath>
@@ -484,7 +494,7 @@
   <AlienFiles>
     <PathWithFilename>C:\Users\nec41725\Desktop\DT_05_12_2013\project\sensoric.h</PathWithFilename>
     <TopLine>1</TopLine>
-    <CurrentLine>15</CurrentLine>
+    <CurrentLine>12</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -559,18 +569,44 @@
     </WindowPosition>
   </AlienFiles>
 
+  <AlienFiles>
+    <PathWithFilename>C:\Users\nec41725\Desktop\DT_05_12_2013\project\XE16xREGS.H</PathWithFilename>
+    <TopLine>8467</TopLine>
+    <CurrentLine>8472</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
   <MDIGroups>
     <Orientation>1</Orientation>
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>10</ActiveTab>
+      <ActiveTab>3</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\megatron.c</Name>
-          <ColumnNumber>0</ColumnNumber>
+          <ColumnNumber>32</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>22</CurrentLine>
+          <CurrentLine>11</CurrentLine>
         </Doc>
         <Doc>
           <Name>motor.h</Name>
@@ -580,15 +616,15 @@
         </Doc>
         <Doc>
           <Name>sensoric.h</Name>
-          <ColumnNumber>24</ColumnNumber>
+          <ColumnNumber>27</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>15</CurrentLine>
+          <CurrentLine>12</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\sensoric.c</Name>
-          <ColumnNumber>17</ColumnNumber>
-          <TopLine>60</TopLine>
-          <CurrentLine>60</CurrentLine>
+          <ColumnNumber>49</ColumnNumber>
+          <TopLine>97</TopLine>
+          <CurrentLine>126</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\GPT1.C</Name>
@@ -628,9 +664,15 @@
         </Doc>
         <Doc>
           <Name>.\MAIN.C</Name>
-          <ColumnNumber>83</ColumnNumber>
-          <TopLine>347</TopLine>
-          <CurrentLine>374</CurrentLine>
+          <ColumnNumber>21</ColumnNumber>
+          <TopLine>355</TopLine>
+          <CurrentLine>364</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>XE16xREGS.H</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>8467</TopLine>
+          <CurrentLine>8472</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

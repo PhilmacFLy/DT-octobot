@@ -9,7 +9,7 @@
 ;                PLEASE DO NOT MODIFY THIS FILE !
 ;
 ;----------------------------------------------------------------------------
-; Date          05.12.2013 12:52:42
+; Date          05.12.2013 13:20:50
 ;
 ;****************************************************************************
 
@@ -336,7 +336,7 @@ ADC0_GLOBCTR_ANON	SET	0
 ADC0_GLOBCTR_ARBM	SET	1
 ADC0_GLOBCTR_ARBRND	SET	0
 ADC0_GLOBCTR_CDELAY	SET	0
-ADC0_GLOBCTR_DIVA	SET	4
+ADC0_GLOBCTR_DIVA	SET	9
 ADC0_GLOBCTR_DIVD	SET	0
 
 ; Global Status Register
@@ -981,7 +981,7 @@ ADC1_GLOBCTR_ANON	SET	0
 ADC1_GLOBCTR_ARBM	SET	0
 ADC1_GLOBCTR_ARBRND	SET	0
 ADC1_GLOBCTR_CDELAY	SET	0
-ADC1_GLOBCTR_DIVA	SET	4
+ADC1_GLOBCTR_DIVA	SET	9
 ADC1_GLOBCTR_DIVD	SET	0
 
 ; Global Status Register
