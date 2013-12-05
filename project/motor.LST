@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, MOTOR                                                                 12/02/2013 18:56:00 PAGE 1   
+C166 COMPILER V7.05, MOTOR                                                                 12/05/2013 12:44:45 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE MOTOR
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE motor.c MODV2 BROWS
    52  2              megatronleft = ReadMegatronLeft();
    53  2              megatronright = ReadMegatronRight();
    54  2              megatroncounter = 0;
-C166 COMPILER V7.05, MOTOR                                                                 12/02/2013 18:56:00 PAGE 2   
+C166 COMPILER V7.05, MOTOR                                                                 12/05/2013 12:44:45 PAGE 2   
 
    55  2        }
    56  1      
@@ -127,7 +127,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE motor.c MODV2 BROWS
   114         void SetMotorSpeedRight(unsigned char direction, unsigned char speed)
   115         {
   116  1        CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, (0xFF - speed)); // ?
-C166 COMPILER V7.05, MOTOR                                                                 12/02/2013 18:56:00 PAGE 3   
+C166 COMPILER V7.05, MOTOR                                                                 12/05/2013 12:44:45 PAGE 3   
 
   117  1        CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
   118  1        // rechter motor direction pin = 1 für vorwärts

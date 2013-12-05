@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, GPT2                                                                  12/02/2013 18:56:00 PAGE 1   
+C166 COMPILER V7.05, GPT2                                                                  12/05/2013 12:44:45 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE GPT2
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
    12         // @Description   This file contains functions that use the GPT2 module.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          02.12.2013 18:53:10
+   15         // @Date          05.12.2013 12:12:15
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
    52         
    53         
    54         //****************************************************************************
-C166 COMPILER V7.05, GPT2                                                                  12/02/2013 18:56:00 PAGE 2   
+C166 COMPILER V7.05, GPT2                                                                  12/05/2013 12:44:45 PAGE 2   
 
    55         // @Typedefs
    56         //****************************************************************************
@@ -125,9 +125,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
   112         // @Parameters    None
   113         //
   114         //----------------------------------------------------------------------------
-  115         // @Date          02.12.2013
+  115         // @Date          05.12.2013
   116         //
-C166 COMPILER V7.05, GPT2                                                                  12/02/2013 18:56:00 PAGE 3   
+C166 COMPILER V7.05, GPT2                                                                  12/05/2013 12:44:45 PAGE 3   
 
   117         //****************************************************************************
   118         
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT2.C MODV2 BROWSE
   176  1        ///  Configuration of the GPT2 CAPREL:
   177  1        ///  -----------------------------------------------------------------------
   178  1        ///  - capture T5 into CAPREL is disabled
-C166 COMPILER V7.05, GPT2                                                                  12/02/2013 18:56:00 PAGE 4   
+C166 COMPILER V7.05, GPT2                                                                  12/05/2013 12:44:45 PAGE 4   
 
   179  1        ///  - capture trigger from pin CAPIN
   180  1        ///  - capure is disabled

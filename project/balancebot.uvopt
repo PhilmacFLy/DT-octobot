@@ -16,8 +16,8 @@
   </Extensions>
 
   <DaveTm>
-    <dwLowDateTime>1233406881</dwLowDateTime>
-    <dwHighDateTime>30338948</dwHighDateTime>
+    <dwLowDateTime>-620451045</dwLowDateTime>
+    <dwHighDateTime>30339498</dwHighDateTime>
   </DaveTm>
 
   <Target>
@@ -312,10 +312,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>22</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>353</TopLine>
-      <CurrentLine>372</CurrentLine>
+      <CurrentLine>371</CurrentLine>
       <bDave2>1</bDave2>
       <PathWithFileName>.\MAIN.C</PathWithFileName>
       <FilenameWithoutPath>MAIN.C</FilenameWithoutPath>
@@ -368,10 +368,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>17</ColumnNumber>
+      <ColumnNumber>32</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>229</TopLine>
-      <CurrentLine>253</CurrentLine>
+      <CurrentLine>243</CurrentLine>
       <bDave2>1</bDave2>
       <PathWithFileName>.\GPT1.C</PathWithFileName>
       <FilenameWithoutPath>GPT1.C</FilenameWithoutPath>
@@ -396,10 +396,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>61</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>281</TopLine>
-      <CurrentLine>286</CurrentLine>
+      <CurrentLine>290</CurrentLine>
       <bDave2>1</bDave2>
       <PathWithFileName>.\ADC0.C</PathWithFileName>
       <FilenameWithoutPath>ADC0.C</FilenameWithoutPath>
@@ -445,10 +445,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>14</ColumnNumber>
+      <ColumnNumber>17</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>21</TopLine>
-      <CurrentLine>53</CurrentLine>
+      <TopLine>30</TopLine>
+      <CurrentLine>37</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\sensoric.c</PathWithFileName>
       <FilenameWithoutPath>sensoric.c</FilenameWithoutPath>
@@ -456,7 +456,7 @@
   </Group>
 
   <AlienFiles>
-    <PathWithFilename>C:\Users\hap41156\Desktop\DT\project\motor.h</PathWithFilename>
+    <PathWithFilename>C:\Users\nec41725\Desktop\DT_05_12_2013\project\motor.h</PathWithFilename>
     <TopLine>1</TopLine>
     <CurrentLine>13</CurrentLine>
     <Constant>0</Constant>
@@ -482,9 +482,9 @@
   </AlienFiles>
 
   <AlienFiles>
-    <PathWithFilename>C:\Users\hap41156\Desktop\DT\project\sensoric.h</PathWithFilename>
+    <PathWithFilename>C:\Users\nec41725\Desktop\DT_05_12_2013\project\sensoric.h</PathWithFilename>
     <TopLine>1</TopLine>
-    <CurrentLine>13</CurrentLine>
+    <CurrentLine>15</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -508,7 +508,7 @@
   </AlienFiles>
 
   <AlienFiles>
-    <PathWithFilename>C:\Users\hap41156\Desktop\DT\project\GPT1.H</PathWithFilename>
+    <PathWithFilename>C:\Users\nec41725\Desktop\DT_05_12_2013\project\GPT1.H</PathWithFilename>
     <TopLine>80</TopLine>
     <CurrentLine>80</CurrentLine>
     <Constant>0</Constant>
@@ -534,7 +534,7 @@
   </AlienFiles>
 
   <AlienFiles>
-    <PathWithFilename>C:\Users\hap41156\Desktop\DT\project\ADC0.H</PathWithFilename>
+    <PathWithFilename>C:\Users\nec41725\Desktop\DT_05_12_2013\project\ADC0.H</PathWithFilename>
     <TopLine>170</TopLine>
     <CurrentLine>189</CurrentLine>
     <Constant>0</Constant>
@@ -564,61 +564,13 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>6</ActiveTab>
+      <ActiveTab>9</ActiveTab>
       <Documents>
         <Doc>
-          <Name>.\MAIN.C</Name>
-          <ColumnNumber>33</ColumnNumber>
-          <TopLine>353</TopLine>
-          <CurrentLine>362</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\ADC0.C</Name>
-          <ColumnNumber>61</ColumnNumber>
-          <TopLine>281</TopLine>
-          <CurrentLine>290</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>ADC0.H</Name>
+          <Name>.\megatron.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>170</TopLine>
-          <CurrentLine>189</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\motor.c</Name>
-          <ColumnNumber>22</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>12</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\IO.C</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>255</TopLine>
-          <CurrentLine>264</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>GPT1.H</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>80</TopLine>
-          <CurrentLine>80</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\GPT1.C</Name>
-          <ColumnNumber>32</ColumnNumber>
-          <TopLine>229</TopLine>
-          <CurrentLine>243</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\sensoric.c</Name>
-          <ColumnNumber>14</ColumnNumber>
-          <TopLine>21</TopLine>
-          <CurrentLine>53</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>sensoric.h</Name>
-          <ColumnNumber>32</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>13</CurrentLine>
+          <CurrentLine>22</CurrentLine>
         </Doc>
         <Doc>
           <Name>motor.h</Name>
@@ -627,10 +579,58 @@
           <CurrentLine>13</CurrentLine>
         </Doc>
         <Doc>
-          <Name>.\megatron.c</Name>
-          <ColumnNumber>0</ColumnNumber>
+          <Name>sensoric.h</Name>
+          <ColumnNumber>27</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>22</CurrentLine>
+          <CurrentLine>15</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\sensoric.c</Name>
+          <ColumnNumber>17</ColumnNumber>
+          <TopLine>30</TopLine>
+          <CurrentLine>37</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\GPT1.C</Name>
+          <ColumnNumber>32</ColumnNumber>
+          <TopLine>229</TopLine>
+          <CurrentLine>243</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>GPT1.H</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>80</TopLine>
+          <CurrentLine>80</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\IO.C</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>255</TopLine>
+          <CurrentLine>264</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\motor.c</Name>
+          <ColumnNumber>22</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>12</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>ADC0.H</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>170</TopLine>
+          <CurrentLine>189</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\ADC0.C</Name>
+          <ColumnNumber>77</ColumnNumber>
+          <TopLine>263</TopLine>
+          <CurrentLine>281</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\MAIN.C</Name>
+          <ColumnNumber>22</ColumnNumber>
+          <TopLine>353</TopLine>
+          <CurrentLine>371</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

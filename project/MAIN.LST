@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 1   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:44:44 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE MAIN
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
    12         // @Description   This file contains the project initialization function.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          02.12.2013 18:53:08
+   15         // @Date          05.12.2013 12:12:14
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
    52         // USER CODE BEGIN (MAIN_General,4)
    53         
    54         // USER CODE END
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 2   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:44:44 PAGE 2   
 
    55         
    56         
@@ -125,9 +125,9 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   112         // @Parameters    None
   113         //
   114         //----------------------------------------------------------------------------
-  115         // @Date          02.12.2013
+  115         // @Date          05.12.2013
   116         //
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 3   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:44:44 PAGE 3   
 
   117         //****************************************************************************
   118         
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   176  1        PSW_IEN        =  1;          
   177  1      
   178  1      } //  End of function MAIN_vInit
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 4   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:44:44 PAGE 4   
 
   179         
   180         
@@ -209,7 +209,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   192         // @Parameters    None
   193         //
   194         //----------------------------------------------------------------------------
-  195         // @Date          02.12.2013
+  195         // @Date          05.12.2013
   196         //
   197         //****************************************************************************
   198         
@@ -247,7 +247,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   230         // @Parameters    None
   231         //
   232         //----------------------------------------------------------------------------
-  233         // @Date          02.12.2013
+  233         // @Date          05.12.2013
   234         //
   235         //****************************************************************************
   236         
@@ -255,7 +255,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   238         
   239         // USER CODE END
   240         
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 5   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:44:44 PAGE 5   
 
   241         void MAIN_vLockProtecReg(void)
   242         {
@@ -291,7 +291,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   272         // @Parameters    None
   273         //
   274         //----------------------------------------------------------------------------
-  275         // @Date          02.12.2013
+  275         // @Date          05.12.2013
   276         //
   277         //****************************************************************************
   278         
@@ -319,7 +319,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
              -Hz)
   299  2      
   300  2              }
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 6   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:44:44 PAGE 6   
 
   301  1      
   302  1        else                                               // fR derived from external crystal clock
@@ -362,7 +362,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   336         // @Parameters    None
   337         //
   338         //----------------------------------------------------------------------------
-  339         // @Date          02.12.2013
+  339         // @Date          05.12.2013
   340         //
   341         //****************************************************************************
   342         
@@ -383,7 +383,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   357  1      
   358  1        // USER CODE END
   359  1      
-C166 COMPILER V7.05, MAIN                                                                  12/02/2013 18:55:59 PAGE 7   
+C166 COMPILER V7.05, MAIN                                                                  12/05/2013 12:44:44 PAGE 7   
 
   360  1        while(1)
   361  1        {

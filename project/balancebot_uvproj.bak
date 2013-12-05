@@ -339,6 +339,11 @@
               <FileType>1</FileType>
               <FilePath>.\megatron.c</FilePath>
             </File>
+            <File>
+              <FileName>sensoric.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\sensoric.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

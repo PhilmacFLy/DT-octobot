@@ -7,9 +7,11 @@
 #define DIRECTION_Z (2)
 
 void ReadSensorData();
-
-unsigned int ReadAccelValueRaw(unsigned char direction);
+			   
+unsigned char ReadAccelValueRaw(unsigned char direction);
+unsigned char ReadSpinValueRaw();
+				   
 signed int ReadAccelValue(unsigned char direction);
-signed int ReadSpinAccelValue();
+signed int ReadSpinValue();
 
 #endif /* __SENSORIC_H__ */

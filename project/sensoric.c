@@ -5,10 +5,7 @@
 
 #include "sensoric.h"
 
-volatile unsigned int gyro_x = 0;
-volatile unsigned int gyro_y = 0;
-volatile unsigned int gyro_z = 0;
-volatile unsigned int accel_spin = 0;
+volatile unsigned int speed_spin = 0;
 volatile unsigned int accel_x = 0;
 volatile unsigned int accel_y = 0;
 volatile unsigned int accel_z = 0;
@@ -37,16 +34,21 @@ void ReadSensorData()
    accel_x = ADC0_uwGetResultData(RESULT_REG_3);
    accel_y = ADC0_uwGetResultData(RESULT_REG_4);
    accel_z = ADC0_uwGetResultData(RESULT_REG_0);
-   accel_spin = ADC0_uwGetResultData(RESULT_REG_1);
+   speed_spin = ADC0_uwGetResultData(RESULT_REG_1);
 }
 
-unsigned int ReadAccelValueRaw(unsigned char direction)
-{
-  if (direction == DIRECTION_X) return accel_x;
-  if (direction == DIRECTION_Y) return accel_y;
-  if (direction == DIRECTION_Z) return accel_z;
+unsigned char ReadAccelValueRaw(unsigned char direction)
+{									   
+  if (direction == DIRECTION_X) return ((unsigned char) (accel_x >> 2));
+  if (direction == DIRECTION_Y) return ((unsigned char) (accel_y >> 2));
+  if (direction == DIRECTION_Z) return ((unsigned char) (accel_z >> 2));
   return 0;
 }
+  
+unsigned char ReadSpinValueRaw()
+{
+  return ((unsigned char) (speed_spin >> 2));
+} 
 
 // untested
 //DIRECTION_X positive value: backward, negative value: forward
@@ -61,35 +63,30 @@ signed int ReadAccelValue(unsigned char direction)
   if (direction == DIRECTION_Y) tmp = accel_y;
   if (direction == DIRECTION_Z) tmp = accel_z;
 
-  // read value between 0x00 and 0x3FF
-  // 0x3FF = 5V
-  // 0x00 = 0V
-  // Vs = 3,3V => 675
-  // Vs/2 = 1,65V => 338
-  // 1g = 0,33V => ~67,5
-  if (tmp < 338) x = -((signed int)(338 - tmp)); // negative
-  else           x = ((signed int)(tmp - 338)); // posivite
-
-  // range -338 to 338
-  //       -5G  to 5G
-  return ((x * 100) / 338); // return value / 20 = X G
+  // 0 - 0x3FF / 0 - 1023, voltage is irrelevant because Vs = Vref
+  // 511/512 is middle
+  if (tmp < 512) x = - ( (signed int) (511 - tmp) ); // <= 511 is negative
+  else           x =   ( (signed int) (tmp - 512) ); // >= 512 is positive
+  
+  // at Vs = 3,3V, the sensitivity is about 330mV / g
+  // therefore, -511 to 511 is similar to -5G - +5G
+  return ((x * 1000) / 1022); // return value * 0,01g = X g
 }
 
 // untested
 // positive value: vorwärts kipping
 // negative value: rückwärts kipping
-signed int ReadSpinAccelValue()
+signed int ReadSpinValue()
 {
-  unsigned int tmp = accel_spin;
+  unsigned int tmp = speed_spin;
   signed int x;
 
-  //Vs = 3,3V => 675
-  //Vs/2 = 1,65V => 338
-  //3,3 mV / grad/s
-  if (tmp < 338) x = -((signed int)(338 - tmp)); // negative
-  else           x = ((signed int)(tmp - 338)); // positive
+  // 0 - 0x3FF / 0 - 1023, voltage is irrelevant because Vs = Vref
+  // 511/512 is middle
+  if (tmp < 512) x = - ( (signed int) (511 - tmp) ); // <= 511 is negative
+  else           x =   ( (signed int) (tmp - 512) ); // >= 512 is positive
 
-  // range -338 to 338
-  //       -500 grad/s to 500 grad/s
-  return ((x * 100) / 338); // return value / 5 = X grad/s
+  // at Vs = 3,3V the sensitivity is about 3,3mV / °/s
+  // therefore, -511 to 511 is similar to -500°/s - +500°/s
+  return (( x * 1000) / 1022); // return value = X°/s
 }

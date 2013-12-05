@@ -8,7 +8,7 @@
 \par \plain\f4\fs22\cf0 Compiler: \tab\tab\b Keil
 \par \plain\f4\fs22\cf0 Memory Model: \tab\b SMALL
 \par 
-\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 02.12.2013 18:53:10
+\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 05.12.2013 12:12:16
 \par 
 \par 
 \par \plain\f4\fs22\cf2\b Please read this document carefully and note
@@ -401,6 +401,7 @@
 \tab P4.4 - P4.7 output edge characteristic: sharp edge mode\par 
 \par 
 \tab Configuration of Port P5:\par 
+\tab P5.0 is used as alternate input for the  Analog Input Pin (AN50)\par 
 \tab P5.3 is used as alternate input for the  GPT12E Timer2 Count\par 
 \tab input(T3IN)\par 
 \tab P5.5 is used as alternate input for the  Analog Input Pin (AN55)\par 
@@ -1433,11 +1434,23 @@
 \tab - the wait-for-start mode is selected for source 2\par 
 \par 
 \tab Configuration of Channel Control Registers:\par 
+\tab Configuration of Channel 0\par 
+\tab - the result register7 is selected\par 
+\tab - the limit check 0 is selected\par 
+\par 
+\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\par 
+\tab - the input class selected is Input Class 0\par 
+\par 
+\tab - LCBR0 is selected as upper boundary\par 
+\par 
+\tab - LCBR1 is selected as lower boundary\par 
+\par 
 \tab Configuration of Channel 5\par 
 \tab - the result register0 is selected\par 
 \tab - the limit check 0 is selected\par 
 \par 
-\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\tab - the reference voltage selected is voltage accross analog channel 0\par 
 \par 
 \tab - the input class selected is Input Class 0\par 
 \par 
@@ -1449,7 +1462,7 @@
 \tab - the result register1 is selected\par 
 \tab - the limit check 0 is selected\par 
 \par 
-\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\tab - the reference voltage selected is voltage accross analog channel 0\par 
 \par 
 \tab - the input class selected is Input Class 0\par 
 \par 
@@ -1461,7 +1474,7 @@
 \tab - the result register2 is selected\par 
 \tab - the limit check 0 is selected\par 
 \par 
-\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\tab - the reference voltage selected is voltage accross analog channel 0\par 
 \par 
 \tab - the input class selected is Input Class 0\par 
 \par 
@@ -1473,7 +1486,7 @@
 \tab - the result register3 is selected\par 
 \tab - the limit check 0 is selected\par 
 \par 
-\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\tab - the reference voltage selected is voltage accross analog channel 0\par 
 \par 
 \tab - the input class selected is Input Class 0\par 
 \par 
@@ -1485,7 +1498,7 @@
 \tab - the result register4 is selected\par 
 \tab - the limit check 0 is selected\par 
 \par 
-\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\tab - the reference voltage selected is voltage accross analog channel 0\par 
 \par 
 \tab - the input class selected is Input Class 0\par 
 \par 
@@ -1497,7 +1510,7 @@
 \tab - the result register5 is selected\par 
 \tab - the limit check 0 is selected\par 
 \par 
-\tab - the reference voltage selected is Standard Voltage (Varef)\par 
+\tab - the reference voltage selected is voltage accross analog channel 0\par 
 \par 
 \tab - the input class selected is Input Class 0\par 
 \par 
@@ -1569,6 +1582,7 @@
 \tab - the FIFO functionality is disabled\par 
 \par 
 \tab Configuration of Channel Interrupt Node Pointer Register:\par 
+\tab - the SR0 line become activated if channel 0 interrupt is generated\par 
 \par 
 \tab - the SR0 line become activated if channel 5 interrupt is generated\par 
 \par 

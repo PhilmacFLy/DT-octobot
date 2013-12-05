@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, IO                                                                    12/02/2013 18:56:00 PAGE 1   
+C166 COMPILER V7.05, IO                                                                    12/05/2013 12:44:44 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE IO
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
    12         // @Description   This file contains functions that use the IO module.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          02.12.2013 18:53:10
+   15         // @Date          05.12.2013 12:12:15
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
    52         
    53         
    54         //****************************************************************************
-C166 COMPILER V7.05, IO                                                                    12/02/2013 18:56:00 PAGE 2   
+C166 COMPILER V7.05, IO                                                                    12/05/2013 12:44:44 PAGE 2   
 
    55         // @Typedefs
    56         //****************************************************************************
@@ -124,10 +124,10 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   111         // @Parameters    None
   112         //
   113         //----------------------------------------------------------------------------
-  114         // @Date          02.12.2013
+  114         // @Date          05.12.2013
   115         //
   116         //****************************************************************************
-C166 COMPILER V7.05, IO                                                                    12/02/2013 18:56:00 PAGE 3   
+C166 COMPILER V7.05, IO                                                                    12/05/2013 12:44:44 PAGE 3   
 
   117         
   118         // USER CODE BEGIN (IO_Function,1)
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   176  1        ///  - push/pull output is selected
   177  1        ///  - the pin status is low level
   178  1        ///  P4.4 is used as general purpose output
-C166 COMPILER V7.05, IO                                                                    12/02/2013 18:56:00 PAGE 4   
+C166 COMPILER V7.05, IO                                                                    12/05/2013 12:44:44 PAGE 4   
 
   179  1        ///  - push/pull output is selected
   180  1        ///  - the pin status is low level
@@ -211,99 +211,100 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   194  1        ///  -----------------------------------------------------------------------
   195  1        ///  Configuration of Port P5:
   196  1        ///  -----------------------------------------------------------------------
-  197  1        ///  P5.3 is used as alternate input for the  GPT12E Timer2 Count 
-  198  1        ///  input(T3IN)
-  199  1        ///  P5.5 is used as alternate input for the  Analog Input Pin (AN55)
-  200  1        ///  P5.6 is used as alternate input for the  Analog Input Pin (AN56)
-  201  1        ///  P5.7 is used as alternate input for the  Analog Input Pin (AN57)
-  202  1        ///  P5.13 is used as alternate input for the  Analog Input Pin (AN513)
-  203  1        ///  P5.14 is used as alternate input for the  Analog Input Pin (AN514)
-  204  1        ///  P5.15 is used as alternate input for the  Analog Input Pin (AN515)
-  205  1      
+  197  1        ///  P5.0 is used as alternate input for the  Analog Input Pin (AN50)
+  198  1        ///  P5.3 is used as alternate input for the  GPT12E Timer2 Count 
+  199  1        ///  input(T3IN)
+  200  1        ///  P5.5 is used as alternate input for the  Analog Input Pin (AN55)
+  201  1        ///  P5.6 is used as alternate input for the  Analog Input Pin (AN56)
+  202  1        ///  P5.7 is used as alternate input for the  Analog Input Pin (AN57)
+  203  1        ///  P5.13 is used as alternate input for the  Analog Input Pin (AN513)
+  204  1        ///  P5.14 is used as alternate input for the  Analog Input Pin (AN514)
+  205  1        ///  P5.15 is used as alternate input for the  Analog Input Pin (AN515)
   206  1      
-  207  1        ///  -----------------------------------------------------------------------
-  208  1        ///  Configuration of Port P6:
-  209  1        ///  -----------------------------------------------------------------------
-  210  1        ///  - no pin of port P6 is used
-  211  1      
+  207  1      
+  208  1        ///  -----------------------------------------------------------------------
+  209  1        ///  Configuration of Port P6:
+  210  1        ///  -----------------------------------------------------------------------
+  211  1        ///  - no pin of port P6 is used
   212  1      
-  213  1        ///  -----------------------------------------------------------------------
-  214  1        ///  Configuration of Port P7:
-  215  1        ///  -----------------------------------------------------------------------
-  216  1        ///  - no pin of port P7 is used
-  217  1      
+  213  1      
+  214  1        ///  -----------------------------------------------------------------------
+  215  1        ///  Configuration of Port P7:
+  216  1        ///  -----------------------------------------------------------------------
+  217  1        ///  - no pin of port P7 is used
   218  1      
-  219  1        ///  -----------------------------------------------------------------------
-  220  1        ///  Configuration of Port P8:
-  221  1        ///  -----------------------------------------------------------------------
-  222  1        ///  P8.0 is used as alternate output for the  CCU60 output(CC60)
-  223  1        ///  - push/pull output is selected
-  224  1        ///  P8.1 is used as alternate output for the  CCU60 output(CC61)
-  225  1        ///  - push/pull output is selected
-  226  1      
-  227  1        ///  P8.0 - P8.3 output driver characteristic: strong driver
-  228  1        ///  P8.4 - P8.6 output driver characteristic: strong driver
-  229  1      
-  230  1        ///  P8.0 - P8.3 output edge characteristic: sharp edge mode
-  231  1        ///  P8.4 - P8.6 output edge characteristic: sharp edge mode
-  232  1      
+  219  1      
+  220  1        ///  -----------------------------------------------------------------------
+  221  1        ///  Configuration of Port P8:
+  222  1        ///  -----------------------------------------------------------------------
+  223  1        ///  P8.0 is used as alternate output for the  CCU60 output(CC60)
+  224  1        ///  - push/pull output is selected
+  225  1        ///  P8.1 is used as alternate output for the  CCU60 output(CC61)
+  226  1        ///  - push/pull output is selected
+  227  1      
+  228  1        ///  P8.0 - P8.3 output driver characteristic: strong driver
+  229  1        ///  P8.4 - P8.6 output driver characteristic: strong driver
+  230  1      
+  231  1        ///  P8.0 - P8.3 output edge characteristic: sharp edge mode
+  232  1        ///  P8.4 - P8.6 output edge characteristic: sharp edge mode
   233  1      
-  234  1        ///  -----------------------------------------------------------------------
-  235  1        ///  Configuration of Port P9:
-  236  1        ///  -----------------------------------------------------------------------
-  237  1        ///  - no pin of port P9 is used
-  238  1      
+  234  1      
+  235  1        ///  -----------------------------------------------------------------------
+  236  1        ///  Configuration of Port P9:
+  237  1        ///  -----------------------------------------------------------------------
+  238  1        ///  - no pin of port P9 is used
   239  1      
-  240  1        ///  -----------------------------------------------------------------------
-C166 COMPILER V7.05, IO                                                                    12/02/2013 18:56:00 PAGE 5   
+  240  1      
+C166 COMPILER V7.05, IO                                                                    12/05/2013 12:44:44 PAGE 5   
 
-  241  1        ///  Configuration of Port P10:
-  242  1        ///  -----------------------------------------------------------------------
-  243  1        ///  P10.0 is used as general purpose output
-  244  1        ///  - push/pull output is selected
-  245  1        ///  - the pin status is low level
-  246  1        ///  P10.1 is used as general purpose output
-  247  1        ///  - push/pull output is selected
-  248  1        ///  - the pin status is low level
-  249  1      
-  250  1        ///  P10.0 - P10.3 output driver characteristic: strong driver
-  251  1        ///  P10.4 - P10.7 output driver characteristic: strong driver
-  252  1        ///  P10.8 - P10.11 output driver characteristic: strong driver
-  253  1        ///  P10.12 - P10.15 output driver characteristic: strong driver
-  254  1      
-  255  1        ///  P10.0 - P10.3 output edge characteristic: sharp edge mode
-  256  1        ///  P10.4 - P10.7 output edge characteristic: sharp edge mode
-  257  1        ///  P10.8 - P10.11 output edge characteristic: sharp edge mode
-  258  1        ///  P10.12 - P10.15 output edge characteristic: sharp edge mode
-  259  1      
+  241  1        ///  -----------------------------------------------------------------------
+  242  1        ///  Configuration of Port P10:
+  243  1        ///  -----------------------------------------------------------------------
+  244  1        ///  P10.0 is used as general purpose output
+  245  1        ///  - push/pull output is selected
+  246  1        ///  - the pin status is low level
+  247  1        ///  P10.1 is used as general purpose output
+  248  1        ///  - push/pull output is selected
+  249  1        ///  - the pin status is low level
+  250  1      
+  251  1        ///  P10.0 - P10.3 output driver characteristic: strong driver
+  252  1        ///  P10.4 - P10.7 output driver characteristic: strong driver
+  253  1        ///  P10.8 - P10.11 output driver characteristic: strong driver
+  254  1        ///  P10.12 - P10.15 output driver characteristic: strong driver
+  255  1      
+  256  1        ///  P10.0 - P10.3 output edge characteristic: sharp edge mode
+  257  1        ///  P10.4 - P10.7 output edge characteristic: sharp edge mode
+  258  1        ///  P10.8 - P10.11 output edge characteristic: sharp edge mode
+  259  1        ///  P10.12 - P10.15 output edge characteristic: sharp edge mode
   260  1      
-  261  1        ///  -----------------------------------------------------------------------
-  262  1        ///  Configuration of Port P11:
-  263  1        ///  -----------------------------------------------------------------------
-  264  1        ///  - no pin of port P11 is used
-  265  1      
+  261  1      
+  262  1        ///  -----------------------------------------------------------------------
+  263  1        ///  Configuration of Port P11:
+  264  1        ///  -----------------------------------------------------------------------
+  265  1        ///  - no pin of port P11 is used
   266  1      
-  267  1        ///  -----------------------------------------------------------------------
-  268  1        ///  Configuration of Port P15:
-  269  1        ///  -----------------------------------------------------------------------
-  270  1        ///  - no pin of port P15 is used
-  271  1        ///  - Port15 Data register P15(Read only)
-  272  1      
+  267  1      
+  268  1        ///  -----------------------------------------------------------------------
+  269  1        ///  Configuration of Port P15:
+  270  1        ///  -----------------------------------------------------------------------
+  271  1        ///  - no pin of port P15 is used
+  272  1        ///  - Port15 Data register P15(Read only)
   273  1      
   274  1      
-  275  1        // USER CODE BEGIN (IO_Function,3)
-  276  1      
-  277  1        // USER CODE END
-  278  1      
-  279  1      } //  End of function IO_vInit
-  280         
+  275  1      
+  276  1        // USER CODE BEGIN (IO_Function,3)
+  277  1      
+  278  1        // USER CODE END
+  279  1      
+  280  1      } //  End of function IO_vInit
   281         
   282         
   283         
-  284         // USER CODE BEGIN (IO_General,10)
-  285         
-  286         // USER CODE END
-  287         
+  284         
+  285         // USER CODE BEGIN (IO_General,10)
+  286         
+  287         // USER CODE END
+  288         
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
@@ -318,9 +319,9 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
   IDATA-DATA SIZE  =    --------     --------
   SDATA-DATA SIZE  =    --------     --------
   BDATA-DATA SIZE  =    --------     --------
-  HUGE-DATA SIZE   =    --------     --------
-C166 COMPILER V7.05, IO                                                                    12/02/2013 18:56:00 PAGE 6   
+C166 COMPILER V7.05, IO                                                                    12/05/2013 12:44:44 PAGE 6   
 
+  HUGE-DATA SIZE   =    --------     --------
   BIT SIZE         =    --------     --------
   INIT'L SIZE      =    --------     --------
 END OF MODULE INFORMATION.

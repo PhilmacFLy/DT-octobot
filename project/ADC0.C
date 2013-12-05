@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the ADC0 module.
 //
 //----------------------------------------------------------------------------
-// @Date          02.12.2013 18:53:10
+// @Date          05.12.2013 12:12:15
 //
 //****************************************************************************
 
@@ -128,7 +128,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          02.12.2013
+// @Date          05.12.2013
 //
 //****************************************************************************
 
@@ -190,8 +190,8 @@ void ADC0_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of Channel Control Registers:
   ///  -----------------------------------------------------------------------
-  ///  Configuration of Channel 5
-  ///  - the result register0 is selected
+  ///  Configuration of Channel 0
+  ///  - the result register7 is selected
   ///  - the limit check 0 is selected
 
   ///  - the reference voltage selected is Standard Voltage (Varef)
@@ -202,13 +202,27 @@ void ADC0_vInit(void)
 
   ///  - LCBR1 is selected as lower boundary
 
-  ADC0_CHCTR5    =  0x0004;      // load channel control register
+  ADC0_CHCTR0    =  0x7004;      // load channel control register
+
+  ///  Configuration of Channel 5
+  ///  - the result register0 is selected
+  ///  - the limit check 0 is selected
+
+  ///  - the reference voltage selected is voltage accross analog channel 0
+
+  ///  - the input class selected is Input Class 0
+
+  ///  - LCBR0 is selected as upper boundary
+
+  ///  - LCBR1 is selected as lower boundary
+
+  ADC0_CHCTR5    =  0x0104;      // load channel control register
 
   ///  Configuration of Channel 6
   ///  - the result register1 is selected
   ///  - the limit check 0 is selected
 
-  ///  - the reference voltage selected is Standard Voltage (Varef)
+  ///  - the reference voltage selected is voltage accross analog channel 0
 
   ///  - the input class selected is Input Class 0
 
@@ -216,13 +230,13 @@ void ADC0_vInit(void)
 
   ///  - LCBR1 is selected as lower boundary
 
-  ADC0_CHCTR6    =  0x1004;      // load channel control register
+  ADC0_CHCTR6    =  0x1104;      // load channel control register
 
   ///  Configuration of Channel 7
   ///  - the result register2 is selected
   ///  - the limit check 0 is selected
 
-  ///  - the reference voltage selected is Standard Voltage (Varef)
+  ///  - the reference voltage selected is voltage accross analog channel 0
 
   ///  - the input class selected is Input Class 0
 
@@ -230,13 +244,13 @@ void ADC0_vInit(void)
 
   ///  - LCBR1 is selected as lower boundary
 
-  ADC0_CHCTR7    =  0x2004;      // load channel control register
+  ADC0_CHCTR7    =  0x2104;      // load channel control register
 
   ///  Configuration of Channel 13
   ///  - the result register3 is selected
   ///  - the limit check 0 is selected
 
-  ///  - the reference voltage selected is Standard Voltage (Varef)
+  ///  - the reference voltage selected is voltage accross analog channel 0
 
   ///  - the input class selected is Input Class 0
 
@@ -244,13 +258,13 @@ void ADC0_vInit(void)
 
   ///  - LCBR1 is selected as lower boundary
 
-  ADC0_CHCTR13   =  0x3004;      // load channel control register
+  ADC0_CHCTR13   =  0x3104;      // load channel control register
 
   ///  Configuration of Channel 14
   ///  - the result register4 is selected
   ///  - the limit check 0 is selected
 
-  ///  - the reference voltage selected is Standard Voltage (Varef)
+  ///  - the reference voltage selected is voltage accross analog channel 0
 
   ///  - the input class selected is Input Class 0
 
@@ -258,13 +272,13 @@ void ADC0_vInit(void)
 
   ///  - LCBR1 is selected as lower boundary
 
-  ADC0_CHCTR14   =  0x4004;      // load channel control register
+  ADC0_CHCTR14   =  0x4104;      // load channel control register
 
   ///  Configuration of Channel 15
   ///  - the result register5 is selected
   ///  - the limit check 0 is selected
 
-  ///  - the reference voltage selected is Standard Voltage (Varef)
+  ///  - the reference voltage selected is voltage accross analog channel 0
 
   ///  - the input class selected is Input Class 0
 
@@ -272,7 +286,7 @@ void ADC0_vInit(void)
 
   ///  - LCBR1 is selected as lower boundary
 
-  ADC0_CHCTR15   =  0x5004;      // load channel control register
+  ADC0_CHCTR15   =  0x5104;      // load channel control register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of Sample Time and Resolution:
@@ -364,6 +378,8 @@ void ADC0_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of Channel Interrupt Node Pointer Register:
   ///  -----------------------------------------------------------------------
+  ///  - the SR0 line become activated if channel 0 interrupt is generated
+
   ADC0_CHINPR0   =  0x0000;      // load channel interrupt node pointer 
                                  // register
 
@@ -473,7 +489,7 @@ void ADC0_vInit(void)
   ///  - ADC0 is master 
   ADC0_SYNCTR   |=  0x0010;      // Synchronisation register
 
-  P5_DIDIS       =  0xE0E0;      // Port 5 Digital input disable register
+  P5_DIDIS       =  0xE0E1;      // Port 5 Digital input disable register
 
   ADC0_GLOBCTR  |=  0x0300;      // turn on Analog part
 
@@ -513,7 +529,7 @@ void ADC0_vInit(void)
 //                15)- see macros defined in the header file
 //
 //----------------------------------------------------------------------------
-// @Date          02.12.2013
+// @Date          05.12.2013
 //
 //****************************************************************************
 
@@ -568,7 +584,7 @@ void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte ubEnIntr, ubyte ubRFill, ubyt
 //                15) - see macros defined in the header file
 //
 //----------------------------------------------------------------------------
-// @Date          02.12.2013
+// @Date          05.12.2013
 //
 //****************************************************************************
 
@@ -619,7 +635,7 @@ void ADC0_vStartSeq2ReqChNum(ubyte ubExtTrg, ubyte ubEnIntr, ubyte ubRFill, ubyt
 //                source to start conversion
 //
 //----------------------------------------------------------------------------
-// @Date          02.12.2013
+// @Date          05.12.2013
 //
 //****************************************************************************
 
@@ -653,7 +669,7 @@ void ADC0_vStartParReqChNum(uword uwChannelNum)
 //                ubSrc: defines the sequential source number
 //
 //----------------------------------------------------------------------------
-// @Date          02.12.2013
+// @Date          05.12.2013
 //
 //****************************************************************************
 
