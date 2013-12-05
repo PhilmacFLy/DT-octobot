@@ -16,8 +16,8 @@
   </Extensions>
 
   <DaveTm>
-    <dwLowDateTime>-620451045</dwLowDateTime>
-    <dwHighDateTime>30339498</dwHighDateTime>
+    <dwLowDateTime>1412550286</dwLowDateTime>
+    <dwHighDateTime>30339504</dwHighDateTime>
   </DaveTm>
 
   <Target>
@@ -312,10 +312,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>22</ColumnNumber>
+      <ColumnNumber>3</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>353</TopLine>
-      <CurrentLine>371</CurrentLine>
+      <TopLine>347</TopLine>
+      <CurrentLine>373</CurrentLine>
       <bDave2>1</bDave2>
       <PathWithFileName>.\MAIN.C</PathWithFileName>
       <FilenameWithoutPath>MAIN.C</FilenameWithoutPath>
@@ -396,10 +396,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>61</ColumnNumber>
+      <ColumnNumber>52</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>281</TopLine>
-      <CurrentLine>290</CurrentLine>
+      <TopLine>263</TopLine>
+      <CurrentLine>266</CurrentLine>
       <bDave2>1</bDave2>
       <PathWithFileName>.\ADC0.C</PathWithFileName>
       <FilenameWithoutPath>ADC0.C</FilenameWithoutPath>
@@ -445,10 +445,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>39</ColumnNumber>
+      <ColumnNumber>17</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>30</TopLine>
-      <CurrentLine>44</CurrentLine>
+      <TopLine>60</TopLine>
+      <CurrentLine>60</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\sensoric.c</PathWithFileName>
       <FilenameWithoutPath>sensoric.c</FilenameWithoutPath>
@@ -564,7 +564,7 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>3</ActiveTab>
+      <ActiveTab>10</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\megatron.c</Name>
@@ -580,19 +580,19 @@
         </Doc>
         <Doc>
           <Name>sensoric.h</Name>
-          <ColumnNumber>27</ColumnNumber>
+          <ColumnNumber>24</ColumnNumber>
           <TopLine>1</TopLine>
           <CurrentLine>15</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\sensoric.c</Name>
           <ColumnNumber>17</ColumnNumber>
-          <TopLine>30</TopLine>
-          <CurrentLine>37</CurrentLine>
+          <TopLine>60</TopLine>
+          <CurrentLine>60</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\GPT1.C</Name>
-          <ColumnNumber>32</ColumnNumber>
+          <ColumnNumber>0</ColumnNumber>
           <TopLine>229</TopLine>
           <CurrentLine>243</CurrentLine>
         </Doc>
@@ -622,15 +622,15 @@
         </Doc>
         <Doc>
           <Name>.\ADC0.C</Name>
-          <ColumnNumber>61</ColumnNumber>
-          <TopLine>281</TopLine>
-          <CurrentLine>290</CurrentLine>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>263</TopLine>
+          <CurrentLine>266</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\MAIN.C</Name>
-          <ColumnNumber>22</ColumnNumber>
-          <TopLine>353</TopLine>
-          <CurrentLine>371</CurrentLine>
+          <ColumnNumber>83</ColumnNumber>
+          <TopLine>347</TopLine>
+          <CurrentLine>374</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

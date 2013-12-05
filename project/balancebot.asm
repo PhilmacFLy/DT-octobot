@@ -9,7 +9,7 @@
 ;                PLEASE DO NOT MODIFY THIS FILE !
 ;
 ;----------------------------------------------------------------------------
-; Date          05.12.2013 12:12:16
+; Date          05.12.2013 12:52:42
 ;
 ;****************************************************************************
 
@@ -14721,28 +14721,28 @@ P10_IN_P8	SET	0
 P10_IN_P9	SET	0
 
 ; Port 10 Input/Output Control Register 00
-P10_IOCR00_PC	SET	0
+P10_IOCR00_PC	SET	8
 
 ; Port 10 Input/Output Control Register 01
-P10_IOCR01_PC	SET	0
+P10_IOCR01_PC	SET	8
 
 ; Port 10 Input/Output Control Register 02
-P10_IOCR02_PC	SET	0
+P10_IOCR02_PC	SET	8
 
 ; Port 10 Input/Output Control Register 03
-P10_IOCR03_PC	SET	0
+P10_IOCR03_PC	SET	8
 
 ; Port 10 Input/Output Control Register 04
-P10_IOCR04_PC	SET	0
+P10_IOCR04_PC	SET	8
 
 ; Port 10 Input/Output Control Register 05
-P10_IOCR05_PC	SET	0
+P10_IOCR05_PC	SET	8
 
 ; Port 10 Input/Output Control Register 06
-P10_IOCR06_PC	SET	0
+P10_IOCR06_PC	SET	8
 
 ; Port 10 Input/Output Control Register 07
-P10_IOCR07_PC	SET	0
+P10_IOCR07_PC	SET	8
 
 ; Port 10 Input/Output Control Register 08
 P10_IOCR08_PC	SET	0

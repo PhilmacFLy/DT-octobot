@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the IO module.
 //
 //----------------------------------------------------------------------------
-// @Date          05.12.2013 12:12:15
+// @Date          05.12.2013 12:52:42
 //
 //****************************************************************************
 
@@ -247,6 +247,24 @@ void IO_vInit(void)
   ///  P10.1 is used as general purpose output
   ///  - push/pull output is selected
   ///  - the pin status is low level
+  ///  P10.2 is used as general purpose output
+  ///  - push/pull output is selected
+  ///  - the pin status is low level
+  ///  P10.3 is used as general purpose output
+  ///  - push/pull output is selected
+  ///  - the pin status is low level
+  ///  P10.4 is used as general purpose output
+  ///  - push/pull output is selected
+  ///  - the pin status is low level
+  ///  P10.5 is used as general purpose output
+  ///  - push/pull output is selected
+  ///  - the pin status is low level
+  ///  P10.6 is used as general purpose output
+  ///  - push/pull output is selected
+  ///  - the pin status is low level
+  ///  P10.7 is used as general purpose output
+  ///  - push/pull output is selected
+  ///  - the pin status is low level
 
   ///  P10.0 - P10.3 output driver characteristic: strong driver
   ///  P10.4 - P10.7 output driver characteristic: strong driver
@@ -258,6 +276,14 @@ void IO_vInit(void)
   ///  P10.8 - P10.11 output edge characteristic: sharp edge mode
   ///  P10.12 - P10.15 output edge characteristic: sharp edge mode
 
+  P10_IOCR00     =  0x0080;      // load port control register 0
+  P10_IOCR01     =  0x0080;      // load port control register 1
+  P10_IOCR02     =  0x0080;      // load port control register 2
+  P10_IOCR03     =  0x0080;      // load port control register 3
+  P10_IOCR04     =  0x0080;      // load port control register 4
+  P10_IOCR05     =  0x0080;      // load port control register 5
+  P10_IOCR06     =  0x0080;      // load port control register 6
+  P10_IOCR07     =  0x0080;      // load port control register 7
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of Port P11:

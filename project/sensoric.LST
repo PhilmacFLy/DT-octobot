@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, SENSORIC                                                              12/05/2013 12:44:45 PAGE 1   
+C166 COMPILER V7.05, SENSORIC                                                              12/05/2013 12:54:49 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE SENSORIC
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE sensoric.c MODV2 BR
    51  1      } 
    52         
    53         // untested
-C166 COMPILER V7.05, SENSORIC                                                              12/05/2013 12:44:45 PAGE 2   
+C166 COMPILER V7.05, SENSORIC                                                              12/05/2013 12:54:49 PAGE 2   
 
    54         //DIRECTION_X positive value: backward, negative value: forward
    55         //DIRECTION_Y positive value: left, negative value: right

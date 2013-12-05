@@ -1,4 +1,4 @@
-L166 LINKER/LOCATER V5.25                                                               12/05/2013  12:44:45  PAGE 1
+L166 LINKER/LOCATER V5.25                                                               12/05/2013  12:54:49  PAGE 1
 
 
 L166 LINKER/LOCATER V5.25, INVOKED BY:
@@ -59,7 +59,7 @@ GPT1_viTmr2                          32  ---
 
 MEMORY MAP OF MODULE:  .\obj\balancebot (?C_STARTUP)
 
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 2
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 2
 
 
 
@@ -77,13 +77,13 @@ C1004CH   C10235H   0001EAH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?MOT
 C10236H   C103C7H   000192H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?ADC0
 C103C8H   C10543H   00017CH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?SENSORIC
 C10544H   C1069DH   00015AH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?SCS
-C1069EH   C10791H   0000F4H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?MAIN
-C10792H   C1085BH   0000CAH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?CCU60
-C1085CH   C10893H   000038H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?GPT1
-C10894H   C108B5H   000022H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?GPT2
-C108B6H   C108D3H   00001EH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?MEGATRON
-C108D4H   C108EDH   00001AH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?IO
-C108EEH   C108FBH   00000EH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?ABS
+C1069EH   C1079DH   000100H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?MAIN
+C1079EH   C10867H   0000CAH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?CCU60
+C10868H   C108A1H   00003AH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?IO
+C108A2H   C108D9H   000038H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?GPT1
+C108DAH   C108FBH   000022H   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?GPT2
+C108FCH   C10919H   00001EH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?MEGATRON
+C1091AH   C10927H   00000EH   CODE  REL   WORD   ---    3  PUBL  NCODE   ?PR?ABS
 E00000H   E001FFH   000200H   DATA  REL   WORD   ---    1  PUBL  NDATA   ?C_USERSTACK
 E00200H   E0021FH   000020H   DATA  REL   WORD   ---    1  PUBL  NDATA   ?C_USERSTACK1
 E00220H   E0023FH   000020H   DATA  REL   WORD   ---    1  PUBL  NDATA   ?C_USERSTACK2
@@ -119,7 +119,7 @@ NCODE                                CODE  ---    3  NCODE       ?PR?MAIN
                                                      NCODE       ?PR?SENSORIC
                                                      NCODE       ?PR?ABS
 
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 3
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 3
 
 
 
@@ -150,14 +150,14 @@ PUBLIC SYMBOLS OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C10384H     ADC0_vStartParReqChNum           LABEL ---  NCODE   ?PR?ADC0
       C10324H     ADC0_vStartSeq0ReqChNum          LABEL ---  NCODE   ?PR?ADC0
       C10354H     ADC0_vStartSeq2ReqChNum          LABEL ---  NCODE   ?PR?ADC0
-      C10792H     CCU60_vInit                      LABEL ---  NCODE   ?PR?CCU60
-      C10812H     CCU60_viNodeI0                   LABEL ---  NCODE   ?PR?CCU60
+      C1079EH     CCU60_vInit                      LABEL ---  NCODE   ?PR?CCU60
+      C1081EH     CCU60_viNodeI0                   LABEL ---  NCODE   ?PR?CCU60
       C1056AH     DisableVcoBypass                 LABEL ---  NCODE   ?PR?SCS
       C1055CH     EnableVcoBypass                  LABEL ---  NCODE   ?PR?SCS
-      C1085CH     GPT1_vInit                       LABEL ---  NCODE   ?PR?GPT1
-      C10888H     GPT1_viTmr2                      LABEL ---  NCODE   ?PR?GPT1
-      C10894H     GPT2_vInit                       LABEL ---  NCODE   ?PR?GPT2
-      C108D4H     IO_vInit                         LABEL ---  NCODE   ?PR?IO
+      C108A2H     GPT1_vInit                       LABEL ---  NCODE   ?PR?GPT1
+      C108CEH     GPT1_viTmr2                      LABEL ---  NCODE   ?PR?GPT1
+      C108DAH     GPT2_vInit                       LABEL ---  NCODE   ?PR?GPT2
+      C10868H     IO_vInit                         LABEL ---  NCODE   ?PR?IO
       C10738H     MAIN_vChangeFreq                 LABEL ---  NCODE   ?PR?MAIN
       C1069EH     MAIN_vInit                       LABEL ---  NCODE   ?PR?MAIN
       C106ECH     MAIN_vLockProtecReg              LABEL ---  NCODE   ?PR?MAIN
@@ -165,8 +165,8 @@ PUBLIC SYMBOLS OF MODULE:  .\obj\balancebot (?C_STARTUP)
       000000H     RESET                            INTNO ---  ---     ---
       C104B8H     ReadAccelValue                   LABEL ---  NCODE   ?PR?SENSORIC
       C10482H     ReadAccelValueRaw                LABEL ---  NCODE   ?PR?SENSORIC
-      C108B6H     ReadMegatronLeft                 LABEL ---  NCODE   ?PR?MEGATRON
-      C108C4H     ReadMegatronRight                LABEL ---  NCODE   ?PR?MEGATRON
+      C108FCH     ReadMegatronLeft                 LABEL ---  NCODE   ?PR?MEGATRON
+      C1090AH     ReadMegatronRight                LABEL ---  NCODE   ?PR?MEGATRON
       C103C8H     ReadSensorData                   LABEL ---  NCODE   ?PR?SENSORIC
       C1050CH     ReadSpinValue                    LABEL ---  NCODE   ?PR?SENSORIC
       C104B0H     ReadSpinValueRaw                 LABEL ---  NCODE   ?PR?SENSORIC
@@ -179,11 +179,11 @@ PUBLIC SYMBOLS OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C10210H     SetMotorSpeedRight               LABEL ---  NCODE   ?PR?MOTOR
       C1005CH     SetMotorSpeeds                   LABEL ---  NCODE   ?PR?MOTOR
       C1004CH     SetMotorSpeedsNoReturn           LABEL ---  NCODE   ?PR?MOTOR
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 4
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 4
 
 
       C10578H     WaitForTimer13Stop               LABEL ---  NCODE   ?PR?SCS
-      C108EEH     abs                              LABEL ---  NCODE   ?PR?ABS
+      C1091AH     abs                              LABEL ---  NCODE   ?PR?ABS
       E00252H     accel_x                          VAR   ---  NDATA0  ?ND0?SENSORIC
       E00250H     accel_y                          VAR   ---  NDATA0  ?ND0?SENSORIC
       E0024EH     accel_z                          VAR   ---  NDATA0  ?ND0?SENSORIC
@@ -239,7 +239,7 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       000020H     SYMBOL    CONST     ---     ---   UST1SZ
       000020H     SYMBOL    CONST     ---     ---   UST2SZ
       000200H     SYMBOL    CONST     ---     ---   USTSZ
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 5
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 5
 
 
       00F600H     SYMBOL    VAR       ---     ---   _BOS
@@ -299,7 +299,7 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C0014CH     LINE      ---       ---     ---   #1835
       C0014EH     LINE      ---       ---     ---   #1836
       C00150H     LINE      ---       ---     ---   #1837
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 6
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 6
 
 
       C00154H     LINE      ---       ---     ---   #1838
@@ -359,7 +359,7 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C001DAH     LINE      ---       ---     ---   #1967
       C001DCH     LINE      ---       ---     ---   #1968
       C001DEH     LINE      ---       ---     ---   #1969
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 7
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 7
 
 
       C001E0H     LINE      ---       ---     ---   #1970
@@ -419,7 +419,7 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C00246H     LINE      ---       ---     ---   #2109
       C00248H     LINE      ---       ---     ---   #2110
       C0024AH     LINE      ---       ---     ---   #2112
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 8
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 8
 
 
       C0024EH     LINE      ---       ---     ---   #2113
@@ -479,7 +479,7 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C001F8H     SYMBOL    LABEL     ---     ---   Del1
       C001F4H     SYMBOL    LABEL     ---     ---   Delay1ms
       ---         BLOCKEND  LVL=0     ---     ---   
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 9
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 9
 
 
       C1076AH     GLOBAL    LABEL     ---     ---   main
@@ -539,7 +539,7 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
 
       C10738H     BLOCK     LVL=0     0032H   ---   MAIN_vChangeFreq
       C10738H     LINE      ---       ---     ---   #283
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 10
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 10
 
 
       C10738H     LINE      ---       ---     ---   #285
@@ -556,22 +556,26 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C10768H     LINE      ---       ---     ---   #323
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C1076AH     BLOCK     LVL=0     0028H   ---   main
-      C1076CH     BLOCK     LVL=1     0026H   ---   
+      C1076AH     BLOCK     LVL=0     0034H   ---   main
+      C1076CH     BLOCK     LVL=1     0032H   ---   
       000000H     SYMBOL    AUTO      ---     ---   ret_left
       000002H     SYMBOL    AUTO      ---     ---   ret_right
+      000088H     SYMBOL    REG       ---     ---   ledvalue
       ---         BLOCKEND  LVL=1     ---     ---   
       C1076AH     LINE      ---       ---     ---   #347
       C1076CH     LINE      ---       ---     ---   #348
-      C1076CH     LINE      ---       ---     ---   #354
-      C1076EH     LINE      ---       ---     ---   #360
-      C1076EH     LINE      ---       ---     ---   #364
-      C10774H     LINE      ---       ---     ---   #365
-      C10778H     LINE      ---       ---     ---   #368
+      C1076CH     LINE      ---       ---     ---   #356
+      C1076EH     LINE      ---       ---     ---   #362
+      C1076EH     LINE      ---       ---     ---   #366
+      C10774H     LINE      ---       ---     ---   #367
+      C10778H     LINE      ---       ---     ---   #370
       C1077CH     LINE      ---       ---     ---   #371
-      C10782H     LINE      ---       ---     ---   #372
-      C10786H     LINE      ---       ---     ---   #373
-      C10790H     LINE      ---       ---     ---   #381
+      C10780H     LINE      ---       ---     ---   #372
+      C10784H     LINE      ---       ---     ---   #373
+      C1078AH     LINE      ---       ---     ---   #375
+      C1078EH     LINE      ---       ---     ---   #376
+      C10792H     LINE      ---       ---     ---   #377
+      C1079CH     LINE      ---       ---     ---   #385
       ---         BLOCKEND  LVL=0     ---     ---   
       C1055CH     PUBLIC    LABEL     ---     ---   EnableVcoBypass
       C10638H     PUBLIC    LABEL     ---     ---   SCS_CountClocksWithTimer
@@ -595,13 +599,13 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C1055CH     BLOCK     LVL=0     000EH   ---   EnableVcoBypass
       C1055CH     LINE      ---       ---     ---   #262
       C1055CH     LINE      ---       ---     ---   #265
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 11
+
+
       C10560H     LINE      ---       ---     ---   #268
       C10560H     LINE      ---       ---     ---   #285
       C10568H     LINE      ---       ---     ---   #286
       ---         BLOCKEND  LVL=0     ---     ---   
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 11
-
-
 
       C1056AH     BLOCK     LVL=0     000EH   ---   DisableVcoBypass
       C1056AH     LINE      ---       ---     ---   #309
@@ -655,13 +659,13 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C105AAH     LINE      ---       ---     ---   #370
       C105B2H     LINE      ---       ---     ---   #502
       C105B2H     LINE      ---       ---     ---   #214
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 12
+
+
       C105B8H     LINE      ---       ---     ---   #217
       C105BAH     LINE      ---       ---     ---   #221
       C105BAH     LINE      ---       ---     ---   #238
       C105C2H     LINE      ---       ---     ---   #504
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 12
-
-
       C105C2H     LINE      ---       ---     ---   #509
       C105C8H     LINE      ---       ---     ---   #265
       C105CAH     LINE      ---       ---     ---   #268
@@ -715,118 +719,129 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C1065CH     LINE      ---       ---     ---   #759
       C10664H     LINE      ---       ---     ---   #775
       C1066CH     LINE      ---       ---     ---   #805
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 13
+
+
       C1067AH     LINE      ---       ---     ---   #817
       C10688H     LINE      ---       ---     ---   #839
       C10692H     LINE      ---       ---     ---   #857
       C1069AH     LINE      ---       ---     ---   #860
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 13
-
-
       ---         BLOCKEND  LVL=0     ---     ---   
-      C108D4H     PUBLIC    LABEL     ---     ---   IO_vInit
+      C10868H     PUBLIC    LABEL     ---     ---   IO_vInit
 
-      C108D4H     BLOCK     LVL=0     001AH   ---   IO_vInit
-      C108D4H     LINE      ---       ---     ---   #122
-      C108D4H     LINE      ---       ---     ---   #158
-      C108DCH     LINE      ---       ---     ---   #189
-      C108E0H     LINE      ---       ---     ---   #190
-      C108E4H     LINE      ---       ---     ---   #191
-      C108E8H     LINE      ---       ---     ---   #192
-      C108ECH     LINE      ---       ---     ---   #280
+      C10868H     BLOCK     LVL=0     003AH   ---   IO_vInit
+      C10868H     LINE      ---       ---     ---   #122
+      C10868H     LINE      ---       ---     ---   #158
+      C10870H     LINE      ---       ---     ---   #189
+      C10874H     LINE      ---       ---     ---   #190
+      C10878H     LINE      ---       ---     ---   #191
+      C1087CH     LINE      ---       ---     ---   #192
+      C10880H     LINE      ---       ---     ---   #279
+      C10884H     LINE      ---       ---     ---   #280
+      C10888H     LINE      ---       ---     ---   #281
+      C1088CH     LINE      ---       ---     ---   #282
+      C10890H     LINE      ---       ---     ---   #283
+      C10894H     LINE      ---       ---     ---   #284
+      C10898H     LINE      ---       ---     ---   #285
+      C1089CH     LINE      ---       ---     ---   #286
+      C108A0H     LINE      ---       ---     ---   #306
       ---         BLOCKEND  LVL=0     ---     ---   
-      C10792H     PUBLIC    LABEL     ---     ---   CCU60_vInit
-      C10812H     PUBLIC    LABEL     ---     ---   CCU60_viNodeI0
+      C1079EH     PUBLIC    LABEL     ---     ---   CCU60_vInit
+      C1081EH     PUBLIC    LABEL     ---     ---   CCU60_viNodeI0
 
-      C10792H     BLOCK     LVL=0     0080H   ---   CCU60_vInit
-      C10792H     LINE      ---       ---     ---   #122
-      C10792H     LINE      ---       ---     ---   #137
-      C10798H     LINE      ---       ---     ---   #139
-      C1079AH     LINE      ---       ---     ---   #140
-      C1079CH     LINE      ---       ---     ---   #141
-      C1079EH     LINE      ---       ---     ---   #142
-      C107A0H     LINE      ---       ---     ---   #158
-      C107A8H     LINE      ---       ---     ---   #179
-      C107ACH     LINE      ---       ---     ---   #181
-      C107B4H     LINE      ---       ---     ---   #182
-      C107BCH     LINE      ---       ---     ---   #206
-      C107C4H     LINE      ---       ---     ---   #225
-      C107C8H     LINE      ---       ---     ---   #239
-      C107CEH     LINE      ---       ---     ---   #248
-      C107D2H     LINE      ---       ---     ---   #252
-      C107D8H     LINE      ---       ---     ---   #255
-      C107E0H     LINE      ---       ---     ---   #281
-      C107E6H     LINE      ---       ---     ---   #284
-      C107EEH     LINE      ---       ---     ---   #294
-      C107F6H     LINE      ---       ---     ---   #295
-      C107FAH     LINE      ---       ---     ---   #297
-      C10802H     LINE      ---       ---     ---   #307
-      C10808H     LINE      ---       ---     ---   #316
-      C10810H     LINE      ---       ---     ---   #323
-      ---         BLOCKEND  LVL=0     ---     ---   
-
-      C10812H     BLOCK     LVL=0     004AH   ---   CCU60_viNodeI0
-      C10812H     LINE      ---       ---     ---   #354
-      C10818H     LINE      ---       ---     ---   #360
-      C10820H     LINE      ---       ---     ---   #366
-      C10822H     LINE      ---       ---     ---   #369
-      C1082CH     LINE      ---       ---     ---   #370
-      C1082CH     LINE      ---       ---     ---   #372
-      C10834H     LINE      ---       ---     ---   #378
-      C10836H     LINE      ---       ---     ---   #381
-      C10840H     LINE      ---       ---     ---   #382
-      C10840H     LINE      ---       ---     ---   #384
-      C10848H     LINE      ---       ---     ---   #390
-      C1084AH     LINE      ---       ---     ---   #391
-      C1084CH     LINE      ---       ---     ---   #394
-      C10856H     LINE      ---       ---     ---   #395
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 14
-
-
-      ---         BLOCKEND  LVL=0     ---     ---   
-      C10888H     PUBLIC    LABEL     ---     ---   GPT1_viTmr2
-      C1085CH     PUBLIC    LABEL     ---     ---   GPT1_vInit
-
-      C1085CH     BLOCK     LVL=0     002CH   ---   GPT1_vInit
-      C1085CH     LINE      ---       ---     ---   #122
-      C1085CH     LINE      ---       ---     ---   #130
-      C10860H     LINE      ---       ---     ---   #132
-      C10862H     LINE      ---       ---     ---   #134
-      C10864H     LINE      ---       ---     ---   #154
-      C10868H     LINE      ---       ---     ---   #155
-      C1086CH     LINE      ---       ---     ---   #166
-      C10870H     LINE      ---       ---     ---   #167
-      C10874H     LINE      ---       ---     ---   #178
-      C10878H     LINE      ---       ---     ---   #179
-      C1087CH     LINE      ---       ---     ---   #197
-      C10880H     LINE      ---       ---     ---   #204
-      C10882H     LINE      ---       ---     ---   #206
-      C10884H     LINE      ---       ---     ---   #208
-      C10886H     LINE      ---       ---     ---   #210
+      C1079EH     BLOCK     LVL=0     0080H   ---   CCU60_vInit
+      C1079EH     LINE      ---       ---     ---   #122
+      C1079EH     LINE      ---       ---     ---   #137
+      C107A4H     LINE      ---       ---     ---   #139
+      C107A6H     LINE      ---       ---     ---   #140
+      C107A8H     LINE      ---       ---     ---   #141
+      C107AAH     LINE      ---       ---     ---   #142
+      C107ACH     LINE      ---       ---     ---   #158
+      C107B4H     LINE      ---       ---     ---   #179
+      C107B8H     LINE      ---       ---     ---   #181
+      C107C0H     LINE      ---       ---     ---   #182
+      C107C8H     LINE      ---       ---     ---   #206
+      C107D0H     LINE      ---       ---     ---   #225
+      C107D4H     LINE      ---       ---     ---   #239
+      C107DAH     LINE      ---       ---     ---   #248
+      C107DEH     LINE      ---       ---     ---   #252
+      C107E4H     LINE      ---       ---     ---   #255
+      C107ECH     LINE      ---       ---     ---   #281
+      C107F2H     LINE      ---       ---     ---   #284
+      C107FAH     LINE      ---       ---     ---   #294
+      C10802H     LINE      ---       ---     ---   #295
+      C10806H     LINE      ---       ---     ---   #297
+      C1080EH     LINE      ---       ---     ---   #307
+      C10814H     LINE      ---       ---     ---   #316
+      C1081CH     LINE      ---       ---     ---   #323
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C10888H     BLOCK     LVL=0     000CH   ---   GPT1_viTmr2
-      C10888H     LINE      ---       ---     ---   #242
-      C1088AH     LINE      ---       ---     ---   #252
-      C10890H     LINE      ---       ---     ---   #255
-      ---         BLOCKEND  LVL=0     ---     ---   
-      C10894H     PUBLIC    LABEL     ---     ---   GPT2_vInit
+      C1081EH     BLOCK     LVL=0     004AH   ---   CCU60_viNodeI0
+      C1081EH     LINE      ---       ---     ---   #354
+      C10824H     LINE      ---       ---     ---   #360
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 14
 
-      C10894H     BLOCK     LVL=0     0022H   ---   GPT2_vInit
-      C10894H     LINE      ---       ---     ---   #123
-      C10894H     LINE      ---       ---     ---   #132
-      C10898H     LINE      ---       ---     ---   #135
-      C1089AH     LINE      ---       ---     ---   #137
-      C1089CH     LINE      ---       ---     ---   #156
-      C108A0H     LINE      ---       ---     ---   #157
-      C108A4H     LINE      ---       ---     ---   #172
-      C108A8H     LINE      ---       ---     ---   #173
-      C108ACH     LINE      ---       ---     ---   #184
-      C108B0H     LINE      ---       ---     ---   #185
-      C108B4H     LINE      ---       ---     ---   #202
+
+      C1082CH     LINE      ---       ---     ---   #366
+      C1082EH     LINE      ---       ---     ---   #369
+      C10838H     LINE      ---       ---     ---   #370
+      C10838H     LINE      ---       ---     ---   #372
+      C10840H     LINE      ---       ---     ---   #378
+      C10842H     LINE      ---       ---     ---   #381
+      C1084CH     LINE      ---       ---     ---   #382
+      C1084CH     LINE      ---       ---     ---   #384
+      C10854H     LINE      ---       ---     ---   #390
+      C10856H     LINE      ---       ---     ---   #391
+      C10858H     LINE      ---       ---     ---   #394
+      C10862H     LINE      ---       ---     ---   #395
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C108CEH     PUBLIC    LABEL     ---     ---   GPT1_viTmr2
+      C108A2H     PUBLIC    LABEL     ---     ---   GPT1_vInit
+
+      C108A2H     BLOCK     LVL=0     002CH   ---   GPT1_vInit
+      C108A2H     LINE      ---       ---     ---   #122
+      C108A2H     LINE      ---       ---     ---   #130
+      C108A6H     LINE      ---       ---     ---   #132
+      C108A8H     LINE      ---       ---     ---   #134
+      C108AAH     LINE      ---       ---     ---   #154
+      C108AEH     LINE      ---       ---     ---   #155
+      C108B2H     LINE      ---       ---     ---   #166
+      C108B6H     LINE      ---       ---     ---   #167
+      C108BAH     LINE      ---       ---     ---   #178
+      C108BEH     LINE      ---       ---     ---   #179
+      C108C2H     LINE      ---       ---     ---   #197
+      C108C6H     LINE      ---       ---     ---   #204
+      C108C8H     LINE      ---       ---     ---   #206
+      C108CAH     LINE      ---       ---     ---   #208
+      C108CCH     LINE      ---       ---     ---   #210
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C108CEH     BLOCK     LVL=0     000CH   ---   GPT1_viTmr2
+      C108CEH     LINE      ---       ---     ---   #242
+      C108D0H     LINE      ---       ---     ---   #252
+      C108D6H     LINE      ---       ---     ---   #255
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C108DAH     PUBLIC    LABEL     ---     ---   GPT2_vInit
+
+      C108DAH     BLOCK     LVL=0     0022H   ---   GPT2_vInit
+      C108DAH     LINE      ---       ---     ---   #123
+      C108DAH     LINE      ---       ---     ---   #132
+      C108DEH     LINE      ---       ---     ---   #135
+      C108E0H     LINE      ---       ---     ---   #137
+      C108E2H     LINE      ---       ---     ---   #156
+      C108E6H     LINE      ---       ---     ---   #157
+      C108EAH     LINE      ---       ---     ---   #172
+      C108EEH     LINE      ---       ---     ---   #173
+      C108F2H     LINE      ---       ---     ---   #184
+      C108F6H     LINE      ---       ---     ---   #185
+      C108FAH     LINE      ---       ---     ---   #202
       ---         BLOCKEND  LVL=0     ---     ---   
       C10390H     PUBLIC    LABEL     ---     ---   ADC0_vSeqSoftTrigger
       C10236H     PUBLIC    LABEL     ---     ---   ADC0_vInit
       C10354H     PUBLIC    LABEL     ---     ---   ADC0_vStartSeq2ReqChNum
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 15
+
+
       C10324H     PUBLIC    LABEL     ---     ---   ADC0_vStartSeq0ReqChNum
       C10384H     PUBLIC    LABEL     ---     ---   ADC0_vStartParReqChNum
 
@@ -839,9 +854,6 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C10248H     LINE      ---       ---     ---   #186
       C1024EH     LINE      ---       ---     ---   #188
       C10254H     LINE      ---       ---     ---   #205
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 15
-
-
       C1025CH     LINE      ---       ---     ---   #219
       C10264H     LINE      ---       ---     ---   #233
       C1026CH     LINE      ---       ---     ---   #247
@@ -887,6 +899,9 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C10324H     BLOCK     LVL=1     002EH   ---   
       000006H     SYMBOL    REG       ---     ---   uwVal
       ---         BLOCKEND  LVL=1     ---     ---   
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 16
+
+
       C10324H     LINE      ---       ---     ---   #536
       C10324H     LINE      ---       ---     ---   #537
       C10324H     LINE      ---       ---     ---   #539
@@ -899,9 +914,6 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C1033AH     LINE      ---       ---     ---   #548
       C10340H     LINE      ---       ---     ---   #550
       C10344H     LINE      ---       ---     ---   #551
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 16
-
-
       C10344H     LINE      ---       ---     ---   #552
       C1034EH     LINE      ---       ---     ---   #554
       C10352H     LINE      ---       ---     ---   #556
@@ -947,6 +959,9 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C10398H     LINE      ---       ---     ---   #683
       C103A2H     LINE      ---       ---     ---   #684
       C103AAH     LINE      ---       ---     ---   #686
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 17
+
+
       C103ACH     LINE      ---       ---     ---   #688
       C103B2H     LINE      ---       ---     ---   #690
       C103B4H     LINE      ---       ---     ---   #692
@@ -959,9 +974,6 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C101EAH     PUBLIC    LABEL     ---     ---   SetMotorSpeedLeft
       C10210H     PUBLIC    LABEL     ---     ---   SetMotorSpeedRight
       C1005CH     PUBLIC    LABEL     ---     ---   SetMotorSpeeds
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 17
-
-
       E00240H     PUBLIC    VAR       ---     ---   megatroncounter
       E00242H     PUBLIC    VAR       ---     ---   optimusprimeleft
       E00244H     PUBLIC    VAR       ---     ---   optimusprimeright
@@ -1007,6 +1019,9 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C10110H     LINE      ---       ---     ---   #53
       C10118H     LINE      ---       ---     ---   #54
       C1011CH     LINE      ---       ---     ---   #55
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 18
+
+
       C1011CH     LINE      ---       ---     ---   #59
       C10138H     LINE      ---       ---     ---   #60
       C1013CH     LINE      ---       ---     ---   #61
@@ -1019,9 +1034,6 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C10192H     LINE      ---       ---     ---   #74
       C10192H     LINE      ---       ---     ---   #75
       C1019CH     LINE      ---       ---     ---   #78
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 18
-
-
       C101ACH     LINE      ---       ---     ---   #79
       C101ACH     LINE      ---       ---     ---   #83
       C101B0H     LINE      ---       ---     ---   #84
@@ -1061,38 +1073,38 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C10234H     LINE      ---       ---     ---   #126
       C10234H     LINE      ---       ---     ---   #127
       ---         BLOCKEND  LVL=0     ---     ---   
-      C108B6H     PUBLIC    LABEL     ---     ---   ReadMegatronLeft
-      C108C4H     PUBLIC    LABEL     ---     ---   ReadMegatronRight
+      C108FCH     PUBLIC    LABEL     ---     ---   ReadMegatronLeft
+      C1090AH     PUBLIC    LABEL     ---     ---   ReadMegatronRight
 
-      C108B6H     BLOCK     LVL=0     000EH   ---   ReadMegatronLeft
-      C108B6H     BLOCK     LVL=1     000CH   ---   
+      C108FCH     BLOCK     LVL=0     000EH   ---   ReadMegatronLeft
+      C108FCH     BLOCK     LVL=1     000CH   ---   
       000004H     SYMBOL    REG       ---     ---   value
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 19
+
+
       ---         BLOCKEND  LVL=1     ---     ---   
-      C108B6H     LINE      ---       ---     ---   #8
-      C108B6H     LINE      ---       ---     ---   #9
-      C108B6H     LINE      ---       ---     ---   #12
-      C108B8H     LINE      ---       ---     ---   #13
-      C108BCH     LINE      ---       ---     ---   #14
-      C108C0H     LINE      ---       ---     ---   #15
-      C108C2H     LINE      ---       ---     ---   #16
-      C108C2H     LINE      ---       ---     ---   #17
+      C108FCH     LINE      ---       ---     ---   #8
+      C108FCH     LINE      ---       ---     ---   #9
+      C108FCH     LINE      ---       ---     ---   #12
+      C108FEH     LINE      ---       ---     ---   #13
+      C10902H     LINE      ---       ---     ---   #14
+      C10906H     LINE      ---       ---     ---   #15
+      C10908H     LINE      ---       ---     ---   #16
+      C10908H     LINE      ---       ---     ---   #17
       ---         BLOCKEND  LVL=0     ---     ---   
 
-      C108C4H     BLOCK     LVL=0     0010H   ---   ReadMegatronRight
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 19
-
-
-      C108C4H     BLOCK     LVL=1     000EH   ---   
+      C1090AH     BLOCK     LVL=0     0010H   ---   ReadMegatronRight
+      C1090AH     BLOCK     LVL=1     000EH   ---   
       000004H     SYMBOL    REG       ---     ---   value
       ---         BLOCKEND  LVL=1     ---     ---   
-      C108C4H     LINE      ---       ---     ---   #19
-      C108C4H     LINE      ---       ---     ---   #20
-      C108C4H     LINE      ---       ---     ---   #22
-      C108C8H     LINE      ---       ---     ---   #23
-      C108CCH     LINE      ---       ---     ---   #24
-      C108D0H     LINE      ---       ---     ---   #25
-      C108D2H     LINE      ---       ---     ---   #26
-      C108D2H     LINE      ---       ---     ---   #27
+      C1090AH     LINE      ---       ---     ---   #19
+      C1090AH     LINE      ---       ---     ---   #20
+      C1090AH     LINE      ---       ---     ---   #22
+      C1090EH     LINE      ---       ---     ---   #23
+      C10912H     LINE      ---       ---     ---   #24
+      C10916H     LINE      ---       ---     ---   #25
+      C10918H     LINE      ---       ---     ---   #26
+      C10918H     LINE      ---       ---     ---   #27
       ---         BLOCKEND  LVL=0     ---     ---   
       C103C8H     PUBLIC    LABEL     ---     ---   ReadSensorData
       C104B8H     PUBLIC    LABEL     ---     ---   ReadAccelValue
@@ -1127,6 +1139,9 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C1049EH     LINE      ---       ---     ---   #44
       C104ACH     LINE      ---       ---     ---   #45
       C104AEH     LINE      ---       ---     ---   #46
+L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:54:49  PAGE 20
+
+
       ---         BLOCKEND  LVL=0     ---     ---   
 
       C104B0H     BLOCK     LVL=0     0008H   ---   ReadSpinValueRaw
@@ -1139,9 +1154,6 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       000048H     SYMBOL    REG       ---     ---   direction
       C104B8H     BLOCK     LVL=1     0052H   ---   
       000006H     SYMBOL    REG       ---     ---   tmp
-L166 LINKER/LOCATER V5.25                                                             12/05/2013  12:44:45  PAGE 20
-
-
       000007H     SYMBOL    REG       ---     ---   x
       ---         BLOCKEND  LVL=1     ---     ---   
       C104B8H     LINE      ---       ---     ---   #57
@@ -1169,7 +1181,7 @@ SYMBOL TABLE OF MODULE:  .\obj\balancebot (?C_STARTUP)
       C10528H     LINE      ---       ---     ---   #91
       C10542H     LINE      ---       ---     ---   #92
       ---         BLOCKEND  LVL=0     ---     ---   
-      C108EEH     PUBLIC    LABEL     ---     ---   abs
+      C1091AH     PUBLIC    LABEL     ---     ---   abs
       C1003CH     PUBLIC    VAR       ---     ---   ?C_ENDINIT
 
 
@@ -1182,8 +1194,8 @@ FUNCTION . . . . . . . . . . . REG MASK
 
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 1000H BYTE CODE SIZE LIMIT; USED: 0AD6H BYTE (67%) *
+* RESTRICTED VERSION WITH 1000H BYTE CODE SIZE LIMIT; USED: 0B02H BYTE (68%) *
 ******************************************************************************
 
-Program Size: data=1111(near=1111) const=76(near=0) code=2728
+Program Size: data=1111(near=1111) const=76(near=0) code=2772
 L166 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
