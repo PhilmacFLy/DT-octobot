@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          05.12.2013 13:20:48
+// @Date          09.12.2013 18:51:36
 //
 //****************************************************************************
 
@@ -33,6 +33,7 @@
 #include "motor.h"
 #include "megatron.h"
 #include "sensoric.h"
+#include "balance.h"
 // USER CODE END
 
 
@@ -112,7 +113,7 @@ volatile unsigned char timerevent = 0;
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          05.12.2013
+// @Date          09.12.2013
 //
 //****************************************************************************
 
@@ -192,7 +193,7 @@ void MAIN_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          05.12.2013
+// @Date          09.12.2013
 //
 //****************************************************************************
 
@@ -230,7 +231,7 @@ void MAIN_vUnlockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          05.12.2013
+// @Date          09.12.2013
 //
 //****************************************************************************
 
@@ -272,7 +273,7 @@ void MAIN_vLockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          05.12.2013
+// @Date          09.12.2013
 //
 //****************************************************************************
 
@@ -336,7 +337,7 @@ void MAIN_vChangeFreq(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          05.12.2013
+// @Date          09.12.2013
 //
 //****************************************************************************
 
@@ -351,11 +352,17 @@ void main(void)
   signed int ret_right;
   volatile signed int gyrovalue;
   unsigned char ledvalue;
+  volatile signed int winkel = 0.0;
+  volatile signed int val_x;
+  volatile signed int val_y;
+  volatile signed int val_z;
   // USER CODE END
 
   MAIN_vInit();
 
   // USER CODE BEGIN (Main,3)
+
+  BalanceInit();
 
   // USER CODE END
 
@@ -365,11 +372,19 @@ void main(void)
    // USER CODE BEGIN (Main,4)
    while(0 == timerevent);
    timerevent = 0;
+		   
+   ReadSensorData();
+   Balance();
+   //SetMotorSpeedsNoReturn(10, -10);
 
    // start reading the data, they will be get then
-   ReadSensorData();
+   
    gyrovalue = ReadSpinValue();
+   winkel = GetCurrentAngle();
    ledvalue = ReadSpinValueRaw();
+   val_x = ReadAccelValue(DIRECTION_X) + 512;
+   val_y = ReadAccelValue(DIRECTION_Y) + 512;
+   val_z = ReadAccelValue(DIRECTION_Z) + 512;
    
    P10_OUT_P7 = (gyrovalue > 35) ? 0 : 1;
    P10_OUT_P6 =	(gyrovalue > 25) ? 0 : 1;
@@ -380,10 +395,11 @@ void main(void)
    P10_OUT_P1 =	(gyrovalue < -25) ? 0 : 1;
    P10_OUT_P0 =	(gyrovalue < -35) ? 0 : 1;
    // do some kind of stuff
-   ret_left = 80;
-   ret_right = 80;
-   SetMotorSpeeds(&ret_left, &ret_right);
-   // set motor speed
+   //ret_left = 00;
+   //ret_right = 00;
+   //SetMotorSpeeds(&ret_left, &ret_right);
+   
+
    //SetMotorSpeedsNoReturn(links_p, rechts_p);
    // faehrt vorwärts hoffentlich
    // und au langsam

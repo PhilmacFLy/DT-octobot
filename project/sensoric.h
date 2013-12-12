@@ -10,6 +10,8 @@ void ReadSensorData();
 			   
 unsigned char ReadAccelValueRaw(unsigned char direction);
 unsigned char ReadSpinValueRaw();
+
+signed int GetCurrentAngle();
 				   
 signed int ReadAccelValue(unsigned char direction);
 signed int ReadSpinValue();

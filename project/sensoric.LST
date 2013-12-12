@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, SENSORIC                                                              12/05/2013 14:10:59 PAGE 1   
+C166 COMPILER V7.05, SENSORIC                                                              12/12/2013 14:35:02 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE SENSORIC
@@ -17,145 +17,182 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE sensoric.c MODV2 BR
     5         
     6         #include "sensoric.h"
     7         
-    8         #define NUM_SAMPLES 10
+    8         #include "MATH.H"
     9         
-   10         volatile unsigned int accel_x_arr[NUM_SAMPLES];
-   11         volatile unsigned int accel_y_arr[NUM_SAMPLES];
-   12         volatile unsigned int accel_z_arr[NUM_SAMPLES];
-   13         volatile unsigned int speed_spin_arr[NUM_SAMPLES];
-   14         
-   15         volatile unsigned int accel_x = 0;
-   16         volatile unsigned int accel_y = 0;
-   17         volatile unsigned int accel_z = 0;      
-   18         volatile unsigned int speed_spin = 0;
-   19         
-   20         unsigned int GetMediumValue(unsigned int* vals)
-   21         {
-   22  1              unsigned int ret = 0;
-   23  1              unsigned int max = 0x0000;
-   24  1              unsigned int min = 0xFFFF;
-   25  1              int i = 0;
-   26  1      
-   27  1              // iterate and save min/max values
-   28  1              for (i = 0; i < NUM_SAMPLES; i++)
-   29  1              {
-   30  2                ret += vals[i];
-   31  2                if (vals[i] > max) max = vals[i];
-   32  2                if (vals[i] < min) min = vals[i];
-   33  2          }
-   34  1      
-   35  1              // remove min/max valuea
-   36  1              ret -= min;
-   37  1              ret -= max;
+   10         // min 3
+   11         #define NUM_SAMPLES 5
+   12         
+   13         // zero value ~= 512
+   14         volatile unsigned int accel_x_arr[NUM_SAMPLES];
+   15         volatile unsigned int accel_y_arr[NUM_SAMPLES];
+   16         volatile unsigned int accel_z_arr[NUM_SAMPLES];
+   17         volatile unsigned int speed_spin_arr[NUM_SAMPLES];
+   18         
+   19         volatile unsigned int accel_x = 0;
+   20         volatile unsigned int accel_y = 0;
+   21         volatile unsigned int accel_z = 0;      
+   22         volatile unsigned int speed_spin = 0;
+   23         
+   24         unsigned int GetMediumValue(unsigned int* vals)
+   25         {
+   26  1              unsigned int ret = 0;
+   27  1              unsigned int max = 0x0000;
+   28  1              unsigned int min = 0xFFFF;
+   29  1              int i = 0;
+   30  1      
+   31  1              // iterate and save min/max values
+   32  1              for (i = 0; i < NUM_SAMPLES; i++)
+   33  1              {
+   34  2                ret += vals[i];
+   35  2                if (vals[i] > max) max = vals[i];
+   36  2                if (vals[i] < min) min = vals[i];
+   37  2          }
    38  1      
-   39  1              return (ret/(NUM_SAMPLES-2));
-   40  1      }
-   41         
-   42         void ReadSensorData()
-   43         {
-   44  1         unsigned int i = 0;
-   45  1         // read ALL! the ADC channels
-   46  1         //13,14,5 for gyro acceleration
-   47  1         //7 for spinning sensor
-   48  1         //register 0 - channel 5  (Acceleration Z Axix)
-   49  1         //register 1 - channel 6  (Acceleration Spinning)
-   50  1         //register 2 - channel 7  (unused)
-   51  1         //register 3 - channel 13 (Acceleration )
-   52  1         //register 4 - channel 14 ()
-   53  1         //register 5 - channel 15 (unused)
-C166 COMPILER V7.05, SENSORIC                                                              12/05/2013 14:10:59 PAGE 2   
+   39  1              // remove min/max values
+   40  1              ret -= min;
+   41  1              ret -= max;
+   42  1              return (ret/(NUM_SAMPLES-2));
+   43  1      }
+   44         
+   45         void ReadSensorData()
+   46         {
+   47  1         unsigned int i = 0;
+   48  1         volatile unsigned int tmp;
+   49  1         // read ALL! the ADC channels
+   50  1         //13,14,5 for gyro acceleration
+   51  1         //7 for spinning sensor
+   52  1         //register 0 - channel 5  (Acceleration Z Axix)
+   53  1         //register 1 - channel 6  (Acceleration Spinning)
+C166 COMPILER V7.05, SENSORIC                                                              12/12/2013 14:35:02 PAGE 2   
 
-   54  1         for (i = 0; i < NUM_SAMPLES; i++)
-   55  1         {
-   56  2                 ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_5);
-   57  2                 ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_13);
-   58  2                 while(!ADC0_uwResultValid(RESULT_REG_0) && !ADC0_uwResultValid(RESULT_REG_3)); // necessary?
-   59  2                 ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_6);
-   60  2                 ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_14);
-   61  2                 while(!ADC0_uwResultValid(RESULT_REG_1) && !ADC0_uwResultValid(RESULT_REG_4)); // necessary?
-   62  2                 //ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_7);
-   63  2                 //ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_15);  
-   64  2                 //while(!ADC0_uwResultValid(RESULT_REG_2) && !ADC0_uwResultValid(RESULT_REG_5)); // necessary?
-   65  2              
-   66  2                 accel_x_arr[i] = ADC0_uwGetResultData(RESULT_REG_3);
-   67  2                 accel_y_arr[i] = ADC0_uwGetResultData(RESULT_REG_4);
-   68  2                 accel_z_arr[i] = ADC0_uwGetResultData(RESULT_REG_0);
-   69  2                 speed_spin_arr[i] = ADC0_uwGetResultData(RESULT_REG_1);
-   70  2         }
-   71  1         accel_x = GetMediumValue(accel_x_arr);
-   72  1         accel_y = GetMediumValue(accel_y_arr);
-   73  1         accel_z = GetMediumValue(accel_z_arr);
-   74  1         speed_spin = GetMediumValue(speed_spin_arr);
-   75  1      }
-   76         
-   77         unsigned char ReadAccelValueRaw(unsigned char direction)
-   78         {                                                                          
-   79  1        if (direction == DIRECTION_X) return ((unsigned char) (accel_x >> 2));
-   80  1        if (direction == DIRECTION_Y) return ((unsigned char) (accel_y >> 2));
-   81  1        if (direction == DIRECTION_Z) return ((unsigned char) (accel_z >> 2));
-   82  1        return 0;
-   83  1      }
-   84           
-   85         unsigned char ReadSpinValueRaw()
-   86         {
-   87  1        return ((unsigned char) (speed_spin >> 2));
-   88  1      } 
-   89         
-   90         // untested
-   91         //DIRECTION_X positive value: backward, negative value: forward
-   92         //DIRECTION_Y positive value: left, negative value: right
-   93         //DIRECTION_Z positive value: down, negative value: up
-   94         signed int ReadAccelValue(unsigned char direction)
-   95         {
-   96  1        unsigned int tmp = 0;
-   97  1        signed int x;
-   98  1      
-   99  1        if (direction == DIRECTION_X) tmp = accel_x;
-  100  1        if (direction == DIRECTION_Y) tmp = accel_y;
-  101  1        if (direction == DIRECTION_Z) tmp = accel_z;
-  102  1      
-  103  1        // 0 - 0x3FF / 0 - 1023, voltage is irrelevant because Vs = Vref
-  104  1        // 511/512 is middle
-  105  1        if (tmp < 512) x = - ( (signed int) (511 - tmp) ); // <= 511 is negative
-  106  1        else           x =   ( (signed int) (tmp - 512) ); // >= 512 is positive
-  107  1        
-  108  1        // at Vs = 3,3V, the sensitivity is about 330mV / g
-  109  1        // therefore, -511 to 511 is similar to -5G - +5G
-  110  1        return ((x * 1000) / 1022); // return value * 0,01g = X g
-  111  1      }
-  112         
-  113         // tested
-  114         // positive value: rückwaerts kipping
-  115         // negative value: vorwaerts kipping
-C166 COMPILER V7.05, SENSORIC                                                              12/05/2013 14:10:59 PAGE 3   
+   54  1         //register 2 - channel 7  (unused)
+   55  1         //register 3 - channel 13 (Acceleration )
+   56  1         //register 4 - channel 14 ()
+   57  1         //register 5 - channel 15 (unused)
+   58  1         for (i = 0; i < NUM_SAMPLES; i++)
+   59  1         {
+   60  2                 ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_5);
+   61  2                 while(!ADC0_uwResultValid(RESULT_REG_0)); // necessary?
+   62  2                 ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_6);
+   63  2                 while(!ADC0_uwResultValid(RESULT_REG_1)); // necessary?
+   64  2                 ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_13);
+   65  2                 while(!ADC0_uwResultValid(RESULT_REG_3)); // necessary?
+   66  2                 ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_14);
+   67  2                 while(!ADC0_uwResultValid(RESULT_REG_4)); // necessary?
+   68  2            
+   69  2             /*
+   70  2                 ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_5);
+   71  2                 ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_13);
+   72  2                 while(!ADC0_uwResultValid(RESULT_REG_0) && !ADC0_uwResultValid(RESULT_REG_3)); // necessary?
+   73  2                 ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_6);
+   74  2                 ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_14);
+   75  2                 while(!ADC0_uwResultValid(RESULT_REG_1) && !ADC0_uwResultValid(RESULT_REG_4)); // necessary?
+   76  2                 ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_7);
+   77  2                 ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_15);  
+   78  2                 while(!ADC0_uwResultValid(RESULT_REG_2) && !ADC0_uwResultValid(RESULT_REG_5)); // necessary?
+   79  2                 */
+   80  2                 accel_x_arr[i] = ADC0_uwGetResultData(RESULT_REG_3);
+   81  2                 accel_y_arr[i] = ADC0_uwGetResultData(RESULT_REG_4);
+   82  2                 accel_z_arr[i] = ADC0_uwGetResultData(RESULT_REG_0);
+   83  2                 speed_spin_arr[i] = ADC0_uwGetResultData(RESULT_REG_1);//1);
+   84  2         }
+   85  1         accel_x = GetMediumValue(accel_x_arr);
+   86  1         accel_y = GetMediumValue(accel_y_arr);
+   87  1         accel_z = GetMediumValue(accel_z_arr);
+   88  1         speed_spin = GetMediumValue(speed_spin_arr);
+   89  1      }
+*** WARNING C47 IN LINE 48 OF sensoric.c: 'tmp': unreferenced local variable
+   90         
+   91         unsigned char ReadAccelValueRaw(unsigned char direction)
+   92         {                                                                          
+   93  1        if (direction == DIRECTION_X) return ((unsigned char) (accel_x >> 2));
+   94  1        if (direction == DIRECTION_Y) return ((unsigned char) (accel_y >> 2));
+   95  1        if (direction == DIRECTION_Z) return ((unsigned char) (accel_z >> 2));
+   96  1        return 0;
+   97  1      }
+   98           
+   99         unsigned char ReadSpinValueRaw()
+  100         {
+  101  1        return ((unsigned char) (speed_spin >> 2));
+  102  1      } 
+  103         
+  104         // untested
+  105         // positive: forward
+  106         // negative: backward
+  107         signed int GetCurrentAngle()
+  108         {
+  109  1              signed int xvalue;
+  110  1              double alpha;
+  111  1              xvalue = ReadAccelValue(DIRECTION_X);
+  112  1              alpha = acos(((double)xvalue) / 100.0);
+  113  1              // pi/2 = grade
+  114  1              // <pi/2 = kippen vorwärts
+C166 COMPILER V7.05, SENSORIC                                                              12/12/2013 14:35:02 PAGE 3   
 
-  116         signed int ReadSpinValue()
-  117         {
-  118  1        unsigned int tmp = speed_spin;
-  119  1        signed int x;
-  120  1      
-  121  1        // 0 - 0x3FF / 0 - 1023, voltage is irrelevant because Vs = Vref
-  122  1        // 511/512 is middle
-  123  1        if (tmp < 512) x = - ( (signed int) (511 - tmp) ); // <= 511 is negative
-  124  1        else           x =   ( (signed int) (tmp - 512) ); // >= 512 is positive
-  125  1      
-  126  1        // 40 mV offset (1,61V center, should be 1,65V)
-  127  1        // 3,6 mV sensitivity =>  12
-  128  1        x += 12;
-  129  1      
-  130  1        // at Vs = 3,3V the sensitivity is about 3,3mV / °/s
-  131  1        // therefore, -511 to 511 is similar to -500°/s - +500°/s
-  132  1        return (( x * 1000) / 1022); // return value = X°/s
-  133  1      }
+  115  1              // >pi/2 = kippen rückwärts
+  116  1              alpha = alpha * 180. / 3.14159; // rad to grad
+  117  1              alpha = alpha - 90.; // offset
+  118  1              alpha = -alpha; // vorzeichen
+  119  1              return ((signed int)alpha);
+  120  1      }
+  121         
+  122         // untested
+  123         //DIRECTION_X positive value: forward, negative value: backward
+  124         //DIRECTION_Y positive value: left, negative value: right
+  125         //DIRECTION_Z positive value: down, negative value: up
+  126         signed int ReadAccelValue(unsigned char direction)
+  127         {
+  128  1        unsigned int tmp = 0;
+  129  1        signed int x;
+  130  1      
+  131  1        if (direction == DIRECTION_X) tmp = accel_x + 3;
+  132  1        if (direction == DIRECTION_Y) tmp = accel_y + 0;
+  133  1        if (direction == DIRECTION_Z) tmp = accel_z + 0;
+  134  1      
+  135  1        // 0 - 0x3FF / 0 - 1023, voltage is irrelevant because Vs = Vref
+  136  1        // 511/512 is middle
+  137  1        if (tmp < 512) x = - ( (signed int) (511 - tmp) ); // <= 511 is negative
+  138  1        else           x =   ( (signed int) (tmp - 512) ); // >= 512 is positive
+  139  1        
+  140  1        // at Vs = 3,3V, the sensitivity is about 330mV / g
+  141  1        // therefore, -511 to 511 is similar to -5G - +5G
+  142  1        return x;
+  143  1        //return ((x * 1000) / 1022); // return value * 0,01g = X g
+  144  1      }
+  145         
+  146         // tested
+  147         // positive value: rückwaerts kipping
+  148         // negative value: vorwaerts kipping
+  149         signed int ReadSpinValue()
+  150         {
+  151  1        unsigned int tmp = speed_spin;
+  152  1        signed int x;
+  153  1      
+  154  1        // 0 - 0x3FF / 0 - 1023, voltage is irrelevant because Vs = Vref
+  155  1        // 511/512 is middle
+  156  1        if (tmp < 512) x = - ( (signed int) (511 - tmp) ); // <= 511 is negative
+  157  1        else           x =   ( (signed int) (tmp - 512) ); // >= 512 is positive
+  158  1      
+  159  1        // 40 mV offset (1,61V center, should be 1,65V)
+  160  1        // 3,6 mV sensitivity =>  12-14
+  161  1        x += 14;
+  162  1      
+  163  1        // at Vs = 3,3V the sensitivity is about 3,3mV / °/s
+  164  1        // therefore, -511 to 511 is similar to -500°/s - +500°/s
+  165  1        return -x;
+  166  1        //return (( x * 1000) / 1022); // return value = X°/s
+  167  1      }
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
-  CODE SIZE        =         502     --------
+  CODE SIZE        =         562     --------
   NEAR-CONST SIZE  =    --------     --------
   FAR-CONST SIZE   =    --------     --------
   HUGE-CONST SIZE  =    --------     --------
   XHUGE-CONST SIZE =    --------     --------
-  NEAR-DATA SIZE   =          88     --------
+  NEAR-DATA SIZE   =          48     --------
+C166 COMPILER V7.05, SENSORIC                                                              12/12/2013 14:35:02 PAGE 4   
+
   FAR-DATA SIZE    =    --------     --------
   XHUGE-DATA SIZE  =    --------     --------
   IDATA-DATA SIZE  =    --------     --------
@@ -167,4 +204,4 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
 END OF MODULE INFORMATION.
 
 
-C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
+C166 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)

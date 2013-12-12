@@ -344,6 +344,11 @@
               <FileType>1</FileType>
               <FilePath>.\sensoric.c</FilePath>
             </File>
+            <File>
+              <FileName>balance.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\balance.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

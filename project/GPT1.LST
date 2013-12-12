@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, GPT1                                                                  12/05/2013 14:10:59 PAGE 1   
+C166 COMPILER V7.05, GPT1                                                                  12/12/2013 14:35:01 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE GPT1
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT1.C MODV2 BROWSE
    12         // @Description   This file contains functions that use the GPT1 module.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          05.12.2013 13:20:49
+   15         // @Date          09.12.2013 18:51:38
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT1.C MODV2 BROWSE
    52         
    53         
    54         //****************************************************************************
-C166 COMPILER V7.05, GPT1                                                                  12/05/2013 14:10:59 PAGE 2   
+C166 COMPILER V7.05, GPT1                                                                  12/12/2013 14:35:01 PAGE 2   
 
    55         // @Typedefs
    56         //****************************************************************************
@@ -124,10 +124,10 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT1.C MODV2 BROWSE
   111         // @Parameters    None
   112         //
   113         //----------------------------------------------------------------------------
-  114         // @Date          05.12.2013
+  114         // @Date          09.12.2013
   115         //
   116         //****************************************************************************
-C166 COMPILER V7.05, GPT1                                                                  12/05/2013 14:10:59 PAGE 3   
+C166 COMPILER V7.05, GPT1                                                                  12/12/2013 14:35:01 PAGE 3   
 
   117         
   118         // USER CODE BEGIN (Init,1)
@@ -175,10 +175,10 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT1.C MODV2 BROWSE
   160  1        ///  -----------------------------------------------------------------------
   161  1        ///  - timer 2 works in timer mode
   162  1        ///  - external up/down control is disabled
-  163  1        ///  - prescaler factor is 64
+  163  1        ///  - prescaler factor is 128
   164  1        ///  - up/down control bit is reset
   165  1      
-  166  1        GPT12E_T2CON   =  0x0003;      // load timer 2 control register
+  166  1        GPT12E_T2CON   =  0x0004;      // load timer 2 control register
   167  1        GPT12E_T2      =  0x3696;      // load timer 2 register
   168  1        ///  - prescaler for timer block 1 is 8
   169  1      
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT1.C MODV2 BROWSE
   176  1        ///  - up/down control bit is reset
   177  1      
   178  1        GPT12E_T4CON   =  0x0009;      // load timer 4 control register
-C166 COMPILER V7.05, GPT1                                                                  12/05/2013 14:10:59 PAGE 4   
+C166 COMPILER V7.05, GPT1                                                                  12/12/2013 14:35:01 PAGE 4   
 
   179  1        GPT12E_T4      =  0x0000;      // load timer 4 register
   180  1        ///  - prescaler for timer block 1 is 8
@@ -248,20 +248,20 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE GPT1.C MODV2 BROWSE
   231         // @Parameters    None
   232         //
   233         //----------------------------------------------------------------------------
-  234         // @Date          05.12.2013
+  234         // @Date          09.12.2013
   235         //
   236         //****************************************************************************
   237         
   238         // USER CODE BEGIN (Tmr2,1)
   239         
   240         // USER CODE END
-C166 COMPILER V7.05, GPT1                                                                  12/05/2013 14:10:59 PAGE 5   
+C166 COMPILER V7.05, GPT1                                                                  12/12/2013 14:35:01 PAGE 5   
 
   241         
   242         void GPT1_viTmr2(void) interrupt T2INT
   243         {
   244  1        // USER CODE BEGIN (Tmr2,2)
-  245  1        // 50 ms cycle time interrupt
+  245  1        // 10 ms cycle time interrupt
   246  1        // here we can set the DOTHESHIT flag
   247  1        // USER CODE END
   248  1      

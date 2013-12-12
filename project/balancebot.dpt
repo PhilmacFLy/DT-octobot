@@ -9,7 +9,7 @@
 '                PLEASE DO NOT MODIFY THIS FILE !
 '
 '----------------------------------------------------------------------------
-; Date          05.12.2013 13:20:50
+; Date          09.12.2013 18:51:38
 '
 '****************************************************************************
 
@@ -10444,7 +10444,7 @@ GPT12E_KSCCFG_NOMCFG=0
 GPT12E_KSCCFG_SUMCFG=0
 GPT12E_T2CON_T2CHDIR=0
 GPT12E_T2CON_T2EDGE=0
-GPT12E_T2CON_T2I=3
+GPT12E_T2CON_T2I=4
 GPT12E_T2CON_T2IRDIS=0
 GPT12E_T2CON_T2M=0
 GPT12E_T2CON_T2R=1

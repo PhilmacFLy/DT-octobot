@@ -5,8 +5,12 @@
 
 #include "sensoric.h"
 
-#define NUM_SAMPLES 10
+#include "MATH.H"
 
+// min 3
+#define NUM_SAMPLES 5
+
+// zero value ~= 512
 volatile unsigned int accel_x_arr[NUM_SAMPLES];
 volatile unsigned int accel_y_arr[NUM_SAMPLES];
 volatile unsigned int accel_z_arr[NUM_SAMPLES];
@@ -32,16 +36,16 @@ unsigned int GetMediumValue(unsigned int* vals)
 	  if (vals[i] < min) min = vals[i];
     }
 
-	// remove min/max valuea
+	// remove min/max values
 	ret -= min;
 	ret -= max;
-
 	return (ret/(NUM_SAMPLES-2));
 }
 
 void ReadSensorData()
 {
    unsigned int i = 0;
+   volatile unsigned int tmp;
    // read ALL! the ADC channels
    //13,14,5 for gyro acceleration
    //7 for spinning sensor
@@ -53,20 +57,30 @@ void ReadSensorData()
    //register 5 - channel 15 (unused)
    for (i = 0; i < NUM_SAMPLES; i++)
    {
+	   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_5);
+	   while(!ADC0_uwResultValid(RESULT_REG_0)); // necessary?
+	   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_6);
+	   while(!ADC0_uwResultValid(RESULT_REG_1)); // necessary?
+	   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_13);
+	   while(!ADC0_uwResultValid(RESULT_REG_3)); // necessary?
+	   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_14);
+	   while(!ADC0_uwResultValid(RESULT_REG_4)); // necessary?
+      
+       /*
 	   ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_5);
 	   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_13);
 	   while(!ADC0_uwResultValid(RESULT_REG_0) && !ADC0_uwResultValid(RESULT_REG_3)); // necessary?
 	   ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_6);
 	   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_14);
 	   while(!ADC0_uwResultValid(RESULT_REG_1) && !ADC0_uwResultValid(RESULT_REG_4)); // necessary?
-	   //ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_7);
-	   //ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_15);  
-	   //while(!ADC0_uwResultValid(RESULT_REG_2) && !ADC0_uwResultValid(RESULT_REG_5)); // necessary?
-	
+	   ADC0_vStartSeq0ReqChNum(0, 0, 0, ADC0_ANA_7);
+	   ADC0_vStartSeq2ReqChNum(0, 0, 0, ADC0_ANA_15);  
+	   while(!ADC0_uwResultValid(RESULT_REG_2) && !ADC0_uwResultValid(RESULT_REG_5)); // necessary?
+	   */
 	   accel_x_arr[i] = ADC0_uwGetResultData(RESULT_REG_3);
 	   accel_y_arr[i] = ADC0_uwGetResultData(RESULT_REG_4);
 	   accel_z_arr[i] = ADC0_uwGetResultData(RESULT_REG_0);
-	   speed_spin_arr[i] = ADC0_uwGetResultData(RESULT_REG_1);
+	   speed_spin_arr[i] = ADC0_uwGetResultData(RESULT_REG_1);//1);
    }
    accel_x = GetMediumValue(accel_x_arr);
    accel_y = GetMediumValue(accel_y_arr);
@@ -88,7 +102,25 @@ unsigned char ReadSpinValueRaw()
 } 
 
 // untested
-//DIRECTION_X positive value: backward, negative value: forward
+// positive: forward
+// negative: backward
+signed int GetCurrentAngle()
+{
+	signed int xvalue;
+	double alpha;
+	xvalue = ReadAccelValue(DIRECTION_X);
+	alpha = acos(((double)xvalue) / 100.0);
+	// pi/2 = grade
+	// <pi/2 = kippen vorwärts
+	// >pi/2 = kippen rückwärts
+	alpha = alpha * 180. / 3.14159; // rad to grad
+	alpha = alpha - 90.; // offset
+	alpha = -alpha; // vorzeichen
+	return ((signed int)alpha);
+}
+
+// untested
+//DIRECTION_X positive value: forward, negative value: backward
 //DIRECTION_Y positive value: left, negative value: right
 //DIRECTION_Z positive value: down, negative value: up
 signed int ReadAccelValue(unsigned char direction)
@@ -96,9 +128,9 @@ signed int ReadAccelValue(unsigned char direction)
   unsigned int tmp = 0;
   signed int x;
 
-  if (direction == DIRECTION_X) tmp = accel_x;
-  if (direction == DIRECTION_Y) tmp = accel_y;
-  if (direction == DIRECTION_Z) tmp = accel_z;
+  if (direction == DIRECTION_X) tmp = accel_x + 3;
+  if (direction == DIRECTION_Y) tmp = accel_y + 0;
+  if (direction == DIRECTION_Z) tmp = accel_z + 0;
 
   // 0 - 0x3FF / 0 - 1023, voltage is irrelevant because Vs = Vref
   // 511/512 is middle
@@ -107,7 +139,8 @@ signed int ReadAccelValue(unsigned char direction)
   
   // at Vs = 3,3V, the sensitivity is about 330mV / g
   // therefore, -511 to 511 is similar to -5G - +5G
-  return ((x * 1000) / 1022); // return value * 0,01g = X g
+  return x;
+  //return ((x * 1000) / 1022); // return value * 0,01g = X g
 }
 
 // tested
@@ -124,10 +157,11 @@ signed int ReadSpinValue()
   else           x =   ( (signed int) (tmp - 512) ); // >= 512 is positive
 
   // 40 mV offset (1,61V center, should be 1,65V)
-  // 3,6 mV sensitivity =>  12
-  x += 12;
+  // 3,6 mV sensitivity =>  12-14
+  x += 14;
 
   // at Vs = 3,3V the sensitivity is about 3,3mV / °/s
   // therefore, -511 to 511 is similar to -500°/s - +500°/s
-  return (( x * 1000) / 1022); // return value = X°/s
+  return -x;
+  //return (( x * 1000) / 1022); // return value = X°/s
 }

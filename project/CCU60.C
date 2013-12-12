@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the CCU60 module.
 //
 //----------------------------------------------------------------------------
-// @Date          05.12.2013 13:20:50
+// @Date          09.12.2013 18:51:38
 //
 //****************************************************************************
 
@@ -29,6 +29,8 @@
 #include "MAIN.H"
 
 // USER CODE BEGIN (CCU60_General,2)
+
+#include "motor.h"
 
 // USER CODE END
 
@@ -111,7 +113,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          05.12.2013
+// @Date          09.12.2013
 //
 //****************************************************************************
 
@@ -343,7 +345,7 @@ void CCU60_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          05.12.2013
+// @Date          09.12.2013
 //
 //****************************************************************************
 
@@ -363,7 +365,8 @@ void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
 
     // USER CODE BEGIN (NodeI0,10)	   
     // steigende Flanke für linker Motor
-    P4_OUT_P3 = 1;	// motor links PWM
+	if (leftspeed > 0)
+      P4_OUT_P3 = 1;	// motor links PWM
     // USER CODE END
 
     CCU60_ISR |= 0x0001;  // clear flag CCU60_IS_ICC60R
@@ -375,7 +378,8 @@ void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
 
     // USER CODE BEGIN (NodeI0,12) 
     // steigende Flanke für rechter Motor
-    P4_OUT_P0 = 1; // motor rechts PWM
+	if (rightspeed > 0)
+      P4_OUT_P0 = 1; // motor rechts PWM
     // USER CODE END
 
     CCU60_ISR |= 0x0004;  // clear flag CCU60_IS_ICC61R

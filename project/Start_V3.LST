@@ -1,4 +1,4 @@
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE     1
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     1
 
 
 MACRO ASSEMBLER A166 V5.34
@@ -65,7 +65,7 @@ LOC      OBJ             LINE     SOURCE
                            55     ;
                            56     ; <o> UST1SZ: User Stack Size for local register bank 1 <0x0-0x4000:0x2>
                            57     ; <i> Defines the user stack space available for the interrupt functions that are
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE     2
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     2
 
                            58     ; <i> assigned to the local register bank 1.  Since the compiler cannot copy the R0
                            59     ; <i> value to local register banks, the user stack must be assign separately.
@@ -115,29 +115,29 @@ LOC      OBJ             LINE     SOURCE
                           103     ;  INIT_CPUCON1: Init CPUCON1 register
                           104     ; --- <i>Set INIT_CPUCON1 = 1 to initialize the CPUCON1 register
                           105     $SET (INIT_CPUCON1 = 0) ; default: do not initialize CPUCON1   /Dave/                 
-                                                    
+                                                      
                           106     ;
                           107     ; <q> ZCJ: Enable Zero Cycle Jump Function (CPUCON1.0):
  0001                     108     _ZCJ EQU 1 ; 0 = Disable Zero Cycle Jump Function /Dave/                              
-                                       
+                                         
                           109                             ; 1 = Enable Zero Cycle Jump Function
                           110     ;
                           111     ; <q> BP: Enable Branch Prediction Unit (CPUCON1.1):
  0001                     112     _BP EQU 1 ; 0 = Disable Branch Prediction Unit /Dave/                                 
-                                    
+                                      
                           113                             ; 1 = Enable Branch Prediction Unit
                           114     ;
                           115     ; <q> INTSCXT: Enable Interruptability of Switch Context Instruction (CPUCON1.2):
  0001                     116     _INTSCXT EQU 1 ; 0 = Disable Interruption of SCXT instruction /Dave/                  
-                                                   
+                                                     
                           117                             ; 1 = Enable Interruption of SCXT instruction
                           118     ;
                           119     ; SGTDIS: Disable Segmentation Control (CPUCON1.3):
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE     3
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     3
 
                                   $IF TINY
                                   _SGTDIS EQU 0 ; disable segmented mode for TINY model /Dave/                          
-                                           
+                                             
                           122     $ELSE
  0000                     123     _SGTDIS  EQU    0       ; enable segmented mode (Reset Value)
                           124     $ENDIF
@@ -145,13 +145,13 @@ LOC      OBJ             LINE     SOURCE
                           126     ; <o> WDTCTL: Watchdog Timer Control (CPUCON1.4):
                           127     ; <0=> DISWDT executable until end of EINIT  <1=> DISWDT/ENWDT always executable
  0000                     128     _WDTCTL EQU 0 ; 0 = DISWDT executable until end of EINIT /Dave/                       
-                                              
+                                                
                           129                             ; 1 = DISWDT/ENWDT always executable
                           130     ;
                           131     ; <o> VECSC: Vector Table Scaling Factor (CPUCON1.5 .. CPUCON1.6)
                           132     ; <0=> 2 words  <1=> 4 words  <2=> 8 words  <3=> 16 words
  0000                     133     _VECSC EQU 0 ; 0 = Space between two vectors is 2 words /Dave/                        
-                                             
+                                               
                           134                             ; 1 = Space between two vectors is 4 words
                           135                             ; 2 = Space between two vectors is 8 words
                           136                             ; 3 = Space between two vectors is 16 words
@@ -164,10 +164,10 @@ LOC      OBJ             LINE     SOURCE
                           143     ;  INIT_CPUCON2: Init CPUCON2 register
                           144     ; --- <i>Set INIT_CPUCON2 = 1 to initialize the CPUCON2 register
                           145     $SET (INIT_CPUCON2 = 0) ; default: do not initialize CPUCON2   /Dave/                 
-                                                    
+                                                      
                           146     ;
                           147     ; <q> SL: Enable Short Loop Mode (CPUCON2.0)
- 0001                     148     _SL EQU 1 ; 0 = Short Loop mode disabled /Dave/                                   
+ 0001                     148     _SL EQU 1 ; 0 = Short Loop mode disabled /Dave/                                     
                           149                             ; 1 = Short Loop mode enabled
                           150     ;
                           151     ; <q> DAID: Disable Atomic Injection Deny (CPUCON2.1)
@@ -175,21 +175,22 @@ LOC      OBJ             LINE     SOURCE
                           153                             ; 1 = Injection-requests are not denied during Atomic 
                           154     ;
                           155     ; <q> RETST: Enable Return Stack (CPUCON2.3)
- 0001                     156     _RETST EQU 1 ; 0 = Return Stack disabled /Dave/                                   
+ 0001                     156     _RETST EQU 1 ; 0 = Return Stack disabled /Dave/                                     
                           157                             ; 1 = Return Stack enabled
                           158     ;
                           159     ; <q> OVRUN: Allow Pipeline Bubble Overrun (CPUCON2.4)
  0001                     160     _OVRUN EQU 1 ; 0 = Overrun of Pipeline Bubbles not allowed /Dave/                     
-                                                
+                                                  
                           161                             ; 1 = Overrun of Pipeline Bubbles allowed
                           162     ;
                           163     ; <q> LFIC: Linear Follower Instruction Cache (CPUCON2.5)
  0001                     164     _LFIC EQU 1 ; 0 = Zero Cycle Jump Cache disabled /Dave/                               
-                                      
+                                        
                           165                             ; 1 = Zero Cycle Jump Cache enabled
                           166     ;
                           167     ; <q> STEN: Enable Stall Instruction (CPUCON2.6)
  0000                     168     _STEN EQU 0 ; 0 = Stall instruction disabled /Dave/                                   
+                                    
                           169                             ; 1 = Stall instruction enabled
                           170     ;
                           171     ; <q> EIOIAEN: Early IO Injection Acknowledge guaranteed (CPUCON2.7)
@@ -198,27 +199,27 @@ LOC      OBJ             LINE     SOURCE
                           174     ; 
                           175     ; <q> BYPF: Enable Fetch Bypass Control (CPUCON2.8)
  0001                     176     _BYPF EQU 1 ; 0 = Bypass Path from Fetch to Decode disabled /Dave/                    
-                                                 
+                                                   
                           177                             ; 1 = Bypass Path from Fetch to Decode enabled
-                          178     ;
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE     4
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     4
 
+                          178     ;
                           179     ; <q> BYPPF: Enable Prefecth Bypass Control (CPUCON2.9)
  0001                     180     _BYPPF EQU 1 ; 0 = Bypass Path from Prefetch to Decode disabled /Dave/                
-                                                     
+                                                       
                           181                             ; 1 = Bypass Path from Prefetch to Decode enabled
                           182     ;
                           183     ; <o> FIFOFED: FIFO Fill Configuration (CPUCON2.10 .. CPUCON2.11)
                           184     ; <0=> FIFO disabled    <1=> 1 instruction
                           185     ; <2=> 2 instructions   <3=> 3 instructions
- 0003                     186     _FIFOFED EQU 3 ; 0 = FIFO disabled /Dave/                                   
+ 0003                     186     _FIFOFED EQU 3 ; 0 = FIFO disabled /Dave/                                     
                           187                             ; 1 = FIFO filled with up to 1 instruction per cycle
                           188                             ; 2 = FIFO filled with up to 2 instructions per cycle
                           189                             ; 3 = FIFO filled with up to 3 instructions per cycle
                           190     ;
                           191     ;<o> FIFODEPTH: FIFO Depth Configuration (CPUCON2.12 .. CPUCON2.15) <0-8>
  0008                     192     _FIFODEPTH EQU 8 ; 0 = No FIFO entries (No FIFO) /Dave/                               
-                                      
+                                        
                           193                             ; 1 = 1 FIFO entry
                           194                             ; ...
                           195                             ; 8 = 8 FIFO entries
@@ -231,7 +232,7 @@ LOC      OBJ             LINE     SOURCE
                           202     ;  INIT_IMBCTR: Init IMBCTR register
                           203     ; --- <i>Set INIT_IMBCTR = 1 to initialize the IMBCTRL/H register
                           204     $SET (INIT_IMBCTR = 0) ; default: do not initialize IMBCTR   /Dave/                   
-                                                  
+                                                    
                           205     ;
                           206     ; <h> Definitions for Internal Memory Block Control Register IMBCTRL
                           207     ; ==================================================================
@@ -240,20 +241,20 @@ LOC      OBJ             LINE     SOURCE
                           210     ; <i> this value also specifies the read time of the PSRAM in the flash emulation addr
                                   ess range
  0000                     211     _WSFLASH EQU 0 ; 0 = No waitstates (forbidden!) /Dave/                                
-                                     
+                                       
                           212                             ; 1-7 = One to seven waitstate
                           213     ;
                           214     ; <q> DLCPF: Disable Linear Code Pre-Fetch (IMBCTRL.3)
                           215     ; <0=> High Speed Mode
                           216     ; <1=> Low Power Mode
- 0000                     217     _DLCPF EQU 0 ; 0 = High Speed Mode /Dave/                                   
+ 0000                     217     _DLCPF EQU 0 ; 0 = High Speed Mode /Dave/                                     
                           218                             ; 1 = Low Power Mode
                           219     ;
                           220     ; <o> DCF: Disable Code Fetch from Flash Memory (IMBCTRL.12 .. IMBCTRL.13)
                           221     ; <i> values 0 and 3 are not allowed
                           222     ; <1=> no instruction fetch if RPA 1
                           223     ; <2=> instructions can always be fetched
- 0000                     224     _DCF EQU 0 ; 0 = Illegal state /Dave/                                   
+ 0000                     224     _DCF EQU 0 ; 0 = Illegal state /Dave/                                     
                           225                             ; 1 = no instruction fetch if RPA=1
                           226                             ; 2 = instructions can always be fetched
                           227                             ; 3 = Illegal state
@@ -262,22 +263,22 @@ LOC      OBJ             LINE     SOURCE
                           230     ; <i> values 0 and 3 are not allowed
                           231     ; <1=> no data read if RPA=1
                           232     ; <2=> data can always be read
- 0000                     233     _DDF EQU 0 ; 0 = Illegal state /Dave/                                   
+ 0000                     233     _DDF EQU 0 ; 0 = Illegal state /Dave/                                     
                           234                             ; 1 = no data read if RPA=1
                           235                             ; 2 = data can always be read
                           236                             ; 3 = Illegal state
                           237     ;
                           238     ;</h>
-                          239     
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE     5
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     5
 
+                          239     
                           240     ; <h> Definitions for Internal Memory Block Control Register IMBCTRH
                           241     ; ==================================================================
                           242     ;
                           243     ; <o> PSPROT: PSRAM Write Protection (IMBCTRH.8 .. IMBCTRH.15)<0-255>
                           244     ; <i> The start address of the writable range is E00000H + 1000H*PSPROT
  0000                     245     _PSPROT EQU 0 ; 0  = Complete PSRAM is writable /Dave/                                
-                                     
+                                       
                           246                             ; ...
                           247                             ; 16 or bigger = PSRAM is write protected
                           248     ;</h>
@@ -293,12 +294,12 @@ LOC      OBJ             LINE     SOURCE
                           258     ;
                           259     ; INIT_WUOSCCON: Init WUOSCCON register
                           260     ; --- Set INIT_WUOSCCON = 1 to initialize the WUOSCCON register
-                          261     $SET (INIT_WUOSCCON = 0) ; /Dave/                                   
+                          261     $SET (INIT_WUOSCCON = 0) ; /Dave/                                     
                           262     ;
                           263     ; <o> FREQSEL: System Clock Select (WUOSCCON.0 .. WUOSCCON.1)
                           264     ; <0=> 500kHz   <1=> 300 kHz
                           265     ; <2=> 200kHz   <3=> 130 kHz
- 0000                     266     _FREQSEL EQU 0 ; 0 = 500 kHz /Dave/                                   
+ 0000                     266     _FREQSEL EQU 0 ; 0 = 500 kHz /Dave/                                     
                           267                             ; 1 = 300 kHz
                           268                             ; 2 = 200 kHz
                           269                             ; 3 = 130 kHz
@@ -306,7 +307,7 @@ LOC      OBJ             LINE     SOURCE
                           271     ; <o> PWSEL: Power Consumption Selection (WUOSCCON.2 .. WUOSCCON.3)
                           272     ; <0=> not specified <1=> not specified
                           273     ; <2=> not specified <3=> not specified
- 0000                     274     _PWSEL EQU 0 ; 0 = not specified /Dave/                                   
+ 0000                     274     _PWSEL EQU 0 ; 0 = not specified /Dave/                                     
                           275                             ; 1 = not specified
                           276                             ; 2 = not specified
                           277                             ; 3 = not specified
@@ -314,7 +315,7 @@ LOC      OBJ             LINE     SOURCE
                           279     ; <q> DIS: Clock Disable (WUOSCCON.4)
                           280     ; <i> enables the automatic asyncronous switch to the emergency clock 
                           281     ; <i> in case of an OSCWDT or VCOLCK emergency event
- 0000                     282     _DIS EQU 0 ; 0 = Clock is enabled /Dave/                                   
+ 0000                     282     _DIS EQU 0 ; 0 = Clock is enabled /Dave/                                     
                           283                             ; 1 = Clock is disabled
                           284     ;
                           285     ; </e>
@@ -324,24 +325,24 @@ LOC      OBJ             LINE     SOURCE
                           289     ;
                           290     ; INIT_HPOSCCON: Init HPOSCCON register
                           291     ; --- Set INIT_HPOSCCON = 1 to initialize the HPOSCCON register
-                          292     $SET (INIT_HPOSCCON = 0) ; /Dave/                                   
+                          292     $SET (INIT_HPOSCCON = 0) ; /Dave/                                     
                           293     ;
                           294     ; <q> OSCWDTRST: Oscillator Watchdog Reset (HPOSCCON.1)
                           295     ; <i> specifies if the oscillator watchdog will be reset 
  0000                     296     _OSCWDTRST EQU 0 ; 0 = The oscillator watchdog of the PLL is not reset and remains act
-                                  ive /Dave/                                   
+                                  ive /Dave/                                     
                           297                             ; 1 = The oscillator watchdog of the PLL is reset and restarte
                                   d
                           298     ;
                           299     ; <o> MODE: Oscillator Mode (HPOSCCON.2 .. HPOSCCON.3)
                           300     ; <0=>External Crystal Mode. Power-Saving Mode is not entered     <1=>OSC_HP disabled.
                                    Power-Saving Mode is not entered
-                          301     ; <2=>External Input Clock Mode. Power-Saving Mode is not entered <3=>OSC_HP disabled.
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE     6
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     6
 
+                          301     ; <2=>External Input Clock Mode. Power-Saving Mode is not entered <3=>OSC_HP disabled.
                                    Power-Saving Mode is entered
  0000                     302     _MODE EQU 0 ; 0 = External Crystal Mode. Power-Saving Mode is not entered /Dave/      
-                                                               
+                                                                 
                           303                             ; 1 = OSC_HP disabled. Power-Saving Mode is not entered
                           304                             ; 2 = External Input Clock Mode. Power-Saving Mode is not ente
                                   red
@@ -349,24 +350,25 @@ LOC      OBJ             LINE     SOURCE
                           306     ;
                           307     ; <q> X1DEN: XTAL1 Data Enable (HPOSCCON.7)
                           308     ; <i> specifies if X1D reflects the inverted level of XTAL1 
- 0000                     309     _X1DEN EQU 0 ; 0 = Bit X1D is not updated /Dave/                                   
+ 0000                     309     _X1DEN EQU 0 ; 0 = Bit X1D is not updated /Dave/                                     
                           310                             ; 1 = Bit X1D reflects the inverted level of XTAL1
                           311     ;
                           312     ; <q> SHBY: Shaper Bypass (HPOSCCON.8)
                           313     ; <i> Switch shaper or/off
  0000                     314     _SHBY EQU 0 ; 0 = The shaper is not bypassed /Dave/                                   
+                                    
                           315                             ; 1 = The shaper is bypassed
                           316     ;
                           317     ; <q> EMCLKEN: OSCWDT Emergency System Clock Source Select Enable (HPOSCCON.9)
                           318     ; <i> Clock selection in case of an OSCWDT emergency
  0000                     319     _HP_EMCLKEN EQU 0 ; 0 = MCM controlled by SYSCON0.CLKSEL /Dave/                       
-                                              
+                                                
                           320                             ; 1 = MCM controlled by SYSCON0.EMCLKSEL
                           321     ;
                           322     ; <q> EMFINDISEN: Emergency Input Clock Disconnect Enable (HPOSCCON.10)
                           323     ; <i> defines whether bit PLLSTAT.FINDIS is set in an emergency
  0000                     324     _HP_EMFINDISEN EQU 0 ; 0 = No update of PLLSTAT.FINDIS /Dave/                         
-                                            
+                                              
                           325                             ; 1 = PLLSTAT.FINDIS is set in an OSCWDT emergency case
                           326     ;
                           327     ; </e>
@@ -376,11 +378,11 @@ LOC      OBJ             LINE     SOURCE
                           331     ;
                           332     ; INIT_PLLOSCCON: Init PLLOSCCON register
                           333     ; --- Set INIT_PLLOSCCON = 1 to initialize the PLLOSCCON register
-                          334     $SET (INIT_PLLOSCCON = 0) ; /Dave/                                   
+                          334     $SET (INIT_PLLOSCCON = 0) ; /Dave/                                     
                           335     ;
                           336     ; <q> OSCPD: Internal Clock IOSC Power Saving Mode (PLLOSCCON.0)
                           337     ; <i> specifies if IOSC is active or not
- 0000                     338     _OSCPD EQU 0 ; 0 = IOSC is active /Dave/                                   
+ 0000                     338     _OSCPD EQU 0 ; 0 = IOSC is active /Dave/                                     
                           339                             ; 1 = IOSC is no longer powered
                           340     ;
                           341     ; </e>
@@ -391,7 +393,7 @@ LOC      OBJ             LINE     SOURCE
                           346     ;
                           347     ; INIT_PLLCON: Init PLLCON register
                           348     ; --- Set INIT_PLLCON = 1 to initialize all the PLLCONx register
-                          349     $SET (INIT_PLLCON = 0) ; /Dave/                                   
+                          349     $SET (INIT_PLLCON = 0) ; /Dave/                                     
                           350     ;
                           351     ;  <h> Definitions for PLL Clock Register PLLCON0
                           352     ; ===============================================
@@ -401,27 +403,27 @@ LOC      OBJ             LINE     SOURCE
                           356     ; <0=> Normal operation, VCO is not bypassed
                           357     ; <1=> Prescaler Mode. VCO is bypassed
  0000                     358     _VCOBY EQU 0 ; 0 = Normal operation, VCO is not bypassed /Dave/                       
-                                              
+                                                
                           359                             ; 1 = Prescaler Mode. VCO is bypassed
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     7
+
                           360     ;
                           361     ; <q> VCOPWD: VCO Power Saving Mode (PLLCON0.1)
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE     7
-
                           362     ; <i> disables VCO
- 0000                     363     _VCOPWD EQU 0 ; 0 = VCO is active /Dave/                                   
+ 0000                     363     _VCOPWD EQU 0 ; 0 = VCO is active /Dave/                                     
                           364                             ; 1 = VCO is inactive in power saving mode
                           365     ;
                           366     ; <o> VCOSEL: VCO Range Select (PLLCON0.2)
                           367     ; <0=> 48...112 MHz
                           368     ; <1=> 96...160 MHz
                           369     ; <i> VCOSEL VCO Range Select
- 0000                     370     _VCOSEL EQU 0 ; 0 = 48...112 MHz /Dave/                                   
+ 0000                     370     _VCOSEL EQU 0 ; 0 = 48...112 MHz /Dave/                                     
                           371                             ; 1 = 96...160 MHz
                           372     ;
                           373     ; <o> NDIV: N-Divider Value (PLLCON0.8 .. PLLCON0.13) <16-40>
                           374     ; <i> The resulting factor N for the N-Divider is (NDIV+1)
                           375     ; <i> Only values between 16 and 40 are allowed
- 0000                     376     _NDIV EQU 0 ; /Dave/                                   
+ 0000                     376     _NDIV EQU 0 ; /Dave/                                     
                           377     ;
                           378     ; </h>
                           379     ;
@@ -430,7 +432,7 @@ LOC      OBJ             LINE     SOURCE
                           382     ;
                           383     ; <q> PLLPWD: Power Saving Mode (PLLCON1.0)
                           384     ; <i> disables PLL in power saving mode
- 0000                     385     _PLLPWD EQU 0 ; 0 = Normal Mode /Dave/                                   
+ 0000                     385     _PLLPWD EQU 0 ; 0 = Normal Mode /Dave/                                     
                           386                             ; 1 = Complete PLL block is inactive in power saving mode
                           387     ;
                           388     ; <o> OSCSEL: Clock Input Selection (PLLCON1.1)
@@ -438,31 +440,31 @@ LOC      OBJ             LINE     SOURCE
                           390     ; <0=> external oscillator (OSC_HP)
                           391     ; <1=> internal oscillator (IOSC)
  0000                     392     _OSCSEL EQU 0 ; 0 = PLL input clock is OSC_HP output /Dave/                           
-                                          
+                                            
                           393                             ; 1 = PLL input clock is IOSC output
                           394     ;
                           395     ; <q> AOSCSEL: Asyncronous Clock Input Selection (PLLCON1.3)
                           396     ; <i> 
  0000                     397     _AOSCSEL EQU 0 ; 0 = Configuration is controlled via bis OSCSEL /Dave/                
-                                                     
+                                                       
                           398                             ; 1 = PLL internal clock IOSC is selected asyncronously
                           399     ;
                           400     ; <q> EMCLKEN: VCOLCK Emergency System Clock Source Select Enable (PLLCON1.5)
                           401     ; <i> Master clock selection in case of emergency
  0000                     402     _PLL_EMCLKEN EQU 0 ; 0 = MCM controlled by SZSCON0.CLKSEL /Dave/                      
-                                               
+                                                 
                           403                             ; 1 = MCM controlled by SZSCON0.EMCLKSEL in a VCOLCK emergency
                                    case
                           404     ;
                           405     ; <q> EMFINDISEN: Emergency Input Clock Disconnect Enable (PLLCON1.6)
                           406     ; <i> specifies if PLLSTAT.FINDIS is set in a VCOLCK emergency case
  0000                     407     _PLL_EMFINDISEN EQU 0 ; 0 = No update of PLLSTAT.FINDIS /Dave/                        
-                                             
+                                               
                           408                             ; 1 = PLLSTAT.FINDIS is set in a VCOLCK emergency case
                           409     ;
                           410     ; <o> PDIV: P-Divider Value (PLLCON1.8 .. PLLCON1.11) <0-15>
                           411     ; <i> The resulting factor P for the P-Divider is (PDIV+1)
- 0000                     412     _PDIV EQU 0 ; /Dave/                                   
+ 0000                     412     _PDIV EQU 0 ; /Dave/                                     
                           413     ;
                           414     ; </h>
                           415     ;
@@ -471,10 +473,10 @@ LOC      OBJ             LINE     SOURCE
                           418     ;
                           419     ; <o> K1DIV: K1-Divider Value (PLLCON2.0 .. PLLCON2.9) <0-1023>
                           420     ; <i> The resulting factor K1 for the K1-Divider is (K1DIV+1)
- 0000                     421     _K1DIV EQU 0 ; /Dave/                                   
-                          422     ;
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE     8
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     8
 
+ 0000                     421     _K1DIV EQU 0 ; /Dave/                                     
+                          422     ;
                           423     ; </h>
                           424     ;
                           425     ;  <h> Definitions for PLL Clock Register PLLCON3
@@ -482,7 +484,7 @@ LOC      OBJ             LINE     SOURCE
                           427     ;
                           428     ; <o> K2DIV: K2-Divider Value (PLLCON3.0 .. PLLCON3.9) <0-1023>
                           429     ; <i> The resulting factor K2 for the K2-Divider is (K2DIV+1)
- 0000                     430     _K2DIV EQU 0 ; /Dave/                                   
+ 0000                     430     _K2DIV EQU 0 ; /Dave/                                     
                           431     ;
                           432     ; </h>
                           433     ; </e>
@@ -495,12 +497,12 @@ LOC      OBJ             LINE     SOURCE
                           440     ;
                           441     ; INIT_SYSCON0: Init SYSCON0 register
                           442     ; --- Set INIT_SYSCON0 = 1 to initialize the SYSCON0 register
-                          443     $SET (INIT_SYSCON0 = 0) ; /Dave/                                   
+                          443     $SET (INIT_SYSCON0 = 0) ; /Dave/                                     
                           444     ;
                           445     ; <o> CLKSEL: System Clock Select (SYSCON0.0 .. SYSCON0.1)
                           446     ; <0=> WUT clock output <1=> OSC_HP output
                           447     ; <2=> PLL clock output <3=> DIRIN clock input
- 0000                     448     _CLKSEL EQU 0 ; 0 = WUT clock output /Dave/                                   
+ 0000                     448     _CLKSEL EQU 0 ; 0 = WUT clock output /Dave/                                     
                           449                             ; 1 = OSC_HP output
                           450                             ; 2 = PLL clock output
                           451                             ; 3 = Direct Input clock DIRIN
@@ -508,7 +510,7 @@ LOC      OBJ             LINE     SOURCE
                           453     ; <o> EMCLKSEL: Emergency Clock Select (SYSCON0.3 .. SYSCON0.4)
                           454     ; <0=> WUT clock output <1=> OSC_HP output
                           455     ; <2=> PLL clock output <3=> DIRIN clock input
- 0000                     456     _EMCLKSEL EQU 0 ; 0 = WUT clock output /Dave/                                   
+ 0000                     456     _EMCLKSEL EQU 0 ; 0 = WUT clock output /Dave/                                     
                           457                             ; 1 = OSC_HP output
                           458                             ; 2 = PLL clock output
                           459                             ; 3 = Direct Input clock DIRIN
@@ -517,7 +519,7 @@ LOC      OBJ             LINE     SOURCE
                           462     ; <i> enables the automatic asyncronous switch to the emergency clock 
                           463     ; <i> in case of an OSCWDT or VCOLCK emergency event
  0000                     464     _EMCLKSELEN EQU 0 ; 0 = Emergency clock switch is disabled /Dave/                     
-                                                
+                                                  
                           465                             ; 1 = Emergency clock switch is enabled
                           466     ;
                           467     ; </e>
@@ -539,10 +541,10 @@ LOC      OBJ             LINE     SOURCE
                           483     ; <4=> No pull device activated. Input is inverted
                           484     ; <5=> Pull-down device activated. Input is inverted
                           485     ; <6=> Pull-up device activated. Input is inverted
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     9
+
                           486     ; <7=> No pull device activated. Input is inverted
                           487     ; <8=> Output of ESRCFGx.OUT. Push-pull
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE     9
-
                           488     ; <9=> Output of ESRCFGx.OUT. Push-pull
                           489     ; <10=> Output drives a 0 for an Internal Application Reset, a 1 otherwise. Push-pull
                           490     ; <11=> Output drives a 0 for an Application Reset, a 1 otherwise. Push-pull
@@ -607,10 +609,10 @@ LOC      OBJ             LINE     SOURCE
                           544                             ; 14 = Output drives a 0 for an Internal Application Reset. Op
                                   en-drain
                           545                             ; 15 = Output drives a 0 for an Application Reset. Open-drain
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    10
+
                           546     
                           547     
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    10
-
                           548     ; <o> ESR 2: Pin Control(ESRCFG.PC) if avalible
                           549     ; <0=> No pull device activated. Input is not inverted
                           550     ; <1=> Pull-down device activated. Input is not inverted
@@ -657,31 +659,31 @@ LOC      OBJ             LINE     SOURCE
                           588     ; --- Set WATCHDOG = 0 to enable the Hardware watchdog and initialize the WDTCON regis
                                   ter
                           589     $SET (WATCHDOG = 0) ; 0 = Disabled Hardware watchdog /Dave/                           
-                                          
+                                            
                           590     ;
                           591     ; <o> IR: Input Frequency Request Bit (WDTCS.8)
                           592     ; <0=> Peripheral Frequency divided by 16384
                           593     ; <1=> Peripheral Frequency divided by 256 
  0000                     594     _IR EQU 0 ; 0 = frequency f_peripheral / 16384 (CPU default)   /Dave/                 
-                                                    
+                                                      
                           595                             ; 1 = frequency f_peripheral / 256
                           596     ;
                           597     ; <o> WDTREL: Watchdog Timer Reload Value (WDTREL0 .. WDTREL15) <0-65535>
                           598     ; <i> Reload value of WDT (counts up, overflow gives Watchdog reset)
- FFFC                     599     _WDTREL EQU 65532 ; /Dave/                                   
+ FFFC                     599     _WDTREL EQU 65532 ; /Dave/                                     
                           600     ;
                           601     ; </e>
                           602     ;
                           603     ; <h> External Bus Configuration
                           604     ;
                           605     ; <e> Configure External Bus (EBC) Behaviour
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    11
+
                           606     ; ==========================================
                           607     ;
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    11
-
                           608     ; --- Set CONFIG_EBC = 0 to initialize the EBCMOD0/EBCMOD1 registers
                           609     $SET (CONFIG_EBC = 0) ; 0 = EBCMOD0/EBCMOD1 are set during reset according the  /Dave/
-                                                                     
+                                                                       
                           610                             ;     of configuration bus (typical Port0) values.
                           611                             ; 1 = the following external bus configuration values
                           612                             ;     are written to EBCMOD and BUSACT0
@@ -692,7 +694,7 @@ LOC      OBJ             LINE     SOURCE
                           617     ; <o> SAPEN: Segment Address Pins Enabled (EBCMOD0.0 .. EBCMOD0.3) <0-8>
                           618     ; <i> Number of active Address Lines (A16-A23)
  0000                     619     _SAPEN EQU 0 ; 0 = No segment address pins enabled /Dave/                             
-                                        
+                                          
                           620                             ; 1 = One (A16) segment address pin enabled
                           621                             ; : = :        
                           622                             ; 8 = Eight (A16 .. A23) address pins enabled
@@ -700,7 +702,7 @@ LOC      OBJ             LINE     SOURCE
                           624     ;
                           625     ; <o> CSPEN: CSx Pins Enabled (EBCMOD0.4 .. EBCMOD0.7) <0-8>
                           626     ; <i> Number of active ChipSelect pins
- 0000                     627     _CSPEN EQU 0 ; 0 = No CS pins enabled /Dave/                                   
+ 0000                     627     _CSPEN EQU 0 ; 0 = No CS pins enabled /Dave/                                     
                           628                             ; 1 = One CS (CS0) pin enabled
                           629                             ; : = :
                           630                             ; 8 = Eight CS (CS0 .. CS7) pins enabled
@@ -709,44 +711,45 @@ LOC      OBJ             LINE     SOURCE
                           633     ;
                           634     ; <q> ARBEN: Enable Bus Arbitration Pins (EBCMOD0.8)
  0000                     635     _ARBEN EQU 0 ; 0 = HOLD, HLDA and BREQ pins are tristate or act as GPIO /Dave/        
-                                                             
+                                                               
                           636                             ; 1 = HOLD, HLDA and BREQ pins act normally
                           637     ;
                           638     ; <o> SLAVE: SLAVE mode enable (EBCMOD0.9)
                           639     ; <0=> Master Mode  <1=> Slave Mode
  0000                     640     _SLAVE EQU 0 ; 0 = Bus arbiter acts in master mode /Dave/                             
-                                        
+                                          
                           641                             ; 1 = Bus arbiter acts in slave mode
                           642     ;
                           643     ; <q> EBCDIS: Disable EBC pins (EBCMOD0.10)
  0000                     644     _EBCDIS EQU 0 ; 0 = EBC is using the pins for external bus /Dave/                     
-                                                
+                                                  
                           645                             ; 1 = EBC off (pins to be used as GPIO if implemented)
                           646     ;
                           647     ; <o> WRCFG: Configuration for pins WR/WRL and BHE/WRH (EBCMOD0.11)
                           648     ; <0=> WR and BHE  <1=> WRL and WRH
- 0000                     649     _WRCFG EQU 0 ; 0 = Pins act as WR and BHE /Dave/                                   
+ 0000                     649     _WRCFG EQU 0 ; 0 = Pins act as WR and BHE /Dave/                                     
                           650                             ; 1 = Pins act as WRL and WRH
                           651     ;
                           652     ; <q> BYTDIS: Disable BHE pin (EBCMOD0.12)
- 0000                     653     _BYTDIS EQU 0 ; 0 = BHE enabled /Dave/                                   
+ 0000                     653     _BYTDIS EQU 0 ; 0 = BHE enabled /Dave/                                     
                           654                             ; 1 = BHE disabled (GPIO function if implemented)
                           655     ;
                           656     ; <q> ALEDIS: Disable ALE pin (EBCMOD0.13)
- 0000                     657     _ALEDIS EQU 0 ; 0 = ALE pin enabled /Dave/                                   
+ 0000                     657     _ALEDIS EQU 0 ; 0 = ALE pin enabled /Dave/                                     
                           658                             ; 1 = ALE pin disabled (GPIO function if implemented)
                           659     ;
                           660     ; <q> RDYDIS: Disable READY pin (EBCMOD0.14)
- 0000                     661     _RDYDIS EQU 0 ; 0 = READY enabled /Dave/                                   
+ 0000                     661     _RDYDIS EQU 0 ; 0 = READY enabled /Dave/                                     
                           662                             ; 1 = READY disabled (GPIO function if implemented)
                           663     ;
                           664     ; <o> RDYPOL: READY pin polarity (EBCMOD0.15)
                           665     ; <0=> Active Low  <1=> Active High
- 0000                     666     _RDYPOL EQU 0 ; 0 = READY pin is active low /Dave/                                   
+ 0000                     666     _RDYPOL EQU 0 ; 0 = READY pin is active low /Dave/                                    
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    12
+
+                                   
                           667                             ; 1 = READY pin is active high
                           668     ;
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    12
-
                           669     ;</h>
                           670     ;
                           671     ; <h>Definitions for EBC Mode 1 register EBCMOD1
@@ -754,7 +757,7 @@ LOC      OBJ             LINE     SOURCE
                           673     ;
                           674     ; <o> APDIS: Address Port Pins Disable (EBCMOD1.0 .. EBCMOD1.3) <0-15>
  0000                     675     _APDIS EQU 0 ; 0  = Address bus pins 15-1 of PORT1 enabled /Dave/                     
-                                                
+                                                  
                           676                             ; 1  = Pin A15 disabled, A14-1 enabled
                           677                             ; 2  = Pin A15-A14 disabled, A13-1 enabled
                           678                             ; ...
@@ -762,22 +765,22 @@ LOC      OBJ             LINE     SOURCE
                           680     ;
                           681     ; <q> A0PDIS: Address Bit 0 Pin Disable (EBCMOD1.4)
  0000                     682     _A0PDIS EQU 0 ; 0 = Address bus pin 0 of PORT1 enabled /Dave/                         
-                                            
+                                              
                           683                             ; 1 = Address bus pin 0 of PORT1 disabled
                           684     ;
                           685     ; <q> ALPDIS: Address Low Pins Disable (EBCMOD1.5)
  0000                     686     _ALPDIS EQU 0 ; 0 = Address bus pin 7-0 generally enabled /Dave/                      
-                                               
+                                                 
                           687                             ; 1 = Address bus pin 7-0 of PORT1 disabled
                           688     ;
                           689     ; <q> DHPDIS: Data High Port Pins Disable (EBCMOD1.6)
  0000                     690     _DHPDIS EQU 0 ; 0 = Data bus pins 15-8 of PORT0 enabled /Dave/                        
-                                             
+                                               
                           691                             ; 1 = Data bus pins 15-8 disabled (used as GPIO)
                           692     ;
                           693     ; <q> WRPDIS: WR/WRL Pin Disable (EBCMOD1.7)
  0000                     694     _WRPDIS EQU 0 ; 0 = WR/WRL pin of Port P20 enabled /Dave/                             
-                                        
+                                          
                           695                             ; 1 = WR/WRL pin of Port P20 disabled
                           696     ;
                           697     ;</h></e>
@@ -786,69 +789,69 @@ LOC      OBJ             LINE     SOURCE
                           700     ; =================================================
                           701     ;
                           702     ; --- Set CONFIG_CS0 = 1 to initialize the FCONCS0/TCONCS0 registers
-                          703     $SET (CONFIG_CS0 = 0) ; /Dave/                                   
+                          703     $SET (CONFIG_CS0 = 0) ; /Dave/                                     
                           704     ;
                           705     ; <h>Definitions for Function Configuration Register FCONCS0
                           706     ; ==========================================================
                           707     ;
                           708     ; <q> ENCS0: Enable Chip Select (FCONCS0.0)
- 0000                     709     _ENCS0 EQU 0 ; 0 = Chip Select 0 disabled /Dave/                                   
+ 0000                     709     _ENCS0 EQU 0 ; 0 = Chip Select 0 disabled /Dave/                                     
                           710                             ; 1 = Chip Select 0 enabled
                           711     ;
                           712     ; <q> RDYEN0: Ready Enable (FCONCS0.1)
  0000                     713     _RDYEN0 EQU 0 ; 0 = Access time controlled by TCONCS0.PHE0 /Dave/                     
-                                                
+                                                  
                           714                             ; 1 = Access time cont. by TCONCS0.PHE0 and READY signal
                           715     ;
                           716     ; <o> RDYMOD0: Ready Mode (FCONCS0.2) 
                           717     ; <0=> Asynchronous  <1=> Synchronous
- 0000                     718     _RDYMOD0 EQU 0 ; 0 = Asynchronous READY /Dave/                                   
+ 0000                     718     _RDYMOD0 EQU 0 ; 0 = Asynchronous READY /Dave/                                     
                           719                             ; 1 = Synchronous READY
                           720     ;
                           721     ; <o> BTYP0: Bus Type Selection (FCONCS0.4 .. FCONCS0.5)
                           722     ; <0=> 8-bit Demultiplexed Bus  <1=> 8-bit Multiplexed Bus
                           723     ; <2=> 16-bit Demultiplexed Bus <3=> 16-bit Multiplexed Bus
- 0000                     724     _BTYP0 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                   
+ 0000                     724     _BTYP0 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                     
                           725                             ; 1 = 8 bit Multiplexed bus
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    13
+
                           726                             ; 2 = 16 bit Demultiplexed bus
                           727                             ; 3 = 16 bit Multiplexed bus
                           728     ; </h>
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    13
-
                           729     ;
                           730     ; <h> TCONCS0: Definitions for the Timing Configuration register 
                           731     ; ==============================================================
                           732     ;
                           733     ; <o> PHA0: Phase A clock cycles (TCONCS0.0 .. TCONCS0.1) <0-3>
- 0000                     734     _PHA0 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     734     _PHA0 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           735                             ; : = : 
                           736                             ; 3 = 3 clock cycles
                           737     ;
                           738     ; <o> PHB0: Phase B clock cycles (TCONCS0.2) <1-2> <#-1>
- 0000                     739     _PHB0 EQU 0 ; 0 = 1 clock cycle /Dave/                                   
+ 0000                     739     _PHB0 EQU 0 ; 0 = 1 clock cycle /Dave/                                     
                           740                             ; 1 = 2 clock cycles
                           741     ;
                           742     ; <o> PHC0: Phase C clock cycles (TCONCS0.3 .. TCONCS0.4) <0-3>
- 0000                     743     _PHC0 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     743     _PHC0 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           744                             ; : = :
                           745                             ; 3 = 3 clock cycles
                           746     ;
                           747     ; <o> PHD0: Phase D clock cycle (TCONCS0.5) <0-1>
- 0000                     748     _PHD0 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     748     _PHD0 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           749                             ; 1 = 1 clock cycle
                           750     ;
                           751     ; <o> PHE0: Phase E clock cycles (TCONCS0.6 .. TCONCS0.10) <1-32> <#-1>
- 0000                     752     _PHE0 EQU 0 ; 0 = 1 clock cycle /Dave/                                   
+ 0000                     752     _PHE0 EQU 0 ; 0 = 1 clock cycle /Dave/                                     
                           753                             ; : = :
                           754                             ; 31 = 32 clock cycles
                           755     ;
                           756     ; <o> RDPHF0: Phase F read clock cycles (TCONCS0.11 .. TCONCS0.12) <0-3>
- 0000                     757     _RDPHF0 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     757     _RDPHF0 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           758                             ; : = :
                           759                             ; 3 = 3 clock cycles
                           760     ;
                           761     ; <o> WRPHF0: Phase F write clock cycles (TCONCS0.13 .. TCONCS0.14) <0-3>
- 0000                     762     _WRPHF0 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     762     _WRPHF0 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           763                             ; : = :
                           764                             ; 3 = 3 clock cycles
                           765     ;</h> </e>
@@ -857,20 +860,20 @@ LOC      OBJ             LINE     SOURCE
                           768     ; =================================================
                           769     ;
                           770     ; --- Set CONFIG_CS1 = 1 to initialize the ADDRSEL1/FCONCS1/TCONCS1 registers
-                          771     $SET (CONFIG_CS1 = 0) ; /Dave/                                   
+                          771     $SET (CONFIG_CS1 = 0) ; /Dave/                                     
                           772     ;
                           773     ; <h>Definitions for Address Select register ADDRSEL1
                           774     ; ===================================================
                           775     ; <o> CS1 Start Address   <0x0-0xFFFFFF:0x1000>
  0000                     776     _ADDR1 EQU 0x0 ; Set CS1# Start Address (default 100000H) /Dave/                      
-                                               
+                                                 
                           777     
                           778     ; <o> CS1 Size in KB      
                           779     ; <4=>    4KB      <8=>    8KB      <16=>   16KB     <32=>   32KB   
                           780     ; <64=>   64KB     <128=>  128KB    <256=>  256KB    <512=>  512KB
                           781     ; <1024=> 1024KB   <2048=> 2048KB   <4096=> 4096KB   <8192=> 8192KB
  1000                     782     _SIZE1 EQU 4*KB ; Set CS1# Size (default 1024*KB = 1*MB) /Dave/                       
-                                              
+                                                
                           783                                  ; possible values for _SIZE1 are:
                           784                                  ;    4*KB            (gives RGSZ1 = 0)
                           785                                  ;    8*KB            (gives RGSZ1 = 1)
@@ -878,11 +881,11 @@ LOC      OBJ             LINE     SOURCE
                           787                                  ;   32*KB            (gives RGSZ1 = 3)
                           788                                  ;   64*KB            (gives RGSZ1 = 4)
                           789                                  ;  128*KB            (gives RGSZ1 = 5)
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    14
+
                           790                                  ;  256*KB            (gives RGSZ1 = 6)
                           791                                  ;  512*KB            (gives RGSZ1 = 7)
                           792                                  ; 1024*KB  or  1*MB  (gives RGSZ1 = 8)
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    14
-
                           793                                  ; 2048*KB  or  2*MB  (gives RGSZ1 = 9)
                           794                                  ; 4096*KB  or  4*MB  (gives RGSZ1 = 10)
                           795                                  ; 8192*KB  or  8*MB  (gives RGSZ1 = 11)
@@ -893,23 +896,23 @@ LOC      OBJ             LINE     SOURCE
                           800     ; ==========================================================
                           801     ;
                           802     ; <q> ENCS1: Enable Chip Select (FCONCS1.0)
- 0000                     803     _ENCS1 EQU 0 ; 0 = Chip Select 0 disabled /Dave/                                   
+ 0000                     803     _ENCS1 EQU 0 ; 0 = Chip Select 0 disabled /Dave/                                     
                           804                             ; 1 = Chip Select 0 enabled
                           805     ;
                           806     ; <q> RDYEN1: Ready Enable (FCONCS1.1)
  0000                     807     _RDYEN1 EQU 0 ; 0 = Access time controlled by TCONCS1.PHE1 /Dave/                     
-                                                
+                                                  
                           808                             ; 1 = Access time cont. by TCONCS1.PHE1 and READY signal
                           809     ;
                           810     ; <o> RDYMOD1: Ready Mode (FCONCS1.2)
                           811     ; <0=> Asynchronous  <1=> Synchronous
- 0000                     812     _RDYMOD1 EQU 0 ; 0 = Asynchronous READY /Dave/                                   
+ 0000                     812     _RDYMOD1 EQU 0 ; 0 = Asynchronous READY /Dave/                                     
                           813                             ; 1 = Synchronous READY
                           814     ;
                           815     ; <o> BTYP1: Bus Type Selection (FCONCS1.4 .. FCONCS1.5)
                           816     ; <0=> 8-bit Demultiplexed Bus  <1=> 8-bit Multiplexed Bus
                           817     ; <2=> 16-bit Demultiplexed Bus <3=> 16-bit Multiplexed Bus
- 0000                     818     _BTYP1 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                   
+ 0000                     818     _BTYP1 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                     
                           819                             ; 1 = 8 bit Multiplexed bus
                           820                             ; 2 = 16 bit Demultiplexed bus
                           821                             ; 3 = 16 bit Multiplexed bus
@@ -919,38 +922,38 @@ LOC      OBJ             LINE     SOURCE
                           825     ; =============================================================
                           826     ;
                           827     ; <o>PHA1: Phase A clock cycles (TCONCS1.0 .. TCONCS1.1) <0-3>
- 0000                     828     _PHA1 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     828     _PHA1 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           829                             ; : = : 
                           830                             ; 3 = 3 clock cycles
                           831     ;
                           832     ; <o>PHB1: Phase B clock cycles (TCONCS1.2) <1-2> <#-1>
- 0000                     833     _PHB1 EQU 0 ; 0 = 1 clock cycle /Dave/                                   
+ 0000                     833     _PHB1 EQU 0 ; 0 = 1 clock cycle /Dave/                                     
                           834                             ; 1 = 2 clock cycles
                           835     ;
                           836     ; <o>PHC1: Phase C clock cycles (TCONCS1.3 .. TCONCS1.4) <0-3>
- 0000                     837     _PHC1 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     837     _PHC1 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           838                             ; : = :
                           839                             ; 3 = 3 clock cycles
                           840     ;
                           841     ; <o>PHD1: Phase D clock cycles (TCONCS1.5) <0-1>
- 0000                     842     _PHD1 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     842     _PHD1 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           843                             ; 1 = 1 clock cycle
                           844     ;
                           845     ; <o> PHE1: Phase E clock cycles (TCONCS1.6 .. TCONCS1.10) <1-32> <#-1>
- 0000                     846     _PHE1 EQU 0 ; 0 = 1 clock cycle /Dave/                                   
+ 0000                     846     _PHE1 EQU 0 ; 0 = 1 clock cycle /Dave/                                     
                           847                             ; : = :
                           848                             ; 31 = 32 clock cycles
                           849     ;
                           850     ; <o>RDPHF1: Phase F read clock cycles (TCONCS1.11 .. TCONCS1.12) <0-3>
- 0000                     851     _RDPHF1 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     851     _RDPHF1 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           852                             ; : = :
                           853                             ; 3 = 3 clock cycles
                           854     ;
-                          855     ; <o>WRPHF1: Phase F write clock cycles (TCONCS1.13 .. TCONCS1.14) <0-3>
- 0000                     856     _WRPHF1 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
-                          857                             ; : = :
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    15
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    15
 
+                          855     ; <o>WRPHF1: Phase F write clock cycles (TCONCS1.13 .. TCONCS1.14) <0-3>
+ 0000                     856     _WRPHF1 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
+                          857                             ; : = :
                           858                             ; 3 = 3 clock cycles
                           859     ;</h> </e>
                           860     ;
@@ -958,20 +961,20 @@ LOC      OBJ             LINE     SOURCE
                           862     ;   =============================================
                           863     ;
                           864     ; --- Set CONFIG_CS2 = 1 to initialize the ADDRSEL2/FCONCS2/TCONCS2 registers
-                          865     $SET (CONFIG_CS2 = 0) ; /Dave/                                   
+                          865     $SET (CONFIG_CS2 = 0) ; /Dave/                                     
                           866     ;
                           867     ; <h>Definitions for Address Select register ADDRSEL2
                           868     ; ===================================================
                           869     ; <o> CS2 Start Address   <0x0-0xFFFFFF:0x1000>
  0000                     870     _ADDR2 EQU 0x0 ; Set CS2# Start Address (default 100000H) /Dave/                      
-                                               
+                                                 
                           871     
                           872     ; <o> CS2 Size in KB      
                           873     ; <4=>    4KB      <8=>    8KB      <16=>   16KB     <32=>   32KB
                           874     ; <64=>   64KB     <128=>  128KB    <256=>  256KB    <512=>  512KB
                           875     ; <1024=> 1024KB   <2048=> 2048KB   <4096=> 4096KB   <8192=> 8192KB
  1000                     876     _SIZE2 EQU 4*KB ; Set CS2# Size (default 1024*KB = 1*MB) /Dave/                       
-                                              
+                                                
                           877                                  ; possible values for _SIZE2 are:
                           878                                  ;    4*KB            (gives RGSZ2 = 0)
                           879                                  ;    8*KB            (gives RGSZ2 = 1)
@@ -992,63 +995,63 @@ LOC      OBJ             LINE     SOURCE
                           894     ; ==========================================================
                           895     ;
                           896     ; <q> ENCS2: Enable Chip Select (FCONCS2.0)
- 0000                     897     _ENCS2 EQU 0 ; 0 = Chip Select 0 disabled /Dave/                                   
+ 0000                     897     _ENCS2 EQU 0 ; 0 = Chip Select 0 disabled /Dave/                                     
                           898                             ; 1 = Chip Select 0 enabled
                           899     ;
                           900     ; <q> RDYEN2: Ready Enable (FCONCS2.1)
  0000                     901     _RDYEN2 EQU 0 ; 0 = Access time controlled by TCONCS2.PHE1 /Dave/                     
-                                                
+                                                  
                           902                             ; 1 = Access time cont. by TCONCS2.PHE1 and READY signal
                           903     ;
                           904     ; <o> RDYMOD2: Ready Mode (FCONCS2.2)
                           905     ; <0=> Asynchronous  <1=> Synchronous
- 0000                     906     _RDYMOD2 EQU 0 ; 0 = Asynchronous READY /Dave/                                   
+ 0000                     906     _RDYMOD2 EQU 0 ; 0 = Asynchronous READY /Dave/                                     
                           907                             ; 1 = Synchronous READY
                           908     ;
                           909     ; <o> BTYP2: Bus Type Selection (FCONCS2.4 .. FCONCS2.5)
                           910     ; <0=> 8-bit Demultiplexed Bus  <1=> 8-bit Multiplexed Bus
                           911     ; <2=> 16-bit Demultiplexed Bus <3=> 16-bit Multiplexed Bus
- 0000                     912     _BTYP2 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                   
+ 0000                     912     _BTYP2 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                     
                           913                             ; 1 = 8 bit Multiplexed bus
                           914                             ; 2 = 16 bit Demultiplexed bus
                           915                             ; 3 = 16 bit Multiplexed bus
                           916     ;</h>
                           917     ;
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    16
+
                           918     ; <h>TCONCS2: Definitions for the Timing Configuration register 
                           919     ; =============================================================
                           920     ;
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    16
-
                           921     ; <o>PHA2: Phase A clock cycle (TCONCS2.0 .. TCONCS2.1) <0-3>
- 0000                     922     _PHA2 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     922     _PHA2 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           923                             ; : = : 
                           924                             ; 3 = 3 clock cycles
                           925     ;
                           926     ; <o>PHB2: Phase B clock cycle (TCONCS2.2) <1-2> <#-1>
- 0000                     927     _PHB2 EQU 0 ; 0 = 1 clock cycle /Dave/                                   
+ 0000                     927     _PHB2 EQU 0 ; 0 = 1 clock cycle /Dave/                                     
                           928                             ; 1 = 2 clock cycles
                           929     ;
                           930     ; <o>PHC2: Phase C clock cycle (TCONCS2.3 .. TCONCS2.4) <0-3>
- 0000                     931     _PHC2 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     931     _PHC2 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           932                             ; : = :
                           933                             ; 3 = 3 clock cycles
                           934     ;
                           935     ; <o>PHD2: Phase D clock cycle (TCONCS2.5) <0-1>
- 0000                     936     _PHD2 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     936     _PHD2 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           937                             ; 1 = 1 clock cycle
                           938     ;
                           939     ; <o> PHE2: Phase E clock cycle (TCONCS2.6 .. TCONCS2.10) <1-32> <#-1>
- 0000                     940     _PHE2 EQU 0 ; 0 = 1 clock cycle /Dave/                                   
+ 0000                     940     _PHE2 EQU 0 ; 0 = 1 clock cycle /Dave/                                     
                           941                             ; : = :
                           942                             ; 31 = 32 clock cycles
                           943     ;
                           944     ; <o>RDPHF2: Phase F read clock cycle (TCONCS2.11 .. TCONCS2.12) <0-3>
- 0000                     945     _RDPHF2 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     945     _RDPHF2 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           946                             ; : = :
                           947                             ; 3 = 3 clock cycles
                           948     ;
                           949     ; <o>WRPHF2: Phase F write clock cycle (TCONCS2.13 .. TCONCS2.14) <0-3>
- 0000                     950     _WRPHF2 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                     950     _WRPHF2 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                           951                             ; : = :
                           952                             ; 3 = 3 clock cycles
                           953     ;</h> </e>
@@ -1057,20 +1060,20 @@ LOC      OBJ             LINE     SOURCE
                           956     ;   =============================================
                           957     ;
                           958     ; --- Set CONFIG_CS3 = 1 to initialize the ADDRSEL3/FCONCS3/TCONCS3 registers
-                          959     $SET (CONFIG_CS3 = 0) ; /Dave/                                   
+                          959     $SET (CONFIG_CS3 = 0) ; /Dave/                                     
                           960     ;
                           961     ; <h>Definitions for Address Select register ADDRSEL3
                           962     ; ===================================================
                           963     ; <o> CS3 Start Address   <0x0-0xFFFFFF:0x1000>
  0000                     964     _ADDR3 EQU 0x0 ; Set CS3# Start Address (default 100000H) /Dave/                      
-                                               
+                                                 
                           965     
                           966     ; <o> CS2 Size in KB      
                           967     ; <4=>    4KB      <8=>    8KB      <16=>   16KB     <32=>   32KB
                           968     ; <64=>   64KB     <128=>  128KB    <256=>  256KB    <512=>  512KB
                           969     ; <1024=> 1024KB   <2048=> 2048KB   <4096=> 4096KB   <8192=> 8192KB
  1000                     970     _SIZE3 EQU 4*KB ; Set CS3# Size (default 1024*KB = 1*MB) /Dave/                       
-                                              
+                                                
                           971                                  ; possible values for _SIZE3 are:
                           972                                  ;    4*KB            (gives RGSZ3 = 0)
                           973                                  ;    8*KB            (gives RGSZ3 = 1)
@@ -1082,34 +1085,34 @@ LOC      OBJ             LINE     SOURCE
                           979                                  ;  512*KB            (gives RGSZ3 = 7)
                           980                                  ; 1024*KB  or  1*MB  (gives RGSZ3 = 8)
                           981                                  ; 2048*KB  or  2*MB  (gives RGSZ3 = 9)
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    17
+
                           982                                  ; 4096*KB  or  4*MB  (gives RGSZ3 = 10)
                           983                                  ; 8192*KB  or  8*MB  (gives RGSZ3 = 11)
                           984                                  ;                    (RGSZ3 = 12 .. 15 reserved)
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    17
-
                           985     ;</h>
                           986     ;
                           987     ; <h>Definitions for Function Configuration Register FCONCS3
                           988     ; ==========================================================
                           989     ;
                           990     ; <q> ENCS3: Enable Chip Select (FCONCS3.0)
- 0000                     991     _ENCS3 EQU 0 ; 0 = Chip Select 0 disabled /Dave/                                   
+ 0000                     991     _ENCS3 EQU 0 ; 0 = Chip Select 0 disabled /Dave/                                     
                           992                             ; 1 = Chip Select 0 enabled
                           993     ;
                           994     ; <q> RDYEN3: Ready Enable (FCONCS3.1)
  0000                     995     _RDYEN3 EQU 0 ; 0 = Access time controlled by TCONCS3.PHE1 /Dave/                     
-                                                
+                                                  
                           996                             ; 1 = Access time cont. by TCONCS3.PHE1 and READY signal
                           997     ;
                           998     ; <o> RDYMOD3: Ready Mode (FCONCS3.2)
                           999     ; <0=> Asynchronous  <1=> Synchronous
- 0000                    1000     _RDYMOD3 EQU 0 ; 0 = Asynchronous READY /Dave/                                   
+ 0000                    1000     _RDYMOD3 EQU 0 ; 0 = Asynchronous READY /Dave/                                     
                          1001                             ; 1 = Synchronous READY
                          1002     ;
                          1003     ; <o> BTYP3  Bus Type Selection (FCONCS3.4 .. FCONCS3.5)
                          1004     ; <0=> 8-bit Demultiplexed Bus  <1=> 8-bit Multiplexed Bus
                          1005     ; <2=> 16-bit Demultiplexed Bus <3=> 16-bit Multiplexed Bus
- 0000                    1006     _BTYP3 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                   
+ 0000                    1006     _BTYP3 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                     
                          1007                             ; 1 = 8 bit Multiplexed bus
                          1008                             ; 2 = 16 bit Demultiplexed bus
                          1009                             ; 3 = 16 bit Multiplexed bus
@@ -1119,59 +1122,59 @@ LOC      OBJ             LINE     SOURCE
                          1013     ; =============================================================
                          1014     ;
                          1015     ; <o>PHA3: Phase A clock cycle (TCONCS3.0 .. TCONCS3.1) <0-3>
- 0000                    1016     _PHA3 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1016     _PHA3 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1017                             ; : = : 
                          1018                             ; 3 = 3 clock cycles
                          1019     ;
                          1020     ; <o>PHB3: Phase B clock cycle (TCONCS2.2) <1-2> <#-1>
- 0000                    1021     _PHB3 EQU 0 ; 0 = 1 clock cycle /Dave/                                   
+ 0000                    1021     _PHB3 EQU 0 ; 0 = 1 clock cycle /Dave/                                     
                          1022                             ; 1 = 2 clock cycles
                          1023     ;
                          1024     ; <o>PHC3: Phase C clock cycle (TCONCS3.3 .. TCONCS3.4) <0-3>
- 0000                    1025     _PHC3 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1025     _PHC3 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1026                             ; : = :
                          1027                             ; 3 = 3 clock cycles
                          1028     ;
                          1029     ; <o>PHD3: Phase D clock cycle (TCONCS3.5) <0-1>
- 0000                    1030     _PHD3 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1030     _PHD3 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1031                             ; 1 = 1 clock cycle
                          1032     ;
                          1033     ; <o> PHE3: Phase E clock cycle (TCONCS3.6 .. TCONCS3.10) <1-32> <#-1>
- 0000                    1034     _PHE3 EQU 0 ; 0 = 1 clock cycle /Dave/                                   
+ 0000                    1034     _PHE3 EQU 0 ; 0 = 1 clock cycle /Dave/                                     
                          1035                             ; : = :
                          1036                             ; 31 = 32 clock cycles
                          1037     ;
                          1038     ; <o>RDPHF3: Phase F read clock cycle (TCONCS3.11 .. TCONCS3.12) <0-3>
- 0000                    1039     _RDPHF3 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1039     _RDPHF3 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1040                             ; : = :
                          1041                             ; 3 = 3 clock cycles
                          1042     ;
                          1043     ; <o>WRPHF3: Phase F write clock cycle (TCONCS3.13 .. TCONCS3.14) <0-3>
- 0000                    1044     _WRPHF3 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1044     _WRPHF3 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1045                             ; : = :
                          1046                             ; 3 = 3 clock cycles
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    18
+
                          1047     ;</h> </e>
                          1048     ;
                          1049     ;<e>Configure External Bus Behaviour for CS4 Area
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    18
-
                          1050     ;   =============================================
                          1051     ;
                          1052     ; --- Set CONFIG_CS4 = 1 to initialize the ADDRSEL4/FCONCS4/TCONCS4 registers
-                         1053     $SET (CONFIG_CS4 = 0) ; /Dave/                                   
+                         1053     $SET (CONFIG_CS4 = 0) ; /Dave/                                     
                          1054     ;
                          1055     ; <h>Definitions for Address Select register ADDRSEL4
                          1056     ; ===================================================
                          1057     ; <o> CS4 Start Address   <0x0-0xFFFFFF:0x1000>
  0000                    1058     _ADDR4 EQU 0x0 ; Set CS4# Start Address (default 100000H) /Dave/                      
-                                               
+                                                 
                          1059     
                          1060     ; <o> CS4 Size in KB      
                          1061     ; <4=>    4KB      <8=>    8KB      <16=>   16KB     <32=>   32KB
                          1062     ; <64=>   64KB     <128=>  128KB    <256=>  256KB    <512=>  512KB
                          1063     ; <1024=> 1024KB   <2048=> 2048KB   <4096=> 4096KB   <8192=> 8192KB
  1000                    1064     _SIZE4 EQU 4*KB ; Set CS4# Size (default 1024*KB = 1*MB) /Dave/                       
-                                              
+                                                
                          1065                                  ; possible values for _SIZE4 are:
                          1066                                  ;    4*KB            (gives RGSZ4 = 0)
                          1067                                  ;    8*KB            (gives RGSZ4 = 1)
@@ -1192,23 +1195,23 @@ LOC      OBJ             LINE     SOURCE
                          1082     ; ==========================================================
                          1083     ;
                          1084     ; <q> ENCS4: Enable Chip Select (FCONCS4.0)
- 0000                    1085     _ENCS4 EQU 0 ; 0 = Chip Select 0 disabled /Dave/                                   
+ 0000                    1085     _ENCS4 EQU 0 ; 0 = Chip Select 0 disabled /Dave/                                     
                          1086                             ; 1 = Chip Select 0 enabled
                          1087     ;
                          1088     ; <q> RDYEN4: Ready Enable (FCONCS4.1)
  0000                    1089     _RDYEN4 EQU 0 ; 0 = Access time controlled by TCONCS4.PHE1 /Dave/                     
-                                                
+                                                  
                          1090                             ; 1 = Access time cont. by TCONCS4.PHE1 and READY signal
                          1091     ;
                          1092     ; <o> RDYMOD4: Ready Mode (FCONCS4.2)
                          1093     ; <0=> Asynchronous  <1=> Synchronous
- 0000                    1094     _RDYMOD4 EQU 0 ; 0 = Asynchronous READY /Dave/                                   
+ 0000                    1094     _RDYMOD4 EQU 0 ; 0 = Asynchronous READY /Dave/                                     
                          1095                             ; 1 = Synchronous READY
                          1096     ;
                          1097     ; <o> BTYP4: Bus Type Selection (FCONCS4.4 .. FCONCS4.5)
                          1098     ; <0=> 8-bit Demultiplexed Bus  <1=> 8-bit Multiplexed Bus
                          1099     ; <2=> 16-bit Demultiplexed Bus <3=> 16-bit Multiplexed Bus
- 0000                    1100     _BTYP4 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                   
+ 0000                    1100     _BTYP4 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                     
                          1101                             ; 1 = 8 bit Multiplexed bus
                          1102                             ; 2 = 16 bit Demultiplexed bus
                          1103                             ; 3 = 16 bit Multiplexed bus
@@ -1218,37 +1221,37 @@ LOC      OBJ             LINE     SOURCE
                          1107     ; =============================================================
                          1108     ;
                          1109     ; <o>PHA4: Phase A clock cycle (TCONCS4.0 .. TCONCS4.1) <0-3>
- 0000                    1110     _PHA4 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    19
+
+ 0000                    1110     _PHA4 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1111                             ; : = : 
                          1112                             ; 3 = 3 clock cycles
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    19
-
                          1113     ;
                          1114     ; <o>PHB4: Phase B clock cycle (TCONCS4.2) <1-2> <#-1>
- 0000                    1115     _PHB4 EQU 0 ; 0 = 1 clock cycle /Dave/                                   
+ 0000                    1115     _PHB4 EQU 0 ; 0 = 1 clock cycle /Dave/                                     
                          1116                             ; 1 = 2 clock cycles
                          1117     ;
                          1118     ; <o>PHC4: Phase C clock cycle (TCONCS4.3 .. TCONCS4.4) <0-3>
- 0000                    1119     _PHC4 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1119     _PHC4 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1120                             ; : = :
                          1121                             ; 3 = 3 clock cycles
                          1122     ;
                          1123     ; <o>PHD4: Phase D clock cycle (TCONCS4.5) <0-1>
- 0000                    1124     _PHD4 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1124     _PHD4 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1125                             ; 1 = 1 clock cycle
                          1126     ;
                          1127     ; <o> PHE4: Phase E clock cycle (TCONCS4.6 .. TCONCS4.10) <1-32> <#-1>
- 0000                    1128     _PHE4 EQU 0 ; 0 = 1 clock cycle /Dave/                                   
+ 0000                    1128     _PHE4 EQU 0 ; 0 = 1 clock cycle /Dave/                                     
                          1129                             ; : = :
                          1130                             ; 31 = 32 clock cycles
                          1131     ;
                          1132     ; <o>RDPHF4: Phase F read clock cycle (TCONCS4.11 .. TCONCS4.12) <0-3>
- 0000                    1133     _RDPHF4 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1133     _RDPHF4 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1134                             ; : = :
                          1135                             ; 3 = 3 clock cycles
                          1136     ;
                          1137     ; <o>WRPHF4: Phase F write clock cycle (TCONCS4.13 .. TCONCS4.14) <0-3>
- 0000                    1138     _WRPHF4 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1138     _WRPHF4 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1139                             ; : = :
                          1140                             ; 3 = 3 clock cycles
                          1141     ;</h> </e>
@@ -1257,20 +1260,20 @@ LOC      OBJ             LINE     SOURCE
                          1144     ;   =============================================
                          1145     ;
                          1146     ; --- Set CONFIG_CS7 = 1 to initialize the ADDRSEL7/FCONCS7/TCONCS7 registers
-                         1147     $SET (CONFIG_CS7 = 0) ; /Dave/                                   
+                         1147     $SET (CONFIG_CS7 = 0) ; /Dave/                                     
                          1148     ;
                          1149     ; <h>Definitions for Address Select register ADDRSEL7
                          1150     ; ===================================================
                          1151     ; <o> CS7 Start Address   <0x0-0xFFFFFF:0x1000>
  0000                    1152     _ADDR7 EQU 0x0 ; Set CS7# Start Address (default 100000H) /Dave/                      
-                                               
+                                                 
                          1153     
                          1154     ; <o> CS7 Size in KB      
                          1155     ; <4=>    4KB      <8=>    8KB      <16=>   16KB     <32=>   32KB
                          1156     ; <64=>   64KB     <128=>  128KB    <256=>  256KB    <512=>  512KB
                          1157     ; <1024=> 1024KB   <2048=> 2048KB   <4096=> 4096KB   <8192=> 8192KB
  1000                    1158     _SIZE7 EQU 4*KB ; Set CS7# Size (default 1024*KB = 1*MB) /Dave/                       
-                                              
+                                                
                          1159                                  ; possible values for _SIZE7 are:
                          1160                                  ;    4*KB            (gives RGSZ7 = 0)
                          1161                                  ;    8*KB            (gives RGSZ7 = 1)
@@ -1286,30 +1289,30 @@ LOC      OBJ             LINE     SOURCE
                          1171                                  ; 8192*KB  or  8*MB  (gives RGSZ7 = 11)
                          1172                                  ;                    (RGSZ7 = 12 .. 15 reserved)
                          1173     ;</h>
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    20
+
                          1174     ;
                          1175     ; <h>Definitions for Function Configuration Register FCONCS7
                          1176     ; ==========================================================
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    20
-
                          1177     ;
                          1178     ; <q> ENCS7: Enable Chip Select (FCONCS7.0)
- 0000                    1179     _ENCS7 EQU 0 ; 0 = Chip Select 0 disabled /Dave/                                   
+ 0000                    1179     _ENCS7 EQU 0 ; 0 = Chip Select 0 disabled /Dave/                                     
                          1180                             ; 1 = Chip Select 0 enabled
                          1181     ;
                          1182     ; <q> RDYEN7: Ready Enable (FCONCS7.1)
  0000                    1183     _RDYEN7 EQU 0 ; 0 = Access time controlled by TCONCS7.PHE1 /Dave/                     
-                                                
+                                                  
                          1184                             ; 1 = Access time cont. by TCONCS7.PHE1 and READY signal
                          1185     ;
                          1186     ; <o> RDYMOD7: Ready Mode (FCONCS7.2)
                          1187     ; <0=> Asynchronous  <1=> Synchronous
- 0000                    1188     _RDYMOD7 EQU 0 ; 0 = Asynchronous READY /Dave/                                   
+ 0000                    1188     _RDYMOD7 EQU 0 ; 0 = Asynchronous READY /Dave/                                     
                          1189                             ; 1 = Synchronous READY
                          1190     ;
                          1191     ; <o> BTYP7: Bus Type Selection (FCONCS7.4 .. FCONCS7.5)
                          1192     ; <0=> 8-bit Demultiplexed Bus  <1=> 8-bit Multiplexed Bus
                          1193     ; <2=> 16-bit Demultiplexed Bus <3=> 16-bit Multiplexed Bus
- 0000                    1194     _BTYP7 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                   
+ 0000                    1194     _BTYP7 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                     
                          1195                             ; 1 = 8 bit Multiplexed bus
                          1196                             ; 2 = 16 bit Demultiplexed bus
                          1197                             ; 3 = 16 bit Multiplexed bus
@@ -1319,46 +1322,46 @@ LOC      OBJ             LINE     SOURCE
                          1201     ; =============================================================
                          1202     ;
                          1203     ; <o>PHA7: Phase A clock cycle (TCONCS7.0 .. TCONCS7.1) <0-3>
- 0000                    1204     _PHA7 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1204     _PHA7 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1205                             ; : = : 
                          1206                             ; 3 = 3 clock cycles
                          1207     ;
                          1208     ; <o>PHB7: Phase B clock cycle (TCONCS7.2) <1-2> <#-1>
- 0000                    1209     _PHB7 EQU 0 ; 0 = 1 clock cycle /Dave/                                   
+ 0000                    1209     _PHB7 EQU 0 ; 0 = 1 clock cycle /Dave/                                     
                          1210                             ; 1 = 2 clock cycles
                          1211     ;
                          1212     ; <o>PHC7: Phase C clock cycle (TCONCS7.3 .. TCONCS7.4) <0-3>
- 0000                    1213     _PHC7 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1213     _PHC7 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1214                             ; : = :
                          1215                             ; 3 = 3 clock cycles
                          1216     ;
                          1217     ; <o>PHD27 Phase D clock cycle (TCONCS2.5) <0-1>
- 0000                    1218     _PHD7 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1218     _PHD7 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1219                             ; 1 = 1 clock cycle
                          1220     ;
                          1221     ; <o> PHE7: Phase E clock cycle (TCONCS7.6 .. TCONCS7.10) <1-32> <#-1>
- 0000                    1222     _PHE7 EQU 0 ; 0 = 1 clock cycle /Dave/                                   
+ 0000                    1222     _PHE7 EQU 0 ; 0 = 1 clock cycle /Dave/                                     
                          1223                             ; : = :
                          1224                             ; 31 = 32 clock cycles
                          1225     ;
                          1226     ; <o>RDPHF7: Phase F read clock cycle (TCONCS7.11 .. TCONCS7.12) <0-3>
- 0000                    1227     _RDPHF7 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1227     _RDPHF7 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1228                             ; : = :
                          1229                             ; 3 = 3 clock cycles
                          1230     ;
                          1231     ; <o>WRPHF7: Phase F write clock cycle (TCONCS7.13 .. TCONCS7.14) <0-3>
- 0000                    1232     _WRPHF7 EQU 0 ; 0 = 0 clock cycles /Dave/                                   
+ 0000                    1232     _WRPHF7 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1233                             ; : = :
                          1234                             ; 3 = 3 clock cycles
                          1235     ;</h> </e>
                          1236     ;
                          1237     ; </h>
                          1238     ; <<< end of configuration section >>>
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    21
+
                          1239     
                          1240     
                                   $IF TINY
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    21
-
                                   $SET (DPPUSE = 0)
                          1243     $ENDIF
                          1244     
@@ -1422,11 +1425,11 @@ LOC      OBJ             LINE     SOURCE
                                   ENDIF
                          1303     $ENDIF
                          1304     
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    22
+
                          1305     ?C_MAINREGISTERS        REGDEF  R0 - R15
                          1306     
 --------                 1307     ?C_SYSSTACK     SECTION DATA PUBLIC 'IDATA'
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    22
-
                          1308     $IF NOT TINY
                          1309     SDATA           DGROUP  ?C_SYSSTACK
                          1310     $ENDIF
@@ -1490,11 +1493,11 @@ LOC      OBJ             LINE     SOURCE
  00FFFF00                1368     IMBCTRL   EQU    0FFFF00H
  00FFFF02                1369     IMBCTRH   EQU    0FFFF02H
  F100                    1370     ESRCFG0   DEFR   0F100H
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    23
+
  F102                    1371     ESRCFG1   DEFR   0F102H
  F104                    1372     ESRCFG2   DEFR   0F104H
  F0E2                    1373     STATCLR1  DEFR   0F0E2H
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    23
-
  F1B8.15                 1374     PLLCON0_NACK   BIT PLLCON0.15
  F1BA.15                 1375     PLLCON1_PACK   BIT PLLCON1.15
  F1BC.15                 1376     PLLCON2_K1ACK  BIT PLLCON2.15
@@ -1558,11 +1561,11 @@ LOC      OBJ             LINE     SOURCE
                          1434     
                                   $IF (INIT_CPUCON2 = 1)                  ; Set CPUCON2 register
                                   _CPC2           SET     (_RETST<<3) OR (_DAID<<1) OR (_SL)
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    24
+
                                   _CPC2           SET     _CPC2 OR (_EIOIAEN<<7) OR (_STEN<<6) OR (_LFIC<<5) OR (_OVRUN<
                                   <4)
                                   _CPC2           SET     _CPC2 OR (_BYPPF<<9) OR (_BYPF<<8) 
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    24
-
                                   _CPC2           SET     _CPC2 OR (_FIFODEPTH<<12) OR (_FIFOFED<<10) 
                                                   MOV     CPUCON2,#_CPC2
                          1441     $ENDIF
@@ -1626,11 +1629,11 @@ LOC      OBJ             LINE     SOURCE
                                                   MOV     R0,#_FCS1
                                                   MOV     FCONCS1,R0
                                   
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    25
+
                          1502     $ENDIF
                          1503     
                                   $IF (CONFIG_CS2)  
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    25
-
                                                                           ; Set TCONCS2 register
                                   _TCS2           SET     (_PHD2<<5) OR (_PHC2<<3) OR (_PHB2<<2) OR (_PHA2)
                                   _TCS2           SET     _TCS2 OR (_WRPHF2<<13) OR (_RDPHF2<<11) OR (_PHE2<<6)
@@ -1694,11 +1697,11 @@ LOC      OBJ             LINE     SOURCE
                                                                           ; Set FCONCS7 register
                                   _FCS7  SET  (_BTYP7<<4) OR (_RDYMOD7<<2) OR (_RDYEN7<<1) OR (_ENCS7)
                                                   MOV     R0,#_FCS7 
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    26
+
                                                   MOV     FCONCS7,R0
                                   
                          1570     $ENDIF
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    26
-
                          1571     
                                   $IF (INIT_RSTCON = 1)                   ; Set RSTCON register
                                   _RSTCON         SET     (_ROCOFF<<5) OR (_RORMV<<4) OR (_RSTLEN)
@@ -1762,11 +1765,11 @@ LOC      OBJ             LINE     SOURCE
                                                   CALL    ApplyNewK1Div
                                   
                                   ; switch to bypass mode before changing the clock source or VCO parameter
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    27
+
                                                   EXTR    #01H            ; Extended SFR access
                                                   OR      PLLCON0,#0001H  ; set bypass mode
                                                   NOP
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    27
-
                                   WBY:            EXTR    #01H            ; Extended SFR access
                                                   MOV     R0,PLLSTAT
                                                   JB      R0.0,WBY        ; wait until bypass mode active
@@ -1830,11 +1833,11 @@ LOC      OBJ             LINE     SOURCE
                                   ENDIF ; IF (NOT _VCOBY)
                                   
                                   ; set final K2DIV
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    28
+
                                                   MOV     R0,#_K2DIV
                                                   CALL    ApplyNewK2Div
                                   
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    28
-
                          1695     $ENDIF ;$IF (INIT_PLLCON = 1)
                          1696     
                          1697     
@@ -1898,11 +1901,11 @@ LOC      OBJ             LINE     SOURCE
                                                   JMPR    cc_Z,EndClear
                                   
                                   RepeatClear:
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    29
+
                                   $IF (WATCHDOG = 1)
                                                   SRVWDT                          ; SERVICE WATCHDOG
                                   $ENDIF
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    29
-
                                                   MOV     R5,#0
                                                   MOV     R2,[R8+]    ; Count
                                                   JMPR    cc_Z,EndClear
@@ -1966,11 +1969,11 @@ LOC      OBJ             LINE     SOURCE
 00000076 B853            1821                     MOV     [R3],R5
 00000078 0841            1822                     ADD     R4,#1
 0000007A 2821            1823                     SUB     R2,#1
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    30
+
 0000007C 3DF3            1824                     JMPR    cc_NZ,ClearBit
 0000007E 0DE7            1825                     JMPR    cc_UC,RepeatClear
                          1826     
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    30
-
 00000080 DC09            1827     ClearFar:       EXTS    R9,#1
 00000082 9838            1828                     MOV     R3,[R8+]
                          1829     RepClearFar:
@@ -2034,11 +2037,11 @@ LOC      OBJ             LINE     SOURCE
                                                   SUB     R2,#1
                                                   JMPR    cc_NZ,CopyInitVal
                                                   JNB     R8.0,RepeatInit
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    31
+
                                                   ADD     R8,#1
                                                   ADDC    R9,#0                   ; potential overflow
                                                   JMPR    cc_UC,RepeatInit
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    31
-
                                   
                                   InitBit:        MOVBZ   R3,RL2
                                                   SHL     R3,#1
@@ -2102,11 +2105,11 @@ LOC      OBJ             LINE     SOURCE
                          1953     NoDPP3Adj:      
                                   $IF (WATCHDOG = 1)
                                                   SRVWDT                          ; SERVICE WATCHDOG
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    32
+
                          1956     $ENDIF
 00000100 2821            1957                     SUB     R2,#1
 00000102 3DF0            1958                     JMPR    cc_NZ,CopyInitVal
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    32
-
 00000104 9AF8D000        1959                     JNB     R8.0,RepeatInit
 00000108 0881            1960                     ADD     R8,#1
 0000010A 1890            1961                     ADDC    R9,#0                   ; potential overflow
@@ -2170,11 +2173,11 @@ LOC      OBJ             LINE     SOURCE
                                                   JMPR    cc_NZ,CopyInitVal
                                                   JMPR    cc_UC,CopyInitDone
                                   
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    33
+
                                   
                                   CopyNearVal:    EXTS    R9,#1
                                                   MOVB    RL5,[R8]
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    33
-
                                                   ADD     R8,#1
                                                   ADDC    R9,#0
                                                   MOVB    [R3],RL5
@@ -2238,11 +2241,11 @@ LOC      OBJ             LINE     SOURCE
 0000014C 4001            2083                     CMP     R0,R1           ; compare old and new value
 0000014E 2D0C            2084                     JMPR    cc_EQ,K1DivDone ; do nothing if identical
                          2085     
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    34
+
 00000150 F6F0BCF1        2086                     MOV     PLLCON2,R0      ; set new K1DIV value without setting K1ACK
                          2087     
 00000154 F2F1BCF0        2088     K1CLRLoop:      MOV     R1,PLLSTAT      ; read PLLSTAT
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    34
-
 00000158 8AF1FC70        2089                     JB      R1.7,K1CLRLoop  ; wait until K1RDY is clear
                          2090                     
 0000015C D180            2091                     EXTR    #01H            ; Extended SFR access
@@ -2306,11 +2309,11 @@ LOC      OBJ             LINE     SOURCE
 000001E2 F2F1BCF0        2149     NCLRLoop:       MOV     R1,PLLSTAT      ; read PLLSTAT
 000001E6 8AF1FC60        2150                     JB      R1.6,NCLRLoop   ; wait until NRDY is clear
 000001EA D180            2151                     EXTR    #01H            ; Extended SFR access
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    35
+
 000001EC FFDC            2152                     BSET    PLLCON0_NACK    ; set NACK
 000001EE F2F1BCF0        2153     NSETLoop:       MOV     R1,PLLSTAT      ; read PLLSTAT
 000001F2 9AF1FC60        2154                     JNB     R1.6,NSETLoop   ; wait until NRDY is set
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    35
-
 000001F6 CB00            2155                     RET
                          2156     
                          2157     
@@ -2326,7 +2329,7 @@ LOC      OBJ             LINE     SOURCE
                          2167     
                          2168     
                          2169     
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    36
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    36
 
 SYMBOL TABLE LISTING
 ------ ----- -------
@@ -2394,7 +2397,7 @@ ESRCFG2. . . . . .  WORD   F104H             A  ESFR
 EndClear . . . . .  NEAR   A0H               R  SEC=?C_STARTUP_CODE
 EndInit. . . . . .  NEAR   12CH              R  SEC=?C_STARTUP_CODE
 FCONCS0. . . . . .  DATA16 EE12H             A  
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    37
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    37
 
 FCONCS1. . . . . .  DATA16 EE1AH             A  
 FCONCS2. . . . . .  DATA16 EE22H             A  
@@ -2462,7 +2465,7 @@ WDTREL . . . . . .  WORD   F0C8H             A  ESFR
 WUOSCCON . . . . .  WORD   F1AEH             A  ESFR
 _A0PDIS. . . . . .  DATA3  0H                A  
 _ADDR1 . . . . . .  DATA3  0H                A  
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    38
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    38
 
 _ADDR2 . . . . . .  DATA3  0H                A  
 _ADDR3 . . . . . .  DATA3  0H                A  
@@ -2530,7 +2533,7 @@ _PHA4. . . . . . .  DATA3  0H                A
 _PHA7. . . . . . .  DATA3  0H                A  
 _PHB0. . . . . . .  DATA3  0H                A  
 _PHB1. . . . . . .  DATA3  0H                A  
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    39
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    39
 
 _PHB2. . . . . . .  DATA3  0H                A  
 _PHB3. . . . . . .  DATA3  0H                A  
@@ -2598,7 +2601,7 @@ _VCOSEL. . . . . .  DATA3  0H                A
 _VECSC . . . . . .  DATA3  0H                A  
 _WDTCTL. . . . . .  DATA3  0H                A  
 _WDTREL. . . . . .  DATA16 FFFCH             A  
-A166 MACRO ASSEMBLER  START_V3                                                            12/05/2013 14:10:58 PAGE    40
+A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    40
 
 _WRCFG . . . . . .  DATA3  0H                A  
 _WRPDIS. . . . . .  DATA3  0H                A  

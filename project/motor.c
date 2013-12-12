@@ -7,12 +7,17 @@
 #include "megatron.h"
 #include "motor.h"
 
+unsigned int MAX_ACCELERATION = 25;
+
 volatile unsigned int megatroncounter = 0;
 volatile unsigned int megatronleft = 0;
 volatile unsigned int megatronright = 0;
 		   
 volatile unsigned int optimusprimeleft;
 volatile unsigned int optimusprimeright;
+
+volatile unsigned int leftspeed = 0;
+volatile unsigned int rightspeed = 0;
 
 void SetMotorSpeedsNoReturn(signed int left, signed int right)
 {
@@ -34,15 +39,15 @@ void SetMotorSpeeds(signed int* left_p, signed int* right_p)
   if (right < -0xFF) right = -0xFF;
 
   // maximal speed um 25 aendern
-  if (25 < abs(left - lastleft))
+  if (MAX_ACCELERATION < abs(left - lastleft))
   {
-    if (left > lastleft) left = lastleft + 25;
-	else left = lastleft - 25;
+    if (left > lastleft) left = lastleft + MAX_ACCELERATION;
+	else left = lastleft - MAX_ACCELERATION;
   }
-  if (25 < abs(right - lastright))
+  if (MAX_ACCELERATION < abs(right - lastright))
   {
-    if (right > lastright) right = lastright + 25;
-	else right = lastright - 25;
+    if (right > lastright) right = lastright + MAX_ACCELERATION;
+	else right = lastright - MAX_ACCELERATION;
   }
    
   // megatron auslesen alle 10 cycles
@@ -97,6 +102,7 @@ void SetMotorSpeeds(signed int* left_p, signed int* right_p)
 // API for Left Motor
 void SetMotorSpeedLeft(unsigned char direction, unsigned char speed)
 {
+  leftspeed = speed;
   CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, (0xFF - speed)); // ?
   CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
   // rechter motor direction pin = 0 für vorwärts
@@ -113,6 +119,7 @@ void SetMotorSpeedLeft(unsigned char direction, unsigned char speed)
 // API for Right Motor
 void SetMotorSpeedRight(unsigned char direction, unsigned char speed)
 {
+  rightspeed = speed;
   CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, (0xFF - speed)); // ?
   CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
   // rechter motor direction pin = 1 für vorwärts
