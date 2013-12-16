@@ -356,6 +356,8 @@ void main(void)
   volatile signed int val_x;
   volatile signed int val_y;
   volatile signed int val_z;
+
+  volatile signed int speed = 5;
   // USER CODE END
 
   MAIN_vInit();
@@ -403,7 +405,7 @@ void main(void)
    //SetMotorSpeedsNoReturn(links_p, rechts_p);
    // faehrt vorwärts hoffentlich
    // und au langsam
-   //SetMotorSpeedsNoReturn(-40, -40);//20, 20);
+   //SetMotorSpeedsNoReturn(speed, speed);//20, 20);
    // USER CODE END
 
   }

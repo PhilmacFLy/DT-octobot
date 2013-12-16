@@ -128,7 +128,7 @@ signed int ReadAccelValue(unsigned char direction)
   unsigned int tmp = 0;
   signed int x;
 
-  if (direction == DIRECTION_X) tmp = accel_x + 3;
+  if (direction == DIRECTION_X) tmp = accel_x + 2;
   if (direction == DIRECTION_Y) tmp = accel_y + 0;
   if (direction == DIRECTION_Z) tmp = accel_z + 0;
 
@@ -158,7 +158,7 @@ signed int ReadSpinValue()
 
   // 40 mV offset (1,61V center, should be 1,65V)
   // 3,6 mV sensitivity =>  12-14
-  x += 14;
+  x += 12;
 
   // at Vs = 3,3V the sensitivity is about 3,3mV / °/s
   // therefore, -511 to 511 is similar to -500°/s - +500°/s

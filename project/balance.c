@@ -17,8 +17,8 @@ volatile signed long angle;
 volatile signed long spin;
 
 // adjustable here and in debugger
-volatile signed int C_PROPORTIONAL = 4;
-volatile signed int C_INTEGRAL = 1;
+volatile signed int C_PROPORTIONAL = 5;
+volatile signed int C_INTEGRAL = 7;
 volatile signed int C_DIFFERENTIAL = 1;
 
 signed int integralvalues[10];
@@ -45,6 +45,9 @@ void Balance()
 {
 	angle = GetCurrentAngle();
 	spin = (angle - integralvalues[index]);//ReadSpinValue();
+	if ((angle <= 1 && angle >= 0) || (angle >= -1 && angle <= 0)) angle = 0;
+	//else angle += 3;
+	//if (angle >= -1 && angle <= 0) angle = 0;
 	
 	integralvalues[index] = angle;
 	index = (index + 1) % NUM_INTEGRAL_VALUES;
@@ -60,5 +63,5 @@ void Balance()
 
 	left = motorvalue;
 	right = motorvalue;
-	SetMotorSpeedsNoReturn(left, right);
+	SetMotorSpeedsNoReturn(left, right, angle);
 }

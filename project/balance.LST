@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, BALANCE                                                               12/12/2013 14:35:02 PAGE 1   
+C166 COMPILER V7.05, BALANCE                                                               12/13/2013 18:31:51 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE BALANCE
@@ -29,8 +29,8 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE balance.c MODV2 BRO
    17         volatile signed long spin;
    18         
    19         // adjustable here and in debugger
-   20         volatile signed int C_PROPORTIONAL = 4;
-   21         volatile signed int C_INTEGRAL = 1;
+   20         volatile signed int C_PROPORTIONAL = 5;
+   21         volatile signed int C_INTEGRAL = 7;
    22         volatile signed int C_DIFFERENTIAL = 1;
    23         
    24         signed int integralvalues[10];
@@ -57,32 +57,35 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE balance.c MODV2 BRO
    45         {
    46  1              angle = GetCurrentAngle();
    47  1              spin = (angle - integralvalues[index]);//ReadSpinValue();
-   48  1              
-   49  1              integralvalues[index] = angle;
-*** WARNING C192 IN LINE 49 OF balance.c: '=': value truncated
-   50  1              index = (index + 1) % NUM_INTEGRAL_VALUES;
-   51  1      
-   52  1              motorvalue = 0;
-C166 COMPILER V7.05, BALANCE                                                               12/12/2013 14:35:02 PAGE 2   
+   48  1              if ((angle <= 1 && angle >= 0) || (angle >= -1 && angle <= 0)) angle = 0;
+   49  1              //else angle += 3;
+   50  1              //if (angle >= -1 && angle <= 0) angle = 0;
+   51  1              
+   52  1              integralvalues[index] = angle;
+*** WARNING C192 IN LINE 52 OF balance.c: '=': value truncated
+C166 COMPILER V7.05, BALANCE                                                               12/13/2013 18:31:51 PAGE 2   
 
-   53  1              motorvalue += C_PROPORTIONAL * angle;
-   54  1              motorvalue += C_DIFFERENTIAL * spin;
-   55  1              motorvalue += C_INTEGRAL * GetIntegralVal();
-   56  1              if (motorvalue > 255)
-   57  1                motorvalue = 255;
-   58  1              if (motorvalue < -255)
-   59  1                motorvalue = -255;
-   60  1      
-   61  1              left = motorvalue;
-*** WARNING C192 IN LINE 61 OF balance.c: '=': value truncated
-   62  1              right = motorvalue;
-*** WARNING C192 IN LINE 62 OF balance.c: '=': value truncated
-   63  1              SetMotorSpeedsNoReturn(left, right);
-   64  1      }
+   53  1              index = (index + 1) % NUM_INTEGRAL_VALUES;
+   54  1      
+   55  1              motorvalue = 0;
+   56  1              motorvalue += C_PROPORTIONAL * angle;
+   57  1              motorvalue += C_DIFFERENTIAL * spin;
+   58  1              motorvalue += C_INTEGRAL * GetIntegralVal();
+   59  1              if (motorvalue > 255)
+   60  1                motorvalue = 255;
+   61  1              if (motorvalue < -255)
+   62  1                motorvalue = -255;
+   63  1      
+   64  1              left = motorvalue;
+*** WARNING C192 IN LINE 64 OF balance.c: '=': value truncated
+   65  1              right = motorvalue;
+*** WARNING C192 IN LINE 65 OF balance.c: '=': value truncated
+   66  1              SetMotorSpeedsNoReturn(left, right, angle);
+   67  1      }
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
-  CODE SIZE        =         310     --------
+  CODE SIZE        =         388     --------
   NEAR-CONST SIZE  =    --------     --------
   FAR-CONST SIZE   =    --------     --------
   HUGE-CONST SIZE  =    --------     --------

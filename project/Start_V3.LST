@@ -1,4 +1,4 @@
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     1
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE     1
 
 
 MACRO ASSEMBLER A166 V5.34
@@ -65,7 +65,7 @@ LOC      OBJ             LINE     SOURCE
                            55     ;
                            56     ; <o> UST1SZ: User Stack Size for local register bank 1 <0x0-0x4000:0x2>
                            57     ; <i> Defines the user stack space available for the interrupt functions that are
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     2
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE     2
 
                            58     ; <i> assigned to the local register bank 1.  Since the compiler cannot copy the R0
                            59     ; <i> value to local register banks, the user stack must be assign separately.
@@ -133,7 +133,7 @@ LOC      OBJ             LINE     SOURCE
                           117                             ; 1 = Enable Interruption of SCXT instruction
                           118     ;
                           119     ; SGTDIS: Disable Segmentation Control (CPUCON1.3):
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     3
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE     3
 
                                   $IF TINY
                                   _SGTDIS EQU 0 ; disable segmented mode for TINY model /Dave/                          
@@ -201,7 +201,7 @@ LOC      OBJ             LINE     SOURCE
  0001                     176     _BYPF EQU 1 ; 0 = Bypass Path from Fetch to Decode disabled /Dave/                    
                                                    
                           177                             ; 1 = Bypass Path from Fetch to Decode enabled
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     4
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE     4
 
                           178     ;
                           179     ; <q> BYPPF: Enable Prefecth Bypass Control (CPUCON2.9)
@@ -269,7 +269,7 @@ LOC      OBJ             LINE     SOURCE
                           236                             ; 3 = Illegal state
                           237     ;
                           238     ;</h>
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     5
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE     5
 
                           239     
                           240     ; <h> Definitions for Internal Memory Block Control Register IMBCTRH
@@ -337,7 +337,7 @@ LOC      OBJ             LINE     SOURCE
                           299     ; <o> MODE: Oscillator Mode (HPOSCCON.2 .. HPOSCCON.3)
                           300     ; <0=>External Crystal Mode. Power-Saving Mode is not entered     <1=>OSC_HP disabled.
                                    Power-Saving Mode is not entered
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     6
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE     6
 
                           301     ; <2=>External Input Clock Mode. Power-Saving Mode is not entered <3=>OSC_HP disabled.
                                    Power-Saving Mode is entered
@@ -405,7 +405,7 @@ LOC      OBJ             LINE     SOURCE
  0000                     358     _VCOBY EQU 0 ; 0 = Normal operation, VCO is not bypassed /Dave/                       
                                                 
                           359                             ; 1 = Prescaler Mode. VCO is bypassed
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     7
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE     7
 
                           360     ;
                           361     ; <q> VCOPWD: VCO Power Saving Mode (PLLCON0.1)
@@ -473,7 +473,7 @@ LOC      OBJ             LINE     SOURCE
                           418     ;
                           419     ; <o> K1DIV: K1-Divider Value (PLLCON2.0 .. PLLCON2.9) <0-1023>
                           420     ; <i> The resulting factor K1 for the K1-Divider is (K1DIV+1)
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     8
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE     8
 
  0000                     421     _K1DIV EQU 0 ; /Dave/                                     
                           422     ;
@@ -541,7 +541,7 @@ LOC      OBJ             LINE     SOURCE
                           483     ; <4=> No pull device activated. Input is inverted
                           484     ; <5=> Pull-down device activated. Input is inverted
                           485     ; <6=> Pull-up device activated. Input is inverted
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE     9
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE     9
 
                           486     ; <7=> No pull device activated. Input is inverted
                           487     ; <8=> Output of ESRCFGx.OUT. Push-pull
@@ -609,7 +609,7 @@ LOC      OBJ             LINE     SOURCE
                           544                             ; 14 = Output drives a 0 for an Internal Application Reset. Op
                                   en-drain
                           545                             ; 15 = Output drives a 0 for an Application Reset. Open-drain
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    10
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    10
 
                           546     
                           547     
@@ -677,7 +677,7 @@ LOC      OBJ             LINE     SOURCE
                           603     ; <h> External Bus Configuration
                           604     ;
                           605     ; <e> Configure External Bus (EBC) Behaviour
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    11
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    11
 
                           606     ; ==========================================
                           607     ;
@@ -745,7 +745,7 @@ LOC      OBJ             LINE     SOURCE
                           664     ; <o> RDYPOL: READY pin polarity (EBCMOD0.15)
                           665     ; <0=> Active Low  <1=> Active High
  0000                     666     _RDYPOL EQU 0 ; 0 = READY pin is active low /Dave/                                    
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    12
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    12
 
                                    
                           667                             ; 1 = READY pin is active high
@@ -813,7 +813,7 @@ LOC      OBJ             LINE     SOURCE
                           723     ; <2=> 16-bit Demultiplexed Bus <3=> 16-bit Multiplexed Bus
  0000                     724     _BTYP0 EQU 0 ; 0 = 8 bit Demultiplexed bus /Dave/                                     
                           725                             ; 1 = 8 bit Multiplexed bus
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    13
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    13
 
                           726                             ; 2 = 16 bit Demultiplexed bus
                           727                             ; 3 = 16 bit Multiplexed bus
@@ -881,7 +881,7 @@ LOC      OBJ             LINE     SOURCE
                           787                                  ;   32*KB            (gives RGSZ1 = 3)
                           788                                  ;   64*KB            (gives RGSZ1 = 4)
                           789                                  ;  128*KB            (gives RGSZ1 = 5)
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    14
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    14
 
                           790                                  ;  256*KB            (gives RGSZ1 = 6)
                           791                                  ;  512*KB            (gives RGSZ1 = 7)
@@ -949,7 +949,7 @@ LOC      OBJ             LINE     SOURCE
                           852                             ; : = :
                           853                             ; 3 = 3 clock cycles
                           854     ;
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    15
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    15
 
                           855     ; <o>WRPHF1: Phase F write clock cycles (TCONCS1.13 .. TCONCS1.14) <0-3>
  0000                     856     _WRPHF1 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
@@ -1017,7 +1017,7 @@ LOC      OBJ             LINE     SOURCE
                           915                             ; 3 = 16 bit Multiplexed bus
                           916     ;</h>
                           917     ;
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    16
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    16
 
                           918     ; <h>TCONCS2: Definitions for the Timing Configuration register 
                           919     ; =============================================================
@@ -1085,7 +1085,7 @@ LOC      OBJ             LINE     SOURCE
                           979                                  ;  512*KB            (gives RGSZ3 = 7)
                           980                                  ; 1024*KB  or  1*MB  (gives RGSZ3 = 8)
                           981                                  ; 2048*KB  or  2*MB  (gives RGSZ3 = 9)
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    17
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    17
 
                           982                                  ; 4096*KB  or  4*MB  (gives RGSZ3 = 10)
                           983                                  ; 8192*KB  or  8*MB  (gives RGSZ3 = 11)
@@ -1153,7 +1153,7 @@ LOC      OBJ             LINE     SOURCE
  0000                    1044     _WRPHF3 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1045                             ; : = :
                          1046                             ; 3 = 3 clock cycles
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    18
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    18
 
                          1047     ;</h> </e>
                          1048     ;
@@ -1221,7 +1221,7 @@ LOC      OBJ             LINE     SOURCE
                          1107     ; =============================================================
                          1108     ;
                          1109     ; <o>PHA4: Phase A clock cycle (TCONCS4.0 .. TCONCS4.1) <0-3>
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    19
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    19
 
  0000                    1110     _PHA4 EQU 0 ; 0 = 0 clock cycles /Dave/                                     
                          1111                             ; : = : 
@@ -1289,7 +1289,7 @@ LOC      OBJ             LINE     SOURCE
                          1171                                  ; 8192*KB  or  8*MB  (gives RGSZ7 = 11)
                          1172                                  ;                    (RGSZ7 = 12 .. 15 reserved)
                          1173     ;</h>
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    20
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    20
 
                          1174     ;
                          1175     ; <h>Definitions for Function Configuration Register FCONCS7
@@ -1357,7 +1357,7 @@ LOC      OBJ             LINE     SOURCE
                          1236     ;
                          1237     ; </h>
                          1238     ; <<< end of configuration section >>>
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    21
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    21
 
                          1239     
                          1240     
@@ -1425,7 +1425,7 @@ LOC      OBJ             LINE     SOURCE
                                   ENDIF
                          1303     $ENDIF
                          1304     
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    22
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    22
 
                          1305     ?C_MAINREGISTERS        REGDEF  R0 - R15
                          1306     
@@ -1493,7 +1493,7 @@ LOC      OBJ             LINE     SOURCE
  00FFFF00                1368     IMBCTRL   EQU    0FFFF00H
  00FFFF02                1369     IMBCTRH   EQU    0FFFF02H
  F100                    1370     ESRCFG0   DEFR   0F100H
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    23
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    23
 
  F102                    1371     ESRCFG1   DEFR   0F102H
  F104                    1372     ESRCFG2   DEFR   0F104H
@@ -1561,7 +1561,7 @@ LOC      OBJ             LINE     SOURCE
                          1434     
                                   $IF (INIT_CPUCON2 = 1)                  ; Set CPUCON2 register
                                   _CPC2           SET     (_RETST<<3) OR (_DAID<<1) OR (_SL)
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    24
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    24
 
                                   _CPC2           SET     _CPC2 OR (_EIOIAEN<<7) OR (_STEN<<6) OR (_LFIC<<5) OR (_OVRUN<
                                   <4)
@@ -1629,7 +1629,7 @@ LOC      OBJ             LINE     SOURCE
                                                   MOV     R0,#_FCS1
                                                   MOV     FCONCS1,R0
                                   
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    25
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    25
 
                          1502     $ENDIF
                          1503     
@@ -1697,7 +1697,7 @@ LOC      OBJ             LINE     SOURCE
                                                                           ; Set FCONCS7 register
                                   _FCS7  SET  (_BTYP7<<4) OR (_RDYMOD7<<2) OR (_RDYEN7<<1) OR (_ENCS7)
                                                   MOV     R0,#_FCS7 
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    26
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    26
 
                                                   MOV     FCONCS7,R0
                                   
@@ -1765,7 +1765,7 @@ LOC      OBJ             LINE     SOURCE
                                                   CALL    ApplyNewK1Div
                                   
                                   ; switch to bypass mode before changing the clock source or VCO parameter
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    27
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    27
 
                                                   EXTR    #01H            ; Extended SFR access
                                                   OR      PLLCON0,#0001H  ; set bypass mode
@@ -1833,7 +1833,7 @@ LOC      OBJ             LINE     SOURCE
                                   ENDIF ; IF (NOT _VCOBY)
                                   
                                   ; set final K2DIV
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    28
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    28
 
                                                   MOV     R0,#_K2DIV
                                                   CALL    ApplyNewK2Div
@@ -1901,7 +1901,7 @@ LOC      OBJ             LINE     SOURCE
                                                   JMPR    cc_Z,EndClear
                                   
                                   RepeatClear:
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    29
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    29
 
                                   $IF (WATCHDOG = 1)
                                                   SRVWDT                          ; SERVICE WATCHDOG
@@ -1969,7 +1969,7 @@ LOC      OBJ             LINE     SOURCE
 00000076 B853            1821                     MOV     [R3],R5
 00000078 0841            1822                     ADD     R4,#1
 0000007A 2821            1823                     SUB     R2,#1
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    30
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    30
 
 0000007C 3DF3            1824                     JMPR    cc_NZ,ClearBit
 0000007E 0DE7            1825                     JMPR    cc_UC,RepeatClear
@@ -2037,7 +2037,7 @@ LOC      OBJ             LINE     SOURCE
                                                   SUB     R2,#1
                                                   JMPR    cc_NZ,CopyInitVal
                                                   JNB     R8.0,RepeatInit
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    31
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    31
 
                                                   ADD     R8,#1
                                                   ADDC    R9,#0                   ; potential overflow
@@ -2105,7 +2105,7 @@ LOC      OBJ             LINE     SOURCE
                          1953     NoDPP3Adj:      
                                   $IF (WATCHDOG = 1)
                                                   SRVWDT                          ; SERVICE WATCHDOG
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    32
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    32
 
                          1956     $ENDIF
 00000100 2821            1957                     SUB     R2,#1
@@ -2173,7 +2173,7 @@ LOC      OBJ             LINE     SOURCE
                                                   JMPR    cc_NZ,CopyInitVal
                                                   JMPR    cc_UC,CopyInitDone
                                   
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    33
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    33
 
                                   
                                   CopyNearVal:    EXTS    R9,#1
@@ -2241,7 +2241,7 @@ LOC      OBJ             LINE     SOURCE
 0000014C 4001            2083                     CMP     R0,R1           ; compare old and new value
 0000014E 2D0C            2084                     JMPR    cc_EQ,K1DivDone ; do nothing if identical
                          2085     
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    34
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    34
 
 00000150 F6F0BCF1        2086                     MOV     PLLCON2,R0      ; set new K1DIV value without setting K1ACK
                          2087     
@@ -2309,7 +2309,7 @@ LOC      OBJ             LINE     SOURCE
 000001E2 F2F1BCF0        2149     NCLRLoop:       MOV     R1,PLLSTAT      ; read PLLSTAT
 000001E6 8AF1FC60        2150                     JB      R1.6,NCLRLoop   ; wait until NRDY is clear
 000001EA D180            2151                     EXTR    #01H            ; Extended SFR access
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    35
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    35
 
 000001EC FFDC            2152                     BSET    PLLCON0_NACK    ; set NACK
 000001EE F2F1BCF0        2153     NSETLoop:       MOV     R1,PLLSTAT      ; read PLLSTAT
@@ -2329,7 +2329,7 @@ LOC      OBJ             LINE     SOURCE
                          2167     
                          2168     
                          2169     
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    36
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    36
 
 SYMBOL TABLE LISTING
 ------ ----- -------
@@ -2397,7 +2397,7 @@ ESRCFG2. . . . . .  WORD   F104H             A  ESFR
 EndClear . . . . .  NEAR   A0H               R  SEC=?C_STARTUP_CODE
 EndInit. . . . . .  NEAR   12CH              R  SEC=?C_STARTUP_CODE
 FCONCS0. . . . . .  DATA16 EE12H             A  
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    37
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    37
 
 FCONCS1. . . . . .  DATA16 EE1AH             A  
 FCONCS2. . . . . .  DATA16 EE22H             A  
@@ -2465,7 +2465,7 @@ WDTREL . . . . . .  WORD   F0C8H             A  ESFR
 WUOSCCON . . . . .  WORD   F1AEH             A  ESFR
 _A0PDIS. . . . . .  DATA3  0H                A  
 _ADDR1 . . . . . .  DATA3  0H                A  
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    38
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    38
 
 _ADDR2 . . . . . .  DATA3  0H                A  
 _ADDR3 . . . . . .  DATA3  0H                A  
@@ -2533,7 +2533,7 @@ _PHA4. . . . . . .  DATA3  0H                A
 _PHA7. . . . . . .  DATA3  0H                A  
 _PHB0. . . . . . .  DATA3  0H                A  
 _PHB1. . . . . . .  DATA3  0H                A  
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    39
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    39
 
 _PHB2. . . . . . .  DATA3  0H                A  
 _PHB3. . . . . . .  DATA3  0H                A  
@@ -2601,7 +2601,7 @@ _VCOSEL. . . . . .  DATA3  0H                A
 _VECSC . . . . . .  DATA3  0H                A  
 _WDTCTL. . . . . .  DATA3  0H                A  
 _WDTREL. . . . . .  DATA16 FFFCH             A  
-A166 MACRO ASSEMBLER  START_V3                                                            12/12/2013 14:35:01 PAGE    40
+A166 MACRO ASSEMBLER  START_V3                                                            12/13/2013 18:31:50 PAGE    40
 
 _WRCFG . . . . . .  DATA3  0H                A  
 _WRPDIS. . . . . .  DATA3  0H                A  

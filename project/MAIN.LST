@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, MAIN                                                                  12/12/2013 14:35:01 PAGE 1   
+C166 COMPILER V7.05, MAIN                                                                  12/13/2013 18:31:50 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE MAIN
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
    52         
    53         // USER CODE BEGIN (MAIN_General,4)
    54         
-C166 COMPILER V7.05, MAIN                                                                  12/12/2013 14:35:01 PAGE 2   
+C166 COMPILER V7.05, MAIN                                                                  12/13/2013 18:31:50 PAGE 2   
 
    55         // USER CODE END
    56         
@@ -127,7 +127,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   114         //
   115         //----------------------------------------------------------------------------
   116         // @Date          09.12.2013
-C166 COMPILER V7.05, MAIN                                                                  12/12/2013 14:35:01 PAGE 3   
+C166 COMPILER V7.05, MAIN                                                                  12/13/2013 18:31:50 PAGE 3   
 
   117         //
   118         //****************************************************************************
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   176  1        //   globally enable interrupts
   177  1        PSW_IEN        =  1;          
   178  1      
-C166 COMPILER V7.05, MAIN                                                                  12/12/2013 14:35:01 PAGE 4   
+C166 COMPILER V7.05, MAIN                                                                  12/13/2013 18:31:50 PAGE 4   
 
   179  1      } //  End of function MAIN_vInit
   180         
@@ -255,7 +255,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   238         // USER CODE BEGIN (LockProtecReg,1)
   239         
   240         // USER CODE END
-C166 COMPILER V7.05, MAIN                                                                  12/12/2013 14:35:01 PAGE 5   
+C166 COMPILER V7.05, MAIN                                                                  12/13/2013 18:31:50 PAGE 5   
 
   241         
   242         void MAIN_vLockProtecReg(void)
@@ -319,7 +319,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   299  2                  SCS_SwitchSystemClock(1);                // System clock is increased to target speed (80/66 M
              -Hz)
   300  2      
-C166 COMPILER V7.05, MAIN                                                                  12/12/2013 14:35:01 PAGE 6   
+C166 COMPILER V7.05, MAIN                                                                  12/13/2013 18:31:50 PAGE 6   
 
   301  2              }
   302  1      
@@ -382,76 +382,78 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE
   356  1        volatile signed int val_x;
   357  1        volatile signed int val_y;
   358  1        volatile signed int val_z;
-  359  1        // USER CODE END
-C166 COMPILER V7.05, MAIN                                                                  12/12/2013 14:35:01 PAGE 7   
+  359  1      
+C166 COMPILER V7.05, MAIN                                                                  12/13/2013 18:31:50 PAGE 7   
 
-  360  1      
-  361  1        MAIN_vInit();
+  360  1        volatile signed int speed = 5;
+  361  1        // USER CODE END
   362  1      
-  363  1        // USER CODE BEGIN (Main,3)
+  363  1        MAIN_vInit();
   364  1      
-  365  1        BalanceInit();
+  365  1        // USER CODE BEGIN (Main,3)
   366  1      
-  367  1        // USER CODE END
+  367  1        BalanceInit();
   368  1      
-  369  1        while(1)
-  370  1        {
-  371  2      
-  372  2         // USER CODE BEGIN (Main,4)
-  373  2         while(0 == timerevent);
-  374  2         timerevent = 0;
-  375  2                         
-  376  2         ReadSensorData();
-  377  2         Balance();
-  378  2         //SetMotorSpeedsNoReturn(10, -10);
-  379  2      
-  380  2         // start reading the data, they will be get then
-  381  2         
-  382  2         gyrovalue = ReadSpinValue();
-  383  2         winkel = GetCurrentAngle();
-  384  2         ledvalue = ReadSpinValueRaw();
-  385  2         val_x = ReadAccelValue(DIRECTION_X) + 512;
-  386  2         val_y = ReadAccelValue(DIRECTION_Y) + 512;
-  387  2         val_z = ReadAccelValue(DIRECTION_Z) + 512;
-  388  2         
-  389  2         P10_OUT_P7 = (gyrovalue > 35) ? 0 : 1;
-  390  2         P10_OUT_P6 = (gyrovalue > 25) ? 0 : 1;
-  391  2         P10_OUT_P5 = (gyrovalue > 15) ? 0 : 1;
-  392  2         P10_OUT_P4 = (gyrovalue > 5) ? 0 : 1;
-  393  2         P10_OUT_P3 = (gyrovalue < -5) ? 0 : 1;
-  394  2         P10_OUT_P2 = (gyrovalue < -15) ? 0 : 1;
-  395  2         P10_OUT_P1 = (gyrovalue < -25) ? 0 : 1;
-  396  2         P10_OUT_P0 = (gyrovalue < -35) ? 0 : 1;
-  397  2         // do some kind of stuff
-  398  2         //ret_left = 00;
-  399  2         //ret_right = 00;
-  400  2         //SetMotorSpeeds(&ret_left, &ret_right);
-  401  2         
-  402  2      
-  403  2         //SetMotorSpeedsNoReturn(links_p, rechts_p);
-  404  2         // faehrt vorwärts hoffentlich
-  405  2         // und au langsam
-  406  2         //SetMotorSpeedsNoReturn(-40, -40);//20, 20);
-  407  2         // USER CODE END
-  408  2      
-  409  2        }
-  410  1      
-  411  1      } //  End of function main
+  369  1        // USER CODE END
+  370  1      
+  371  1        while(1)
+  372  1        {
+  373  2      
+  374  2         // USER CODE BEGIN (Main,4)
+  375  2         while(0 == timerevent);
+  376  2         timerevent = 0;
+  377  2                         
+  378  2         ReadSensorData();
+  379  2         Balance();
+  380  2         //SetMotorSpeedsNoReturn(10, -10);
+  381  2      
+  382  2         // start reading the data, they will be get then
+  383  2         
+  384  2         gyrovalue = ReadSpinValue();
+  385  2         winkel = GetCurrentAngle();
+  386  2         ledvalue = ReadSpinValueRaw();
+  387  2         val_x = ReadAccelValue(DIRECTION_X) + 512;
+  388  2         val_y = ReadAccelValue(DIRECTION_Y) + 512;
+  389  2         val_z = ReadAccelValue(DIRECTION_Z) + 512;
+  390  2         
+  391  2         P10_OUT_P7 = (gyrovalue > 35) ? 0 : 1;
+  392  2         P10_OUT_P6 = (gyrovalue > 25) ? 0 : 1;
+  393  2         P10_OUT_P5 = (gyrovalue > 15) ? 0 : 1;
+  394  2         P10_OUT_P4 = (gyrovalue > 5) ? 0 : 1;
+  395  2         P10_OUT_P3 = (gyrovalue < -5) ? 0 : 1;
+  396  2         P10_OUT_P2 = (gyrovalue < -15) ? 0 : 1;
+  397  2         P10_OUT_P1 = (gyrovalue < -25) ? 0 : 1;
+  398  2         P10_OUT_P0 = (gyrovalue < -35) ? 0 : 1;
+  399  2         // do some kind of stuff
+  400  2         //ret_left = 00;
+  401  2         //ret_right = 00;
+  402  2         //SetMotorSpeeds(&ret_left, &ret_right);
+  403  2         
+  404  2      
+  405  2         //SetMotorSpeedsNoReturn(links_p, rechts_p);
+  406  2         // faehrt vorwärts hoffentlich
+  407  2         // und au langsam
+  408  2         //SetMotorSpeedsNoReturn(speed, speed);//20, 20);
+  409  2         // USER CODE END
+  410  2      
+  411  2        }
+  412  1      
+  413  1      } //  End of function main
 *** WARNING C47 IN LINE 351 OF MAIN.C: 'ret_left': unreferenced local variable
 *** WARNING C47 IN LINE 352 OF MAIN.C: 'ret_right': unreferenced local variable
-  412         
-  413         
   414         
-  415         // USER CODE BEGIN (MAIN_General,10)
+  415         
   416         
-  417         // USER CODE END
+  417         // USER CODE BEGIN (MAIN_General,10)
   418         
+  419         // USER CODE END
+C166 COMPILER V7.05, MAIN                                                                  12/13/2013 18:31:50 PAGE 8   
 
-C166 COMPILER V7.05, MAIN                                                                  12/12/2013 14:35:01 PAGE 8   
+  420         
 
 
 MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
-  CODE SIZE        =         538     --------
+  CODE SIZE        =         544     --------
   NEAR-CONST SIZE  =    --------     --------
   FAR-CONST SIZE   =    --------     --------
   HUGE-CONST SIZE  =    --------     --------

@@ -8,9 +8,9 @@
 extern volatile unsigned int leftspeed;
 extern volatile unsigned int rightspeed;
 
-void SetMotorSpeedsNoReturn(signed int left, signed int right);
+void SetMotorSpeedsNoReturn(signed int left, signed int right, signed long winkel);
 
-void SetMotorSpeeds(signed int* left_p, signed int* right_p);
+void SetMotorSpeeds(signed int* left_p, signed int* right_p, signed long winkel);
 
 void SetMotorSpeedLeft(unsigned char direction, unsigned char speed);
 

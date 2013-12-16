@@ -7,7 +7,7 @@
 #include "megatron.h"
 #include "motor.h"
 
-unsigned int MAX_ACCELERATION = 25;
+unsigned int MAX_ACCELERATION = 40;
 
 volatile unsigned int megatroncounter = 0;
 volatile unsigned int megatronleft = 0;
@@ -19,34 +19,37 @@ volatile unsigned int optimusprimeright;
 volatile unsigned int leftspeed = 0;
 volatile unsigned int rightspeed = 0;
 
-void SetMotorSpeedsNoReturn(signed int left, signed int right)
+volatile signed long winkel = 0;
+
+void SetMotorSpeedsNoReturn(signed int left, signed int right, signed long winkel)
 {
-  SetMotorSpeeds(&left, &right);
+  SetMotorSpeeds(&left, &right, winkel);
 }
 
-void SetMotorSpeeds(signed int* left_p, signed int* right_p)
+void SetMotorSpeeds(signed int* left_p, signed int* right_p, signed long winkel)
 {
   signed int left = *left_p;
   signed int right = *right_p;
 
   static signed int lastleft = 0;
   static signed int lastright = 0;
-
+//  winkel += 8;
   // zu hohe werte abfangen
   if (left > 0xFF) left = 0xFF;
   if (left < -0xFF) left = -0xFF;
   if (right > 0xFF) right = 0xFF;
   if (right < -0xFF) right = -0xFF;
-
-  // maximal speed um 25 aendern
+  //if (winkel == 0) winkel = 10;
+  // maximal speed um MAX_ACCELERATION aendern
+ // maximal speed um 25 aendern
   if (MAX_ACCELERATION < abs(left - lastleft))
   {
-    if (left > lastleft) left = lastleft + MAX_ACCELERATION;
+    if (left > lastleft) left = lastleft + winkel;
 	else left = lastleft - MAX_ACCELERATION;
   }
   if (MAX_ACCELERATION < abs(right - lastright))
   {
-    if (right > lastright) right = lastright + MAX_ACCELERATION;
+    if (right > lastright) right = lastright + winkel;
 	else right = lastright - MAX_ACCELERATION;
   }
    
