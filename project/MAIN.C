@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          09.12.2013 18:51:36
+// @Date          16.12.2013 19:04:44
 //
 //****************************************************************************
 
@@ -78,7 +78,8 @@
 //****************************************************************************
 
 // USER CODE BEGIN (MAIN_General,7)
-volatile unsigned char timerevent = 0;
+volatile unsigned char timerevent = 0;	
+  volatile signed int speed = 20;
 // USER CODE END
 
 
@@ -113,7 +114,7 @@ volatile unsigned char timerevent = 0;
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          09.12.2013
+// @Date          16.12.2013
 //
 //****************************************************************************
 
@@ -193,7 +194,7 @@ void MAIN_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          09.12.2013
+// @Date          16.12.2013
 //
 //****************************************************************************
 
@@ -231,7 +232,7 @@ void MAIN_vUnlockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          09.12.2013
+// @Date          16.12.2013
 //
 //****************************************************************************
 
@@ -273,7 +274,7 @@ void MAIN_vLockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          09.12.2013
+// @Date          16.12.2013
 //
 //****************************************************************************
 
@@ -337,7 +338,7 @@ void MAIN_vChangeFreq(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          09.12.2013
+// @Date          16.12.2013
 //
 //****************************************************************************
 
@@ -357,7 +358,9 @@ void main(void)
   volatile signed int val_y;
   volatile signed int val_z;
 
-  volatile signed int speed = 5;
+  unsigned char counter = 0;
+  unsigned char timebase = 20; // * 5 ms
+
   // USER CODE END
 
   MAIN_vInit();
@@ -374,38 +377,42 @@ void main(void)
    // USER CODE BEGIN (Main,4)
    while(0 == timerevent);
    timerevent = 0;
-		   
-   ReadSensorData();
-   Balance();
-   //SetMotorSpeedsNoReturn(10, -10);
 
-   // start reading the data, they will be get then
-   
-   gyrovalue = ReadSpinValue();
-   winkel = GetCurrentAngle();
-   ledvalue = ReadSpinValueRaw();
-   val_x = ReadAccelValue(DIRECTION_X) + 512;
-   val_y = ReadAccelValue(DIRECTION_Y) + 512;
-   val_z = ReadAccelValue(DIRECTION_Z) + 512;
-   
-   P10_OUT_P7 = (gyrovalue > 35) ? 0 : 1;
-   P10_OUT_P6 =	(gyrovalue > 25) ? 0 : 1;
-   P10_OUT_P5 =	(gyrovalue > 15) ? 0 : 1;
-   P10_OUT_P4 =	(gyrovalue > 5) ? 0 : 1;
-   P10_OUT_P3 =	(gyrovalue < -5) ? 0 : 1;
-   P10_OUT_P2 =	(gyrovalue < -15) ? 0 : 1;
-   P10_OUT_P1 =	(gyrovalue < -25) ? 0 : 1;
-   P10_OUT_P0 =	(gyrovalue < -35) ? 0 : 1;
-   // do some kind of stuff
-   //ret_left = 00;
-   //ret_right = 00;
-   //SetMotorSpeeds(&ret_left, &ret_right);
-   
-
-   //SetMotorSpeedsNoReturn(links_p, rechts_p);
-   // faehrt vorwärts hoffentlich
-   // und au langsam
-   //SetMotorSpeedsNoReturn(speed, speed);//20, 20);
+   counter--;
+   if (counter == 0)
+   {
+   		counter = timebase;		   
+	   ReadSensorData();
+	   Balance();
+	   
+	   // start reading the data, they will be get then
+	   
+	   gyrovalue = ReadSpinValue();
+	   winkel = GetCurrentAngle();
+	   ledvalue = ReadSpinValueRaw();
+	   val_x = ReadAccelValue(DIRECTION_X) + 512;
+	   val_y = ReadAccelValue(DIRECTION_Y) + 512;
+	   val_z = ReadAccelValue(DIRECTION_Z) + 512;
+	   
+	   P10_OUT_P7 = (gyrovalue > 35) ? 0 : 1;
+	   P10_OUT_P6 =	(gyrovalue > 25) ? 0 : 1;
+	   P10_OUT_P5 =	(gyrovalue > 15) ? 0 : 1;
+	   P10_OUT_P4 =	(gyrovalue > 5) ? 0 : 1;
+	   P10_OUT_P3 =	(gyrovalue < -5) ? 0 : 1;
+	   P10_OUT_P2 =	(gyrovalue < -15) ? 0 : 1;
+	   P10_OUT_P1 =	(gyrovalue < -25) ? 0 : 1;
+	   P10_OUT_P0 =	(gyrovalue < -35) ? 0 : 1;
+	   // do some kind of stuff
+	   //ret_left = 00;
+	   //ret_right = 00;
+	   //SetMotorSpeeds(&ret_left, &ret_right);
+	   
+	
+	   //SetMotorSpeedsNoReturn(links_p, rechts_p);
+	   // faehrt vorwärts hoffentlich
+	   // und au langsam
+	   //SetMotorSpeedsNoReturn(speed, speed);//20, 20);
+	}
    // USER CODE END
 
   }

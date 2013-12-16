@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, SENSORIC                                                              12/13/2013 18:31:51 PAGE 1   
+C166 COMPILER V7.05, SENSORIC                                                              12/16/2013 19:11:14 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE SENSORIC
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE sensoric.c MODV2 BR
    51  1         //7 for spinning sensor
    52  1         //register 0 - channel 5  (Acceleration Z Axix)
    53  1         //register 1 - channel 6  (Acceleration Spinning)
-C166 COMPILER V7.05, SENSORIC                                                              12/13/2013 18:31:51 PAGE 2   
+C166 COMPILER V7.05, SENSORIC                                                              12/16/2013 19:11:14 PAGE 2   
 
    54  1         //register 2 - channel 7  (unused)
    55  1         //register 3 - channel 13 (Acceleration )
@@ -127,7 +127,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE sensoric.c MODV2 BR
   112  1              alpha = acos(((double)xvalue) / 100.0);
   113  1              // pi/2 = grade
   114  1              // <pi/2 = kippen vorwärts
-C166 COMPILER V7.05, SENSORIC                                                              12/13/2013 18:31:51 PAGE 3   
+C166 COMPILER V7.05, SENSORIC                                                              12/16/2013 19:11:14 PAGE 3   
 
   115  1              // >pi/2 = kippen rückwärts
   116  1              alpha = alpha * 180. / 3.14159; // rad to grad
@@ -191,7 +191,7 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
   HUGE-CONST SIZE  =    --------     --------
   XHUGE-CONST SIZE =    --------     --------
   NEAR-DATA SIZE   =          48     --------
-C166 COMPILER V7.05, SENSORIC                                                              12/13/2013 18:31:51 PAGE 4   
+C166 COMPILER V7.05, SENSORIC                                                              12/16/2013 19:11:14 PAGE 4   
 
   FAR-DATA SIZE    =    --------     --------
   XHUGE-DATA SIZE  =    --------     --------

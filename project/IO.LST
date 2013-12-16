@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, IO                                                                    12/13/2013 18:31:50 PAGE 1   
+C166 COMPILER V7.05, IO                                                                    12/16/2013 19:11:13 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE IO
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
    12         // @Description   This file contains functions that use the IO module.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          09.12.2013 18:51:38
+   15         // @Date          16.12.2013 19:04:45
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
    52         
    53         
    54         //****************************************************************************
-C166 COMPILER V7.05, IO                                                                    12/13/2013 18:31:50 PAGE 2   
+C166 COMPILER V7.05, IO                                                                    12/16/2013 19:11:13 PAGE 2   
 
    55         // @Typedefs
    56         //****************************************************************************
@@ -124,10 +124,10 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   111         // @Parameters    None
   112         //
   113         //----------------------------------------------------------------------------
-  114         // @Date          09.12.2013
+  114         // @Date          16.12.2013
   115         //
   116         //****************************************************************************
-C166 COMPILER V7.05, IO                                                                    12/13/2013 18:31:50 PAGE 3   
+C166 COMPILER V7.05, IO                                                                    12/16/2013 19:11:13 PAGE 3   
 
   117         
   118         // USER CODE BEGIN (IO_Function,1)
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   176  1        ///  - push/pull output is selected
   177  1        ///  - the pin status is low level
   178  1        ///  P4.4 is used as general purpose output
-C166 COMPILER V7.05, IO                                                                    12/13/2013 18:31:50 PAGE 4   
+C166 COMPILER V7.05, IO                                                                    12/16/2013 19:11:13 PAGE 4   
 
   179  1        ///  - push/pull output is selected
   180  1        ///  - the pin status is low level
@@ -255,7 +255,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   238  1        ///  - no pin of port P9 is used
   239  1      
   240  1      
-C166 COMPILER V7.05, IO                                                                    12/13/2013 18:31:50 PAGE 5   
+C166 COMPILER V7.05, IO                                                                    12/16/2013 19:11:13 PAGE 5   
 
   241  1        ///  -----------------------------------------------------------------------
   242  1        ///  Configuration of Port P10:
@@ -319,7 +319,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE IO.C MODV2 BROWSE M
   300  1      
   301  1      
   302  1        // USER CODE BEGIN (IO_Function,3)
-C166 COMPILER V7.05, IO                                                                    12/13/2013 18:31:50 PAGE 6   
+C166 COMPILER V7.05, IO                                                                    12/16/2013 19:11:13 PAGE 6   
 
   303  1      
   304  1        // USER CODE END

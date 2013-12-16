@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the GPT1 module.
 //
 //----------------------------------------------------------------------------
-// @Date          09.12.2013 18:51:38
+// @Date          16.12.2013 19:04:46
 //
 //****************************************************************************
 
@@ -111,7 +111,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          09.12.2013
+// @Date          16.12.2013
 //
 //****************************************************************************
 
@@ -160,11 +160,11 @@ void GPT1_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  - timer 2 works in timer mode
   ///  - external up/down control is disabled
-  ///  - prescaler factor is 128
+  ///  - prescaler factor is 32
   ///  - up/down control bit is reset
 
-  GPT12E_T2CON   =  0x0004;      // load timer 2 control register
-  GPT12E_T2      =  0x3696;      // load timer 2 register
+  GPT12E_T2CON   =  0x0002;      // load timer 2 control register
+  GPT12E_T2      =  0xD7B8;      // load timer 2 register
   ///  - prescaler for timer block 1 is 8
 
   ///  -----------------------------------------------------------------------
@@ -231,7 +231,7 @@ void GPT1_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          09.12.2013
+// @Date          16.12.2013
 //
 //****************************************************************************
 
@@ -242,7 +242,7 @@ void GPT1_vInit(void)
 void GPT1_viTmr2(void) interrupt T2INT
 {
   // USER CODE BEGIN (Tmr2,2)
-  // 10 ms cycle time interrupt
+  // 5 ms cycle time interrupt
   // here we can set the DOTHESHIT flag
   // USER CODE END
 

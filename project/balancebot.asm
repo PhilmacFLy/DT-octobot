@@ -9,7 +9,7 @@
 ;                PLEASE DO NOT MODIFY THIS FILE !
 ;
 ;----------------------------------------------------------------------------
-; Date          09.12.2013 18:51:38
+; Date          16.12.2013 19:04:46
 ;
 ;****************************************************************************
 
@@ -14336,7 +14336,7 @@ GPT12E_KSCCFG_SUMCFG	SET	0
 ; Timer 2 Control Register
 GPT12E_T2CON_T2CHDIR	SET	0
 GPT12E_T2CON_T2EDGE	SET	0
-GPT12E_T2CON_T2I	SET	4
+GPT12E_T2CON_T2I	SET	2
 GPT12E_T2CON_T2IRDIS	SET	0
 GPT12E_T2CON_T2M	SET	0
 GPT12E_T2CON_T2R	SET	1
@@ -14353,7 +14353,7 @@ GPT12E_T2IC_ILVL	SET	9
 GPT12E_T2IC_IR	SET	0
 
 ; Timer 2
-GPT12E_T2_T2	SET	13974
+GPT12E_T2_T2	SET	55224
 
 ; Timer 3 Control Register
 GPT12E_T3CON_BPS1	SET	0

@@ -1,4 +1,4 @@
-C166 COMPILER V7.05, CCU60                                                                 12/13/2013 18:31:50 PAGE 1   
+C166 COMPILER V7.05, CCU60                                                                 12/16/2013 19:11:13 PAGE 1   
 
 
 C166 COMPILER V7.05, COMPILATION OF MODULE CCU60
@@ -23,7 +23,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
    12         // @Description   This file contains functions that use the CCU60 module.
    13         //
    14         //----------------------------------------------------------------------------
-   15         // @Date          09.12.2013 18:51:38
+   15         // @Date          16.12.2013 19:04:46
    16         //
    17         //****************************************************************************
    18         
@@ -63,7 +63,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
    52         
    53         // USER CODE END
    54         
-C166 COMPILER V7.05, CCU60                                                                 12/13/2013 18:31:50 PAGE 2   
+C166 COMPILER V7.05, CCU60                                                                 12/16/2013 19:11:13 PAGE 2   
 
    55         
    56         //****************************************************************************
@@ -126,8 +126,8 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
   113         // @Parameters    None
   114         //
   115         //----------------------------------------------------------------------------
-  116         // @Date          09.12.2013
-C166 COMPILER V7.05, CCU60                                                                 12/13/2013 18:31:50 PAGE 3   
+  116         // @Date          16.12.2013
+C166 COMPILER V7.05, CCU60                                                                 12/16/2013 19:11:13 PAGE 3   
 
   117         //
   118         //****************************************************************************
@@ -191,7 +191,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
   176  1        ///  - 
   177  1        ///  - Single shot mode is disabled
   178  1        ///  - Interrupt on period match is disabled
-C166 COMPILER V7.05, CCU60                                                                 12/13/2013 18:31:50 PAGE 4   
+C166 COMPILER V7.05, CCU60                                                                 12/16/2013 19:11:13 PAGE 4   
 
   179  1        ///  - Interrupt on compare match is disabled
   180  1      
@@ -255,7 +255,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
   238  1        ///  - Generation interrupt on flag ICC62R is disabled
   239  1        ///  - Generation interrupt on flag ICC62F is disabled
   240  1      
-C166 COMPILER V7.05, CCU60                                                                 12/13/2013 18:31:50 PAGE 5   
+C166 COMPILER V7.05, CCU60                                                                 12/16/2013 19:11:13 PAGE 5   
 
   241  1        CCU60_CC62SR   =  0x0000;      // Load CCU60 capture/compare shadow 
   242  1                                       // register for channel 2
@@ -319,7 +319,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
   300  1      
   301  1        ///  -----------------------------------------------------------------------
   302  1        ///  Configuration of the used CCU60 Channels Interrupts:
-C166 COMPILER V7.05, CCU60                                                                 12/13/2013 18:31:50 PAGE 6   
+C166 COMPILER V7.05, CCU60                                                                 12/16/2013 19:11:13 PAGE 6   
 
   303  1        ///  -----------------------------------------------------------------------
   304  1        ///  NodeI0 service request node configuration:
@@ -366,7 +366,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
   345         // @Parameters    None
   346         //
   347         //----------------------------------------------------------------------------
-  348         // @Date          09.12.2013
+  348         // @Date          16.12.2013
   349         //
   350         //****************************************************************************
   351         
@@ -383,7 +383,7 @@ COMPILER INVOKED BY: C:\Program Files\Keil\C166\BIN\C166.EXE CCU60.C MODV2 BROWS
   362  1        if(CCU60_IS & 0x0001)   // if CCU60_IS_ICC60R
   363  1        {
   364  2          // Capture, Compare match rising edge detection an channel 0
-C166 COMPILER V7.05, CCU60                                                                 12/13/2013 18:31:50 PAGE 7   
+C166 COMPILER V7.05, CCU60                                                                 12/16/2013 19:11:13 PAGE 7   
 
   365  2      
   366  2          // USER CODE BEGIN (NodeI0,10)         
@@ -447,7 +447,7 @@ MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
   BDATA-DATA SIZE  =    --------     --------
   HUGE-DATA SIZE   =    --------     --------
   BIT SIZE         =    --------     --------
-C166 COMPILER V7.05, CCU60                                                                 12/13/2013 18:31:50 PAGE 8   
+C166 COMPILER V7.05, CCU60                                                                 12/16/2013 19:11:13 PAGE 8   
 
   INIT'L SIZE      =    --------     --------
 END OF MODULE INFORMATION.
