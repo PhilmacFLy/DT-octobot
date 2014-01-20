@@ -1,4 +1,3 @@
-
 #include "XE16xREGS.H"
 
 #include "ADC0.H"
@@ -8,7 +7,7 @@
 #include "MATH.H"
 
 // min 3
-#define NUM_SAMPLES 5
+#define NUM_SAMPLES 10
 
 // zero value ~= 512
 volatile unsigned int accel_x_arr[NUM_SAMPLES];
@@ -111,8 +110,8 @@ signed int GetCurrentAngle()
 	xvalue = ReadAccelValue(DIRECTION_X);
 	alpha = acos(((double)xvalue) / 100.0);
 	// pi/2 = grade
-	// <pi/2 = kippen vorwärts
-	// >pi/2 = kippen rückwärts
+	// <pi/2 = kippen vorwï¿½rts
+	// >pi/2 = kippen rï¿½ckwï¿½rts
 	alpha = alpha * 180. / 3.14159; // rad to grad
 	alpha = alpha - 90.; // offset
 	alpha = -alpha; // vorzeichen
@@ -144,7 +143,7 @@ signed int ReadAccelValue(unsigned char direction)
 }
 
 // tested
-// positive value: rückwaerts kipping
+// positive value: rï¿½ckwaerts kipping
 // negative value: vorwaerts kipping
 signed int ReadSpinValue()
 {
@@ -160,8 +159,8 @@ signed int ReadSpinValue()
   // 3,6 mV sensitivity =>  12-14
   x += 12;
 
-  // at Vs = 3,3V the sensitivity is about 3,3mV / °/s
-  // therefore, -511 to 511 is similar to -500°/s - +500°/s
+  // at Vs = 3,3V the sensitivity is about 3,3mV / ï¿½/s
+  // therefore, -511 to 511 is similar to -500ï¿½/s - +500ï¿½/s
   return -x;
-  //return (( x * 1000) / 1022); // return value = X°/s
+  //return (( x * 1000) / 1022); // return value = Xï¿½/s
 }
