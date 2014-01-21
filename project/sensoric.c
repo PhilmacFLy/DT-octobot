@@ -110,8 +110,8 @@ signed int GetCurrentAngle()
 	xvalue = ReadAccelValue(DIRECTION_X);
 	alpha = acos(((double)xvalue) / 100.0);
 	// pi/2 = grade
-	// <pi/2 = kippen vorw�rts
-	// >pi/2 = kippen r�ckw�rts
+	// <pi/2 = kippen vorwarts
+	// >pi/2 = kippen ruckwarts
 	alpha = alpha * 180. / 3.14159; // rad to grad
 	alpha = alpha - 90.; // offset
 	alpha = -alpha; // vorzeichen
@@ -125,21 +125,20 @@ signed int GetCurrentAngle()
 signed int ReadAccelValue(unsigned char direction)
 {
   unsigned int tmp = 0;
-  signed int x;
+  signed long x; // because of *1000
 
-  if (direction == DIRECTION_X) tmp = accel_x + 2;
-  if (direction == DIRECTION_Y) tmp = accel_y + 0;
-  if (direction == DIRECTION_Z) tmp = accel_z + 0;
+  if (direction == DIRECTION_X) tmp = (signed long) accel_x + 2;
+  if (direction == DIRECTION_Y) tmp = (signed long) accel_y + 0;
+  if (direction == DIRECTION_Z) tmp = (signed long) accel_z + 0;
 
   // 0 - 0x3FF / 0 - 1023, voltage is irrelevant because Vs = Vref
   // 511/512 is middle
-  if (tmp < 512) x = - ( (signed int) (511 - tmp) ); // <= 511 is negative
-  else           x =   ( (signed int) (tmp - 512) ); // >= 512 is positive
+  if (tmp < 512) x = - ( (signed long) (511 - tmp) ); // <= 511 is negative
+  else           x =   ( (signed long) (tmp - 512) ); // >= 512 is positive
   
   // at Vs = 3,3V, the sensitivity is about 330mV / g
   // therefore, -511 to 511 is similar to -5G - +5G
-  return x;
-  //return ((x * 1000) / 1022); // return value * 0,01g = X g
+  return (signed int)((x * 1000) / 1022); // return value * 0,01g = X g
 }
 
 // tested
@@ -148,7 +147,7 @@ signed int ReadAccelValue(unsigned char direction)
 signed int ReadSpinValue()
 {
   unsigned int tmp = speed_spin;
-  signed int x;
+  signed int x; // because of *1000
 
   // 0 - 0x3FF / 0 - 1023, voltage is irrelevant because Vs = Vref
   // 511/512 is middle
@@ -159,8 +158,7 @@ signed int ReadSpinValue()
   // 3,6 mV sensitivity =>  12-14
   x += 12;
 
-  // at Vs = 3,3V the sensitivity is about 3,3mV / �/s
-  // therefore, -511 to 511 is similar to -500�/s - +500�/s
-  return -x;
-  //return (( x * 1000) / 1022); // return value = X�/s
+  // at Vs = 3,3V the sensitivity is about 3,3mV / grad/s
+  // therefore, -511 to 511 is similar to -500grad/s - +500grad/s
+  return (signed int)(( -x * 1000) / 1022); // return value = Xgrad/s
 }
