@@ -117,7 +117,6 @@ signed int GetCurrentAngle()
 	return ((signed int)alpha);
 }
 
-// untested
 //DIRECTION_X positive value: forward, negative value: backward
 //DIRECTION_Y positive value: left, negative value: right
 //DIRECTION_Z positive value: down, negative value: up
@@ -140,8 +139,7 @@ signed int ReadAccelValue(unsigned char direction)
   return (signed int)((x * 1000) / 1022); // return value * 0,01g = X g
 }
 
-// tested
-// positive value: r�ckwaerts kipping
+// positive value: ruckwaerts kipping
 // negative value: vorwaerts kipping
 signed int ReadSpinValue()
 {
