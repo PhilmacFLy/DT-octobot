@@ -243,7 +243,6 @@ void GPT1_viTmr2(void) interrupt T2INT
 {
   // USER CODE BEGIN (Tmr2,2)
   // 5 ms cycle time interrupt
-  // here we can set the DOTHESHIT flag
   // USER CODE END
 
 
