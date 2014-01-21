@@ -100,7 +100,6 @@ unsigned char ReadSpinValueRaw()
   return ((unsigned char) (speed_spin >> 2));
 } 
 
-// untested
 // positive: forward
 // negative: backward
 signed int GetCurrentAngle()
