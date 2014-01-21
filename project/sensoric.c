@@ -146,12 +146,12 @@ signed int ReadAccelValue(unsigned char direction)
 signed int ReadSpinValue()
 {
   unsigned int tmp = speed_spin;
-  signed int x; // because of *1000
+  signed long x; // because of *1000
 
   // 0 - 0x3FF / 0 - 1023, voltage is irrelevant because Vs = Vref
   // 511/512 is middle
-  if (tmp < 512) x = - ( (signed int) (511 - tmp) ); // <= 511 is negative
-  else           x =   ( (signed int) (tmp - 512) ); // >= 512 is positive
+  if (tmp < 512) x = - ( (signed long) (511 - tmp) ); // <= 511 is negative
+  else           x =   ( (signed long) (tmp - 512) ); // >= 512 is positive
 
   // 40 mV offset (1,61V center, should be 1,65V)
   // 3,6 mV sensitivity =>  12-14
