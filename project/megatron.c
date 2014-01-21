@@ -1,4 +1,3 @@
-
 #include "XE16xREGS.H"
 
 #include "GPT1.H"
@@ -7,7 +6,6 @@
 			
 unsigned int ReadMegatronLeft()
 {
-  //ROLLOUTMEGATRONCODE(GPT1_TIMER_3);
   unsigned int value; 
   GPT1_vStopTmr(GPT1_TIMER_3);
   value = (signed int) GPT1_uwReadTmr(GPT1_TIMER_3);
