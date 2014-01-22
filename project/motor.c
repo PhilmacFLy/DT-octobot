@@ -1,4 +1,3 @@
-
 #include "XE16xREGS.H"
 
 #include "CCU60.H"
@@ -49,9 +48,8 @@ void SetMotorSpeeds(signed int* left_p, signed int* right_p, signed long winkel)
   //if (right <=  LOW_SPEED_MAX && right >=  LOW_SPEED_MIN) right =  LOW_SPEED_MAX;
   //if (right >= -LOW_SPEED_MAX && right <= -LOW_SPEED_MIN) right = -LOW_SPEED_MAX;
 
-  //if (winkel == 0) winkel = 10;
+  // lienare steigerungsrate, um PID-Glied auf Korrektheit zu testen
   // maximal speed um MAX_ACCELERATION aendern
- // maximal speed um 25 aendern
   if (MAX_ACCELERATION < abs(left - lastleft))
   {
     if (left > lastleft) left = lastleft + MAX_ACCELERATION;
@@ -87,13 +85,13 @@ void SetMotorSpeeds(signed int* left_p, signed int* right_p, signed long winkel)
   {
 	if (optimusprimeleft > optimusprimeright) // links "schneller" als rechts
 	{
-	  // links langsamer drehen
-	  left = left * ((signed int) optimusprimeright) / ((signed int) optimusprimeleft);
+	  // rechts schneller drehen 
+	  right = right * ((signed int) optimusprimeleft) / ((signed int) optimusprimeright);
 	}
 	if (optimusprimeright > optimusprimeleft) // rechts "schneller" als links
 	{
-	  // rechts langsamer drehen
-      right = right * ((signed int) optimusprimeleft) / ((signed int) optimusprimeright);
+	  // links schneller drehen
+	  left = left * ((signed int) optimusprimeright) / ((signed int) optimusprimeleft);
 	}
   }
 
@@ -118,7 +116,7 @@ void SetMotorSpeedLeft(unsigned char direction, unsigned char speed)
   leftspeed = speed;
   CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, (0xFF - speed)); // ?
   CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
-  // rechter motor direction pin = 0 für vorwärts
+  // rechter motor direction pin = 0 fï¿½r vorwï¿½rts
   if (MOTOR_FORWARD == direction)
   {
     P4_OUT_P4 = 0;
@@ -135,7 +133,7 @@ void SetMotorSpeedRight(unsigned char direction, unsigned char speed)
   rightspeed = speed;
   CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_1, (0xFF - speed)); // ?
   CCU60_vEnableShadowTransfer(CCU60_TIMER_12);
-  // rechter motor direction pin = 1 für vorwärts
+  // rechter motor direction pin = 1 fï¿½r vorwï¿½rts
   if (MOTOR_FORWARD == direction)
   {
     P4_OUT_P1 = 1;
